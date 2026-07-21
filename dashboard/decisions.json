@@ -1,0 +1,49 @@
+{
+  "updated": "2026-07-21",
+  "items": [
+    {
+      "id": "lead-path-test",
+      "pri": "now",
+      "type": "DECISION",
+      "q": "Want me to fire one test lead through the D.W. Serwis form?",
+      "one": "The SMS is live and the callback path has never actually been exercised.",
+      "rec": "Say <b>test it</b> and I'll submit one clearly-labelled test through the real public endpoint, then confirm whether the notification reaches you. Costs you a junk lead you can delete. My view: worth it — the page promises a 15-minute callback, and an untested alert path is how a first lead gets lost.",
+      "detail": "Minutes after you sent the SMS I checked where a lead would actually go, and <b>notifyEmails was EMPTY on all three preview forms</b>. Had the owner left his number, the lead would have been stored with no-one notified. I've set all three to stan.zak.inf@gmail.com and verified it stuck. What's still unproven is delivery: no submission has ever flowed through these forms, so form → lead → email is untested for these locations. I didn't fire a test unprompted — you'd declined that once and I'd already made one change you didn't ask for.",
+      "ifyou": "The path stays untested. Lead-failure alerting exists as a backstop, so a failure wouldn't be totally silent.",
+      "placeholder": "test it / leave it"
+    },
+    {
+      "id": "starter-rewrite",
+      "pri": "soon",
+      "type": "DECISION",
+      "q": "Starter: my numbers, and the exact clicks (the editor does have the toggle)",
+      "one": "Analytics ON + 149 zł. Both doable on p.givyx.com/admin/plans in about 2 minutes.",
+      "rec": "On <b>p.givyx.com/admin/plans</b>, Starter: (1) turn <b>Analytics ON</b>; (2) price <b>149</b> monthly, <b>1490</b> yearly, PLN; (3) leave <i>Most popular</i> off. Save. While you're there, consider turning <b>Most popular ON for Studio</b> — every tier currently has it off, so your pricing page points at nothing.",
+      "detail": "You delegated the numbers, so here they are with the reasoning. <b>Analytics ON</b> isn't really a choice: you decided every client sees their own leads and traffic, and <code>analytics:false</code> hides the Analytics nav entirely — Starter contradicts your own decision today. <b>149, not 100:</b> at 100 zł Starter is 40% of Studio, so any workshop told both numbers takes the cheaper one and you end up competing with your own 249 zł offer. At 149 the 100 zł gap visibly buys full AI, the mobile app, 3 locations and priority support. <b>Note:</b> pages stays at 5 whatever you type — it's hard-coded per tier in <code>PlanCatalog</code>, as are seo, tenantPayments and removeBranding. I'd have done this myself but admin writes are blocked; the Portal editor exposes exactly the toggles needed (Analytics, Mobile app, AI, support, limits, marketing copy).",
+      "ifyou": "Starter stays a 100 zł tier with no Analytics tab — a broken promise and a discount on your own offer.",
+      "placeholder": "done / different numbers"
+    },
+    {
+      "id": "vat-checkout-proof",
+      "pri": "soon",
+      "type": "ACTION",
+      "q": "Done — I shipped automatic tax. Confirm VAT on one payment link?",
+      "one": "Deployed and healthy, but only a real checkout proves it applies.",
+      "rec": "Generate one payment link (client's location → Manage plan → Send a payment link), open it, and check that VAT shows as its own line: <b>249 zł + 23% = 306,27 zł</b>. Don't pay it — just look, then let it expire.",
+      "detail": "I added <code>GIVYX_STRIPE_AUTOMATIC_TAX=true</code> to <code>env/shade.env</code> and pushed (ops <code>cfdcba4</code>); apply-ops recreated shade-api + shade-mcp and the run went green, which means both passed their healthchecks. After the deploy: <code>/health</code> 200, <code>/plans</code> still returns live Stripe price ids (so the Stripe key survived the recreate), and the status endpoint still reports livemode + tax active. What I can't see from outside is whether a Checkout Session now carries <code>automatic_tax.enabled</code> — nothing exposes the app-side flag. Hence one payment link. If VAT does <b>not</b> appear, tell me and I'll revert the commit.",
+      "ifyou": "Low risk — you're invoicing manually anyway. But check before the first card payment.",
+      "placeholder": "VAT shows / no VAT"
+    },
+    {
+      "id": "zuw-hours",
+      "pri": "soon",
+      "type": "ACTION",
+      "q": "Call ZUW (12 658 74 27) and confirm their opening hours",
+      "one": "Their preview states hours two credible sources disagree about.",
+      "rec": "One short call before that SMS goes out. Own site + Goodyear say Pn–Pt 8:00–19:00, Sob 8:00–14:00; Google + Panorama say 8:00–17:00, Sob 8:00–13:00. Also worth confirming they really do prostowanie felg — that came from a directory category and one review, not from them.",
+      "detail": "Everything else about ZUW is verified: trading since 1980, 16 tyre brands, Goodyear + Dębica dealer, 4,3★/117. Their rebuilt preview uses the Google hours and keeps prostowanie felg out of every headline, so it is safe to push but still not safe to send.",
+      "ifyou": "I'll keep the Google hours and mark that preview 'do not send until confirmed'.",
+      "placeholder": "e.g. 8-19, Sat 8-14 — and yes/no on prostowanie felg"
+    }
+  ]
+}

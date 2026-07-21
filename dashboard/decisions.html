@@ -1,0 +1,127 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Givyx — Decisions</title>
+<style>
+  :root{--bg:#0B0E11;--card:#151B22;--card2:#1A222B;--border:#242C36;--fg:#F2F4F6;--muted:#9AA6B2;
+        --accent:#F5A524;--ink:#14181D;--green:#4ADE80;--blue:#5AA9FF;--red:#F87171;--grayp:#6B7683;--purp:#B794F6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding-bottom:80px}
+  .wrap{max-width:900px;margin:0 auto;padding:24px 18px 40px}
+  .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+  h1{font-size:clamp(23px,4vw,32px);margin:.15em 0 .1em}
+  .sub{color:var(--muted);margin:0 0 16px}
+  .how{background:linear-gradient(180deg,rgba(74,222,128,.13),rgba(74,222,128,.04));border:1px solid rgba(74,222,128,.45);border-radius:14px;padding:14px 16px;margin:0 0 18px;font-size:14px}
+  .how b{color:var(--green)} .how code{background:var(--card2);padding:2px 7px;border-radius:5px;font-size:13px}
+  .d{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:11px}
+  .d.answered{border-color:rgba(74,222,128,.5)}
+  .top{padding:14px 16px 10px;display:flex;gap:12px;align-items:flex-start}
+  .num{font-weight:800;color:var(--accent);font-size:15px;min-width:26px}
+  .q{font-weight:650;font-size:15.5px}
+  .one{color:var(--muted);font-size:13px;margin-top:3px}
+  .tags{display:flex;gap:6px;margin-top:7px;flex-wrap:wrap}
+  .tag{font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px}
+  .t-DECISION{background:rgba(90,169,255,.16);color:var(--blue)}
+  .t-TEXT{background:rgba(183,148,246,.16);color:var(--purp)}
+  .t-ACTION{background:rgba(245,165,36,.16);color:var(--accent)}
+  .t-VERIFY{background:rgba(74,222,128,.16);color:var(--green)}
+  .p-now{background:rgba(248,113,113,.16);color:var(--red)}
+  .p-soon{background:rgba(245,165,36,.16);color:var(--accent)}
+  .p-later{background:rgba(107,118,131,.2);color:var(--grayp)}
+  .recline{margin:0 16px 12px 54px;background:rgba(245,165,36,.10);border:1px solid rgba(245,165,36,.3);border-radius:10px;padding:10px 12px;font-size:13.5px;color:#e9dcc4}
+  .recline b{color:var(--accent)}
+  .ctl{margin:0 16px 12px 54px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .btn{border:1px solid var(--border);background:var(--card2);color:var(--fg);padding:9px 14px;border-radius:9px;cursor:pointer;font-size:12.5px;font-weight:700}
+  .btn:hover{border-color:var(--accent)}
+  .btn.on{background:var(--green);color:var(--ink);border-color:var(--green)}
+  .inp{flex:1;min-width:260px;background:#0d1116;border:1px solid var(--border);color:var(--fg);padding:9px 12px;border-radius:9px;font-size:13px;font-family:inherit}
+  .inp:focus{outline:none;border-color:var(--accent)}
+  .more{margin:0 16px 12px 54px}
+  .morebtn{background:none;border:0;color:var(--grayp);cursor:pointer;font-size:12.5px;padding:0;text-decoration:underline}
+  .detail{display:none;margin-top:9px;font-size:13.5px;color:#cfd6dd;border-top:1px solid var(--border);padding-top:10px}
+  .detail.open{display:block}
+  .bar{position:fixed;left:0;right:0;bottom:0;background:rgba(11,14,17,.97);border-top:1px solid var(--border);padding:12px 18px;display:flex;gap:12px;align-items:center;justify-content:center;backdrop-filter:blur(8px);flex-wrap:wrap}
+  .bar .n{color:var(--muted);font-size:13px}
+  .bar .ok{color:var(--green);font-weight:700;font-size:13px}
+  .bar .err{color:var(--red);font-weight:700;font-size:13px}
+  .bar button{background:var(--card2);color:var(--fg);border:1px solid var(--border);padding:9px 16px;border-radius:10px;font-weight:650;cursor:pointer;font-size:13px}
+  .note{color:var(--grayp);font-size:12.5px;margin-top:20px;border-top:1px solid var(--border);padding-top:14px}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Givyx · Decisions</div>
+  <h1>Decisions</h1>
+  <p class="sub">Only what I can't do alone. Ordered by what matters most.</p>
+  <div class="how">
+    <b>Answers save straight to a file.</b> Click ✓ or type — it writes to
+    <code>answers.json</code> in this folder as you go. Then just say <code>read</code> in chat
+    and I'll pick them up. No downloading, no copy-paste.
+  </div>
+  <div id="list"></div>
+  <p class="note">Types: <b>DECISION</b> = pick · <b>TEXT</b> = info only you have · <b>ACTION</b> = a click only you can do · <b>VERIFY</b> = you look and confirm.</p>
+</div>
+
+<div class="bar">
+  <span class="n" id="count">loading…</span><span id="flag"></span>
+  <button onclick="allYou()">✓ All “you”</button>
+  <button onclick="clearAll()">Clear</button>
+</div>
+
+<script>
+let ITEMS=[], ans={}, timer=null;
+const flag=(cls,txt)=>{const f=document.getElementById('flag');f.className=cls;f.textContent=txt;
+  if(cls==='ok')setTimeout(()=>{f.textContent='';},2000);};
+
+async function boot(){
+  const [d,a]=await Promise.all([fetch('/api/decisions').then(r=>r.json()),fetch('/api/answers').then(r=>r.json())]);
+  ITEMS=d.items||[];
+  for(const [k,v] of Object.entries(a.answers||{}))
+    ans[k]= v.mode==='you'?{mode:'you'}:{mode:'mine',text:v.answer||''};
+  render();
+}
+function save(){
+  clearTimeout(timer);
+  timer=setTimeout(async()=>{
+    try{
+      const r=await fetch('/api/answers',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({answers:ans})});
+      const j=await r.json();
+      flag('ok', j.ok?'✓ saved to answers.json':'save failed');
+    }catch(e){ flag('err','⚠ server not running — restart decisions-server.py'); }
+  },250);
+}
+function setMode(id,m){ans[id]=ans[id]||{};ans[id].mode=ans[id].mode===m?null:m;
+  if(!ans[id].mode&&!ans[id].text)delete ans[id];save();render();}
+function setText(id,v){ans[id]=ans[id]||{};ans[id].text=v;if(v)ans[id].mode='mine';
+  if(!v&&ans[id].mode==='mine')delete ans[id];save();count();}
+function allYou(){ITEMS.forEach(i=>ans[i.id]={mode:'you'});save();render();}
+function clearAll(){ans={};save();render();}
+function toggle(id){document.getElementById('det-'+id).classList.toggle('open');}
+function count(){const n=Object.keys(ans).length;
+  document.getElementById('count').textContent=n?`${n} of ${ITEMS.length} answered — say “read” in chat`:'nothing answered yet';}
+
+function render(){
+  document.getElementById('list').innerHTML=ITEMS.map((it,idx)=>{
+    const a=ans[it.id]||{}, done=a.mode||a.text;
+    return `<div class="d ${done?'answered':''}">
+      <div class="top"><span class="num">${idx+1}.</span>
+        <div style="flex:1"><div class="q">${it.q}</div><div class="one">${it.one||''}</div>
+          <div class="tags"><span class="tag p-${it.pri}">${it.pri==='now'?'NEEDS YOU NOW':it.pri.toUpperCase()}</span>
+          <span class="tag t-${it.type}">${it.type}</span>
+          ${a.mode==='you'?'<span class="tag t-VERIFY">✓ YOU DECIDE</span>':''}
+          ${a.mode==='mine'?'<span class="tag t-ACTION">✎ ANSWERED</span>':''}</div>
+        </div></div>
+      <div class="recline"><b>My recommendation:</b> ${it.rec}</div>
+      <div class="ctl">
+        <button class="btn ${a.mode==='you'?'on':''}" onclick="setMode('${it.id}','you')">✓ Use your recommendation</button>
+        <input class="inp" placeholder="${(it.placeholder||'your answer…').replace(/"/g,'&quot;')}"
+               value="${(a.text||'').replace(/"/g,'&quot;')}" oninput="setText('${it.id}',this.value)">
+      </div>
+      <div class="more"><button class="morebtn" onclick="toggle('${it.id}')">more detail ▾</button>
+        <div class="detail" id="det-${it.id}">${it.detail||''}
+        ${it.ifyou?`<br><br><b>If you say “you”:</b> ${it.ifyou}`:''}</div></div>
+    </div>`;}).join('');
+  count();
+}
+boot();
+</script>

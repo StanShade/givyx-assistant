@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# tool output, not company record
+.playwright-mcp/
+__pycache__/
+*.pyc
+
+# never commit credentials — MCP/admin tokens live in the session scratchpad only
+*.token
+tokens/

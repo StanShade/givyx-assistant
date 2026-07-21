@@ -1,0 +1,199 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Givyx — Technical Board</title>
+<style>
+  :root{--bg:#0B0E11;--bg1:#10141A;--card:#151B22;--card2:#1A222B;--border:#242C36;
+    --fg:#F2F4F6;--muted:#9AA6B2;--accent:#F5A524;--ink:#14181D;--green:#4ADE80;--blue:#5AA9FF;--red:#F87171;--grayp:#6B7683;--purp:#B794F6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:24px 18px 80px}
+  .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+  h1{font-size:clamp(23px,4vw,32px);margin:.15em 0 .1em}
+  .sub{color:var(--muted);margin:0 0 18px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:0 0 20px}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px}
+  .kpi .n{font-size:23px;font-weight:800;line-height:1}
+  .kpi .l{color:var(--muted);font-size:12px;margin-top:5px}
+  .kpi.p0 .n{color:var(--red)}.kpi.p1 .n{color:var(--accent)}.kpi.p2 .n{color:var(--grayp)}
+  .crit{background:linear-gradient(180deg,rgba(248,113,113,.12),rgba(248,113,113,.04));border:1px solid rgba(248,113,113,.4);border-radius:14px;padding:16px 18px;margin:0 0 22px}
+  .crit h3{margin:0 0 8px;color:var(--red);font-size:15px}
+  .crit ol{margin:0;padding-left:20px} .crit li{margin:6px 0;font-size:13.5px;color:#e7d3d3}
+  .crit b{color:#fff}
+  .filters{display:flex;gap:7px;margin:0 0 8px;flex-wrap:wrap}
+  .f{background:var(--card);border:1px solid var(--border);color:var(--fg);padding:7px 13px;border-radius:999px;cursor:pointer;font-weight:600;font-size:12.5px}
+  .f.active{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+  .frow{margin-bottom:8px}
+  .frow .lbl{color:var(--grayp);font-size:11px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 5px}
+  .list{margin-top:16px}
+  .item{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:9px;overflow:hidden}
+  .item .h{padding:12px 14px;cursor:pointer;display:flex;gap:10px;align-items:flex-start}
+  .item .h:hover{background:var(--card2)}
+  .sev{font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px;white-space:nowrap;margin-top:1px}
+  .s-P0{background:rgba(248,113,113,.16);color:var(--red)}
+  .s-P1{background:rgba(245,165,36,.16);color:var(--accent)}
+  .s-P2{background:rgba(107,118,131,.2);color:var(--grayp)}
+  .t{font-weight:600;font-size:14px}
+  .meta{display:flex;gap:6px;margin-top:5px;flex-wrap:wrap}
+  .chip{font-size:10px;padding:2px 7px;border-radius:6px;background:var(--card2);color:var(--muted);font-weight:600}
+  .a-Backend{color:var(--blue)}.a-Portal{color:var(--purp)}.a-Websites{color:var(--green)}.a-Ops{color:var(--accent)}
+  .chev{margin-left:auto;color:var(--grayp);transition:.2s;font-size:12px;margin-top:3px}
+  .item.open .chev{transform:rotate(90deg)}
+  .body{display:none;padding:0 14px 14px 46px;font-size:13px}
+  .item.open .body{display:block}
+  .body .k{color:var(--accent);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;margin:12px 0 3px}
+  .body p{margin:0;color:#cfd6dd}
+  .body .ev{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted)}
+  .blk{display:inline-block;font-size:10px;padding:2px 7px;border-radius:6px;background:rgba(248,113,113,.16);color:var(--red);font-weight:700;margin-top:1px}
+  .note{color:var(--grayp);font-size:12.5px;margin-top:22px;border-top:1px solid var(--border);padding-top:14px}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Givyx · Technical Board</div>
+  <h1>Stack audit — Portal · Backend · Websites · Ops</h1>
+  <p class="sub">83 findings from 4 deep-dive audits (2026-07-18). Filter below; click any item for evidence + suggested fix. 🚩 = blocks onboarding paying clients.<br><b style="color:var(--green)">✅ Shipped since audit (6 prod deploys, all green):</b> BE-1 (/apps API fully locked), BE-2 (location leak fixed), BE-7 (form rate-limit), BE-8 (lead-notify retry+status), WEB-1 (RODO consent banner main+apex), <b>OPS-2 (nightly off-box backups, restore drill passed), OPS-7 (uptime + lead-failure alerting, delivery verified)</b>. <b style="color:var(--green)">→ ALL 5 client-blocking P0s are now CLOSED.</b> Stripe production-readiness in progress.</p>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="crit">
+    <h3>🚩 Must fix before onboarding paying clients (cross-cutting top 5)</h3>
+    <ol>
+      <li><b>Backend: /apps API is unauthenticated</b> — incl. a cascade DELETE that wipes a whole tenant. Anyone could delete a client's site + data. (BE-1)</li>
+      <li><b>Websites: no RODO/cookie consent banner</b> — analytics fires before consent; hard EU compliance blocker for PL workshops. (WEB-1)</li>
+      <li><b>Ops: no monitoring/alerting</b> — a client's site 500ing or a lead email failing goes unnoticed until they complain. (OPS-7)</li>
+      <li><b>Ops: no off-box backups</b> — tenant images + analytics DB live on one VPS disk; disk loss = unrecoverable. (OPS-2)</li>
+      <li><b>Backend: lead notifications unmonitored + form spam unthrottled</b> — a workshop can silently miss customer leads. (BE-7, BE-8)</li>
+    </ol>
+  </div>
+
+  <div class="frow"><div class="lbl">Area</div><div class="filters" id="fArea"></div></div>
+  <div class="frow"><div class="lbl">Severity</div><div class="filters" id="fSev"></div></div>
+  <div class="frow"><div class="lbl">Category</div><div class="filters" id="fCat"></div></div>
+
+  <div class="list" id="list"></div>
+  <p class="note">Raw audits in dashboard/audit-raw/*.md. The 🚩 P0s are folded into the Command Center task board. Nothing here has been changed in code — backend/security fixes need your plan-and-approve gate. Tell me which to schedule and I'll prep fix plans.</p>
+</div>
+
+<script>
+// id,area,cat,sev,eff,title,evidence,action,note,blocks(bool)
+const F=[
+// BACKEND
+["BE-1","Backend","security","P0","M","/apps CRUD completely unauthenticated (incl. cascade DELETE)","AppsApi.cs — route group has no AddPortalAuthorization/access filter; DELETE cascades LocationTeardownService then deletes app.","Add auth + app-ownership check to all /apps and /apps/{appId} routes, esp. DELETE/PUT/POST.","Anyone on the internet can enumerate all tenants and hard-delete a paying client's app + data. #1 fix.",true],
+["BE-2","Backend","security","P1","M","App-scoped reads check token, not ownership","GET /apps/{appId}/plan token-only; GET /apps/{appId}/locations/{id} has NO auth (anon reads location email).","Add appId-ownership filter across /apps/{appId}/* + auth on location GET routes.","Cross-tenant data leak (emails, plan/config). GDPR exposure.",true],
+["BE-3","Backend","security","P1","S","JWTs effectively non-expiring; MCP tokens = full Auth tokens","AuthExtensions.cs RequireExpirationTime=false, no ValidateLifetime; McpTokenService mints TokenType=Auth 365d.","Enable lifetime validation; give MCP tokens a distinct TokenType.","Leaked token never expires; MCP creds act as portal user.",false],
+["BE-4","Backend","reliability","P1","M","Stripe webhooks have no event-id idempotency","PaymentsApi/PlatformBillingApi switch on evt.Type, no evt.Id dedupe. Order insert + refund not idempotent.","Record processed Stripe event.Ids and no-op on repeats.","Duplicate orders / double-applied refunds for paying tenants.",false],
+["BE-5","Backend","bug","P1","M","Analytics summary undercounts clicks/submits >6mo old","AnalyticsRepository.GetSummaryAsync agg branch hardcodes 'page_view'. KPI tiles vs chart disagree.","SUM the counters off daily_stats instead of synthesizing events.","Wrong lead/conversion numbers ~Dec 2026 — the metric clients care about.",false],
+["BE-6","Backend","reliability","P1","M","Over-32K page writes fail opaquely; MCP reports success","No pre-write size guard. Past 32,768 chars the write throws but MCP surfaces success. 2 edits silently dropped.","Pre-write size check + read-back verify; longer term split JSON / move off Table storage.","Silent content loss on larger multilocale pages.",false],
+["BE-7","Backend","security","P1","S","Form submissions: honeypot only, no rate limit","FormsApi POST /submissions checks only honeypot; InMemoryRateLimiter wired only to analytics/inquiries.","Apply the existing IP rate limiter + per-form daily cap.","Attacker floods DB + spams tenant inbox (each submit emails owner).",true],
+["BE-8","Backend","reliability","P1","M","Lead notifications fire-and-forget, unmonitored; default recipient empty","SubmitAsync try/catch logs only; notifier swallows exceptions; Form.NotifyEmails defaults ''.","Persist notification status, retry, warn on save when no recipient, surface failures in Portal.","Workshop can silently miss customer leads. Direct revenue/trust loss.",true],
+["BE-9","Backend","missing-feature","P2","L","No SMS channel anywhere","PortalUsersService.cs:123 'TODO send login sms'; only SendGridEmailClient.","Add an SMS provider abstraction alongside IEmailClient.","Workshops often want SMS lead alerts; likely sales ask.",false],
+["BE-10","Backend","tech-debt","P2","S","TableRepository CreateTableIfNotExists sync in ctor per request","TableRepository.cs:23 sync call, no timeout, scoped per request.","Move table creation to one-time startup / cache exists flag.","Cold Azure adds latency; minor at 10 tenants.",false],
+["BE-11","Backend","bug","P2","S","RowKey.Split('_') breaks on pageId containing underscore","WebPagesRepository.cs:57 / WebPageEntity.cs splits '{pageId}_{type}' naively.","Split on last '_' only, or store fields separately.","Latent; only bites once a pageId has '_'.",false],
+["BE-12","Backend","tech-debt","P2","M","RedisBus.QueryAsync is NotImplementedException","RedisBus.cs:28 throws; cross-instance request/response unimplemented. Deploy is 2 containers.","Implement or document cross-instance queries unsupported; keep websockets instance-affine.","Scaling hazard, not a current blocker.",false],
+["BE-13","Backend","data-model","P2","M","seo.title/description not localizable; seo.locales dropped","WebSeo.cs types string?; renderer sends locales but API has no field.","Extend WebSeo for localized title/desc + a locales field.","Limits per-tenant SEO in PL/SK/RU.",false],
+["BE-14","Backend","data-model","P2","M","Form field labels can't be localized","Forms Postgres stores plain strings, unreachable by renderer localizeTree.","Add per-locale form copy.","Non-EN visitors see English lead form.",false],
+["BE-15","Backend","tech-debt","P2","S","Dead ctas analytics breakdown still queried","AnalyticsRepository.GetBreakdownsAsync runs ctas query though widget retired.","Delete the ctas query/projection.","One dead SQL query per dashboard load.",false],
+["BE-16","Backend","improve","P2","S","PlanService parses SPONSORED_APP_IDS env per request","Transient; parses allowlist every request.","Cache parsed allowlist (singleton).","Negligible perf; tidiness.",false],
+["BE-17","Backend","security","P2","S","Analytics ingest trusts left-most XFF (spoofable)","AnalyticsIngestApi.ResolveClientIp; rate-limit key = this IP.","Trust proxy-attested IP only.","Caps analytics spam/geo poisoning.",false],
+// WEBSITES
+["WEB-1","Websites","missing-feature","P0","M","No cookie / RODO / consent banner","No ConsentBanner anywhere; utils/analytics.ts:32 fires page_view + session UUID before consent.","Add manifest-driven consent component gating the analytics beacon.","EU compliance blocker for PL workshops — a prospect's lawyer flags it immediately.",true],
+["WEB-2","Websites","missing-feature","P1","L","No real booking calendar — callback form only","Forms have a date field but no slot picker; no booking component in registry.","Build booking/availability component or document Calendly embed path.","'Book a service slot' is the #1 workshop ask; we only offer 'leave your number'.",true],
+["WEB-3","Websites","missing-feature","P1","S","No map embed — location is text-only","No iframe/maps embed anywhere; contact shows address text chip only.","Add a map component (embed or static + Directions link), consent-gated.","'How do I get there' is core for a physical workshop; every competitor has it.",true],
+["WEB-4","Websites","missing-feature","P1","M","No reviews / Google-reviews integration","Only static baked screenshots (leonixon). No Places/Reviews API path.","Add a reviews component backed by Google Places API (cached server-side).","Star ratings drive local-trade conversion; without a feed we fake or omit.",true],
+["WEB-5","Websites","seo","P1","M","Page-level JSON-LD (LocalBusiness/AutoRepair/FAQ) not implemented","layout.tsx emits ONE hardcoded 'Organization' block (no address/geo/hours).","Emit LocalBusiness/AutoRepair + FAQPage from manifest seo/page values.","LocalBusiness schema wins Google local pack + AI-Overview citations for workshops.",false],
+["WEB-6","Websites","i18n","P1","M","SK/RU don't exist on slug tenants","main SUPPORTED_LOCALES=['pl','en']; 4-locale machinery only on apex branch.","Port apex multilocale renderer to main.","Selling to SK/RU markets from the tenant platform is impossible until ported.",false],
+["WEB-7","Websites","seo","P1","S","hreflang uses relative ?lang= hrefs (invalid)","layout.tsx:132 emits relative hrefs; Google needs absolute URLs.","Emit absolute https://{host}/?lang={l}.","Localized versions won't be clustered by Google.",false],
+["WEB-8","Websites","i18n","P1","M","seo.title/description can't be localized","WebSeo string?; every localized tenant shares one EN title.","Make WebSeo localizable + persisted locales field.","Per-tenant SEO stuck in English.",false],
+["WEB-9","Websites","i18n","P1","M","Contact-form copy still English in every locale","Form copy in Postgres plain strings, unreachable by localizeTree.","Add per-locale form columns.","Polish visitor sees English form at the moment they try to book.",true],
+["WEB-10","Websites","performance","P1","L","32K Table ceiling; home at 28.3K/32.7K","~4.4K headroom; 4-locale page ≈ one page's budget. Past cap = silent drop.","Split page JSON across properties or move off Table storage.","SEO content growth collides with cap in 4 locales; silent corruption.",false],
+["WEB-11","Websites","performance","P1","L","~150 unused HeroUI registry wrappers ship every page","~165KB react-aria unused on marketing home; prune blocked on Production reads.","Get Production reads, re-run prune, strip unused wrappers.","Dead weight on every tenant's mobile LCP.",false],
+["WEB-12","Websites","bug","P1","M","Analytics KPI rollup under-counts >6mo (renderer view)","Same root as BE-5; chart vs KPI disagree.","Fix in AnalyticsRepository agg branch.","Lead KPIs under-report as data ages.",false],
+["WEB-13","Websites","tech-debt","P1","S","GIVYX_LOCALES only on VPS env, not in repo","Not in committed env/Dockerfile/workflows; apply-ops sync could wipe it.","Commit locale env into image/Dockerfile.","A routine ops sync could un-localize the flagship.",false],
+["WEB-14","Websites","bug","P1","S","Unknown component types render silent null","web-component.tsx:8 returns null, no warn/placeholder.","Log unknown types (dev warn/prod beacon) + dev placeholder.","Manifest typo / cross-branch drift disappears with zero signal.",false],
+["WEB-15","Websites","improve","P2","M","No breakpoint escape hatch for manifest inline styles","values.style is one CSSProperties; clamp/vw only, no @media.","Support a responsiveStyle breakpoint map or document the constraint.","Bespoke tenant layouts can only be fluid.",false],
+["WEB-16","Websites","seo","P2","S","No llms.txt / web app manifest / OG-image routes","app/ has robots+sitemap only.","Add per-host llms.txt + web manifest; dynamic OG routes.","llms.txt = cheap GEO win we already pitch.",false],
+["WEB-17","Websites","seo","P2","S","Apex / home has no self-canonical","app/page.tsx renders outside [page]/layout generateMetadata.","Emit explicit self-canonical for home.","Flagship's top URL lacks the canonical others get.",false],
+["WEB-18","Websites","tech-debt","P2","S","Dead/unwired manifest & theme fields","Manifest.sidebar, WebTheme.width/height, buttonsForeground phantom token.","Wire or remove from the contract.","Confusing surface for MCP/Portal editors.",false],
+["WEB-19","Websites","tech-debt","P2","S","Form/beat-parts switches lack a default branch","givyx-form.tsx:297, beat-parts.tsx:62 — unknown sub-type renders nothing.","Add default that warns/fallbacks.","Same silent-drop as WEB-14 one level down.",false],
+["WEB-20","Websites","tech-debt","P2","S","Analytics country uses spoofable first-hop XFF","proxy/route.ts:22 left-most XFF.","Shared-secret header or trusted right-most hop.","Geo/rate-limit data-quality footgun.",false],
+["WEB-21","Websites","improve","P2","S","Residual mobile tap-target/overflow polish","Footer links 20px, brand 34px, /process cards overflow 7px.","Apply min-h 44px, flex-col footer, box-sizing.","WCAG misses read unpolished on mobile.",false],
+["WEB-22","Websites","i18n","P2","S","Native SK/RU translation review outstanding","Claude-authored copy shipped ahead of native review.","Native-speaker review before pointing prospects at SK/RU.","Machine tone undercuts credibility.",false],
+["WEB-23","Websites","tech-debt","P2","S","Stranded perf branch + worktree hygiene","perf/leonixon-film-imagebitmap (~640ms decode win) unmerged.","Rebase/land the ImageBitmap fix or drop it.","Ready perf win sitting unmerged.",false],
+["WEB-24","Websites","performance","P2","M","Heavy motion ships on capable mobiles","three.js particle field, canvas scroll-film; guarded but still animate.","Skip (not dim) heavy canvases on low-power mobile; keep off workshop template.","Workshop customers skew mobile/older; jank hurts.",false],
+// PORTAL
+["POR-1","Portal","broken-flow","P0","M","Mobile 'Deploy to All Users' is a no-op","mobile-controls.tsx:43 onConfirm={()=>{}} — dialog promises publish, nothing fires.","Wire to a real deploy call (mirror web-deploy-button).","Mobile app can never publish. (Mobile not in car-workshop v1.)",false],
+["POR-2","Portal","broken-flow","P0","S","Mobile editor corner-radius inputs inert","border-editor.tsx:72-107 onChange={()=>{}}.","Wire to the theme border mutation.","Dead controls read as broken product. (Mobile, not v1.)",false],
+["POR-3","Portal","broken-flow","P0","M","Mobile style-variant picker does nothing","element-style-selector.tsx:60 console.log todo.","Implement style-variant apply.","Same. (Mobile, not v1.)",false],
+["POR-4","Portal","redesign","P1","M","Two conflicting billing flows on Manage plan","manage-plan.tsx — mailto 'Request upgrade' (/feedback) vs real Stripe checkout coexist.","Pick one model per tier/state; hide mailto where Stripe is live.","Contradictory pay UX erodes trust when a client tries to pay.",true],
+["POR-5","Portal","bug","P1","S","Checkout errors use alert() not toast","manage-plan.tsx:170,186.","Replace alert() with toast.danger.","Native alert on billing failure looks broken.",false],
+["POR-6","Portal","missing-feature","P1","L","'Billing & invoices' is a Coming-soon stub","manage-plan.tsx:461 no invoice history.","Surface invoices from Stripe customer portal.","Paying clients expect invoices; absence = support tickets.",true],
+["POR-7","Portal","unimplemented","P1","L","Account Settings mostly Coming-soon","account-settings.tsx — password change, 2FA, sessions, notifications, export, delete all stubs.","Ship password change + delete/export (GDPR) first; hide rest.","No self-serve password change/deletion — B2B + privacy gap.",true],
+["POR-8","Portal","bug","P1","S","'Sign in with Google' mislabeled Coming-soon","Google OAuth is fully wired (login-form.tsx:144, auth.ts:125) but settings says coming-soon.","Update the settings row to reflect it's live.","Under-selling a working feature.",false],
+["POR-9","Portal","hidden-menu","P1","M","Mobile live-preview column built but hidden in prod","Gated behind NEXT_PUBLIC_MOBILE_PREVIEW_URL (unset in prod).","Build per-tenant mobile web preview then enable.","No client sees a mobile preview. (Mobile, not v1.)",false],
+["POR-10","Portal","missing-feature","P1","M","Web editor 'N unpublished changes' counter missing","web-deploy-button only reports post-deploy; no pending count.","Add API endpoint for pending preview changes + draft chip.","Clients can't tell if they have undeployed edits.",false],
+["POR-11","Portal","missing-feature","P2","M","Web editor 'Site structure' map missing","chat-component-preview.tsx doesn't render pages/sections map.","Render a site-structure map.","Design feature not built.",false],
+["POR-12","Portal","missing-feature","P2","L","Home dashboard activity feed absent","home-dashboard.tsx no feed; no events source.","Product decision + events endpoint, then feed.","Design home has a 5-item feed.",false],
+["POR-13","Portal","missing-feature","P2","M","Home 'Top products' view counts absent","home-dashboard.tsx cards show no per-product analytics.","Add per-product analytics endpoint.","Design shows counts.",false],
+["POR-14","Portal","bug","P2","S","Table rows-per-page control inert","s-table.tsx:234 onRowsPerPageChange={()=>{}}.","Wire it to state or remove.","Control that changes nothing.",false],
+["POR-15","Portal","improve","P2","M","Plan-list drag-to-reorder not implemented","plans-manager.tsx — ↑/↓ only, no drag.","Add drag-to-reorder.","Minor UX.",false],
+["POR-16","Portal","tech-debt","P2","S","Dead login-form2.tsx","Imported nowhere.","Delete it.","Cleanup.",false],
+["POR-17","Portal","tech-debt","P2","S","Empty a11y key handlers","editable-text.tsx:63, sortable.tsx:49, component-button.tsx:47 onKeyDown={()=>{}}.","Implement keyboard activation or remove.","Misleading stubs; a11y gap.",false],
+["POR-18","Portal","tech-debt","P2","S","Legacy no-op logo route","app/api/users/logo/route.ts:12.","Remove dead route/service.","Cleanup.",false],
+["POR-19","Portal","improve","P2","S","Sidebar plan usage gauge shows label only","No usage bar (design has '48/100 used').","Add the usage gauge.","Minor polish.",false],
+["POR-20","Portal","redesign","P2","L","Mobile editor not at design fidelity","HeroUI Tabs vs design .editor-3col; combine w/ POR-1..3.","Finish mobile editor as one milestone.","Least-finished surface. (Mobile, not v1.)",false],
+["POR-21","Portal","improve","P2","S","Analytics polish (tooltips, legend order)","Truncation tooltips missing; legend order swapped (Sessions should lead).","Fix tooltips + legend order.","Data is real; polish only.",false],
+["POR-22","Portal","redesign","P2","M","HeroUI Tabs/Drawer not pixel-matched","location-settings tabs + help drawer use HeroUI defaults.","Themed override at HeroUI level.","Minor fidelity.",false],
+// OPS
+["OPS-1","Ops","reliability","P1","L","Single VPS = total single point of failure","One 8GB kylos box, 10 containers, no LB/failover. RTO ~1h manual.","Plan a warm-standby VPS or managed LB before many tenants.","Box dies → every site/API/portal down at once.",false],
+["OPS-2","Ops","backup","P0","M","No off-box backups","Weekly cron backs up only caddy_data to SAME disk. Images + analytics DB not backed up.","Nightly encrypted off-box backup: images + pg_dump + caddy_data.","Disk loss = tenant images + analytics unrecoverable.",true],
+["OPS-3","Ops","backup","P1","S","Tenant images only on VPS, not backed up","Since 2026-06-12; Azure has passive pre-flip copy only.","Include /opt/givyx/images in off-box backup.","Client logo/photo uploads single-copy.",false],
+["OPS-4","Ops","backup","P1","S","Analytics Postgres has no backup","No pg_dump anywhere.","Nightly pg_dump off-box.","All visitor history one disk-loss from gone.",false],
+["OPS-5","Ops","scaling","P1","L","Custom-domain provisioning fully manual","Per domain: Caddy block + container + env + SSH key + GH secret + branch. No on-demand TLS.","Caddy on-demand TLS + generic custom-domain container.","Hard ceiling on scaling to 10-50 tenants.",false],
+["OPS-6","Ops","scaling","P1","M","No resource limits on any container","docker-compose has no mem/cpu limits; custom domain = full container.","Add per-container limits; load-test capacity.","One runaway container starves the box.",false],
+["OPS-7","Ops","monitoring","P0","M","No uptime / error / lead-failure monitoring","Only Beszel host CPU/RAM. No per-site uptime, no HTTP-error/lead-email alert.","Add external uptime checks + HTTP-error + lead-email-failure alerts.","A client outage or lost lead goes unnoticed until they complain.",true],
+["OPS-8","Ops","security","P1","L","Live secrets committed to git","env/*.env tracked: JwtSecret, Azure/Redis/Qdrant, SendGrid, Google OAuth, GoDaddy, Postgres pw.","Move to secrets manager / SOPS-encrypted; scrub history if privacy at risk.","Repo privacy is the only protection for all tenant keys.",false],
+["OPS-9","Ops","security","P2","S","metrics.givyx.com has no Caddy basic_auth","Caddyfile metrics block bare; docs say basic_auth but removed.","Restore basic_auth or update runbook; confirm Beszel login strong.","Host metrics behind a single app login.",false],
+["OPS-10","Ops","reliability","P1","S","apply-ops env changes don't auto-rollback on healthcheck fail","apply-ops.sh exits non-zero but leaves broken env at HEAD (deploy.sh does auto-revert).","Snapshot + restore env on healthcheck failure.","One typo in secret rotation → service down, no auto-recovery.",false],
+["OPS-11","Ops","ci-cd","P1","M","Deploy pipeline flakes on SSH/runner, needs manual reruns","appleboy/ssh-action to one host; kylos anti-DDoS rate-limits rapid SSH.","Retry-with-backoff on SSH; consider pull-based agent.","Deploys not reliably one-click.",false],
+["OPS-12","Ops","ci-cd","P1","M","No staging env, no test gate before prod","Push to main → straight to single prod box, no test job.","Add CI test/build gate + staging target.","A regression reaches paying clients on first push.",false],
+["OPS-13","Ops","reliability","P1","L","Single-replica services → deploy downtime; MCP breaks","force-recreate one replica each; MCP SSE breaks on restart (cold-start wedge).","2 replicas behind Caddy for stateless web/api; fix MCP wedge.","Deploys during hours cause blips; MCP drops client sessions.",false],
+["OPS-14","Ops","reliability","P2","S","Wildcard TLS depends on one GoDaddy credential","Caddyfile *.givyx.com tls godaddy; token can be disabled.","Monitor cert expiry externally + document rotation.","Token lapse = all *.givyx.com renewals fail at once.",false],
+["OPS-15","Ops","tech-debt","P2","S","Rollback tooling omits custom-domain container","rollback.sh + manual-rollback.yml have no givyx-ipr.","Add givyx-ipr + pattern for future custom domains.","The one paying custom-domain tenant can't be rolled back via tooling.",false],
+["OPS-16","Ops","scaling","P1","M","32K Table storage ceiling (infra view)","Same as BE-6/WEB-10; MCP write fails but reports success.","Split JSON / move off Table storage; keep read-back verify.","Silent content loss on large multilocale pages.",false],
+["OPS-17","Ops","automation","P2","M","Publish Preview→Production is manual + blocked for agents","deploy_to_production needs a human Portal click; no MCP slug-create.","Provide a safe audited publish + slug-create path.","Per-site publish is a manual bottleneck at 10-50 tenants.",false],
+["OPS-18","Ops","monitoring","P2","S","No DNS/cert-readiness check on custom-domain onboarding","Client DNS typo → indefinitely broken www, Caddy retries silently.","Add DNS/cert-readiness check + alert on stuck issuance.","Client misconfig = broken site with no signal to you.",false],
+["OPS-19","Ops","ci-cd","P2","S","Branch sprawl; ops checkout not on main","~20 local branches; box checkout on a feature branch.","Prune merged branches; keep checkout on main.","Obscures what's actually deployed.",false],
+["OPS-20","Ops","security","P2","M","Containers run as root; docker.sock mounted into agent","No USER in Dockerfiles; /var/run/docker.sock:ro in beszel-agent.","Add non-root USER, cap_drop/read_only; confirm sock needed.","Wider RCE blast radius (one traversal bug already found).",false],
+["OPS-21","Ops","tech-debt","P1","L","main vs apex branch diverged ~268/151 commits (docs stale)","Found during WEB-1: givyx apex is NOT 'main + Dockerfile ENV' as README says; kept in sync by manual cherry-picks. Apex (givyx.com flagship) missing recent main work (scroll-film/leonixon/seo).","Careful reconciliation pass + fix Givyx/README.md; long term make apex = main + env only.","Renderer changes don't reliably reach the flagship; every change needs double-applying; risk of drift regressions on givyx.com.",false],
+];
+const AREAS=["Backend","Portal","Websites","Ops"], SEVS=["P0","P1","P2"];
+const CATS=[...new Set(F.map(f=>f[2]))].sort();
+let fa="all",fs="all",fc="all";
+// KPIs
+const cnt=(s)=>F.filter(f=>f[3]===s).length;
+document.getElementById('kpis').innerHTML=
+ `<div class="kpi p0"><div class="n">${cnt('P0')}</div><div class="l">P0 · blocks clients</div></div>
+  <div class="kpi p1"><div class="n">${cnt('P1')}</div><div class="l">P1 · important</div></div>
+  <div class="kpi p2"><div class="n">${cnt('P2')}</div><div class="l">P2 · polish/debt</div></div>`+
+ AREAS.map(a=>`<div class="kpi"><div class="n" style="color:var(--fg)">${F.filter(f=>f[1]===a).length}</div><div class="l">${a}</div></div>`).join('');
+// filter bars
+function bar(el,items,cur,set){document.getElementById(el).innerHTML=['all',...items].map(x=>`<div class="f ${x===cur?'active':''}" data-v="${x}">${x==='all'?'All':x}</div>`).join('');
+ document.querySelectorAll('#'+el+' .f').forEach(b=>b.onclick=()=>{set(b.dataset.v);draw();});}
+function draw(){
+ bar('fArea',AREAS,fa,v=>fa=v);bar('fSev',SEVS,fs,v=>fs=v);bar('fCat',CATS,fc,v=>fc=v);
+ const items=F.filter(f=>(fa==='all'||f[1]===fa)&&(fs==='all'||f[3]===fs)&&(fc==='all'||f[2]===fc))
+   .sort((a,b)=>a[3].localeCompare(b[3])||a[1].localeCompare(b[1]));
+ document.getElementById('list').innerHTML=items.map(f=>`
+  <div class="item" data-id="${f[0]}">
+   <div class="h"><span class="sev s-${f[3]}">${f[3]}</span>
+     <div><div class="t">${f[5]}</div>
+       <div class="meta"><span class="chip a-${f[1]}">${f[1]}</span><span class="chip">${f[2]}</span><span class="chip">effort ${f[4]}</span><span class="chip">${f[0]}</span>${f[9]?'<span class="blk">🚩 blocks clients</span>':''}</div></div>
+     <span class="chev">▶</span></div>
+   <div class="body">
+     <div class="k">Evidence</div><p class="ev">${f[6]}</p>
+     <div class="k">Suggested fix</div><p>${f[7]}</p>
+     <div class="k">Business impact</div><p>${f[8]}</p></div>
+  </div>`).join('');
+ document.querySelectorAll('.item .h').forEach(h=>h.onclick=()=>h.parentElement.classList.toggle('open'));
+}
+draw();
+</script>

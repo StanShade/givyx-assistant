@@ -1,0 +1,156 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Givyx — Decisions</title>
+<style>
+  :root{--bg:#0B0E11;--card:#151B22;--card2:#1A222B;--border:#242C36;
+    --fg:#F2F4F6;--muted:#9AA6B2;--accent:#F5A524;--ink:#14181D;--green:#4ADE80;--blue:#5AA9FF;--red:#F87171;--grayp:#6B7683;--purp:#B794F6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding-bottom:88px}
+  .wrap{max-width:900px;margin:0 auto;padding:24px 18px 40px}
+  .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+  h1{font-size:clamp(23px,4vw,32px);margin:.15em 0 .1em}
+  .sub{color:var(--muted);margin:0 0 16px}
+  .how{background:linear-gradient(180deg,rgba(74,222,128,.13),rgba(74,222,128,.04));border:1px solid rgba(74,222,128,.45);border-radius:14px;padding:14px 16px;margin:0 0 18px;font-size:14px}
+  .how b{color:var(--green)}
+  .how code{background:var(--card2);padding:2px 7px;border-radius:5px;font-size:13px;color:var(--fg)}
+  .d{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:11px;overflow:hidden}
+  .d.answered{border-color:rgba(74,222,128,.5)}
+  .top{padding:14px 16px 10px;display:flex;gap:12px;align-items:flex-start}
+  .num{font-weight:800;color:var(--accent);font-size:15px;min-width:30px}
+  .q{font-weight:650;font-size:15.5px}
+  .one{color:var(--muted);font-size:13px;margin-top:3px}
+  .tags{display:flex;gap:6px;margin-top:7px;flex-wrap:wrap}
+  .tag{font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px;letter-spacing:.03em}
+  .t-dec{background:rgba(90,169,255,.16);color:var(--blue)}
+  .t-txt{background:rgba(183,148,246,.16);color:var(--purp)}
+  .t-act{background:rgba(245,165,36,.16);color:var(--accent)}
+  .t-ver{background:rgba(74,222,128,.16);color:var(--green)}
+  .p-now{background:rgba(248,113,113,.16);color:var(--red)}
+  .p-soon{background:rgba(245,165,36,.16);color:var(--accent)}
+  .blocked{background:rgba(248,113,113,.16);color:var(--red)}
+  .recline{margin:0 16px 12px 58px;background:rgba(245,165,36,.10);border:1px solid rgba(245,165,36,.3);border-radius:10px;padding:10px 12px;font-size:13.5px;color:#e9dcc4}
+  .recline b{color:var(--accent)}
+  .ctl{margin:0 16px 14px 58px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .btn{border:1px solid var(--border);background:var(--card2);color:var(--fg);padding:9px 14px;border-radius:9px;cursor:pointer;font-size:12.5px;font-weight:700}
+  .btn:hover{border-color:var(--accent)}
+  .btn.you.on{background:var(--green);color:var(--ink);border-color:var(--green)}
+  .inp{flex:1;min-width:240px;background:#0d1116;border:1px solid var(--border);color:var(--fg);padding:9px 12px;border-radius:9px;font-size:13px;font-family:inherit}
+  .inp:focus{outline:none;border-color:var(--accent)}
+  .more{margin:0 16px 12px 58px}
+  .morebtn{background:none;border:0;color:var(--grayp);cursor:pointer;font-size:12.5px;padding:0;text-decoration:underline}
+  .detail{display:none;margin-top:9px;font-size:13.5px;color:#cfd6dd;border-top:1px solid var(--border);padding-top:10px}
+  .detail.open{display:block}
+  h3.sec{margin:28px 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .arch{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 14px;margin-bottom:7px;font-size:13px;color:var(--muted)}
+  .arch b{color:var(--green)}
+  .bar{position:fixed;left:0;right:0;bottom:0;background:rgba(11,14,17,.97);border-top:1px solid var(--border);padding:12px 18px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;backdrop-filter:blur(8px)}
+  .bar .n{color:var(--muted);font-size:13px}
+  .bar .saved{color:var(--green);font-size:13px;font-weight:700}
+  .bar button{background:var(--card2);color:var(--fg);border:1px solid var(--border);padding:9px 16px;border-radius:10px;font-weight:650;cursor:pointer;font-size:13px}
+  .note{color:var(--grayp);font-size:12.5px;margin-top:20px;border-top:1px solid var(--border);padding-top:14px}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Givyx · Decisions</div>
+  <h1>Decisions</h1>
+  <p class="sub">Only what I can't do alone. Ordered by what matters most.</p>
+
+  <div class="how">
+    <b>New way — no downloading.</b> Click ✓ or type your answer, then just say <code>read</code> in chat.
+    I read this page directly, act on everything, delete what's answered and add whatever comes next.
+    Your answers save as you type.
+  </div>
+
+  <div id="list"></div>
+
+  <h3 class="sec">✅ Answered — done or in progress</h3>
+  <div id="archive"></div>
+
+  <p class="note">Types: <b>DECISION</b> = pick · <b>TEXT</b> = info only you have · <b>ACTION</b> = a click only you can do · <b>VERIFY</b> = you look and confirm.<br>Last updated by me: 2026-07-20.</p>
+</div>
+
+<div class="bar">
+  <span class="n" id="count">nothing answered yet</span>
+  <span class="saved" id="savedFlag"></span>
+  <button onclick="allYou()">✓ All “you”</button>
+  <button onclick="clearAll()">Clear</button>
+</div>
+
+<script>
+const KEY='givyx_decisions_v3';
+const D=[
+ {n:1,cat:"now",type:"DECISION",tt:"t-dec",blocked:true,placeholder:"type: use the admin token",
+  q:"Unblock location creation — this is the ONLY thing stopping your first SMS",
+  one:"I need one line from you: “use the admin token”.",
+  rec:"Reply exactly <code>use the admin token</code>. Then I create the Tłumiki Bielarz location myself, build his preview, and hand you a finished SMS to send. Otherwise you do it: p.givyx.com → Administration → Settings → ＋ New location → type “Tłumiki Bielarz” → paste me the token.",
+  detail:"You've answered “you decide” to this three times, but I genuinely cannot act on it — creating a location needs credentials. The stored platform-admin token could do it, but <b>your own standing rule</b> says I must get your explicit confirmation immediately before every single use of that token. A general “you decide” doesn't satisfy a rule that specifically demands per-use approval, so I won't stretch it. One exact line unlocks it permanently for this task.",
+  ifyou:"Nothing happens — I still can't create the location. This one needs the literal phrase or your own 3 clicks."},
+ {n:1.5,cat:"now",type:"ACTION",tt:"t-act",placeholder:"“pushed” — or “added the permission rule”",
+  q:"Run 2 git pushes (the permission system blocks me, twice now)",
+  one:"Two verified branches, both clean fast-forwards. 30 seconds.",
+  rec:"Paste these two commands:<br><code>cd /Users/stan/Code/givyx/Givyx.Api && git push origin feat/stripe-polish-vat:main</code><br><code>cd /Users/stan/Code/givyx/givyx.ops && git push origin docs/stripe-env-restore:main</code><br>Or add a Bash permission rule for <code>git push</code> in these repos and I'll handle pushes myself from now on.",
+  detail:"Two agents in a row hit the same production-push gate and both correctly refused to route around it — one even refused to accept my relayed approval as consent, which was the right call. The branches are verified: Givyx.Api is 701 tests green with the VAT/NIP work; givyx.ops is docs-only and I grepped the diff to confirm it contains no secret values. Both are true fast-forwards.<br><br>The third branch (Portal) is <b>no longer needed</b> — see the archive.",
+  ifyou:"Nothing moves — the gate is a hard block on my side. This one needs your hands or a permission rule."},
+ {n:2,cat:"now",type:"ACTION",tt:"t-act",placeholder:"type “done” when it's in your password manager",
+  q:"⚠️ Save the backup passphrase into your password manager (5 min)",
+  one:"Without an off-server copy, every backup is permanently unreadable.",
+  rec:"Run <code>ssh givyxvps 'cat /opt/givyx/env/backup.env'</code>, copy the passphrase into your password manager, close the terminal. I deliberately never copied or committed it.",
+  detail:"Backups run nightly and a full restore was tested successfully — but they're encrypted with a passphrase living only on the server they protect. If that disk dies you'd have perfect backups you cannot open. This is the single step that makes them real.<br><br>You answered “you decide” — I can't. I won't handle your secrets in plain text and it must live somewhere I can't reach. I've added a reminder to your daily digest email until you confirm.",
+  ifyou:"I can't do this one. It stays here until you confirm."},
+ {n:3,cat:"soon",type:"ACTION",tt:"t-act",placeholder:"“done” or “skip”",
+  q:"Optional (~5 min): free UptimeRobot account for off-box monitoring",
+  one:"My checks run ON the server — they can't tell you if the server itself dies.",
+  rec:"Worth 5 minutes. Point it at https://givyx.com/ and https://api.givyx.com/health. Free tier is plenty. Account creation needs a human, so I can't do it.",
+  detail:"Everything else is monitored: 11 hosts every 5 minutes, lead-failure alerts, a daily digest. The one blind spot is total server loss — today your only signal would be the daily digest not arriving.",
+  ifyou:"I'll leave it; a missing daily digest stays your signal for a full outage."},
+];
+const ARCHIVE=[
+ ["0.1","Land the 3 finished branches","2 still need your push (item 1.5). The 3rd — the Portal one — is NO LONGER NEEDED: your background task already landed the same fix, and did it completely (feature gate, unlock links, purchasability guard, Docker build arg). Our branch is superseded and will be deleted."],
+ ["0.2","Stripe test/prod switching + tenant setup instructions","your direction taken → building the mode switch, tenant how-to-test docs, and we test on Givyx's own Stripe in test mode first, then flip to prod"],
+ ["2","How to send SMS","manual from your own phone for the first sends"],
+ ["3","System alert email","stan.zak.inf@gmail.com — live, delivery verified"],
+ ["4","Nightly off-box backups","approved → shipped, restore drill passed"],
+ ["5","Check the preview on your phone","you deferred to me → proceeding with current design"],
+ ["6","Core strategy","CONFIRMED: simple site = the product, functionality = paid tiers, never custom-per-client"],
+ ["7","SMS/push lead alerts","yes → first feature after client #1"],
+ ["8","Client Portal logins","yes → scoped Owner login per client, added to onboarding"],
+ ["9","Apex branch reconciliation","yes → staged, verified pass (queued)"],
+ ["10","Stripe timing","ASAP (you overrode my wait-for-5-clients advice) → code side shipped"],
+];
+const PRI={now:["p-now","NEEDS YOU NOW"],soon:["p-soon","SOON"]};
+let ans=JSON.parse(localStorage.getItem(KEY)||'{}');
+function save(){
+  localStorage.setItem(KEY,JSON.stringify(ans));
+  const f=document.getElementById('savedFlag'); f.textContent='✓ saved — now say “read” in chat';
+  setTimeout(()=>f.textContent='',2600);
+  const n=Object.keys(ans).filter(k=>ans[k]&&(ans[k].mode||ans[k].text)).length;
+  document.getElementById('count').textContent=n?`${n} of ${D.length} answered`:'nothing answered yet';
+}
+function setMode(n,m){ans[n]=ans[n]||{};ans[n].mode=ans[n].mode===m?null:m;save();render();}
+function setText(n,v){ans[n]=ans[n]||{};ans[n].text=v;if(v)ans[n].mode='mine';save();}
+function allYou(){D.forEach(d=>{ans[d.n]=ans[d.n]||{};ans[d.n].mode='you';});save();render();}
+function clearAll(){ans={};save();render();}
+function toggleDetail(n){document.getElementById('det'+n).classList.toggle('open');}
+function render(){
+  document.getElementById('list').innerHTML=D.map(d=>{
+    const a=ans[d.n]||{}, done=a.mode||a.text;
+    return `<div class="d ${done?'answered':''}">
+      <div class="top"><span class="num">${d.n}.</span>
+        <div style="flex:1"><div class="q">${d.q}</div><div class="one">${d.one}</div>
+          <div class="tags"><span class="tag ${PRI[d.cat][0]}">${PRI[d.cat][1]}</span><span class="tag ${d.tt}">${d.type}</span>${d.blocked?'<span class="tag blocked">BLOCKING FIRST SALE</span>':''}${a.mode==='you'?'<span class="tag t-ver">✓ YOU DECIDE</span>':''}${a.mode==='mine'?'<span class="tag t-act">✎ ANSWERED</span>':''}</div>
+        </div></div>
+      <div class="recline"><b>My recommendation:</b> ${d.rec}</div>
+      <div class="ctl">
+        <button class="btn you ${a.mode==='you'?'on':''}" onclick="setMode(${d.n},'you')">✓ Use your recommendation</button>
+        <input class="inp" placeholder="${d.placeholder}" value="${(a.text||'').replace(/"/g,'&quot;')}" oninput="setText(${d.n},this.value)">
+      </div>
+      <div class="more"><button class="morebtn" onclick="toggleDetail(${d.n})">more detail ▾</button>
+        <div class="detail" id="det${d.n}">${d.detail}<br><br><b>If you say “you”:</b> ${d.ifyou}</div></div>
+    </div>`;
+  }).join('');
+  document.getElementById('archive').innerHTML=ARCHIVE.map(a=>`<div class="arch"><b>✓ ${a[0]}</b> — ${a[1]} → <i>${a[2]}</i></div>`).join('');
+  const n=Object.keys(ans).filter(k=>ans[k]&&(ans[k].mode||ans[k].text)).length;
+  document.getElementById('count').textContent=n?`${n} of ${D.length} answered`:'nothing answered yet';
+}
+render();
+</script>

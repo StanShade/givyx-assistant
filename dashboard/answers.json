@@ -1,0 +1,70 @@
+{
+  "savedAt": "2026-07-21T14:18:30",
+  "answers": {
+    "stripe-mode": {
+      "question": "stripe-mode",
+      "answer": "live all keys setup to prod so preferably I want you write full spec for implementing full stripe functiolite and the most important in portal we have to be able switch between  prod and dev stripe env. maid idea tenant what add payment on site he setup stripe connect check all it with test and on portal he can switch to prod when he will be ready. the same for givyx subscriptions I want bo be able test it. also if price will change tangent what already have subscriptions have to pay exactly the same price as before ",
+      "mode": "mine"
+    },
+    "stripe-tax": {
+      "question": "stripe-tax",
+      "answer": "looks like I activated it can you check ",
+      "mode": "mine"
+    },
+    "targets-locations": {
+      "question": "targets-locations",
+      "answer": "use admit token",
+      "mode": "mine"
+    },
+    "rebuild-tokens": {
+      "question": "rebuild-tokens",
+      "answer": "use admin token",
+      "mode": "mine"
+    },
+    "stripe-plans-page": {
+      "question": "stripe-plans-page",
+      "answer": "set it",
+      "mode": "mine"
+    },
+    "bielarz-reply": {
+      "question": "bielarz-reply",
+      "answer": "no",
+      "mode": "mine"
+    },
+    "price-245-or-249": {
+      "question": "price-245-or-249",
+      "answer": "249 fixed on portal",
+      "mode": "mine"
+    },
+    "yearly-prices-broken": {
+      "question": "yearly-prices-broken",
+      "answer": "also fixed ",
+      "mode": "mine"
+    },
+    "preview-tokens": {
+      "question": "Paste 3 MCP tokens — I've now been refused on this path four times",
+      "answer": "USE YOUR RECOMMENDATION",
+      "mode": "you"
+    },
+    "bielarz-followup": {
+      "question": "bielarz-followup",
+      "answer": "move on or I will try to call we see ",
+      "mode": "mine"
+    },
+    "starter-retire": {
+      "question": "starter-retire",
+      "answer": "rewrite stater",
+      "mode": "mine"
+    },
+    "dwserwis-send": {
+      "question": "dwserwis-send",
+      "answer": "USE YOUR RECOMMENDATION",
+      "mode": "you"
+    },
+    "starter-rewrite": {
+      "question": "Starter rewrite — I can't write to the plan catalog, so here's the spec. Confirm the numbers?",
+      "answer": "USE YOUR RECOMMENDATION",
+      "mode": "you"
+    }
+  }
+}

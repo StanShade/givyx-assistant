@@ -1,0 +1,46 @@
+GIVYX DECISION ANSWERS
+
+0. ⚠️ Save the backup passphrase into your password manager (5 minutes, genuinely important)
+   → YOU DECIDE (use your recommendation)
+
+0.1. ⚠️ Approve landing 3 finished branches (the push to production was denied)
+   → YOU DECIDE (use your recommendation)
+
+0.2. ⚠️ Stripe: your dashboard steps before we can charge anyone 249 zł
+   → MY ANSWER: we need to have possibility to switch stripe account from prod to test and overvise and write instructions for tenant on portal how to setup how to test and then switch to prod the same we will do first in test env on givyx stripe and then after all test switch it to prod 
+
+0.5. Optional (~5 min): create a free UptimeRobot account for off-box monitoring
+   → YOU DECIDE (use your recommendation)
+
+1. Test the new “＋ New location” button once it's deployed (~3 min)
+   → YOU DECIDE (use your recommendation)
+
+1.5. Then: create the location for our first target (Tłumiki Bielarz) and send me the token
+   → YOU DECIDE (use your recommendation)
+
+2. How will you send the SMS?
+   → YOU DECIDE (use your recommendation)
+
+3. What email should system alerts go to? (OPS-7 — a client-blocking P0)
+   → MY ANSWER: stan.zak.inf@gmail.com
+
+4. Approve nightly off-box backups? (OPS-2 — a client-blocking P0)
+   → YOU DECIDE (use your recommendation)
+
+5. Look at the preview on your phone once built — does it feel right?
+   → YOU DECIDE (use your recommendation)
+
+6. Confirm the strategy: simple site = the product, big functionality = paid tiers
+   → YOU DECIDE (use your recommendation)
+
+7. Build SMS/push lead alerts as the first post-sale feature?
+   → YOU DECIDE (use your recommendation)
+
+8. Give each client their own Portal login?
+   → YOU DECIDE (use your recommendation)
+
+9. Reconcile the diverged apex branch? (givyx.com is missing recent work)
+   → YOU DECIDE (use your recommendation)
+
+10. When do we switch from manual invoicing to Stripe subscriptions?
+   → MY ANSWER: as soon as possible

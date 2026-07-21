@@ -1,0 +1,219 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Givyx — Competitors vs Us & Feature Plan</title>
+<style>
+  :root{
+    --bg:#0B0E11;--bg1:#10141A;--card:#151B22;--card2:#1A222B;--border:#242C36;
+    --fg:#F2F4F6;--muted:#9AA6B2;--accent:#F5A524;--ink:#14181D;
+    --green:#4ADE80;--blue:#5AA9FF;--red:#F87171;--grayp:#6B7683;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1100px;margin:0 auto;padding:24px 18px 80px}
+  .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+  h1{font-size:clamp(23px,4vw,32px);margin:.15em 0 .1em}
+  .sub{color:var(--muted);margin:0 0 18px}
+  .tabs{display:flex;gap:8px;margin:0 0 18px;flex-wrap:wrap}
+  .tab{background:var(--card);border:1px solid var(--border);color:var(--fg);padding:9px 16px;border-radius:999px;cursor:pointer;font-weight:600;font-size:13.5px}
+  .tab.active{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+  .view{display:none}.view.active{display:block}
+  /* matrix */
+  .scroll{overflow-x:auto;border:1px solid var(--border);border-radius:14px}
+  table{border-collapse:collapse;width:100%;min-width:720px;font-size:13px}
+  th,td{padding:10px 12px;text-align:center;border-bottom:1px solid var(--border)}
+  th{background:var(--bg1);font-size:12px;color:var(--muted);position:sticky;top:0}
+  td.feat,th.feat{text-align:left;font-weight:600;color:var(--fg);min-width:220px;position:sticky;left:0;background:var(--card)}
+  th.us,td.us{background:rgba(245,165,36,.10)}
+  th.us{color:var(--accent)}
+  .y{color:var(--green);font-weight:700}
+  .p{color:var(--accent);font-weight:700}
+  .n{color:var(--grayp)}
+  .legend{color:var(--grayp);font-size:12.5px;margin:12px 0 0;display:flex;gap:18px;flex-wrap:wrap}
+  .verdict{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 0}
+  @media(max-width:680px){.verdict{grid-template-columns:1fr}}
+  .vc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+  .vc h4{margin:0 0 8px;font-size:14px}
+  .vc.win h4{color:var(--green)} .vc.gap h4{color:var(--red)}
+  .vc ul{margin:0;padding-left:18px;color:#cfd6dd;font-size:13px}
+  .vc li{margin:5px 0}
+  /* feature plan */
+  .grp-h{margin:22px 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+  .fc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:15px;cursor:pointer;transition:.15s}
+  .fc:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .fc .top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}
+  .fc h3{margin:0;font-size:15px}
+  .fc p{margin:6px 0 10px;color:var(--muted);font-size:13px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{font-size:10.5px;padding:2px 8px;border-radius:6px;background:var(--card2);color:var(--muted);font-weight:600}
+  .c-stake{background:rgba(90,169,255,.16);color:var(--blue)}
+  .c-moat{background:rgba(245,165,36,.16);color:var(--accent)}
+  .c-eff{background:rgba(107,118,131,.2);color:var(--muted)}
+  .st{font-size:10.5px;padding:2px 8px;border-radius:99px;font-weight:700}
+  .s-todo{background:rgba(107,118,131,.2);color:var(--grayp)}
+  .s-part{background:rgba(245,165,36,.16);color:var(--accent)}
+  .s-have{background:rgba(74,222,128,.16);color:var(--green)}
+  /* modal */
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.62);display:none;align-items:flex-start;justify-content:center;padding:5vh 16px;z-index:50;overflow:auto}
+  .overlay.open{display:flex}
+  .modal{background:var(--card);border:1px solid var(--border);border-radius:18px;max-width:600px;width:100%;padding:24px}
+  .modal h2{margin:4px 0 2px;font-size:21px}
+  .modal h5{margin:16px 0 6px;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
+  .modal p{margin:0 0 8px;font-size:13.5px;color:#cfd6dd}
+  .rec{background:rgba(245,165,36,.10);border:1px solid rgba(245,165,36,.35);border-radius:11px;padding:11px 13px;font-size:13.5px;margin:12px 0}
+  .rec b{color:var(--accent)}
+  .close{float:right;background:none;border:1px solid var(--border);color:var(--muted);border-radius:9px;width:34px;height:34px;cursor:pointer;font-size:18px}
+  .note{color:var(--grayp);font-size:12.5px;margin-top:24px;border-top:1px solid var(--border);padding-top:14px}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Givyx · Competitors vs Us</div>
+  <h1>Where we stand — and what to build</h1>
+  <p class="sub">From the market research (10 AI builders + PL/SK agencies). Click a feature card for the build plan. Updated 2026-07-18.</p>
+
+  <div class="tabs">
+    <div class="tab active" data-view="matrix">⚔️ Them vs Us</div>
+    <div class="tab" data-view="plan">🔧 Feature Build Plan</div>
+  </div>
+
+  <section class="view active" id="matrix">
+    <div class="scroll"><table id="mtx"></table></div>
+    <div class="legend"><span class="y">✓ has it</span><span class="p">~ partial</span><span class="n">✗ missing</span><span>· "Givyx" column = us (highlighted)</span></div>
+    <div class="verdict">
+      <div class="vc win"><h4>✅ Where we already win</h4><ul>
+        <li><b>AI edits after launch</b> via chat/MCP — core to our architecture</li>
+        <li><b>Done-for-you managed</b> — B12 does it with expensive humans ($199–399 + $1,999 setup); we do it AI-native</li>
+        <li><b>Native PL/SK/RU</b> — global builders are English-first</li>
+        <li><b>Flat outcome pricing</b> — no credit/token anxiety (Lovable/10Web's #1 complaint)</li>
+      </ul></div>
+      <div class="vc gap"><h4>🔴 Where we must catch up</h4><ul>
+        <li><b>Self-serve instant preview</b> — everyone's #1 conversion hook; we do it manually</li>
+        <li><b>Ongoing AI maintenance + monthly report</b> — our moat, not built yet</li>
+        <li><b>Risk reversal</b> (money-back / cancel-anytime) on pricing — table stakes we lack</li>
+        <li><b>Local currency + payments</b> (zł, BLIK/P24, faktura VAT) — the CEE opening no one owns</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="view" id="plan">
+    <div id="planGroups"></div>
+  </section>
+
+  <p class="note">Source: competitors/2026-07-17-landscape-report.md. These features feed the Command Center directions (Platform, Product, Retention, Web). Tell me to re-rank and I'll update.</p>
+</div>
+
+<div class="overlay" id="ov"><div class="modal" id="modal"></div></div>
+
+<script>
+const COLS=["Durable","Wix","10Web","B12","Givyx"];
+// v=has, p=partial, n=missing
+const ROWS=[
+ ["Instant AI site preview (self-serve, <60s)",["v","v","v","v","p"]],
+ ["AI edits after launch (chat)",["v","p","v","v","v"]],
+ ["Ongoing AI maintenance + monthly report",["p","n","n","p","n"]],
+ ["Done-for-you managed service",["n","n","n","v","v"]],
+ ["Free tier / free subdomain",["v","v","n","v","v"]],
+ ["Custom domain + auto SSL",["v","v","v","v","v"]],
+ ["Booking / appointment calendar",["v","v","p","v","p"]],
+ ["Payments / e-commerce",["p","v","v","v","p"]],
+ ["SEO tools (meta / schema)",["v","v","v","v","v"]],
+ ["Analytics dashboard",["v","v","v","v","v"]],
+ ["Lead capture + owner notification",["v","v","v","v","v"]],
+ ["SMS / push lead alerts",["n","n","n","n","n"]],
+ ["Native PL / SK / RU",["p","p","p","n","v"]],
+ ["Local currency + payments (zł, BLIK/P24)",["n","n","n","n","p"]],
+ ["faktura VAT / RODO legal pages",["n","n","n","n","n"]],
+ ["Flat pricing (no credits/tokens)",["v","v","n","v","v"]],
+ ["Risk reversal (money-back/cancel) shown",["v","v","v","v","n"]],
+];
+const M={v:'<span class="y">✓</span>',p:'<span class="p">~</span>',n:'<span class="n">✗</span>'};
+document.getElementById('mtx').innerHTML=
+ `<tr><th class="feat">Feature</th>${COLS.map(c=>`<th class="${c==='Givyx'?'us':''}">${c}</th>`).join('')}</tr>`+
+ ROWS.map(r=>`<tr><td class="feat">${r[0]}</td>${r[1].map((v,i)=>`<td class="${COLS[i]==='Givyx'?'us':''}">${M[v]}</td>`).join('')}</tr>`).join('');
+
+const FEAT=[
+ {g:"P0 — table stakes to compete now (cheap, do first)",items:[
+  {t:"Risk reversal on pricing page",cat:"stake",eff:"S",st:"todo",stl:"missing",
+   p:"Add 30-day money-back + cancel-anytime, visibly.",
+   who:"Durable, Hostinger, 10Web, Squarespace all state it. We show nothing.",
+   why:"Removes the #1 objection for a skeptical workshop owner. Pure copy/UI — hours, not days.",
+   rec:"Ship with the givyx.com pricing pass. Zero engineering risk."},
+  {t:"Local currency display (zł / €)",cat:"stake",eff:"S",st:"part",stl:"partial",
+   p:"Show prices in zł on site + pricing, not just $.",
+   who:"Global builders are $/€ only; PL abonament market quotes zł. Charging/displaying local currency is itself a conversion lever.",
+   why:"A Kraków owner reading '$49' feels foreign; '249 zł' feels local and fair.",
+   rec:"Add zł as the primary display for PL/SK visitors. Small renderer/config change."},
+  {t:"SMS / push lead alerts",cat:"stake",eff:"M",st:"todo",stl:"missing",
+   p:"Text/push the owner the instant a lead comes in (email exists + verified).",
+   who:"Nobody in the set does SMS alerts — an easy win AND a premium upsell.",
+   why:"Email works but is fragile for 'oddzwonimy do 15 min'. SMS makes the promise bulletproof.",
+   rec:"Build after first sale. Doubles as a paid tier feature. Needs an SMS gateway (SMSAPI)."},
+ ]},
+ {g:"P1 — differentiators (our moat — build once, sell as tiers)",items:[
+  {t:"Ongoing AI maintenance + monthly report",cat:"moat",eff:"M",st:"todo",stl:"missing",
+   p:"AI proposes/ships monthly improvements + a 'what your AI did this month' report.",
+   who:"No self-serve builder does this. B12 does it with humans at $199–399+$1,999 setup.",
+   why:"This IS our positioning — 'B12 outcomes at Durable prices'. Also the #1 retention lever (mirrors eSpark's 399 zł monthly-report ritual).",
+   rec:"Highest-leverage build. Start simple: a monthly summary of edits + a couple of AI-suggested tweaks."},
+  {t:"Booking / appointment calendar",cat:"moat",eff:"M",st:"part",stl:"partial",
+   p:"Real scheduling (pick a slot), beyond the callback form we have.",
+   who:"Durable, Wix, B12 have it. Workshops genuinely want 'umów termin online'.",
+   why:"A concrete upsell tier workshops will pay more for; also reduces phone tag.",
+   rec:"Build when the first client asks (they will). Price into a higher tier."},
+  {t:"Local payments (BLIK / Przelewy24) + faktura VAT",cat:"moat",eff:"L",st:"part",stl:"partial",
+   p:"Accept PL/SK local payment methods; auto-issue faktura VAT.",
+   who:"Zero competitors — global builders don't touch CEE payments; PL agencies are manual.",
+   why:"The unowned CEE opening. Turns Givyx from 'a builder' into 'the local business platform'.",
+   rec:"Bigger build — sequence after the moat report + booking. Ties into Stripe/tenant-payments work."},
+  {t:"Self-serve instant AI preview",cat:"stake",eff:"L",st:"part",stl:"partial",
+   p:"'Describe your business → see your homepage in 60s' on givyx.com.",
+   who:"Durable (30s), B12 (60s) — the universal top-of-funnel hook. We do it manually.",
+   why:"Turns givyx.com into a lead machine; the self-serve version of what we do by hand today.",
+   rec:"Our MCP already builds sites from a brief — needs a public wrapper. Build only after the manual motion proves out (Phase 2)."},
+ ]},
+ {g:"P2 — scale enablers (later)",items:[
+  {t:"Custom-domain onboarding automation",cat:"stake",eff:"M",st:"part",stl:"partial",
+   p:"Caddy on-demand TLS + catch-all so client domains self-provision.",
+   who:"Self-serve builders automate this; we do a manual Caddy edit per domain.",
+   why:"Fine at ~10 clients; becomes the bottleneck at scale.",
+   rec:"Automate before offering custom domains at volume. Not a launch blocker."},
+  {t:"RODO / GDPR auto legal pages",cat:"moat",eff:"S",st:"todo",stl:"missing",
+   p:"Auto-generate privacy/cookie/RODO pages per tenant.",
+   who:"No one auto-generates locale-correct CEE legal pages.",
+   why:"Trust + compliance for CEE SMBs; cheap once templated.",
+   rec:"Bundle into onboarding; low effort, nice trust signal."},
+  {t:"Own-domain email (via partner)",cat:"stake",eff:"M",st:"todo",stl:"missing",
+   p:"Offer name@theirdomain.pl mailboxes.",
+   who:"Bundled by many hosts; workshops use free wp.pl/interia addresses.",
+   why:"Real upsell, but we don't host email — needs a reseller/partner.",
+   rec:"Don't promise yet. Add later via a mail partner. (See decision D8.)"},
+ ]},
+];
+const CAT={stake:['c-stake','Table stakes'],moat:['c-moat','Differentiator']};
+const ST={todo:'s-todo',part:'s-part',have:'s-have'};
+document.getElementById('planGroups').innerHTML=FEAT.map((grp,gi)=>
+ `<div class="grp-h">${grp.g}</div><div class="fgrid">${grp.items.map((f,fi)=>
+   `<div class="fc" data-g="${gi}" data-i="${fi}"><div class="top"><h3>${f.t}</h3><span class="st ${ST[f.st]}">${f.stl}</span></div>
+    <p>${f.p}</p><div class="chips"><span class="chip ${CAT[f.cat][0]}">${CAT[f.cat][1]}</span><span class="chip c-eff">effort ${f.eff}</span></div></div>`
+ ).join('')}</div>`).join('');
+
+const ov=document.getElementById('ov'),modal=document.getElementById('modal');
+function closeOv(){ov.classList.remove('open')}
+ov.onclick=e=>{if(e.target===ov)closeOv()};
+document.onkeydown=e=>{if(e.key==='Escape')closeOv()};
+document.querySelectorAll('.fc').forEach(el=>el.onclick=()=>{
+  const f=FEAT[el.dataset.g].items[el.dataset.i];
+  modal.innerHTML=`<button class="close" onclick="closeOv()">×</button>
+   <h2>${f.t}</h2><div class="chips" style="margin:8px 0"><span class="chip ${CAT[f.cat][0]}">${CAT[f.cat][1]}</span><span class="chip c-eff">effort ${f.eff}</span><span class="st ${ST[f.st]}">${f.stl}</span></div>
+   <h5>What</h5><p>${f.p}</p>
+   <h5>Who has it (market)</h5><p>${f.who}</p>
+   <h5>Why it matters for us</h5><p>${f.why}</p>
+   <div class="rec"><b>Recommendation:</b> ${f.rec}</div>`;
+  ov.classList.add('open');
+});
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');document.getElementById(t.dataset.view).classList.add('active');
+});
+</script>

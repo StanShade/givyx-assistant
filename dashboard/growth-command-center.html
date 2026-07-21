@@ -1,0 +1,239 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Givyx Growth Command Center</title>
+<style>
+  :root{
+    --bg:#0B0E11; --bg1:#10141A; --card:#151B22; --card2:#1A222B; --border:#242C36;
+    --fg:#F2F4F6; --muted:#9AA6B2; --accent:#F5A524; --ink:#14181D;
+    --green:#4ADE80; --blue:#5AA9FF; --amber:#F5A524; --red:#F87171; --grayp:#6B7683;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  a{color:var(--accent)}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 18px 80px}
+  header .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+  h1{font-size:clamp(24px,4vw,34px);margin:.15em 0 .1em}
+  .sub{color:var(--muted);margin:0 0 20px}
+  /* KPI strip */
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 26px}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px}
+  .kpi .n{font-size:26px;font-weight:800;color:var(--accent);line-height:1}
+  .kpi .l{color:var(--muted);font-size:12.5px;margin-top:6px}
+  .kpi .goal{color:var(--grayp);font-size:11.5px;margin-top:3px}
+  /* tabs */
+  .tabs{display:flex;gap:8px;margin:0 0 18px;flex-wrap:wrap}
+  .tab{background:var(--card);border:1px solid var(--border);color:var(--fg);padding:9px 16px;border-radius:999px;cursor:pointer;font-weight:600;font-size:13.5px}
+  .tab.active{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+  .view{display:none} .view.active{display:block}
+  /* direction cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .dir{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;cursor:pointer;transition:.15s;position:relative;overflow:hidden}
+  .dir:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .dir .ic{font-size:26px}
+  .dir h3{margin:8px 0 4px;font-size:17px}
+  .dir p{color:var(--muted);font-size:13.5px;margin:0 0 14px}
+  .dir .foot{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--grayp)}
+  .prog{height:6px;background:#0d1116;border-radius:99px;overflow:hidden;margin:10px 0 6px}
+  .prog > i{display:block;height:100%;background:var(--accent)}
+  .pill{display:inline-block;padding:3px 9px;border-radius:99px;font-size:11px;font-weight:700;letter-spacing:.03em}
+  .st-active{background:rgba(74,222,128,.15);color:var(--green)}
+  .st-queued{background:rgba(90,169,255,.15);color:var(--blue)}
+  .st-later{background:rgba(107,118,131,.18);color:var(--grayp)}
+  /* task board */
+  .board{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:820px){.board{grid-template-columns:1fr}}
+  .col{background:var(--bg1);border:1px solid var(--border);border-radius:14px;padding:12px;min-height:120px}
+  .col h4{margin:2px 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:flex;justify-content:space-between}
+  .task{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:11px 12px;margin-bottom:9px;cursor:pointer}
+  .task:hover{border-color:var(--accent)}
+  .task .t{font-size:13.5px;font-weight:600}
+  .task .m{display:flex;gap:6px;margin-top:7px;flex-wrap:wrap;align-items:center}
+  .tag{font-size:10.5px;padding:2px 7px;border-radius:6px;background:var(--card2);color:var(--muted)}
+  .p0{background:rgba(248,113,113,.16);color:var(--red)} .p1{background:rgba(245,165,36,.16);color:var(--amber)} .p2{background:rgba(107,118,131,.18);color:var(--grayp)}
+  /* modal */
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.62);display:none;align-items:flex-start;justify-content:center;padding:5vh 16px;z-index:50;overflow:auto}
+  .overlay.open{display:flex}
+  .modal{background:var(--card);border:1px solid var(--border);border-radius:18px;max-width:640px;width:100%;padding:26px}
+  .modal .ic{font-size:34px}
+  .modal h2{margin:6px 0 2px;font-size:22px}
+  .modal .why{color:var(--muted);font-size:14px;margin:10px 0 16px}
+  .modal h5{margin:18px 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+  .rec{background:rgba(245,165,36,.10);border:1px solid rgba(245,165,36,.35);border-radius:12px;padding:12px 14px;font-size:13.5px}
+  .rec b{color:var(--accent)}
+  ul.tasks{list-style:none;padding:0;margin:0}
+  ul.tasks li{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--border);font-size:13.5px}
+  ul.tasks li:last-child{border:0}
+  .dot{width:9px;height:9px;border-radius:99px;flex:0 0 9px;margin-top:6px}
+  .d-done{background:var(--green)} .d-prog{background:var(--amber)} .d-todo{background:var(--grayp)}
+  .metric{color:var(--muted);font-size:13px}
+  .close{float:right;background:none;border:1px solid var(--border);color:var(--muted);border-radius:9px;width:34px;height:34px;cursor:pointer;font-size:18px}
+  .legend{color:var(--grayp);font-size:12px;margin:14px 0 0;display:flex;gap:16px;flex-wrap:wrap}
+  .legend span{display:inline-flex;gap:6px;align-items:center}
+  .note{color:var(--grayp);font-size:12.5px;margin-top:26px;border-top:1px solid var(--border);padding-top:16px}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Givyx · Growth Command Center</div>
+    <h1>Where we grow — and what's next</h1>
+    <p class="sub">Click any direction or task for details. Updated 2026-07-18 · North Star: first paying subscribers (MRR).</p>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="tabs">
+    <div class="tab active" data-view="dirs">🧭 Growth Directions</div>
+    <div class="tab" data-view="board">✅ Task Board</div>
+  </div>
+
+  <section class="view active" id="dirs">
+    <div class="grid" id="dirGrid"></div>
+    <div class="legend">
+      <span><i class="dot d-done"></i> done</span>
+      <span><i class="dot d-prog"></i> in progress</span>
+      <span><i class="dot d-todo"></i> to do</span>
+    </div>
+  </section>
+
+  <section class="view" id="board">
+    <div class="board" id="taskBoard"></div>
+  </section>
+
+  <p class="note">This is a living board — I update it each iteration and log growth impact in <b>LOG.md</b>. Tell me what to reprioritize and I'll reorder. Decisions that need you live in <b>decisions-needed.html</b>. The competitor "them vs us" matrix + feature build-plan live in <b>competitors-and-features.html</b>. Full stack audit (83 findings, Portal/Backend/Websites/Ops) lives in <b>technical-board.html</b>.</p>
+</div>
+
+<div class="overlay" id="ov"><div class="modal" id="modal"></div></div>
+
+<script>
+const KPIS=[
+  {n:"0",l:"Paying clients",goal:"goal: 3 by Sep"},
+  {n:"$0",l:"MRR",goal:"first 249 zł next"},
+  {n:"4",l:"Live tenant sites",goal:"goal: 10"},
+  {n:"1 / 10",l:"Previews built",goal:"Intra Cars ready"},
+  {n:"0",l:"Leads from outreach",goal:"wave 1 starts Mon"},
+];
+const D=[
+ {id:"sales",ic:"🚗",t:"Sales Motion — Car Services",st:"active",stl:"ACTIVE",
+  goal:"Land the first paying Kraków workshops via pre-built previews + SMS/calls.",
+  why:"Fastest path to first MRR. Do things that don't scale to prove the model before automating.",
+  metric:"Replies → meetings → closes; first paying client at 249 zł.",
+  rec:"Send ONE Intra Cars SMS first as a learning test — don't fire the whole wave blind.",
+  tasks:[["done","29 Kraków prospects researched"],["done","Demo site + clone tooling built"],["done","Intra Cars preview built"],["done","Honest reviews (no fakes)"],["todo","Publish Intra Cars (needs you)"],["todo","Send SMS #1 (learning test)"],["todo","Build other 9 previews (after validation)"],["todo","Close first client"]]},
+ {id:"product",ic:"📦",t:"Product — The Simple Site",st:"active",stl:"ACTIVE",
+  goal:"Sell the productized abonament site as THE product at 249 zł/mo.",
+  why:"The simple site covers ~90% of what a workshop needs. Productization = margin + scale + the AI-maintenance moat. Custom-per-client would make us a slow human agency.",
+  metric:"Build time (~5 min/site), gross margin, % clients on base vs upsell tiers.",
+  rec:"Never custom-build per client. Build each requested feature ONCE into the platform as a paid tier.",
+  tasks:[["done","Demo template (AutoSerwis)"],["done","Config-driven clone tooling"],["done","Template parameterized (batch-safe)"],["todo","Define functionality upsell tiers"],["todo","Set tier pricing on real demand"]]},
+ {id:"platform",ic:"⚙️",t:"Platform & Tech Readiness",st:"active",stl:"ACTIVE",
+  goal:"Make the platform reliably deliver paid client sites end-to-end.",
+  why:"Great creative means nothing if a lead vanishes or a domain breaks. This is the trust layer.",
+  metric:"Lead-delivery success rate, onboarding time per client.",
+  rec:"Build SMS lead-alerts soon — email-only is fragile for the '15-min callback' promise. Manual invoicing is fine short-term.",
+  tasks:[["done","Lead-notification email VERIFIED (lands in inbox ~1s)"],["done","Client Portal login (scoped) exists"],["done","Custom domain + SSL proven"],["done","Onboarding checklist drafted"],["todo","SMS/push lead alerts (feature)"],["todo","Automate custom-domain onboarding"],["todo","Stripe subscription billing"]]},
+ {id:"web",ic:"🌐",t:"givyx.com & Conversion",st:"queued",stl:"QUEUED",
+  goal:"Turn givyx.com into a lead engine (SEO + conversion + proof).",
+  why:"It's where SMS/email links land, and the organic pipeline for the 20-leads/mo goal.",
+  metric:"Organic visits, CTA clicks, leads/mo.",
+  rec:"Do SEO cleanup + pricing risk-reversal first (cheap, high impact). Needs the l_givyx token.",
+  tasks:[["todo","Remove leftover demo pages (kebab/pizza…)"],["todo","Real SEO meta/OG/schema"],["todo","Pricing page: money-back + zł prices"],["todo","PL/SK 'abonament' landing pages"],["todo","Case-study pages (Bozka, leonixon)"]]},
+ {id:"retention",ic:"🔁",t:"Retention & Upsell",st:"queued",stl:"QUEUED",
+  goal:"Keep clients paying and grow account value over time.",
+  why:"Recurring revenue compounds; churn kills it. Upsell raises MRR per client without new CAC.",
+  metric:"Churn %, MRR per client, upsell rate.",
+  rec:"Ship the monthly 'what your AI did' report early — it's the proof of our whole positioning and the #1 retention lever.",
+  tasks:[["done","Founding-client offer defined (price-locked)"],["todo","'What your AI did this month' report"],["todo","Upsell tiers: booking, SMS reminders, e-shop"],["todo","Referral / founding offer"]]},
+ {id:"scale",ic:"🚀",t:"Scale Engine (Phase 2)",st:"later",stl:"LATER",
+  goal:"Move from manual to self-serve and into new markets.",
+  why:"Once the manual playbook proves out, automate the winning parts and widen the funnel.",
+  metric:"Sites/month, CAC, self-serve signups.",
+  rec:"Don't start until 3–5 paying clients validate the manual motion. Then automate what worked.",
+  tasks:[["todo","Instant AI preview on givyx.com"],["todo","Self-serve Portal (customers build with AI)"],["todo","Outbound at scale"],["todo","Belarus/RU + new cities & niches"]]},
+];
+const dmap=Object.fromEntries(D.map(d=>[d.id,d]));
+// Master task board pulled from directions + priorities
+const TASKS=[
+ {t:"Publish Intra Cars preview",dir:"sales",p:"P0",s:"backlog",d:"Flip noindex→false + deploy_to_production for l_2de5017. Needs you (agents blocked from deploy)."},
+ {t:"Confirm Intra Cars real data",dir:"sales",p:"P0",s:"backlog",d:"Postal, email, hours (8–23?), prices. Give me the real values → I patch the preview."},
+ {t:"Send SMS #1 (Intra Cars)",dir:"sales",p:"P0",s:"backlog",d:"Learning test, not a wave. From your number, personalized, STOP opt-out. Message pre-written."},
+ {t:"'Client says yes' onboarding sheet",dir:"platform",p:"P0",s:"backlog",d:"5-step close/onboarding: collect info, set notify email, domain, invoice, go-live in 48h."},
+ {t:"Verify lead-notification email",dir:"platform",p:"P0",s:"done",d:"VERIFIED: test lead → email in your Gmail inbox in ~1 second (subject 'New Oddzwonimy — callback submission — Intracars'), not spam, marked Important. The 15-min callback promise is deliverable. Per-site: always set the form NotifyEmails."},
+ {t:"Close first paying client",dir:"sales",p:"P0",s:"backlog",d:"The only metric that matters now. 1 workshop at 249 zł = validated business."},
+ {t:"🚩 SECURITY: /apps mutations locked (Phase 1)",dir:"platform",p:"P0",s:"done",d:"BE-1 Phase 1 LANDED + deployed + verified: anon POST/PUT/DELETE /apps → 401 in prod. Cascade-DELETE hole closed. 635 tests green. Caller-map confirmed no external caller hits bare /apps. Added AccessService.ValidateAppAccessAsync + AppAccessFilter."},
+ {t:"BE-1 Phase 2: lock /apps GET reads",dir:"platform",p:"P1",s:"done",d:"LANDED + verified: GET /apps was leaking every tenant name anonymously → now 401 (admin-only); GET /apps/{appId} → owner. 638 tests green, live sites unaffected. Whole /apps API now locked."},
+ {t:"BE-2: stop location full-entity leak",dir:"platform",p:"P1",s:"done",d:"LANDED + verified: anon location reads now return a minimal projection (dropped internal feature-flags/customDomain/offeringTypes leak); enumerate-all list route locked to owner. Click-to-call + legal-page email still render live. 527 tests green."},
+ {t:"🚩 RODO/cookie consent banner",dir:"platform",p:"P0",s:"done",d:"WEB-1 LANDED on main + apex, prod-verified: privacy-first banner, NO analytics beacon before Accept (network-confirmed), PL/EN, additive/backward-compat. EU compliance closed. Screenshots in claudeBrain/Givyx/screenshots/consent."},
+ {t:"Reconcile main vs apex branch divergence",dir:"platform",p:"P1",s:"backlog",d:"Found during WEB-1: givyx apex branch diverged from main by ~268/151 commits (NOT the 'main+Dockerfile' model docs claim). Flagship givyx.com missing recent renderer work (scroll-film/leonixon/seo). Needs a careful reconciliation pass + doc fix. Risky — plan before executing."},
+ {t:"🚩 Monitoring + alerting",dir:"platform",p:"P0",s:"done",d:"OPS-7 LIVE: self-hosted checks — 11 hosts every 5 min (edge-triggered DOWN/RECOVERED), lead-notification-failure alerts every 15 min, daily digest 07:00. All → stan.zak.inf@gmail.com via existing SendGrid. Delivery VERIFIED in Gmail inbox. Gap: can't alert if the VPS itself dies → optional UptimeRobot (decision 0.5)."},
+ {t:"🚩 Off-box backups",dir:"platform",p:"P0",s:"done",d:"OPS-2 LIVE: nightly 02:15 gpg AES-256 archive (images + pg_dump + caddy_data) → existing Azure via retained rclone remote. Retention 7 daily + 4 weekly. RESTORE DRILL PASSED: 5401/5401 analytics events, 34/34 form responses, 1451/1451 images byte-identical. ⚠️ Stan must copy the passphrase off-box (decision 0)."},
+ {t:"Harden lead notifications + form rate-limit",dir:"platform",p:"P1",s:"done",d:"BE-7/BE-8 LANDED + verified: form submits rate-limited 6/min per IP (throttle proven live); notifier retries 3x + persists notified/error/at; warns on save when no recipient. Lead flow hardened. 661 tests green. Portal 'not delivered' indicator = small follow-up."},
+ {t:"Booking + map + reviews components",dir:"product",p:"P1",s:"backlog",d:"WEB-2/3/4: the 3 features that close local-trade deals don't exist (real booking calendar, embedded map, Google-reviews feed). Build into platform as tier features."},
+ {t:"LocalBusiness/AutoRepair JSON-LD",dir:"web",p:"P1",s:"backlog",d:"WEB-5: renderer emits only a generic Organization stub. Real LocalBusiness schema wins Google local pack + AI-Overview citations for workshops."},
+ {t:"Build previews for verified top 3",dir:"sales",p:"P0",s:"backlog",d:"VERIFIED RE-RANK: Tłumiki Bielarz (4,8★/308 + cert expired 2024) → ZUW (MS Publisher 2003) → D.W. Serwis (gym price list). Configs corrected with verified data. Needs slugs+tokens — unblocked by the quick-create popup."},
+ {t:"Quick-create location popup (Portal)",dir:"platform",p:"P0",s:"done",d:"DEPLOYED (run 29764207367). p.givyx.com → sidebar Administration → Settings → '＋ New location' top-right. Name → auto-slug (handles ł) → create + auto-mint MCP token in one step. CAVEAT: first real Create click is the first live API execution — test on sandbox tenant first."},
+ {t:"givyx.com SEO cleanup",dir:"web",p:"P1",s:"backlog",d:"Remove demo pages + real meta/OG/schema. Needs l_givyx token."},
+ {t:"Pricing page conversion pass",dir:"web",p:"P1",s:"backlog",d:"Add 30-day money-back + cancel-anytime + zł prices. Table-stakes we're missing."},
+ {t:"Monthly 'what your AI did' report",dir:"retention",p:"P1",s:"backlog",d:"Retention engine + proof of positioning. Mirrors what PL clients pay eSpark 399 zł for."},
+ {t:"SMS/push lead alerts (feature)",dir:"platform",p:"P1",s:"backlog",d:"Email-only is fragile for '15-min callback'. Build into platform; also a premium upsell."},
+ {t:"PL/SK abonament landing pages",dir:"web",p:"P1",s:"backlog",d:"Target 'strona internetowa abonament' intent. No AI-native competitor in this market."},
+ {t:"Case studies (Bozka, leonixon)",dir:"web",p:"P2",s:"backlog",d:"Public proof. Ask clients' OK. Big trust lever for cold outreach."},
+ {t:"Stripe subscription billing",dir:"platform",p:"P2",s:"backlog",d:"Manual invoicing works now; automate after ~5 clients. Needs your Stripe account."},
+ {t:"Instant AI preview lead magnet",dir:"scale",p:"P2",s:"backlog",d:"Self-serve version of what we do manually. Big build; only after model is proven."},
+ {t:"Self-serve Portal (phase 2)",dir:"scale",p:"P2",s:"backlog",d:"Customers build sites with AI themselves. Your stated phase 2."},
+ // done
+ {t:"Competitor research",dir:"product",p:"P1",s:"done",d:"10 AI builders + PL/SK agencies. Confirmed pricing valid; found the maintenance + CEE gaps."},
+ {t:"29 Kraków prospects",dir:"sales",p:"P0",s:"done",d:"Verified list with SMS phones + hooks. Nowa Huta underserved; broken-SSL cluster = gold."},
+ {t:"Demo site + clone tooling",dir:"product",p:"P0",s:"done",d:"AutoSerwis Kowalski; config-driven, ~5 min per clone."},
+ {t:"Intra Cars preview",dir:"sales",p:"P0",s:"done",d:"Built, verified, honest reviews. Live at intracars.givyx.com/?preview=1."},
+ {t:"Template parameterized",dir:"product",p:"P1",s:"done",d:"3 hardcoded facts → config-driven. Batch of 9 now builds correct first time."},
+ {t:"Tech readiness audit",dir:"platform",p:"P1",s:"done",d:"Lead notify exists (email), Portal access ready, no hard blocker at 10 tenants."},
+];
+const COLS=[["backlog","Backlog"],["prog","In Progress"],["done","Done"]];
+const PRI={P0:"p0",P1:"p1",P2:"p2"};
+
+// render KPIs
+document.getElementById('kpis').innerHTML=KPIS.map(k=>`<div class="kpi"><div class="n">${k.n}</div><div class="l">${k.l}</div><div class="goal">${k.goal}</div></div>`).join('');
+// render directions
+document.getElementById('dirGrid').innerHTML=D.map(d=>{
+  const done=d.tasks.filter(t=>t[0]==='done').length, pct=Math.round(done/d.tasks.length*100);
+  return `<div class="dir" data-id="${d.id}"><div class="ic">${d.ic}</div><h3>${d.t}</h3><p>${d.goal}</p>
+   <div class="prog"><i style="width:${pct}%"></i></div>
+   <div class="foot"><span class="pill st-${d.st}">${d.stl}</span><span>${done}/${d.tasks.length} done</span></div></div>`;
+}).join('');
+// render board
+document.getElementById('taskBoard').innerHTML=COLS.map(([s,label])=>{
+  const items=TASKS.filter(t=>t.s===s).sort((a,b)=>a.p.localeCompare(b.p));
+  return `<div class="col"><h4>${label}<span>${items.length}</span></h4>${items.map((t,i)=>{
+    const idx=TASKS.indexOf(t);
+    return `<div class="task" data-ti="${idx}"><div class="t">${t.t}</div><div class="m"><span class="tag ${PRI[t.p]}">${t.p}</span><span class="tag">${dmap[t.dir].ic} ${dmap[t.dir].t.split('—')[0].trim()}</span></div></div>`;
+  }).join('')}</div>`;
+}).join('');
+
+// tabs
+document.querySelectorAll('.tab').forEach(tab=>tab.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
+  tab.classList.add('active'); document.getElementById(tab.dataset.view).classList.add('active');
+});
+// modals
+const ov=document.getElementById('ov'), modal=document.getElementById('modal');
+function open(html){modal.innerHTML='<button class="close" onclick="closeOv()">×</button>'+html; ov.classList.add('open');}
+function closeOv(){ov.classList.remove('open');}
+ov.onclick=e=>{if(e.target===ov)closeOv();};
+const DOT={done:'d-done',prog:'d-prog',todo:'d-todo'};
+document.querySelectorAll('.dir').forEach(el=>el.onclick=()=>{
+  const d=dmap[el.dataset.id];
+  open(`<div class="ic">${d.ic}</div><h2>${d.t}</h2><span class="pill st-${d.st}">${d.stl}</span>
+   <p class="why">${d.why}</p>
+   <div class="rec"><b>Recommendation:</b> ${d.rec}</div>
+   <h5>Tasks</h5><ul class="tasks">${d.tasks.map(t=>`<li><i class="dot ${DOT[t[0]]}"></i><span>${t[1]}</span></li>`).join('')}</ul>
+   <h5>How we measure growth</h5><p class="metric">${d.metric}</p>`);
+});
+document.querySelectorAll('.task').forEach(el=>el.onclick=()=>{
+  const t=TASKS[el.dataset.ti], d=dmap[t.dir];
+  open(`<h2 style="margin-top:4px">${t.t}</h2>
+   <div class="m" style="display:flex;gap:8px;margin:8px 0 4px"><span class="tag ${PRI[t.p]}">${t.p}</span><span class="tag">${d.ic} ${d.t.split('—')[0].trim()}</span><span class="tag">${t.s}</span></div>
+   <p class="why">${t.d}</p>`);
+});
+document.onkeydown=e=>{if(e.key==='Escape')closeOv();};
+</script>

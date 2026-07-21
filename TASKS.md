@@ -36,6 +36,13 @@ P0 = blocks the first sale · P1 = needed before/around first clients · P2 = la
 - [ ] **Close client #1** on a manual faktura. Stripe is not required to close.
 
 ## P1 — before/around the first paying clients
+- [x] **ops-dashboard built** — password-gated Next app over the operating docs; tasks + decisions
+      editable, every write is a git commit; 34/34 tests, byte-identical round-trip proven.
+- [ ] **Decide the git remote** (Stan) — without one there's nothing for the VPS to pull and no
+      pull/push sync. Repo holds prospect phone numbers, research, pricing and outreach.
+- [ ] **Ops-wire ops.givyx.com** — Caddy block + docker-compose service + DNS + deploy. Mine, after
+      the remote exists. Check first: the runbook claims `metrics.givyx.com` has Caddy `basic_auth`
+      but the Caddyfile shows a bare reverse_proxy.
 - [ ] **Grandfathering, platform side** — `AppPlan.Billed*` isn't captured, so Stan's own 249 zł clients
       would be shown the catalog price, not what they pay. Twin of the Connect-side bug already fixed.
 - [ ] **`IsGrandfathered` / `Label` on Price** — nothing marks a row as protected; the Portal can't render

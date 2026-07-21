@@ -44,14 +44,6 @@
       "detail": "Everything else about ZUW is verified: trading since 1980, 16 tyre brands, Goodyear + Dębica dealer, 4,3★/117. Their rebuilt preview uses the Google hours and keeps prostowanie felg out of every headline, so it is safe to push but still not safe to send.",
       "ifyou": "I'll keep the Google hours and mark that preview 'do not send until confirmed'.",
       "placeholder": "e.g. 8-19, Sat 8-14 — and yes/no on prostowanie felg"
-    },
-    {
-      "id": "smoke-test-confirm-the-ops-dashboard-wri",
-      "pri": "now",
-      "type": "DECISION",
-      "q": "Smoke test — edited through the dashboard",
-      "one": "Priority and type changed too.",
-      "rec": "Delete this once you have seen it."
     }
   ]
 }

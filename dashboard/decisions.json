@@ -47,12 +47,11 @@
     },
     {
       "id": "smoke-test-confirm-the-ops-dashboard-wri",
-      "pri": "soon",
-      "type": "ACTION",
-      "q": "Smoke test — confirm the ops dashboard writes decisions.json",
-      "one": "Added by the dashboard to prove the write path.",
-      "rec": "Delete this once you have seen it in <b>decisions.html</b> too.",
-      "placeholder": "seen it / delete it"
+      "pri": "now",
+      "type": "DECISION",
+      "q": "Smoke test — edited through the dashboard",
+      "one": "Priority and type changed too.",
+      "rec": "Delete this once you have seen it."
     }
   ]
 }

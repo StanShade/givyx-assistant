@@ -51,8 +51,6 @@ P0 = blocks the first sale · P1 = needed before/around first clients · P2 = la
       promises a 15-minute callback. (Caught the hard way on 2026-07-21 — all 3 forms had it empty
       with an SMS already out.) At go-live proper: scoped Owner login, flip noindex→false, human
       publish, domain steps.
-- [x] **Dashboard smoke test (edited)** — text replaced through the dashboard editor to prove edits
-      round-trip cleanly
 
 ## P2 — the features that actually close local-trade deals (none exist yet)
 - [ ] **Real booking calendar** — the #1 workshop ask; today only a callback form.
@@ -71,6 +69,8 @@ P0 = blocks the first sale · P1 = needed before/around first clients · P2 = la
       **`givyx-map` is on slug only** — givyx.com and ipr won't have it until it's merged there too.
 - [ ] givyx.com conversion pass: risk reversal, zł pricing, case studies.
 - [ ] Sweep the remaining previews for template copy that asserts unverified facts.
+- [x] **Dashboard smoke test (edited)** — text replaced through the dashboard editor to prove edits
+      round-trip cleanly
 
 ## Standing rules
 - Serialise billing agents — parallel work collided twice.

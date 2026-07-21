@@ -77,7 +77,6 @@ P0 = blocks the first sale · P1 = needed before/around first clients · P2 = la
 - [ ] givyx.com conversion pass: risk reversal, zł pricing, case studies.
 - [ ] Sweep the remaining previews for template copy that asserts unverified facts.
 - [ ] Deploy smoke test — added from ops.givyx.com, delete me
-- [ ] Deploy smoke test 2 — delete me
 
 ## Standing rules
 - Serialise billing agents — parallel work collided twice.

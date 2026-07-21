@@ -1019,3 +1019,25 @@ how every other service in this stack ships. Then: compose service + Caddy block
 
 Cleanup: test container and local images removed; working tree clean; `TASKS.md` and `decisions.json`
 still byte-identical to their pre-dashboard state.
+
+### 2026-07-21 — New working pattern: spec first, then an agent run against it
+- Stan's process for technical work from now on: **write a spec into
+  `givyx.claudeBrain/Givyx/superpowers/specs/`, then run a separate agent from that folder pointed at
+  the spec.** If I can't launch it he runs it manually — so **the spec has to stand alone**: a fresh
+  agent with no memory of the conversation must be able to execute it. Saved as a memory.
+- Wrote **`2026-07-21-ops-dashboard-deploy.md`** for the ops.givyx.com deployment, in the house style
+  (Date/Status/Scope header, evidence table, gate, traps, verification-as-evidence, rollback).
+- Facts established while writing it, all read from the real config rather than assumed:
+  * `apply-ops.sh:70-96` maps env files to services by a `case` and **silently SKIPS anything
+    unrecognised** — a new `env/ops-dashboard.env` would never apply, with a green build.
+  * `*.givyx.com` reverse-proxies to `givyx-slug:3000`, so `ops.givyx.com` needs an explicit named
+    Caddy block or it renders as a nonexistent tenant. **No DNS change** — the wildcard A covers it.
+  * Every other service ships via `deploy.sh <service>` + a per-service restricted SSH key.
+    **Spec deliberately avoids that**: pin the image tag in compose so the existing `compose-up`
+    action does the job with no new key. Costs a tag edit per release; saves box provisioning.
+  * Step 3 (clone the data repo to `/opt/givyx/assistant`, install the deploy key, read `id deploy`)
+    is the one thing `apply-ops` cannot do — it only pulls the ops repo. Needs SSH, i.e. Stan.
+- The spec's §2 is a **hard gate**: `gh auth refresh -s write:packages`, the (A) full vs (B) redacted
+  data decision, and the repo name. An agent starting before that is told to stop, not improvise.
+  Flagged inside (B) that `LOG.md` itself names prospects and quotes their numbers, so it would need
+  a pass first or it carries exactly the data (B) exists to keep off GitHub.

@@ -1041,3 +1041,29 @@ still byte-identical to their pre-dashboard state.
   data decision, and the repo name. An agent starting before that is told to stop, not improvise.
   Flagged inside (B) that `LOG.md` itself names prospects and quotes their numbers, so it would need
   a pass first or it carries exactly the data (B) exists to keep off GitHub.
+
+### 2026-07-21 — ops.givyx.com: repo live, image published, ops wiring staged
+Stan approved "yes, all of it" for the data.
+- ✅ **`StanShade/givyx-assistant` created PRIVATE** — verified private *before* pushing anything,
+  and re-verified after: `visibility=PRIVATE`, sole collaborator `StanShade`. All 44 files pushed.
+  `PersonalAssistant` now has a remote, so pull/push sync exists for the first time.
+- ✅ **Image built and published by GitHub Actions**, run 29855037923 green →
+  `ghcr.io/stanshade/givyx-ops-dashboard:ops-a11adff…`, `platforms: linux/amd64` pinned so a local
+  arm64 build can never publish something the VPS can't run.
+  **This removed a blocker rather than waiting on it**: the workflow's own `GITHUB_TOKEN` has
+  `packages: write`, so Stan's local token never needed the `write:packages` scope after all.
+- ✅ **Workflow deliberately does NOT deploy.** It only publishes; the VPS pins an explicit tag in
+  `givyx.ops`, so shipping stays a conscious one-line change instead of every doc edit hitting prod.
+- 🔧 **`givyx.ops` branch `feat/ops-dashboard` staged locally (not pushed):**
+  * `caddy/Caddyfile` — named `ops.givyx.com` block. Required: the `*.givyx.com` wildcard proxies to
+    `givyx-slug`, so without it the URL would render as a nonexistent tenant. No DNS change needed.
+    No `basic_auth` on purpose — the app authenticates every route including its API.
+  * `apply-ops.sh` — mapped `env/ops-dashboard.env` → `recreate:ops-dashboard`. Without this the file
+    lands in `SKIPPED` and config changes silently never apply, with a green build. `bash -n` clean.
+- 🔴 **Blocked on one SSH step, for two reasons** — the compose service can't be finalised without:
+  1. `id deploy` (uid/gid). The image runs as uid 1001; `/opt/givyx` is owned by `deploy`. Guessing
+     1000 would produce a container that starts healthy and silently cannot save an edit.
+  2. A deploy key generated **on the box** — so the private key never travels through chat. I register
+     the public half against the repo with write access, then the VPS can clone and the container push.
+- ⚠️ GHCR package visibility unknown: `gh` lacks `read:packages`. New packages default to private, and
+  his other services are public per the runbook — so the VPS may need pull auth. Resolve before deploy.

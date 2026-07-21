@@ -106,6 +106,28 @@ export async function commitFiles(relatives: string[], message: string): Promise
     let note: string | undefined;
     const remotes = (await git(["remote"])).trim();
     if (remotes) {
+      // Two writers share this repo: whoever is at the keyboard, and this
+      // container. Without a rebase first, the second one to write gets its
+      // push rejected as non-fast-forward and the two copies drift apart
+      // silently — the commit is safe locally, but nothing says so out loud.
+      // Rebase rather than merge so the history stays linear and readable.
+      try {
+        await git(["pull", "--rebase", "--autostash"]);
+      } catch (err) {
+        // Leave the rebase half-applied and someone has to fix it by hand on
+        // the box, so back out and report instead.
+        try {
+          await git(["rebase", "--abort"]);
+        } catch {
+          /* nothing to abort */
+        }
+        return {
+          committed: true,
+          pushed: false,
+          sha,
+          note: `commit ok, not pushed — pull --rebase failed: ${errorText(err)}`,
+        };
+      }
       try {
         await git(["push"]);
         pushed = true;

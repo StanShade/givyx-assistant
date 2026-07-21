@@ -19,7 +19,12 @@ WORKDIR /app
 
 # git is a runtime dependency, not a build one: every write the dashboard makes
 # is committed to the mounted data repo so there is always an undo.
-RUN apk add --no-cache git wget
+#
+# openssh-client is NOT pulled in by the git package on Alpine, and without it
+# git cannot use the SSH transport at all: commits land locally and every push
+# fails with "make sure you have the correct access rights". Verified in prod
+# 2026-07-21 — the container had no /usr/bin/ssh.
+RUN apk add --no-cache git wget openssh-client
 
 ENV NODE_ENV=production
 

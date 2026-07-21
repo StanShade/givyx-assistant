@@ -1067,3 +1067,41 @@ Stan approved "yes, all of it" for the data.
      the public half against the repo with write access, then the VPS can clone and the container push.
 - ⚠️ GHCR package visibility unknown: `gh` lacks `read:packages`. New packages default to private, and
   his other services are public per the runbook — so the VPS may need pull auth. Resolve before deploy.
+
+### 2026-07-21 — ✅ ops.givyx.com IS LIVE, and the write→push loop works
+Password: in `givyx.ops/env/ops-dashboard.env`. Sign in, edit a task, and the change commits on the
+VPS and pushes to GitHub; `git pull` on the Mac brings it back. Both directions verified.
+
+**Verified end to end on the live host:**
+- `/login` 200 · `/` and `/tasks` **307 → login** · `/api/tasks` **401** · wrong password **401** ·
+  correct password **200** · home view renders the real STATE table and live plan catalog.
+- Added a task through the live UI → `committed: true, pushed: true`, `origin/main` advanced
+  3a0709e → 415a5b4. Deleted it → pushed again. `git pull` on the Mac replayed both.
+  `TASKS.md` structure intact afterwards (33 tasks, 35 continuation lines, all 4 sections);
+  no smoke-test residue; 34/34 tests still green.
+
+**Three real defects found by deploying, none of which local testing could have caught:**
+1. 🔴 **The image had no `ssh` binary.** Alpine's `git` package does not pull `openssh-client`, so git
+   could not use the SSH transport: **commits landed locally and every push failed** with the generic
+   "make sure you have the correct access rights". Diagnosed by running the published image locally
+   (`which ssh` → nothing) rather than guessing at the key or the deploy-key registration. Fixed in
+   the Dockerfile with the reason written next to it.
+2. 🔴 **A failed `apply-ops` run cannot be retried by re-running the workflow.** The first apply died
+   at the image pull *after* the VPS had already fast-forwarded, so the rerun saw
+   `no changes (HEAD already 4b4764a), exiting` and reported **success without doing anything** —
+   compose-up and caddy-reload never ran. A green rerun here means nothing. Recovery needs either a
+   new commit touching the same paths, or the documented manual fallback. **Worth fixing in
+   apply-ops.sh: a force/re-apply mode.**
+3. 🟡 **GHCR packages default to private**, unlike the rest of the stack, so the VPS pull failed
+   `unauthorized`. Stan made it public (image is app code only — data is bind-mounted, secrets come
+   from the env file). Flagged in advance, and it still bit; worth a line in the runbook.
+
+**Also fixed while the rebuild cycle was open:** the app now `pull --rebase --autostash` before
+pushing. Two writers share this repo (the Mac and the container); without it whichever writes second
+has its push rejected and the copies drift apart silently. On rebase failure it aborts cleanly and
+reports rather than leaving a half-applied rebase on the box for someone to fix by hand.
+
+**Sequencing note for next time:** the PR was merged before `/opt/givyx/assistant` existed. It failed
+safely (at the image pull, in 12s, with every other service untouched — givyx.com, Portal, API, ipr,
+previews and metrics all verified 200 afterwards) but that was luck, not design. The clone must
+precede the merge, as the spec said.

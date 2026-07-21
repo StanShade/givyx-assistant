@@ -38,11 +38,15 @@ P0 = blocks the first sale · P1 = needed before/around first clients · P2 = la
 ## P1 — before/around the first paying clients
 - [x] **ops-dashboard built** — password-gated Next app over the operating docs; tasks + decisions
       editable, every write is a git commit; 34/34 tests, byte-identical round-trip proven.
-- [ ] **Decide the git remote** (Stan) — without one there's nothing for the VPS to pull and no
-      pull/push sync. Repo holds prospect phone numbers, research, pricing and outreach.
-- [ ] **Ops-wire ops.givyx.com** — Caddy block + docker-compose service + DNS + deploy. Mine, after
-      the remote exists. Check first: the runbook claims `metrics.givyx.com` has Caddy `basic_auth`
-      but the Caddyfile shows a bare reverse_proxy.
+- [x] **Git remote** — `StanShade/givyx-assistant`, private. Pull/push sync working both ways.
+- [x] **ops.givyx.com LIVE** — auth enforced, real data, and dashboard edits commit + push to GitHub.
+- [ ] **Fix `apply-ops.sh` retry** — a failed apply can't be re-run: the VPS has already
+      fast-forwarded, so the rerun exits "no changes" and reports SUCCESS having done nothing.
+      Needs a force/re-apply mode. A green rerun currently proves nothing.
+- [ ] **Runbook: GHCR packages default to private** — new packages don't inherit the public
+      visibility the rest of the stack uses, so the first VPS pull fails `unauthorized`.
+- [ ] **Check `metrics.givyx.com` auth** — runbook claims Caddy `basic_auth`, the Caddyfile has a
+      bare reverse_proxy. Beszel has its own login, so confirm which is true and fix config or doc.
 - [ ] **Grandfathering, platform side** — `AppPlan.Billed*` isn't captured, so Stan's own 249 zł clients
       would be shown the catalog price, not what they pay. Twin of the Connect-side bug already fixed.
 - [ ] **`IsGrandfathered` / `Label` on Price** — nothing marks a row as protected; the Portal can't render

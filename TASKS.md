@@ -51,8 +51,8 @@ P0 = blocks the first sale · P1 = needed before/around first clients · P2 = la
       promises a 15-minute callback. (Caught the hard way on 2026-07-21 — all 3 forms had it empty
       with an SMS already out.) At go-live proper: scoped Owner login, flip noindex→false, human
       publish, domain steps.
-- [ ] **Dashboard smoke test** — added from the ops dashboard to prove the write path, will be
-      removed
+- [ ] **Dashboard smoke test (edited)** — text replaced through the dashboard editor to prove edits
+      round-trip cleanly
 
 ## P2 — the features that actually close local-trade deals (none exist yet)
 - [ ] **Real booking calendar** — the #1 workshop ask; today only a callback form.

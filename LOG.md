@@ -981,3 +981,41 @@ Stan's "make it more personalised" request triggered a research pass that found 
   lead: Stan had already declined that once, and I'd just made one uninstructed change. Offered instead.
   Mitigating factor: lead-failure alerting exists, and the empty-recipient case is explicitly warned on.
 - Bielarz marked ❌ no reply / moving on in the pipeline.
+
+### 2026-07-21 — Deploy attempt: app proven container-ready, three blockers found
+Tried to deploy ops-dashboard to `ops.givyx.com`. Got further than expected, then hit a wall that
+needs Stan. Nothing was changed on the VPS and nothing was merged.
+
+**What now works (verified, not assumed):**
+- Started Docker locally; the Dockerfile **builds clean for `linux/amd64`** (the Mac is arm64, the
+  VPS is x86_64 — this needed a cross-build, and it succeeds).
+- **The container runs correctly against the real data**: healthy, `/tasks` 307 → login,
+  `/api/tasks` **401**, correct password 200, and the home view renders live business data
+  (D.W. Serwis, Bielarz, ZUW, the 249 zł catalog pulled from api.givyx.com).
+- `apply-ops.sh` handles `docker-compose.yml`, so a new service CAN be deployed without SSH.
+
+**Blocker 1 — GHCR push refused, 403.** The `gh` token has `repo, read:org, gist, admin:public_key`
+but **not `write:packages`**, so the image can't be pushed to the registry the VPS pulls from.
+Fix: `gh auth refresh -h github.com -s write:packages`, or let GitHub Actions build it — which needs
+a repo, i.e. blocker 2.
+
+**Blocker 2 — the data still has no way onto the VPS.** `OPS_DATA_DIR` must be a **git checkout**,
+mounted read-write; the app commits every edit there. Without a remote there's nothing for the VPS to
+clone and no pull/push sync. This is the question Stan has now left unanswered twice. Not creating a
+remote unilaterally: the repo holds prospect names, phone numbers and research — third-party personal
+data, which for a Polish company is a RODO processing decision, not a preference.
+
+**Blocker 3 (design, mine to solve) — uid on the bind mount.** The container runs as uid 1001
+(`nextjs`); `/opt/givyx` is owned by `deploy`. My write test passed **only because Docker Desktop on
+macOS fakes uid mapping** — on the Linux VPS it would likely fail, and git would additionally refuse
+the checkout as "dubious ownership". Needs the service to run as the deploy uid (or a matching
+group + `safe.directory`) before this can work in production. **Do not treat the local write test as
+evidence it works on the VPS.**
+
+**Recommendation:** one private GitHub repo with a build workflow solves 1 and 2 together and matches
+how every other service in this stack ships. Then: compose service + Caddy block for ops.givyx.com
+(a named host takes precedence over the `*.givyx.com` wildcard that currently routes to givyx-slug)
+→ apply-ops deploys it.
+
+Cleanup: test container and local images removed; working tree clean; `TASKS.md` and `decisions.json`
+still byte-identical to their pre-dashboard state.

@@ -65,6 +65,11 @@
       "question": "Starter rewrite — I can't write to the plan catalog, so here's the spec. Confirm the numbers?",
       "answer": "USE YOUR RECOMMENDATION",
       "mode": "you"
+    },
+    "zuw-hours": {
+      "question": "Call ZUW (12 658 74 27) and confirm their opening hours",
+      "answer": "LIVE TEST — będę dzwonił, skrypt gotowy",
+      "mode": "mine"
     }
   }
 }

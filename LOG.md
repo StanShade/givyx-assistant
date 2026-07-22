@@ -1291,3 +1291,29 @@ produced two answers, one of them a request for an offer. Reachability beat mess
   That was the one link I could not exercise myself (the endpoint needs a Portal login), and it also
   proves the deployed container picked up `GIVYX_STRIPE_TAX_RATE_ID`. Sessions from earlier the same
   day show **VAT 0,00** — the before/after is visible in the account itself.
+
+### 2026-07-22 — OpsPA step 1 (schema + store) built and independently verified
+- Spec verified against the code first. Architecture claims all held (`CatalogStore` pattern,
+  `IsPlatformAdmin` + `AddPortalAuthorization`, `Api.cs` registration, Portal admin sections).
+  **Three stale facts corrected** (token expiry 08-07 → **08-20**; "4 decisions" → count at migration
+  time; test count) and **four open forks closed** so an agent can't guess: ops connection string
+  (`OpsConnectionString` → Catalog → Analytics), docs served by the API from `/opt/givyx/assistant`,
+  routine identity, and per-table concurrency semantics.
+- 🔴 **The hole the spec did not see:** `PlatformAdmins.cs` holds exactly one id (`pu_fff7048`, Stan).
+  If the routine authenticates as that, `ops.events.actor` **cannot tell 'stan' from 'claude'** — the
+  audit trail the whole project exists to build would be fiction. Blocks step 2.
+- Agent built step 1 on `feat/ops-store` (`8eb3a60`), worktree, unpushed. **969 insertions, 0
+  deletions.** It also caught my error — I handed it a worktree of the wrong repo — and said so
+  instead of working in the wrong place.
+- **Verified by me, not accepted from the report:** full suite `Passed! Failed: 0, Passed: 766`
+  (baseline 736); DDL matches §4 column for column.
+- **Closed the real gap: the DDL had never touched a Postgres.** Ran a throwaway `postgres:16`,
+  executed it, and confirmed in the database: **4 tables, 6 indexes**, including the partial
+  `answers_unprocessed … WHERE (processed_at IS NULL)`.
+- ⚠️ The 4 integration tests are opt-in behind `OPS_IT_CONN` and had been **passing while doing
+  nothing** — the same "looks normal, is empty" shape as the incident in §0. So I falsified them:
+  pointed them at a dead port and confirmed **Failed: 4, Passed: 0**. They have teeth; their green
+  against real Postgres is real.
+- 🟡 Recorded, not changed: `EnsureSchemaAsync` is wrapped in try/catch like the other three stores,
+  so a bad DDL logs and lets the API boot. Consistent with the repo, but for *this* subsystem a silent
+  schema failure is the original sin — schema health belongs on the ops page (§6 "show sync state").

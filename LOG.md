@@ -1336,3 +1336,25 @@ produced two answers, one of them a request for an offer. Reachability beat mess
 - 🟢 **Unexpected payoff from the `actor` change:** the routine marking answers processed generates
   events it will see on its next poll. It filters them by `actor` — which only works because `actor`
   became the user id and the routine is getting its own identity.
+
+### 2026-07-22 — OpsPA step 3 (migration) built and independently re-run
+- `tools/OpsMigrate` on `feat/ops-migrate` (`2d728bb`), off step 2. 1106 insertions.
+- **I counted the source myself first and handed those numbers over as acceptance criteria**, so the
+  agent could not self-report a pass: 37 tasks (13/24), 31 continuation lines, 3 decisions, 16 answers.
+- **Verified by re-running the migration myself against a fresh Postgres**, twice. Every number
+  matched, including the section split (P0 14 · P1 13 · P2 10) I never told it. Idempotency proven by
+  `max(ops.answers.id) = 16` after two runs — a naive re-run leaves the sequence at 32.
+- Full suite `Passed! Failed: 0, Passed: 861` (835 baseline). `PersonalAssistant` **untouched** —
+  `git status` empty; the tool only ever read it.
+- Idempotency without the lazy escape: task id = `sha1(body)[..10]`, hashing the **body only**, so
+  ticking or moving a task never changes its identity. No "skip if the table is non-empty" anywhere.
+- 🟢 **Two calls it made that I would not have thought to ask for:**
+  1. **`ops.events` left empty.** A bulk import is not a stream of user mutations — seeding events
+     would make the routine's first `/changes` poll replay every historic answer as new work.
+  2. The parser **exits 2** if any line in a P-section is neither checkbox, continuation, nor blank,
+     so nothing can ever be dropped silently.
+- `## Standing rules` (6 bullets, not tasks) deliberately left in markdown, **printed under
+  `NOT IMPORTED:` on every run** — a stated decision, not a silent skip. A test pins it.
+- ⚠️ **Open, must be decided before the routine goes live:** the 16 imported answers have
+  `processed_at NULL`, so the routine's first act would be to redo every decision Stan has ever made.
+  Stamp them processed during the cutover. Recorded in the spec.

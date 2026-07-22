@@ -1210,3 +1210,26 @@ Mac** (removing my own test entry). The dashboard looked completely normal throu
    normal-looking dashboard. The dashboard should show "N local commits not pushed".
 3. **A status endpoint I wrote is not proof.** `automaticTaxSafeToEnable` said yes; Stripe said no.
    Verify the actual operation (create a payment link) before calling a payments change done.
+
+### 2026-07-22 — 📧 OFFER SENT to Speed-Gum — the first one anybody asked for
+- Sent to **speed-gum@op.pl** via `POST /emails`, `sent: true`. Branded shell
+  (`layout:"givyx"` + `locationId:"l_givyx"`), `replyTo` → stan.zak.inf@gmail.com.
+- **This is qualitatively different from the two SMS.** Bielarz and D.W. Serwis were cold. Tomasz
+  said no on the phone and then **asked for it** — so this is a kept promise. Warmest contact to date.
+- **The email API changed what is possible.** `email-api.md` documents `POST /emails`: I can now send
+  directly instead of leaving drafts. `layout:"givyx"` renders through the DEPLOYED `Base.cs`, and
+  `locationId` pulls logo, address, phone and email from the tenant's **location record** — none of
+  it passable in the request. Check what a tenant will show with
+  `GET /locations/by-slug/{slug}` before sending.
+- **Stan's edits, applied:** subdomena not własna domena · 249 reframed as "zbudowana od nowa i
+  nowocześnie" · every mention of locations removed · online payments moved 249 → 750 · no questions,
+  just a request for feedback · signature reduced to "Pozdrawiam, Stanisław".
+  Length **3836 → 1546 chars**.
+- ⚠️ **We now deliberately under-sell two tiers**: the catalog gives Starter a custom domain and
+  Studio online payments, but the email promises neither. Under-promising is the safe direction —
+  just answer "yes" if a 149 client asks for their own domain.
+- 🟡 **Open, flagged twice, not acted on:** the branded footer prints **Karola Bunscha 15A m.34A** —
+  Stan's flat number — on cold outbound mail. Only fixable in the Portal location record, not in the
+  send call.
+- 🟡 The gallery still serves photos taken from his Google listing. The email discloses this and asks
+  for his own, which converts the exposure into a courtesy — but it is still live on the site.

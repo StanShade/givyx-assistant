@@ -48,7 +48,8 @@ Configs ready: previews/heads/tlumiki.py, oponyifelgi.py, dwserwis.py (all corre
 | Previews built | 10 | 2 (Intra Cars, Tłumiki Bielarz) |
 | **SMS SENT** | 1 | **2** ✅ Bielarz 2026-07-20 · D.W. Serwis 2026-07-21 |
 | **CALLS made** | — | **1** — ZUW 2026-07-22, reached, declined |
-| **Live conversations** | ≥1 | **1 ✅** (first ever) |
+| **Live conversations** | ≥1 | **2 ✅** — ZUW (declined) · Speed-Gum (asked for the offer) |
+| **Offers sent** | — | **1** — Speed-Gum 2026-07-22, personalised site + 3 tiers |
 | Replies | ≥1 | 0 (waiting) |
 | Calls/meetings | ≥1 | 0 |
 | Clients | 1 | 0 |
@@ -57,6 +58,7 @@ Configs ready: previews/heads/tlumiki.py, oponyifelgi.py, dwserwis.py (all corre
 | Date | Prospect | Channel | Message | Outcome |
 |---|---|---|---|---|
 | 2026-07-20 | Tłumiki Bielarz (601 489 603) | SMS from Stan's phone | "4,8★/308 opinii… certyfikat wygasł w 2024… podgląd: tlumiki.givyx.com" | ❌ no reply (Stan: moving on 2026-07-21; may phone them himself). Preview since rebuilt — the 4 invented facts he was originally sent are gone. |
+| **2026-07-22** | **Speed-Gum Serwis Opon (Tomasz Gil, 537 326 327)** | ☎️ CALL → 📧 EMAIL | Call: first „nie", turned into **„proszę wysłać ofertę z przykładem"**. Then a personalised site built + emailed to speed-gum@op.pl with 149/249/750 | ⏳ **awaiting reply** — warmest contact we have. He ASKED for this, so it is a kept promise, not cold outreach |
 | **2026-07-22** | **ZUW Opony i Felgi (504 121 596)** | ☎️ **CALL — first live conversation ever** | Direct opener: „czy chcieliby Państwo mieć własną profesjonalną stronę?" | ❌ **„Nie dziękuję, nie jestem zainteresowany."** Landline 12 658 74 27 dead; reached them on the directory mobile. **CLOSED — do not call again, do not send the preview.** |
 | **2026-07-21** | **D.W. Serwis (502 402 802)** | SMS from Stan's phone | "4,8★/282 opinie… pod „Najpopularniejsze usługi" karnety na siłownię $680 per month… podgląd: dwserwis.givyx.com" | ⏳ **awaiting reply** — hook re-verified same day, preview rebuilt + all 4 pages verified |
 | Contacted (SMS/email) | 20 | 0 |

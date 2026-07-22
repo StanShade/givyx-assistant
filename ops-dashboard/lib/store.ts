@@ -8,6 +8,7 @@
  * untouched rather than half-mangled on disk.
  */
 
+import { type AnswersDoc, parseAnswers, serializeAnswers } from "./answers.ts";
 import { type DecisionsDoc, parseDecisions, serializeDecisions } from "./decisions.ts";
 import { commitFiles, readRepoFile, readRepoFileOrNull, writeRepoFileAtomic, type CommitResult } from "./repo.ts";
 import { type TasksDoc, parseTasks, serializeTasks } from "./tasks.ts";
@@ -26,24 +27,12 @@ export async function readDecisions(): Promise<{ doc: DecisionsDoc; raw: string 
   return { doc: parseDecisions(raw), raw };
 }
 
-export interface AnswerRecord {
-  question: string;
-  answer: string;
-  mode: string;
-}
-
-export interface AnswersFile {
-  savedAt?: string;
-  answers: Record<string, AnswerRecord>;
-}
-
-/** Written by decisions-server.py; read-only here. */
-export async function readAnswers(): Promise<AnswersFile> {
+/** Also written by decisions-server.py, so a missing or broken file is not fatal. */
+export async function readAnswers(): Promise<AnswersDoc> {
   const raw = await readRepoFileOrNull(ANSWERS_PATH);
   if (!raw) return { answers: {} };
   try {
-    const parsed = JSON.parse(raw) as AnswersFile;
-    return { savedAt: parsed.savedAt, answers: parsed.answers || {} };
+    return parseAnswers(raw);
   } catch {
     return { answers: {} };
   }
@@ -76,4 +65,12 @@ export async function writeDecisions(doc: DecisionsDoc, message: string): Promis
     throw new WriteError("refusing to write decisions.json: the result does not round-trip");
   }
   return persist(DECISIONS_PATH, next, message);
+}
+
+export async function writeAnswers(doc: AnswersDoc, message: string): Promise<CommitResult> {
+  const next = serializeAnswers(doc);
+  if (serializeAnswers(parseAnswers(next)) !== next) {
+    throw new WriteError("refusing to write answers.json: the result does not round-trip");
+  }
+  return persist(ANSWERS_PATH, next, message);
 }

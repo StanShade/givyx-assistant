@@ -4,7 +4,7 @@ import { Card, Chip, Empty, MoreLink, Stat } from "@/components/ui.tsx";
 import { fetchPlans, formatPrice } from "@/lib/plans.ts";
 import { readRepoFileOrNull } from "@/lib/repo.ts";
 import { stripInlineHtml } from "@/lib/richtext.ts";
-import { readDecisions, readTasks } from "@/lib/store.ts";
+import { readAnswers, readDecisions, readTasks } from "@/lib/store.ts";
 import { pipelineFunnel, plain, sendLog, stateMetrics } from "@/lib/summary.ts";
 import { taskViews } from "@/lib/tasks.ts";
 
@@ -12,9 +12,10 @@ export const dynamic = "force-dynamic";
 export const metadata = { title: "Ops — Givyx" };
 
 export default async function Home() {
-  const [tasks, decisions, stateMd, pipelineMd, plans] = await Promise.all([
+  const [tasks, decisions, answers, stateMd, pipelineMd, plans] = await Promise.all([
     readTasks(),
     readDecisions(),
+    readAnswers(),
     readRepoFileOrNull("STATE.md"),
     readRepoFileOrNull("prospects/pipeline.md"),
     fetchPlans(),
@@ -23,9 +24,14 @@ export default async function Home() {
   const all = taskViews(tasks.doc);
   const p0Open = all.filter((t) => t.section === "P0" && !t.done);
   const openCount = all.filter((t) => !t.done).length;
-  const blocked = [...decisions.doc.items].sort((a, b) =>
-    a.pri === b.pri ? 0 : a.pri === "now" ? -1 : 1,
+  const answered = (id: string) => answers.answers?.[id];
+  const blocked = [...decisions.doc.items].sort(
+    (a, b) =>
+      (answered(a.id) ? 2 : 0) +
+      (a.pri === "now" ? 0 : 1) -
+      ((answered(b.id) ? 2 : 0) + (b.pri === "now" ? 0 : 1)),
   );
+  const waiting = blocked.filter((d) => !answered(d.id));
   const metrics = stateMd ? stateMetrics(stateMd) : [];
   const funnel = pipelineMd ? pipelineFunnel(pipelineMd) : [];
   const sends = pipelineMd ? sendLog(pipelineMd).slice(0, 3) : [];
@@ -43,26 +49,42 @@ export default async function Home() {
       ) : null}
 
       <Card
-        title={`Blocked on Stan · ${blocked.length}`}
-        tone={blocked.some((d) => d.pri === "now") ? "alert" : "plain"}
-        action={<MoreLink href="/decisions">edit</MoreLink>}
+        title={`Blocked on Stan · ${waiting.length} of ${blocked.length} unanswered`}
+        tone={
+          waiting.some((d) => d.pri === "now")
+            ? "alert"
+            : blocked.length > 0 && waiting.length === 0
+              ? "good"
+              : "plain"
+        }
+        action={<MoreLink href="/decisions">answer</MoreLink>}
       >
         {blocked.length === 0 ? (
           <Empty>Nothing is waiting on you.</Empty>
         ) : (
           <ul className="flex flex-col gap-2.5">
-            {blocked.map((d) => (
-              <li key={d.id} className="border-b border-line pb-2.5 last:border-0 last:pb-0">
-                <div className="flex flex-wrap items-center gap-1.5">
-                  <Chip tone={d.pri}>{d.pri === "now" ? "NEEDS YOU NOW" : "SOON"}</Chip>
-                  <Chip tone={d.type}>{d.type}</Chip>
-                </div>
-                <Link href={`/decisions#${d.id}`} className="mt-1 block font-semibold hover:text-accent">
-                  {stripInlineHtml(d.q)}
-                </Link>
-                {d.one ? <p className="text-[13px] text-muted">{stripInlineHtml(d.one)}</p> : null}
-              </li>
-            ))}
+            {blocked.map((d) => {
+              const answer = answered(d.id);
+              return (
+                <li key={d.id} className="border-b border-line pb-2.5 last:border-0 last:pb-0">
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <Chip tone={d.pri}>{d.pri === "now" ? "NEEDS YOU NOW" : "SOON"}</Chip>
+                    <Chip tone={d.type}>{d.type}</Chip>
+                    <Chip tone={answer ? "good" : "muted"}>{answer ? "ANSWERED" : "WAITING"}</Chip>
+                  </div>
+                  <Link href={`/decisions#${d.id}`} className="mt-1 block font-semibold hover:text-accent">
+                    {stripInlineHtml(d.q)}
+                  </Link>
+                  {answer ? (
+                    <p className="line-clamp-2 text-[13px] text-good">
+                      {answer.mode === "you" ? "you decide" : answer.answer}
+                    </p>
+                  ) : d.one ? (
+                    <p className="text-[13px] text-muted">{stripInlineHtml(d.one)}</p>
+                  ) : null}
+                </li>
+              );
+            })}
           </ul>
         )}
       </Card>

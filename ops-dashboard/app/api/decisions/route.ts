@@ -1,3 +1,4 @@
+import { AnswerError, setAnswer } from "@/lib/answers.ts";
 import {
   DecisionError,
   addDecision,
@@ -6,7 +7,7 @@ import {
   type DecisionInput,
 } from "@/lib/decisions.ts";
 import { requireSession } from "@/lib/session.ts";
-import { readDecisions, writeDecisions } from "@/lib/store.ts";
+import { readAnswers, readDecisions, writeAnswers, writeDecisions } from "@/lib/store.ts";
 import { summarize } from "@/lib/tasks.ts";
 
 export const runtime = "nodejs";
@@ -22,6 +23,8 @@ export async function GET() {
 interface Body extends Partial<DecisionInput> {
   op?: string;
   id?: string;
+  answer?: string;
+  mode?: string;
 }
 
 function input(body: Body): DecisionInput {
@@ -50,6 +53,23 @@ export async function POST(request: Request) {
 
   try {
     const { doc } = await readDecisions();
+
+    // Answers go to answers.json, never into decisions.json: the Python server
+    // and decisions.html read that file and its schema is frozen.
+    if (body.op === "answer") {
+      const item = doc.items.find((i) => i.id === body.id);
+      if (!item) throw new AnswerError(`no decision "${body.id ?? ""}"`, 400);
+      const answers = await readAnswers();
+      setAnswer(answers, {
+        id: item.id,
+        question: item.q,
+        answer: String(body.answer ?? ""),
+        mode: String(body.mode ?? ""),
+      });
+      const commit = await writeAnswers(answers, `dashboard: answer "${summarize(item.q)}"`);
+      return Response.json({ ok: true, doc, answers, commit });
+    }
+
     let message: string;
 
     switch (body.op) {
@@ -77,7 +97,7 @@ export async function POST(request: Request) {
     const commit = await writeDecisions(doc, message);
     return Response.json({ ok: true, doc, commit });
   } catch (err) {
-    const status = err instanceof DecisionError ? err.status : 500;
+    const status = err instanceof DecisionError || err instanceof AnswerError ? err.status : 500;
     const message = err instanceof Error ? err.message : "write failed";
     return Response.json({ error: message }, { status });
   }

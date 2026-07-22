@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+import type { AnswerRecord, AnswersDoc } from "@/lib/answers.ts";
 import {
   PRIORITIES,
   TYPES,
@@ -10,7 +11,6 @@ import {
   type DecisionsDoc,
 } from "@/lib/decisions.ts";
 import { safeInlineHtml, stripInlineHtml } from "@/lib/richtext.ts";
-import type { AnswersFile } from "@/lib/store.ts";
 
 const BLANK = {
   pri: "now",
@@ -40,13 +40,14 @@ function toDraft(item: DecisionItem): Draft {
 
 export function DecisionsBoard({
   initial,
-  answers,
+  answers: initialAnswers,
 }: {
   initial: DecisionsDoc;
-  answers: AnswersFile;
+  answers: AnswersDoc;
 }) {
   const router = useRouter();
   const [doc, setDoc] = useState(initial);
+  const [answers, setAnswers] = useState(initialAnswers);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<string | null>(null);
@@ -64,6 +65,7 @@ export function DecisionsBoard({
       });
       const body = (await response.json().catch(() => ({}))) as {
         doc?: DecisionsDoc;
+        answers?: AnswersDoc;
         commit?: { committed: boolean; pushed: boolean; sha?: string; note?: string };
         error?: string;
       };
@@ -72,6 +74,7 @@ export function DecisionsBoard({
         return false;
       }
       if (body.doc) setDoc(body.doc);
+      if (body.answers) setAnswers(body.answers);
       setEditing(null);
       setAdding(false);
       setStatus(
@@ -89,7 +92,11 @@ export function DecisionsBoard({
     }
   }
 
-  const items = [...doc.items].sort((a, b) => (a.pri === b.pri ? 0 : a.pri === "now" ? -1 : 1));
+  // Unanswered "now" first: on a phone the top of the list is all he sees.
+  const rank = (item: DecisionItem) =>
+    (answers.answers?.[item.id] ? 2 : 0) + (item.pri === "now" ? 0 : 1);
+  const items = [...doc.items].sort((a, b) => rank(a) - rank(b));
+  const waiting = doc.items.filter((i) => !answers.answers?.[i.id]).length;
 
   return (
     <>
@@ -104,8 +111,9 @@ export function DecisionsBoard({
         </button>
       </div>
       <p className="mb-3 text-[13px] text-muted">
-        Only what I can&apos;t do alone. Stan still answers in{" "}
-        <code className="rt-code">decisions-server.py</code> — this page writes the same file.
+        Only what I can&apos;t do alone. {waiting === 0 ? "All answered." : `${waiting} still waiting on you.`}{" "}
+        Answers are saved to <code className="rt-code">dashboard/answers.json</code> and pushed, so I
+        pick them up on the next pull.
       </p>
 
       {error ? (
@@ -134,6 +142,7 @@ export function DecisionsBoard({
             item={item}
             number={idx + 1}
             answer={answers.answers?.[item.id]}
+            savedAt={answers.savedAt}
             busy={busy}
             editing={editing === item.id}
             onToggleEdit={() => setEditing(editing === item.id ? null : item.id)}
@@ -149,6 +158,7 @@ function DecisionCard({
   item,
   number,
   answer,
+  savedAt,
   busy,
   editing,
   onToggleEdit,
@@ -156,7 +166,8 @@ function DecisionCard({
 }: {
   item: DecisionItem;
   number: number;
-  answer?: { answer: string; mode: string };
+  answer?: AnswerRecord;
+  savedAt?: string;
   busy: boolean;
   editing: boolean;
   onToggleEdit: () => void;
@@ -199,6 +210,7 @@ function DecisionCard({
           <div className="mt-1.5 flex flex-wrap gap-1.5">
             <Tag tone={item.pri}>{item.pri === "now" ? "NEEDS YOU NOW" : "SOON"}</Tag>
             <Tag tone={item.type}>{item.type}</Tag>
+            <Tag tone={answer ? "answered" : "waiting"}>{answer ? "ANSWERED" : "WAITING"}</Tag>
             <span className="font-mono text-[10px] text-dim">{item.id}</span>
           </div>
         </div>
@@ -219,12 +231,13 @@ function DecisionCard({
         />
       ) : null}
 
-      {answer ? (
-        <div className="mx-4 mb-3 rounded-[10px] border border-good/40 bg-good/10 px-3 py-2 text-[13px]">
-          <b className="text-good">Stan answered:</b>{" "}
-          {answer.mode === "you" ? "use your recommendation" : answer.answer}
-        </div>
-      ) : null}
+      <AnswerBox
+        item={item}
+        answer={answer}
+        savedAt={savedAt}
+        busy={busy}
+        send={send}
+      />
 
       {item.detail || item.ifyou ? (
         <div className="px-4 pb-3">
@@ -252,6 +265,93 @@ function DecisionCard({
         </div>
       ) : null}
     </section>
+  );
+}
+
+/**
+ * The answer form. Phone-first: full-width targets, a textarea with room to
+ * type, and 16px text so iOS does not zoom the page on focus.
+ */
+function AnswerBox({
+  item,
+  answer,
+  savedAt,
+  busy,
+  send,
+}: {
+  item: DecisionItem;
+  answer?: AnswerRecord;
+  savedAt?: string;
+  busy: boolean;
+  send: (payload: Record<string, unknown>) => Promise<boolean>;
+}) {
+  const [open, setOpen] = useState(false);
+  const [text, setText] = useState(answer && answer.mode === "mine" ? answer.answer : "");
+
+  const submit = async (mode: "mine" | "you") => {
+    const ok = await send({ op: "answer", id: item.id, answer: text, mode });
+    if (ok) setOpen(false);
+  };
+
+  if (answer && !open) {
+    return (
+      <div className="mx-4 mb-3 rounded-[10px] border border-good/40 bg-good/10 px-3 py-2.5 text-[13.5px]">
+        <b className="text-good">Your answer:</b>{" "}
+        {answer.mode === "you" ? "you decide" : answer.answer}
+        <div className="mt-2 flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              setText(answer.mode === "mine" ? answer.answer : "");
+              setOpen(true);
+            }}
+            className="rounded-[9px] border border-line bg-card2 px-3 py-2 text-[13px] font-bold hover:border-accent"
+          >
+            Change answer
+          </button>
+          {savedAt ? <span className="text-[11.5px] text-dim">saved {savedAt.replace("T", " ")}</span> : null}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-4 mb-3">
+      <textarea
+        rows={3}
+        value={text}
+        placeholder={item.placeholder || "your answer"}
+        onChange={(e) => setText(e.target.value)}
+        className="w-full rounded-[10px] border border-line bg-inset px-3 py-2.5 text-[16px] leading-snug focus:border-accent focus:outline-none"
+      />
+      <div className="mt-2 flex flex-wrap gap-2">
+        <button
+          type="button"
+          disabled={busy || !text.trim()}
+          onClick={() => submit("mine")}
+          className="min-w-[110px] flex-1 rounded-[10px] border border-accent bg-accent px-3 py-3 text-[14px] font-bold text-ink disabled:opacity-45"
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          disabled={busy}
+          onClick={() => submit("you")}
+          className="min-w-[110px] flex-1 rounded-[10px] border border-line bg-card2 px-3 py-3 text-[14px] font-bold disabled:opacity-45"
+        >
+          You decide
+        </button>
+        {answer ? (
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            className="rounded-[10px] border border-line bg-card2 px-3 py-3 text-[14px] font-bold text-dim"
+          >
+            Cancel
+          </button>
+        ) : null}
+      </div>
+    </div>
   );
 }
 
@@ -403,6 +503,8 @@ const TAG_TONES: Record<string, string> = {
   DECISION: "bg-info/15 text-info",
   ACTION: "bg-accent/15 text-accent",
   TEXT: "bg-purple/15 text-purple",
+  answered: "bg-good/15 text-good",
+  waiting: "bg-dim/20 text-dim",
 };
 
 function Tag({ tone, children }: { tone: string; children: React.ReactNode }) {

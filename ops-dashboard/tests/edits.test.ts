@@ -8,6 +8,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { test } from "node:test";
 
+import { parseAnswers, serializeAnswers, setAnswer } from "../lib/answers.ts";
 import {
   addDecision,
   deleteDecision,
@@ -32,6 +33,7 @@ import {
 const ROOT = process.env.OPS_DATA_DIR || path.resolve(import.meta.dirname, "../..");
 const TASKS = readFileSync(path.join(ROOT, "TASKS.md"), "utf8");
 const DECISIONS = readFileSync(path.join(ROOT, "dashboard/decisions.json"), "utf8");
+const ANSWERS = readFileSync(path.join(ROOT, "dashboard/answers.json"), "utf8");
 
 const doc = () => parseTasks(TASKS);
 const lines = (text: string) => text.split("\n");
@@ -230,4 +232,89 @@ test("invalid pri/type are refused before anything is written", () => {
   assert.throws(() => addDecision(decisions(), { pri: "now", type: "NOPE", q: "x" }), /type must be/);
   assert.throws(() => addDecision(decisions(), { pri: "now", type: "TEXT", q: "  " }), /empty/);
   assert.throws(() => editDecision(decisions(), "no-such-id", { pri: "now", type: "TEXT", q: "x" }), /no decision/);
+});
+
+/* -------------------------------- answers -------------------------------- */
+
+const answers = () => parseAnswers(ANSWERS);
+const at = new Date(2026, 6, 22, 9, 5, 3);
+
+test("answering leaves every other entry, and the file's shape, alone", () => {
+  const a = answers();
+  const before = JSON.parse(ANSWERS) as { answers: Record<string, unknown> };
+  const record = setAnswer(
+    a,
+    { id: "zuw-hours", question: "Call ZUW and confirm their opening hours", answer: "8-19, Sat 8-14", mode: "mine" },
+    at,
+  );
+  assert.deepEqual(record, {
+    question: "Call ZUW and confirm their opening hours",
+    answer: "8-19, Sat 8-14",
+    mode: "mine",
+  });
+
+  const out = JSON.parse(serializeAnswers(a)) as {
+    savedAt: string;
+    answers: Record<string, unknown>;
+  };
+  assert.equal(out.savedAt, "2026-07-22T09:05:03");
+  assert.deepEqual(Object.keys(out), ["savedAt", "answers"]);
+  for (const id of Object.keys(before.answers)) {
+    assert.deepEqual(out.answers[id], before.answers[id], `${id} was disturbed`);
+  }
+});
+
+test("history survives: entries whose decision is gone are never dropped", () => {
+  // Nothing in decisions.json has these ids any more; last week's answers stay.
+  const live = new Set((JSON.parse(DECISIONS) as { items: { id: string }[] }).items.map((i) => i.id));
+  const stale = Object.keys(answers().answers).filter((id) => !live.has(id));
+  assert.ok(stale.length > 5, `expected historic answers, got ${stale.length}`);
+
+  const a = answers();
+  setAnswer(a, { id: "lead-path-test", question: "Fire one test lead?", answer: "test it", mode: "mine" }, at);
+  for (const id of stale) assert.ok(a.answers[id], `${id} was erased`);
+});
+
+test("re-answering overwrites in place without moving the entry", () => {
+  const a = answers();
+  const order = Object.keys(a.answers);
+  setAnswer(a, { id: "bielarz-reply", question: "Reply to Bielarz?", answer: "yes, today", mode: "mine" }, at);
+  assert.deepEqual(Object.keys(a.answers), order);
+  assert.equal(a.answers["bielarz-reply"].answer, "yes, today");
+});
+
+test("an empty answer with mode mine is refused — a stray tap is not an answer", () => {
+  const a = answers();
+  assert.throws(() => setAnswer(a, { id: "zuw-hours", question: "q", answer: "   ", mode: "mine" }, at), /empty answer/);
+  assert.equal(serializeAnswers(a), ANSWERS, "the document was not modified");
+});
+
+test("mode you records the marker the Python server writes, with or without text", () => {
+  const a = answers();
+  setAnswer(a, { id: "zuw-hours", question: "q", answer: "", mode: "you" }, at);
+  assert.equal(a.answers["zuw-hours"].answer, "USE YOUR RECOMMENDATION");
+  assert.equal(a.answers["zuw-hours"].mode, "you");
+
+  setAnswer(a, { id: "zuw-hours", question: "q", answer: "but call them first", mode: "you" }, at);
+  assert.match(a.answers["zuw-hours"].answer, /^USE YOUR RECOMMENDATION/);
+  assert.ok(a.answers["zuw-hours"].answer.includes("but call them first"), "his words are not thrown away");
+});
+
+test("an unknown mode is refused", () => {
+  assert.throws(
+    () => setAnswer(answers(), { id: "zuw-hours", question: "q", answer: "x", mode: "maybe" }, at),
+    /mode must be/,
+  );
+  assert.throws(
+    () => setAnswer(answers(), { id: "", question: "q", answer: "x", mode: "mine" }, at),
+    /id is required/,
+  );
+});
+
+test("an answer round-trips after being written", () => {
+  const a = answers();
+  setAnswer(a, { id: "vat-checkout-proof", question: "Confirm VAT?", answer: "VAT shows", mode: "mine" }, at);
+  const out = serializeAnswers(a);
+  assert.equal(serializeAnswers(parseAnswers(out)), out);
+  assert.ok(!out.endsWith("\n"), "matches json.dump: no trailing newline");
 });

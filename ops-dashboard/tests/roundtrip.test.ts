@@ -11,6 +11,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { test } from "node:test";
 
+import { parseAnswers, serializeAnswers } from "../lib/answers.ts";
 import { parseDecisions, serializeDecisions } from "../lib/decisions.ts";
 import { DOCS } from "../lib/docs.ts";
 import { parseLog, serializeLog } from "../lib/log.ts";
@@ -84,6 +85,48 @@ test("decisions.json: still matches the schema decisions-server.py expects", () 
     assert.ok(["now", "soon"].includes(item.pri), `pri: ${item.pri}`);
     assert.ok(["DECISION", "ACTION", "TEXT"].includes(item.type), `type: ${item.type}`);
     assert.equal(typeof item.q, "string");
+  }
+});
+
+test("answers.json: parse -> serialise is byte-identical", () => {
+  const original = read("dashboard/answers.json");
+  const output = serializeAnswers(parseAnswers(original));
+  assert.equal(output, original);
+  assert.equal(Buffer.byteLength(output), Buffer.byteLength(original));
+});
+
+test("answers.json: parse is stable under repeated round trips", () => {
+  const original = read("dashboard/answers.json");
+  let text = original;
+  for (let i = 0; i < 3; i += 1) text = serializeAnswers(parseAnswers(text));
+  assert.equal(text, original);
+});
+
+test("answers.json: still matches the shape decisions-server.py writes", () => {
+  const doc = parseAnswers(read("dashboard/answers.json"));
+  assert.equal(typeof doc.savedAt, "string");
+  const ids = Object.keys(doc.answers);
+  assert.ok(ids.length > 0);
+  for (const id of ids) {
+    const record = doc.answers[id];
+    assert.equal(typeof record.question, "string", `${id}.question`);
+    assert.equal(typeof record.answer, "string", `${id}.answer`);
+    assert.ok(["mine", "you"].includes(record.mode), `${id}.mode: ${record.mode}`);
+    assert.deepEqual(Object.keys(record), ["question", "answer", "mode"], `${id} fields`);
+  }
+});
+
+test("answers never leak into decisions.json", () => {
+  // The Python server and decisions.html read this file; an `answer` field here
+  // would be tidier and would break both.
+  const raw = JSON.parse(read("dashboard/decisions.json")) as {
+    items: Record<string, unknown>[];
+  };
+  const allowed = new Set(["id", "pri", "type", "q", "one", "rec", "detail", "ifyou", "placeholder"]);
+  for (const item of raw.items) {
+    for (const key of Object.keys(item)) {
+      assert.ok(allowed.has(key), `unexpected field "${key}" on decision ${String(item.id)}`);
+    }
   }
 });
 

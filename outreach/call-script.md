@@ -1,79 +1,121 @@
-# Call script — ZUW Opony i Felgi · 12 658 74 27
+# Call script — cold call, any workshop
 
-Landline, so you'll likely get whoever is nearest the phone. Call **Tue–Thu, 10:00–12:00 or
-14:00–16:00** — avoid opening, lunch, and the last hour.
+Works for any target. Swap `{warsztat}` for the business name.
+**Next up: ZUW Opony i Felgi · 12 658 74 27** — see the ZUW box at the bottom, there's one extra
+question to ask them.
 
-**Goal of the call is NOT to sell.** It is: (1) confirm their hours, (2) get permission to send one
-link. That's it. If you get both, the call worked.
-
----
-
-## The script
-
-**1. Who you are — 5 seconds, then stop talking**
-
-> Dzień dobry, Stan z Givyx, Kraków. Mam jedno krótkie pytanie — mogę?
-
-*Wait for yes. Don't continue over them.*
-
-**2. The honest reason (this is also the hours question)**
-
-> Robimy stronę dla warsztatu na Jerzmanowskiego i chciałem potwierdzić jedną rzecz:
-> w jakich godzinach Państwo pracujecie? Bo w internecie są dwie różne wersje.
-
-*Write down exactly what they say. This is the thing I actually need.*
-
-**3. Why you were looking at all**
-
-> Dzwonię, bo Wasza strona oponyifelgi.krakow.pl otwiera się tylko przez http —
-> na telefonie przeglądarka pokazuje ostrzeżenie i większość ludzi się cofa.
-> Zrobiliśmy podgląd, jak mogłaby wyglądać. Mogę wysłać link SMS-em? Nic nie kosztuje.
-
-**4. Close**
-
-> Jaki numer? Wyślę teraz, obejrzycie kiedy będzie chwila. Oddzwonię za dwa dni, dobrze?
+Call **Tue–Thu, 10:00–12:00 or 14:00–16:00.** Not at opening, not at lunch, not in the last hour.
 
 ---
 
-## If they ask
+## Otwarcie
 
-**"Ile to kosztuje?"**
-> 249 zł netto miesięcznie, bez opłaty za wykonanie. Ale najpierw obejrzyjcie —
-> jak się nie spodoba, to nie ma tematu.
+> **Dzień dobry, czy to {warsztat}?**
 
-**"Nie potrzebujemy strony / mamy stronę"**
-> Rozumiem. Macie — tylko że nie otwiera się na telefonie.
-> Mogę wysłać podgląd, zero zobowiązań? Jak nie, to nie zawracam głowy.
+*Czekaj na "tak".*
 
-*One push only. If they say no again — thank them and hang up. Do not argue.*
+> **Mówi Stan z Givyx, z Krakowa. Chciałem zapytać — czy chcieliby Państwo mieć własną,
+> profesjonalną stronę internetową?**
 
-**"Kto to jest Givyx?"**
-> Robimy strony dla małych firm w Krakowie. Jestem założycielem, dzwonię sam.
-
-**"Proszę wysłać maila"**
-> Jasne, jaki adres? — *then send the SMS anyway to the number you dialled.*
+*Teraz milcz. Kto pierwszy się odezwie, ten przegrywa. Daj im 3 sekundy.*
 
 ---
 
-## Rules
+## Co mogą odpowiedzieć
 
-- **Never invent a price for THEIR services.** Their #1 review complaint is that they don't publish
-  prices. If asked what the site will say: *"dokładnie to, co Państwo podacie."*
-- **Don't claim their site is "broken" or "down".** It loads over http. What's true: **no https,
-  so browsers warn**, and it doesn't scale on a phone (built in Microsoft Publisher, no mobile
-  layout). Verified 2026-07-21.
-- **Don't mention prostowanie felg** unless they do — we never confirmed they offer it.
-- Say **"od 1980"** if it helps build rapport; that one is solid, from their own site.
+### 1. „Nie, dziękujemy" / „Nie potrzebujemy"
+> **Rozumiem. Mogę tylko wysłać SMS-em podgląd, jak by to wyglądało? Nic nie kosztuje,
+> obejrzycie kiedy będzie chwila. Jak się nie spodoba — nie zawracam więcej głowy.**
 
-## After the call — tell me
+*Jeśli drugi raz „nie" — dziękujesz i kończysz. Nie przekonujesz.*
+> **Jasne, rozumiem. Dziękuję za czas, do usłyszenia.**
 
-1. **Their hours** (this unblocks sending their preview at all)
-2. Did they agree to the link? Which number?
-3. Anything they said about their services — especially prostowanie felg
-4. Their mood: interested / indifferent / annoyed. That tells us whether calling beats SMS.
+### 2. „Mamy już stronę"
+> **Wiem, widziałem — dlatego dzwonię. Otwiera się tylko przez http, więc na telefonie
+> przeglądarka pokazuje ostrzeżenie i część klientów się cofa. Mogę wysłać podgląd nowej?**
 
-## Why calling instead of SMS
+*Jeśli mają dobrą stronę i to widać — powiedz to szczerze i odpuść:*
+> **To macie lepiej niż większość. Nie będę zawracał głowy, dziękuję.**
 
-Two SMS, zero replies. That's not proof SMS fails — the sample is far too small — but a call gives
-something an SMS never does: **you hear the objection.** One call where someone tells you why they
-don't care is worth more right now than ten more messages into silence.
+### 3. „Ile to kosztuje?"
+> **249 zł netto miesięcznie, zero za wykonanie. Ale najpierw obejrzyjcie — jak się nie spodoba,
+> to nie ma o czym rozmawiać.**
+
+*Nie tłumacz się z ceny. Podaj i wracaj do „obejrzyjcie".*
+
+### 4. „Nie mam teraz czasu"
+> **Jasne, nie przeszkadzam. Wyślę SMS-em link, obejrzycie kiedy będzie spokojniej. Ten numer dobry?**
+
+### 5. „Skąd Państwo mają mój numer?"
+> **Z Państwa wizytówki w Google. Dzwonię sam, jestem założycielem — to nie call center.**
+
+### 6. „Proszę wysłać maila"
+> **Oczywiście, jaki adres?**
+
+*Zapisz mail — i tak wyślij SMS na numer, na który dzwoniłeś. Mail w warsztacie czyta się rzadko.*
+
+### 7. „Muszę zapytać szefa / to nie ja decyduję"
+> **Rozumiem. Kiedy najlepiej złapać właściciela? Zadzwonię wtedy.**
+
+*Zapisz imię i godzinę. To jest sukces, nie porażka.*
+
+### 8. „Już próbowaliśmy, nic z tego nie było"
+> **Znam to. Dlatego u nas nie ma opłaty na start — płacicie miesięcznie i możecie przestać,
+> kiedy chcecie. Mogę wysłać podgląd?**
+
+### 9. „Ile to trwa? / Kiedy byłaby gotowa?"
+> **Podgląd już jest zrobiony — wyślę go za chwilę. Jak powiecie „robimy", to poprawki
+> i publikacja w kilka dni.**
+
+### 10. ✅ „Tak, chętnie" / „A co to dokładnie?"
+*Nie zaczynaj sprzedawać. Zamykaj.*
+> **Super. Wyślę SMS-em link do podglądu — zrobiliśmy go już dla Państwa firmy.
+> Obejrzycie, a ja oddzwonię za dwa dni i powiecie, co zmienić. Pasuje?**
+
+---
+
+## Zamknięcie (zawsze to samo)
+
+> **Wyślę teraz SMS na ten numer. Oddzwonię {dzień}. Dziękuję i miłego dnia.**
+
+*Wyślij SMS-a od razu po odłożeniu słuchawki, zanim zapomną, że rozmawialiście.*
+
+---
+
+## Zasady — nie łam ich
+
+- **Nie wymyślaj cen ich usług.** Jak zapytają, co będzie na stronie: *„dokładnie to, co Państwo
+  podacie."*
+- **Nie mów, że ich strona „nie działa"** — działa, tylko przez http, bez wersji na telefon.
+  Mów to, co jest prawdą.
+- **Nie obiecuj pozycji w Google.** Nikt tego nie gwarantuje.
+- **Jedno „nie" = jedna próba. Drugie „nie" = koniec rozmowy.** Warsztaty w Krakowie gadają
+  między sobą.
+
+---
+
+## ZUW Opony i Felgi — 12 658 74 27
+
+Wtrąć to naturalnie, najlepiej po punkcie 4 albo na końcu:
+
+> **Jeszcze jedno — w jakich godzinach Państwo pracujecie? W internecie są dwie różne wersje.**
+
+**To jest jedyna rzecz, której naprawdę potrzebuję z tej rozmowy** — bez potwierdzonych godzin nie
+mogę wysłać im podglądu, bo strona podawałaby nieprawdę.
+
+Sprawdzone i prawdziwe (2026-07-21): działają **od 1980**, Jerzmanowskiego 14, **4,3★ / 117 opinii**,
+16 marek opon, punkt dealerski Goodyear i Dębica. Ich strona: **https nie działa w ogóle**, brak
+wersji mobilnej, zrobiona w Microsoft Publisher.
+**Nie wspominaj o prostowaniu felg** — tego nigdy nie potwierdziliśmy.
+
+---
+
+## Po rozmowie — powiedz mi
+
+1. **Godziny otwarcia** (odblokowuje wysyłkę podglądu)
+2. Zgodzili się na link? Na jaki numer?
+3. Co powiedzieli o usługach — szczególnie prostowanie felg
+4. Nastawienie: zainteresowani / obojętni / zirytowani
+
+Punkt 4 jest najważniejszy. Dwa SMS-y, zero odpowiedzi — to za mała próba, żeby cokolwiek wnioskować.
+Rozmowa daje to, czego SMS nigdy nie da: **słyszysz, dlaczego nie.**

@@ -13,8 +13,8 @@ EMAIL = "zuw@oponyifelgi.krakow.pl"  # VERIFIED on own site (also z.moskala@ and
 MAPS_URL = "https://www.google.com/maps?cid=12983370118901642674"  # VERIFIED — resolves to their listing
 # ⚠️CONFIRM HOURS — genuine conflict. Google Business Profile + Panoramafirm say 8–17 / Sob 8–13 (used below).
 # Their own 2003-era site AND the Goodyear dealer record say 8–19 / Sob 8–14. Ask the owner before go-live.
-HOURS = [("Poniedziałek – Piątek", "8:00 – 17:00"), ("Sobota", "8:00 – 13:00"), ("Niedziela", "nieczynne")]  # ⚠️CONFIRM
-OPEN_LINE = "Pn–Pt 8:00–17:00 · Sob 8:00–13:00"  # ⚠️CONFIRM — day-agnostic on purpose, never contradicts a Saturday
+HOURS = [("Poniedziałek – Piątek", "8:00 – 19:00"), ("Sobota", "8:00 – 14:00"), ("Niedziela", "nieczynne")]  # ⚠️CONFIRM — ICH WŁASNA strona; Google mówi 8–17/8–13
+OPEN_LINE = "Opony, felgi i wulkanizacja — Prokocim, Kraków"  # neutralny: przy niepotwierdzonych godzinach nie powtarzamy ich w nagłówku
 TRUST = [("od 1980", "na rynku"), ("4,3 ★", "117 opinii Google"), ("Goodyear · Dębica", "punkt dealerski")]
 SERVICES = [
     ("Wulkanizacja i naprawa ogumienia", "wycena od ręki", "Naprawa przebić i uszkodzeń opon.", "Serwis i wulkanizacja opon, naprawa ogumienia. Profesjonalny sprzęt do wymiany i naprawy opon oraz fachowa kadra."),

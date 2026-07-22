@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-07-22T08:16:53",
+  "savedAt": "2026-07-22T08:19:13",
   "answers": {
     "stripe-mode": {
       "question": "stripe-mode",
@@ -74,6 +74,11 @@
     "lead-path-test": {
       "question": "Want me to fire one test lead through the D.W. Serwis form?",
       "answer": "test is",
+      "mode": "mine"
+    },
+    "vat-checkout-proof": {
+      "question": "Done — I shipped automatic tax. Confirm VAT on one payment link?",
+      "answer": "Couldn't create a payment link\nYou must specify a tax code in all line items to calculate taxes. Alternatively you can set a default tax code on your tax settings: https://stripe.com/docs/api/tax/settings",
       "mode": "mine"
     }
   }

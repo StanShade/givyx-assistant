@@ -94,7 +94,17 @@ Call **Tue–Thu, 10:00–12:00 or 14:00–16:00.** Not at opening, not at lunch
 
 ---
 
-## ZUW Opony i Felgi — 12 658 74 27
+## ZUW Opony i Felgi
+
+**Dzwoń najpierw na komórkę: 504 121 596.** Stacjonarny **12 658 74 27** był wyłączony 2026-07-22
+(uwaga: 126587428 to zła cyfra na końcu — poprawny numer kończy się na **7**).
+
+⚠️ Komórka pochodzi z katalogu (Panorama Firm), **nie z ich strony** — dzwonić można, ale
+**nie wolno jej publikować** na podglądzie, dopóki jej nie potwierdzą.
+
+Firma zarejestrowana jako **Zakład Usług Wulkanizacyjnych s.c. Janusz Brzukała, Zbigniew Moskała** —
+jeśli odbierze osoba, „pan Janusz?" / „pan Zbigniew?" jest dobrym otwarciem.
+E-mail z katalogu: zuw@oponyifelgi.krakow.pl (też niepotwierdzony).
 
 Wtrąć to naturalnie, najlepiej po punkcie 4 albo na końcu:
 
@@ -103,9 +113,14 @@ Wtrąć to naturalnie, najlepiej po punkcie 4 albo na końcu:
 **To jest jedyna rzecz, której naprawdę potrzebuję z tej rozmowy** — bez potwierdzonych godzin nie
 mogę wysłać im podglądu, bo strona podawałaby nieprawdę.
 
-Sprawdzone i prawdziwe (2026-07-21): działają **od 1980**, Jerzmanowskiego 14, **4,3★ / 117 opinii**,
-16 marek opon, punkt dealerski Goodyear i Dębica. Ich strona: **https nie działa w ogóle**, brak
-wersji mobilnej, zrobiona w Microsoft Publisher.
+Sprawdzone i prawdziwe (2026-07-21/22): działają **od 1980**, Jerzmanowskiego 14, **4,3★ / 117
+opinii**, 16 marek opon, punkt dealerski Goodyear i Dębica. Ich strona: **https nie działa w ogóle
+— certyfikat należy do firmy hostingowej `node13.kru.pl`, nie do nich**, brak wersji mobilnej,
+zrobiona w Microsoft Publisher.
+
+Konkretne zdanie, którego możesz użyć:
+> **Certyfikat na Waszej stronie należy do firmy hostingowej, nie do Was — dlatego przeglądarka
+> pokazuje ostrzeżenie, zanim ktokolwiek zobaczy ofertę.**
 **Nie wspominaj o prostowaniu felg** — tego nigdy nie potwierdziliśmy.
 
 ---

@@ -1176,3 +1176,37 @@ All artefacts in `givyx.claudeBrain/Speed-Gum/`.
   **When blocked: ask plainly, in conversation, naming the exact action.**
 - ⚠️ Process slip: a `cd` in a compound command leaked into a heredoc and wrote `LOG.md` into the
   memory folder. Removed. Write absolute paths in compound commands.
+
+### 2026-07-22 — 🔴 AUTOMATIC TAX BROKE CHECKOUT · answers recovered · Starter shipped
+**Two of Stan's dashboard answers had been invisible for hours** — the container committed them,
+then every push failed on a conflict in `answers.json`, because **I had edited that file from the
+Mac** (removing my own test entry). The dashboard looked completely normal throughout.
+
+- ✅ **Fixed without SSH.** The container's commits branch from a blob that still contained my
+  deleted entry, so restoring that exact entry on origin let its rebase replay cleanly — it pushed
+  itself on the next write. No `reset --hard`, no lost commits, no recovery branch needed.
+- 🔴 **`GIVYX_STRIPE_AUTOMATIC_TAX=true` BROKE PAYMENT LINKS.** Stan's recovered answer:
+  *"Couldn't create a payment link — You must specify a tax code in all line items to calculate
+  taxes."* **Reverted to false** (ops `91696f7`); apply-ops green, `/health` 200, Stripe price ids
+  intact. Checkout works again.
+  **My error:** I treated `automaticTaxSafeToEnable: true` as sufficient. It is necessary, not
+  sufficient — Stripe also needs a **default tax code** (Dashboard → Tax → Settings) or a `tax_code`
+  on every price. The endpoint doesn't check that, so the readout I built and trusted was
+  incomplete. Set the default tax code, verify a payment link opens, *then* re-enable.
+  Cost: card payments were impossible for ~1h15m. Nobody was trying to pay, so real cost ≈ 0 —
+  but it was live production breakage caused by a change I made and verified too shallowly.
+- ✅ **lead-path-test = "test it"** → fired one clearly-labelled submission through the real public
+  endpoint on the D.W. Serwis form: **HTTP 201, `resp_5912ac9dae3a43d99f6d6ac79e17f796`**.
+  Awaiting Stan's confirmation that the notification email arrived — that is the last unproven link.
+- ✅ **starter-rewrite = "use your recommendation"** → shipped: **analytics ON**, **149 zł/mo ·
+  1490 zł/yr**. Verified live. Starter no longer contradicts decision #8, and it no longer undercuts
+  the 249 zł offer at 40% of the price.
+- ⚠️ Still open: `highlight` is false on all four tiers, so the pricing page recommends nothing.
+
+**Process changes, all mine:**
+1. **Never write `dashboard/answers.json` from the Mac.** One writer: the container. To retire an
+   answered decision, remove it from `decisions.json` and leave the answer as history.
+2. **A failed rebase must be loud.** Silent staleness hid two answers for hours behind a
+   normal-looking dashboard. The dashboard should show "N local commits not pushed".
+3. **A status endpoint I wrote is not proof.** `automaticTaxSafeToEnable` said yes; Stripe said no.
+   Verify the actual operation (create a payment link) before calling a payments change done.

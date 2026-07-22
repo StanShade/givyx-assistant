@@ -12,22 +12,18 @@ P0 = blocks the first sale · P1 = needed before/around first clients · P2 = la
       invented price, no unclaimed service, correct per-shop content confirmed present.
 - [x] **249 zł is live** — Studio 249 zł/mo · 2490 zł/yr, verified on the public catalog.
 - [x] **Yearly prices fixed** — now exactly 10× monthly on every tier (Stan).
-- [ ] **Rewrite Starter — numbers decided (Stan delegated): analytics ON, 149 zł/mo · 1490/yr, not
-      highlighted.** Do it on p.givyx.com/admin/plans (the editor has the toggles). Rationale: analytics ON (non-negotiable
-      — `analytics: false` hides the Analytics nav, contradicting decision #8) and 149 zł/mo proposed,
-      because 100 zł is 40% of Studio and undercuts the offer he's actively selling. `PUT /admin/plans`
-      can change analytics/customDomain/mobileApp/AI/support/limits; **pages, seo, tenantPayments and
-      removeBranding are code-forced per tier** and need a `PlanCatalog` change. I am blocked from
-      admin writes — this is Stan's click.
+- [x] **Starter rewritten** — analytics ON, 149 zł/mo · 1490 zł/yr, not highlighted. Verified live.
 - [ ] **Set `highlight` on Studio** — all four tiers have it false, so the pricing page recommends
       nothing. Same page, same visit.
 - [x] **Stripe Tax verified ACTIVE** — livemode true, taxStatus active, origin PL, no missing fields,
       `automaticTaxSafeToEnable: true`.
 - [x] **`GIVYX_STRIPE_AUTOMATIC_TAX=true` shipped** (ops cfdcba4, apply-ops run green, API healthy,
       Stripe key intact). Stripe now computes VAT on top of the netto price.
-- [ ] **Confirm VAT on a real checkout** — generate one payment link from the Portal and check the
-      VAT line appears (249 → 306,27 zł). Nothing exposes the app-side flag, so this is the only
-      real proof.
+- [x] **VAT on a real checkout — TESTED, AND IT FAILED.** Automatic tax broke payment-link creation
+      ("must specify a tax code in all line items"). Reverted to false; checkout works again.
+- [ ] **Set a default tax code in Stripe** (Dashboard → Tax → Settings), verify a payment link
+      opens, THEN re-enable `GIVYX_STRIPE_AUTOMATIC_TAX=true`. `automaticTaxSafeToEnable: true` is
+      necessary but NOT sufficient — it does not check for a tax code.
 - [x] **D.W. Serwis SMS SENT 2026-07-21.** Awaiting reply — the one number that matters.
 - [ ] **Prove the lead path end-to-end** — `notifyEmails` was EMPTY on all 3 forms and is now set to
       stan.zak.inf@gmail.com, but no submission has ever flowed through them. One test submit proves

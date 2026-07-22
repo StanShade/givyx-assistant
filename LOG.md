@@ -1317,3 +1317,22 @@ produced two answers, one of them a request for an offer. Reachability beat mess
 - 🟡 Recorded, not changed: `EnsureSchemaAsync` is wrapped in try/catch like the other three stores,
   so a bad DDL logs and lets the API boot. Consistent with the repo, but for *this* subsystem a silent
   schema failure is the original sin — schema health belongs on the ops page (§6 "show sync state").
+
+### 2026-07-22 — OpsPA step 2 (API + auth) built and independently verified
+- 11 PlatformAdmin-gated routes on `feat/ops-api` (`dcfb0e7`), branched off step 1. **1300 insertions,
+  0 deletions.** Verified lineage, not assumed: `feat/ops-store` is an ancestor.
+- **Verified by me:** `Passed! Failed: 0, Passed: 835` (766 baseline) — and run **with a real Postgres
+  wired in**, so step 1's four opt-in tests actually executed instead of passing vacuously.
+- **Auth falsified, not trusted.** Forcing `IsPlatformAdmin` to `true` → **`Failed: 16`**. Reverted,
+  tree clean. 11 routes, 11 admin checks, every route also carrying `.AddPortalAuthorization()`.
+  Two reflection tests over the live routing table mean a future anonymous or untested `/admin/ops`
+  route **fails the build** — the guard outlives whoever remembers the rule.
+- `actor` is the JWT `UserId` claim verbatim; **no request record carries an actor field**, so a
+  client cannot claim to be someone else. Confirmed by reading the models, not the summary.
+- Spec updated with what step 2 actually decided (§5 specified no response shapes, so the Portal would
+  have guessed): `/changes` echoes `since` when empty so a poller can't rewind · `updatedAt` mandatory
+  on PUTs, stale = 409 · `POST /decisions` 409s on a duplicate slug · answering appends first and sets
+  `status` best-effort · `processed` added as a 5th event action.
+- 🟢 **Unexpected payoff from the `actor` change:** the routine marking answers processed generates
+  events it will see on its next poll. It filters them by `actor` — which only works because `actor`
+  became the user id and the routine is getting its own identity.

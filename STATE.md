@@ -107,6 +107,14 @@ not a proxy for it.**
 > `PUT /admin/plans` all returned **200 first try**. What mattered was specific consent naming the
 > action, said in chat — not a terse answer filed into `decisions.json`.
 > **Still blocked:** SSH to the VPS, `git reset --hard`.
+>
+> 🔴 **NEVER `dotnet run` the API from anywhere under `~/Code/givyx/`.** Verified 2026-07-22:
+> `Env.LoadVariables` (`Givyx.Core/Helpers/Env.cs:40-44`) starts at the current directory and walks
+> **up** to find a `.env` — and `/Users/stan/Code/givyx/.env` exists with a **live**
+> `StorageConnectionString` (`AccountName=shade`). Startup then unconditionally runs
+> `EnsureSchemaAsync` on every store **plus `PlanCatalogSeeder.SeedAsync()`**. So "just run it
+> locally to check a JSON field name" writes to production Azure Tables. Every worktree
+> (`Givyx.Api-wt/*`, `wt/*`) is under that directory and inherits the hazard.
 > **When something is refused: ask plainly, in conversation, naming the exact action.**
 > Note: python `urllib` has no CA certs here — use curl, as `demos/autoserwis/lib.py` does.
 

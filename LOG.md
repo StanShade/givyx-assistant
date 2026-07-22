@@ -1358,3 +1358,30 @@ produced two answers, one of them a request for an offer. Reachability beat mess
 - ⚠️ **Open, must be decided before the routine goes live:** the 16 imported answers have
   `processed_at NULL`, so the routine's first act would be to redo every decision Stan has ever made.
   Stamp them processed during the cutover. Recorded in the spec.
+
+### 2026-07-22 — OpsPA step 4 (Portal UI) built; the agent found a production landmine
+- `feat/ops-ui` (`a76cb8e`) in `Givyx.Portal-wt/ops-ui`, off **`origin/main`** — the local checkout was
+  4 commits stale, the third staleness catch today. Home · Tasks · Decisions. Docs page correctly omitted.
+- **Verified by me:** `npm run build` → `✓ Compiled successfully`, `npx tsc --noEmit` clean. Lint parity
+  proven against a baseline worktree: `644 problems` on `origin/main`, `644` on the branch — identical.
+  Its own files: 0.
+- 🔴 **The find of the session, and it is not UI.** The agent refused to run the API locally and said
+  why: `Env.LoadVariables` (`Env.cs:40-44`) walks **up** the directory tree for a `.env`, and
+  `/Users/stan/Code/givyx/.env` holds a **live** `StorageConnectionString` (`AccountName=shade`).
+  Startup runs `EnsureSchemaAsync` on every store plus `PlanCatalogSeeder.SeedAsync()` — so running
+  the API from any worktree writes to **production Azure Tables**. I verified all three facts myself.
+  **I had told it to try standing the API up.** It was right and I was wrong. Now in STATE.md.
+- It also fixed a real latent bug in shared code: `utils/http.ts` threw `new Error(msg, {...error})`,
+  but `Error(msg, options)` only reads `cause` — so `statusCode` was dropped on **every** Portal API
+  call and a 409 was indistinguishable from any other failure.
+- 🟡 **Gap it surfaced in step 2:** there is no `GET /decisions/{id}/answers`. §6 asks for answer
+  history; `IOpsStore.ListAnswersAsync` exists but nothing exposes it, so the UI can show only the
+  latest answer's text. It printed the count and timestamps of earlier answers and **said on screen**
+  that the text is not readable yet, rather than faking it. Route flagged in the spec.
+- Judgement calls kept: **"You decide" needs two taps** (answers are append-only and irreversible; a
+  mis-tap in a car park would commit one) · **no optimistic updates** anywhere, so the screen can
+  never show a change the database refused · an empty list renders as a stated failure, not an
+  innocent empty backlog.
+- ⚠️ Honest limit, stated without being pressed: **no live API call was ever made.** Every shape is
+  type-checked against the API source, not observed. `next dev` proved only that the three routes
+  exist and sit behind the auth gate.

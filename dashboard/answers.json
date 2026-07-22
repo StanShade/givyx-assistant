@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-07-22T08:19:25",
+  "savedAt": "2026-07-22T08:32:35",
   "answers": {
     "stripe-mode": {
       "question": "stripe-mode",
@@ -73,8 +73,8 @@
     },
     "lead-path-test": {
       "question": "Want me to fire one test lead through the D.W. Serwis form?",
-      "answer": "test it",
-      "mode": "mine"
+      "answer": "USE YOUR RECOMMENDATION — test it",
+      "mode": "you"
     },
     "vat-checkout-proof": {
       "question": "Done — I shipped automatic tax. Confirm VAT on one payment link?",

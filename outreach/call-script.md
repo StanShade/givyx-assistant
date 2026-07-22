@@ -147,7 +147,27 @@ Rozmowa daje to, czego SMS nigdy nie da: **słyszysz, dlaczego nie.**
 
 ---
 
-## ▶ TERAZ: Speed-Gum Serwis Opon · **537 326 327** · pytaj o **pana Tomasza**
+## ▶ TERAZ: Auto-Service Fijałków · **12 644 37 43** (stacjonarny)
+
+> **Dzień dobry, czy to Auto-Service Fijałków? Mówi Stan z Givyx, z Krakowa.**
+> **Dzwonię, bo Wasza strona fijalkow.pl nie otwiera się przez https — przeglądarka blokuje ją**
+> **ostrzeżeniem, bo certyfikat należy do firmy hostingowej, nie do Was. Wiedzieliście o tym?**
+
+*„Wiedzieliście o tym?" jest dużo trudniejsze do odrzucenia niż „chcieliby Państwo stronę?".*
+
+**Sprawdzone 2026-07-22:** http działa (200), **https nie działa w ogóle**, certyfikat to
+`*.unixstorm.org` — wildcard firmy hostingowej. Strona to WordPress 6.2.9, motyw Twenty Seventeen,
+uboga treść, pusta podstrona „Lokalizacja". Ma viewport, więc **na telefonie się skaluje** —
+nie mów, że nie działa na komórce.
+
+**Jeśli stacjonarny nie odpowiada → M-TRAK, 730 716 780, pan Marcin** (komórka, 5,7/6 z 60 opinii).
+Tam haczyk jest inny: **mają działającą stronę z rezerwacją na m-trak.dobrywarsztat.info**
+(sprawdzone dziś, 200). Kąt = własność, nie brak strony:
+> **To ich domena i ich marka — Wy budujecie ruch, a adres należy do kogoś innego.**
+
+---
+
+## Odłożone: Speed-Gum Serwis Opon · **537 326 327** · pytaj o **pana Tomasza**
 
 **Otwarcie (wersja „problem first" — testujemy ją zamiast pytania tak/nie):**
 

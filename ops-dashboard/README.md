@@ -10,12 +10,16 @@ It is the successor to `dashboard/decisions-server.py`, not a replacement:
 
 ## What it can change
 
-Only two files, and only through parsers written for their exact shape:
+Only three files, and only through parsers written for their exact shape:
 
 | File | Operations |
 |---|---|
 | `TASKS.md` | add · edit · tick/untick · move between P0/P1/P2 · delete |
 | `dashboard/decisions.json` | add · edit · delete |
+| `dashboard/answers.json` | answer a decision (Stan's replies) |
+
+Answers never go into `decisions.json` — that file is the questions, and the
+Python server and `decisions.html` read it.
 
 Everything else renders read-only. Every write is atomic (temp file + rename)
 and is committed as `Stan <stan.zak.inf@gmail.com>` immediately afterwards, so
@@ -27,9 +31,11 @@ spaces that belong to the item above, plus prose and a `## Standing rules`
 section that are not tasks at all. The parser stores every line verbatim and
 serialising is a concatenation of those lines, so parse → serialise with no edit
 is byte-identical, and ticking a box rewrites exactly one character on one line.
-`npm test` asserts this against the real files in the checkout, and every write
-re-parses its own output and aborts rather than saving something that would not
-round-trip.
+`decisions.json` and `answers.json` are held to the same rule: they are written
+byte-for-byte the way Python's `json.dump(..., ensure_ascii=False, indent=2)`
+writes them, down to the missing trailing newline. `npm test` asserts this
+against the real files in the checkout, and every write re-parses its own output
+and aborts rather than saving something that would not round-trip.
 
 ## Env vars
 
@@ -144,10 +150,11 @@ app/
   api/
     auth/login|logout     session in/out
     tasks                 GET + POST {op: add|edit|toggle|move|delete}
-    decisions             GET + POST {op: add|edit|delete}
+    decisions             GET + POST {op: add|edit|delete|answer}
 lib/
   tasks.ts                TASKS.md parser/serialiser (the careful one)
   decisions.ts            decisions.json parser/serialiser
+  answers.ts              answers.json parser/serialiser + merge
   log.ts                  LOG.md entry splitter
   store.ts                read/write + the round-trip guard
   repo.ts                 path allowlist, atomic write, git commit
@@ -165,5 +172,8 @@ proxy.ts                  the gate
 - Last-write-wins on `decisions.json`. Task edits carry a content hash and are
   refused if the item changed underneath, but a decision edited in two tabs at
   once keeps the second write.
-- `answers.json` is read-only here. Stan still answers through
-  `decisions-server.py`; this page shows what he answered.
+- Last-write-wins on `answers.json` too. Two phones answering the same
+  decision in the same minute: the second one wins.
+- `decisions-server.py` still works and writes the same file, but it rewrites
+  the whole object from its own payload, so answering there drops entries this
+  app has since added. Answer in one place at a time.

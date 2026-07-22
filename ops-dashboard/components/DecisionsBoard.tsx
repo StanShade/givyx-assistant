@@ -285,11 +285,17 @@ function AnswerBox({
   busy: boolean;
   send: (payload: Record<string, unknown>) => Promise<boolean>;
 }) {
+  const existing = answer && answer.mode === "mine" ? answer.answer : "";
   const [open, setOpen] = useState(false);
-  const [text, setText] = useState(answer && answer.mode === "mine" ? answer.answer : "");
+  const [text, setText] = useState(existing);
+  // What the box was filled with when it opened. "You decide" must not carry
+  // that back in — otherwise the record reads "you decide" plus the answer he
+  // just overrode.
+  const [prefill, setPrefill] = useState(existing);
 
   const submit = async (mode: "mine" | "you") => {
-    const ok = await send({ op: "answer", id: item.id, answer: text, mode });
+    const typed = mode === "you" && text.trim() === prefill.trim() ? "" : text;
+    const ok = await send({ op: "answer", id: item.id, answer: typed, mode });
     if (ok) setOpen(false);
   };
 
@@ -302,7 +308,8 @@ function AnswerBox({
           <button
             type="button"
             onClick={() => {
-              setText(answer.mode === "mine" ? answer.answer : "");
+              setText(existing);
+              setPrefill(existing);
               setOpen(true);
             }}
             className="rounded-[9px] border border-line bg-card2 px-3 py-2 text-[13px] font-bold hover:border-accent"

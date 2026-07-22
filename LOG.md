@@ -1145,3 +1145,34 @@ precede the merge, as the spec said.
   invoices — a bad first client is worse than no first client.
 - ⚠️ **Process lesson:** ZUW was called first only because its preview existed, not because it was
   reachable or promising. Build effort pulled the priority. Reachability should have led.
+
+### 2026-07-22 — Speed-Gum: research + location + token done; build spec ready
+Stan called 537 326 327. First answer no, but he turned it into **"proszę wysłać ofertę z przykładem"**
+— the warmest contact we have. Work split: (1) research, (2) location+token, (3) build spec.
+All artefacts in `givyx.claudeBrain/Speed-Gum/`.
+
+- ✅ **Research** (`RESEARCH.md`) — every fact sourced: Tomasz Gil, **NIP 6760019563**,
+  ul. Grażyny 6, **31-217** Kraków Prądnik Biały, 537 326 327, speed-gum@op.pl, sole trader
+  **registered 09-10-2023**, Google cid 16893387397691167494. **Six services quoted verbatim from his
+  own Panorama listing** — he is NOT tyre-only: aircon and general repairs are in scope, and
+  **prostowanie felg is genuinely his** (unlike ZUW, where it was unconfirmed).
+- 🔴 **The old `speedgum.py` is poisoned** — five invented prices including **"Diagnostyka komputerowa
+  od 100 zł"**, the exact Bielarz error, plus olej/hamulce/diagnostyka no source supports. The spec
+  forbids opening it; the head gets rewritten from the dossier.
+- ⛔ **Still missing: opening hours.** Absent from cabb, the Panorama detail page and pkt. Only Tomasz
+  has them. Also **no rating goes on the site** — our "5,0★" is a stale 20-July read and Panorama
+  shows "(0 opinii)".
+- ✅ **Location + token created** — `l_c3c234e` under `a_22a879a`, slug `speedgum`, website enabled,
+  token `mcpt_33fc508` verified via `get_site_context`. `speedgum.givyx.com` 502s until pages exist.
+- 📸 **Refused to scrape Google photos.** GBP photos belong to whoever uploaded them; republishing them
+  commercially is infringement. Set up `Speed-Gum/photos/` with the rules and the ask instead —
+  **a photo of Tomasz himself beats any stock image** for a one-man shop competing on trust, and
+  asking is a good reason to talk to him again.
+- 🔴 **I WAS WRONG about the admin-token block.** On 2026-07-21 I concluded it was a pure tool
+  restriction that approval could not clear, and wrote that into memory. Stan's explicit in-turn
+  *"you have my permission for that"* → both `POST .../locations` and `POST .../mcp-token` returned
+  **200 first try**. What mattered was specific, conversational, in-turn consent naming the action —
+  not a terse answer filed into `decisions.json`. Memory corrected.
+  **When blocked: ask plainly, in conversation, naming the exact action.**
+- ⚠️ Process slip: a `cd` in a compound command leaked into a heredoc and wrote `LOG.md` into the
+  memory folder. Removed. Write absolute paths in compound commands.

@@ -1,8 +1,18 @@
 # Call script — cold call, any workshop
 
 Works for any target. Swap `{warsztat}` for the business name.
-**Next up: ZUW Opony i Felgi · 12 658 74 27** — see the ZUW box at the bottom, there's one extra
-question to ask them.
+
+## Kolejność dzwonienia
+
+| # | Firma | Numer | Dlaczego |
+|---|---|---|---|
+| 1 | **Speed-Gum Serwis Opon** (Tomasz Gil) | **537 326 327** | komórka · 5,0★ w Google · **brak strony potwierdzony** · opony = nasz szablon pasuje 1:1 |
+| 2 | **Auto-Service Fijałków** | **12 644 37 43** | znany punkt w Nowej Hucie · fijalkow.pl **ma błąd SSL** (potwierdzone) — konkretny, sprawdzalny haczyk |
+| 3 | **M-TRAK** (Marcin Król) | **730 716 780** | komórka · 5,7/6 z 60 opinii · nisza: konserwacja podwozi |
+| — | ~~ZUW~~ | 12 658 74 27 | **stacjonarny wyłączony 2026-07-22.** Zostaje komórka z katalogu: **504 121 596** |
+| — | ~~Piekara~~ | 601 414 028 | **pomijamy** — 2,57★/14 na DobryMechanik, skargi na niezamówione naprawy. Zły pierwszy klient. |
+
+**Komórki odbierają się dużo lepiej niż stacjonarne** — ZUW to właśnie pokazał.
 
 Call **Tue–Thu, 10:00–12:00 or 14:00–16:00.** Not at opening, not at lunch, not in the last hour.
 

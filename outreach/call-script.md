@@ -147,7 +147,7 @@ Rozmowa daje to, czego SMS nigdy nie da: **słyszysz, dlaczego nie.**
 
 ---
 
-## ▶ TERAZ: Auto-Service Fijałków · **12 644 37 43** (stacjonarny)
+## Następny w kolejce: Auto-Service Fijałków · **12 644 37 43** (stacjonarny)
 
 > **Dzień dobry, czy to Auto-Service Fijałków? Mówi Stan z Givyx, z Krakowa.**
 > **Dzwonię, bo Wasza strona fijalkow.pl nie otwiera się przez https — przeglądarka blokuje ją**
@@ -167,7 +167,7 @@ Tam haczyk jest inny: **mają działającą stronę z rezerwacją na m-trak.dobr
 
 ---
 
-## Odłożone: Speed-Gum Serwis Opon · **537 326 327** · pytaj o **pana Tomasza**
+## ▶ TERAZ: Speed-Gum Serwis Opon · **537 326 327** · pytaj o **pana Tomasza**
 
 **Otwarcie (wersja „problem first" — testujemy ją zamiast pytania tak/nie):**
 

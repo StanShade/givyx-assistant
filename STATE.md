@@ -62,6 +62,12 @@ offer — so the email he has is a kept promise, not cold outreach. Everything a
 - Stripe webhook idempotency (no double-charge/double-refund on replays).
 - Polish B2B VAT: netto (`tax_behavior=exclusive`), NIP collection, billing address. **Automatic tax
   defaults OFF** — enabling it before Stripe Tax is activated breaks *every* checkout.
+- **VAT is charged by a fixed 23% rate, not by Stripe Tax** (chosen 2026-07-22). `GIVYX_STRIPE_TAX_RATE_ID`
+  = `txr_1Tw3UsHunRjTnmlGOHa5sKyt` is pinned to every platform line item. Verified live: **249 + 57,27
+  = 306,27 zł**. Stripe Tax costs 0.5%/transaction with no free tier and needs a VAT registration we
+  never added; filing is a 360 zł/mo plan the księgowa makes pointless. **The rate cannot express EU
+  reverse charge** — before the first non-Polish VAT-registered buyer, clear the var and switch to
+  Stripe Tax. It is ignored whenever `GIVYX_STRIPE_AUTOMATIC_TAX=true`.
 - Payment-link flow: client's location → Manage plan → Send a payment link → copy → SMS.
   Recurring subscription; **links expire in 24h**, generate at send time.
 - Client-facing subscription card: plan, `249 zł / month netto`, status, next payment, real faktury.
@@ -79,8 +85,9 @@ offer — so the email he has is a kept promise, not cold outreach. Everything a
 ## Blocked on Stan (also in decisions.json → answer at ops.givyx.com)
 
 1. **Watch for a Speed-Gum reply** — email + SMS sent 2026-07-22. The one live thread.
-2. **Set a default tax code in Stripe** (Dashboard → Tax → Settings), verify a payment link opens,
-   THEN re-enable `GIVYX_STRIPE_AUTOMATIC_TAX=true`. See the incident note below.
+2. **One click to close out VAT:** Portal → a client's location → Manage plan → Send a payment link.
+   Tell me and I read the session back from Stripe to confirm 306,27 zł. The Stripe half is already
+   proven; this is the only link I can't exercise myself (the endpoint needs a Portal login).
 3. **Your flat number is on outbound mail** — the branded email footer prints
    `Karola Bunscha 15A m.34A` from the Givyx location record. Fixable only in the Portal.
 4. **Watch for a D.W. Serwis reply** (sent 21-07, silent).
@@ -106,9 +113,11 @@ not a proxy for it.**
 > **When something is refused: ask plainly, in conversation, naming the exact action.**
 > Note: python `urllib` has no CA certs here — use curl, as `demos/autoserwis/lib.py` does.
 
-> ⚠️ **Stripe Tax is ACTIVE on the account, but `GIVYX_STRIPE_AUTOMATIC_TAX` is back to `false`.**
-> Turning it on broke payment-link creation entirely (see the incident above). Checkout works today
-> and adds **no VAT line** — fine while Stan invoices manually, wrong before the first card payment.
+> ✅ **VAT resolved 2026-07-22 — the free way, not Stripe Tax.** `GIVYX_STRIPE_AUTOMATIC_TAX` stays
+> `false` **permanently**; a fixed 23% PL rate is pinned to the line items instead (see Payments
+> above). Stripe Tax remains activated on the account but unused, with **no registration**, so it
+> would have computed 0% anyway — setting the default tax code alone would have stopped the crash
+> and still shipped no VAT. Reading the account settings via the API is what caught that.
 >
 > ⚠️ The ops runbook claimed the `GIVYX_STRIPE_*` vars weren't in the repo. They are (since
 > 2026-06-22) and the tracked key is `sk_live_`. Corrected in ops `740f6de` — following the old text
@@ -210,10 +219,14 @@ not a proxy for it.**
 `730 716 780`. Script + verified hooks in `outreach/call-script.md`. **Mobiles get answered,
 landlines mostly don't** — that pattern held twice.
 
-**Open technical work, in order:** re-enable automatic tax once a Stripe default tax code exists ·
-merge `Givyx.Api` branch `feat/email-brand-darkmode` (branded + dark email shell, unmerged) ·
-`givyx.claudeBrain/OpsPA/SPEC.md` (move the dashboard onto a real backend) · platform-side
-grandfathering.
+**Open technical work, in order:** `givyx.claudeBrain/OpsPA/SPEC.md` (move the dashboard onto a real
+backend) · platform-side grandfathering · Stripe test/live mode plumbing (Stage 1 of
+`specs/2026-07-21-stripe-full-implementation.md`).
+
+✅ **Closed 2026-07-22:** VAT (fixed 23% rate, verified 306,27 zł) · `feat/email-brand-darkmode`
+— **it was never unmerged**: its only commit is patch-identical to `a586072`, already on `main`,
+which has since moved 6 further commits on the same file. Merging it would have reverted the email
+shell by 318 lines. The branch is dead; delete it.
 
 **Three traps that already cost time today:**
 - A failed `apply-ops` run **cannot** be fixed by re-running the workflow — the VPS already

@@ -1258,3 +1258,30 @@ produced two answers, one of them a request for an offer. Reachability beat mess
 4. `git add -A` while an agent was working, swallowing its diff into an unrelated commit.
 5. Ordered outreach by which preview happened to be built, not by who could be reached — ZUW's
    landline was dead the whole time while Speed-Gum's mobile was live.
+
+### 2026-07-22 — VAT shipped the free way; the "unmerged" email branch was a mirage
+- **`feat/email-brand-darkmode` must not be merged.** Its only commit (`9aab590`) is **patch-identical**
+  to `a586072`, already on `main`; `main` has since moved **6 more commits** on the same file
+  (`Base.cs`). `git diff origin/main...branch` = **-318/+151** — merging would have rolled the email
+  shell back past the Emerald restyle, the tenant logo and the one-line footer, i.e. undone the shell
+  that rendered the Speed-Gum offer. Local `main` was **52 commits stale**, which is why STATE.md
+  still called it open. Synced local `main`; branch left for deletion.
+- **VAT: fixed rate, not Stripe Tax.** Read the live account first — `tax_code: null`,
+  head office street/city blank, and **zero tax registrations**. That last one is the finding:
+  setting the default tax code would have stopped the crash and still charged **0 zł VAT**.
+- Stripe Tax pricing checked, not recalled: **0.5% per transaction, no free tier**; filing only
+  exists on **Tax Complete, 360 zł/mo on a 1-year contract**. Stan files JPK_V7 through a księgowa,
+  so filing is pure waste.
+- Created live tax rate **`txr_1Tw3UsHunRjTnmlGOHa5sKyt`** — VAT 23%, PL, exclusive.
+  (Creation first failed on a bare `%` in the description: `curl -d` sends it raw and Stripe read it
+  as a broken percent-escape, returning a param-less "Invalid request". Use `--data-urlencode`.)
+- Shipped `GIVYX_STRIPE_TAX_RATE_ID` (api `9c2e07d`, ops `e0494b2`, both deploys green). TDD:
+  6 new tests, watched them fail, then **736/736 pass**. Inert when unset; ignored when automatic
+  tax is on, because Stripe rejects a session that both computes tax and pins a rate.
+- **Verified the operation, not a status field** — created a real `cs_live_` session on the live
+  Studio price: **subtotal 249,00 · VAT 57,27 · total 306,27 zł**. Probe session expired afterwards.
+- ⚠️ **Known limit, written down before it bites:** a fixed rate charges 23% to *everyone*. EU
+  reverse charge (0% for a VAT-registered company outside Poland) is not expressible. First non-Polish
+  buyer → clear the var, register in Stripe, switch to Stripe Tax.
+- 🟡 Left for Stan: one **Send a payment link** click from the Portal — that endpoint needs a logged-in
+  Portal session, which is his to hold, not mine.

@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-07-22T07:21:34",
+  "savedAt": "2026-07-22T08:16:53",
   "answers": {
     "stripe-mode": {
       "question": "stripe-mode",
@@ -69,6 +69,11 @@
     "zuw-hours": {
       "question": "Call ZUW (12 658 74 27) and confirm their opening hours",
       "answer": "LIVE TEST — będę dzwonił, skrypt gotowy",
+      "mode": "mine"
+    },
+    "lead-path-test": {
+      "question": "Want me to fire one test lead through the D.W. Serwis form?",
+      "answer": "test is",
       "mode": "mine"
     }
   }

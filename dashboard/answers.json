@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-07-22T08:19:13",
+  "savedAt": "2026-07-22T08:19:25",
   "answers": {
     "stripe-mode": {
       "question": "stripe-mode",
@@ -73,7 +73,7 @@
     },
     "lead-path-test": {
       "question": "Want me to fire one test lead through the D.W. Serwis form?",
-      "answer": "test is",
+      "answer": "test it",
       "mode": "mine"
     },
     "vat-checkout-proof": {

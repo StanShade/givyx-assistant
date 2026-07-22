@@ -10,7 +10,7 @@
 
 import { type AnswersDoc, parseAnswers, serializeAnswers } from "./answers.ts";
 import { type DecisionsDoc, parseDecisions, serializeDecisions } from "./decisions.ts";
-import { commitFiles, readRepoFile, readRepoFileOrNull, writeRepoFileAtomic, type CommitResult } from "./repo.ts";
+import { commitFiles, pullIfStale, readRepoFile, readRepoFileOrNull, writeRepoFileAtomic, type CommitResult } from "./repo.ts";
 import { type TasksDoc, parseTasks, serializeTasks } from "./tasks.ts";
 
 export const TASKS_PATH = "TASKS.md";
@@ -18,17 +18,20 @@ export const DECISIONS_PATH = "dashboard/decisions.json";
 export const ANSWERS_PATH = "dashboard/answers.json";
 
 export async function readTasks(): Promise<{ doc: TasksDoc; raw: string }> {
+  await pullIfStale();
   const raw = await readRepoFile(TASKS_PATH);
   return { doc: parseTasks(raw), raw };
 }
 
 export async function readDecisions(): Promise<{ doc: DecisionsDoc; raw: string }> {
+  await pullIfStale();
   const raw = await readRepoFile(DECISIONS_PATH);
   return { doc: parseDecisions(raw), raw };
 }
 
 /** Also written by decisions-server.py, so a missing or broken file is not fatal. */
 export async function readAnswers(): Promise<AnswersDoc> {
+  await pullIfStale();
   const raw = await readRepoFileOrNull(ANSWERS_PATH);
   if (!raw) return { answers: {} };
   try {

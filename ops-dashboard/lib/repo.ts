@@ -83,6 +83,35 @@ async function git(args: string[]): Promise<string> {
   return stdout;
 }
 
+// The data directory is written from two places: this container, and whoever is at
+// a keyboard with the repo cloned. Writes already rebase before pushing, but reads
+// went straight to disk — so anything pushed from outside stayed invisible here
+// until the container happened to write something. That is how ops.givyx.com ended
+// up serving a decision that had been deleted the day before.
+//
+// Pull before serving, throttled so a page of a dozen reads costs at most one fetch.
+// Never fatal: a network blip should serve slightly stale content, not a 500.
+const PULL_THROTTLE_MS = 15_000;
+let lastPullAt = 0;
+let inFlight: Promise<void> | null = null;
+
+export async function pullIfStale(force = false): Promise<void> {
+  if (!force && Date.now() - lastPullAt < PULL_THROTTLE_MS) return;
+  if (inFlight) return inFlight;
+  inFlight = (async () => {
+    try {
+      if (!(await git(["remote"])).trim()) return;
+      await git(["pull", "--rebase", "--autostash"]);
+    } catch {
+      // keep serving what is on disk
+    } finally {
+      lastPullAt = Date.now();
+      inFlight = null;
+    }
+  })();
+  return inFlight;
+}
+
 export interface CommitResult {
   committed: boolean;
   pushed: boolean;

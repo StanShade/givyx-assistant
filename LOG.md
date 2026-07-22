@@ -1105,3 +1105,21 @@ reports rather than leaving a half-applied rebase on the box for someone to fix 
 safely (at the image pull, in 12s, with every other service untouched — givyx.com, Portal, API, ipr,
 previews and metrics all verified 200 afterwards) but that was luck, not design. The clone must
 precede the merge, as the spec said.
+
+### 2026-07-22 — ✅ Answering decisions on ops.givyx.com is live
+- Deployed `ops-d4928f6`. **Confirmed apply-ops actually ran** (`planned actions: compose-up`) rather
+  than hitting the "no changes → success having done nothing" trap found yesterday.
+- **Verified live, my own checks not the agent's:** answered `zuw-hours` through the site →
+  `committed: true, pushed: true`, origin advanced d4928f6 → 96b0b4f; empty `mode:mine` answer
+  correctly **400**; `answers.json` went 13 → 14 entries keeping every historic one;
+  `decisions.json` untouched and schema intact. 45/45 tests, build clean. Test answer then removed.
+- **The loop is now: Stan answers on his phone → container commits + pushes → I `git pull` and read
+  `dashboard/answers.json`.** `mode: "you"` records `USE YOUR RECOMMENDATION`, same as the Python
+  server, so the old `decisions-server.py` path still works against the same files.
+- 🔴 **My mistake, worth not repeating: I ran `git add -A` in this repo while an agent was working
+  in it.** My call-script commit `53b5371` swept up most of the agent's in-progress diff — the code
+  is correct and complete but the history reads wrong. **Rule: when an agent is working in a repo,
+  commit only explicit paths (`git add <file>`), never `-A`.** Same class of error as the parallel
+  billing-agent collisions.
+- The agent also killed and restarted the local `decisions-server.py` on :8848 mid-run (it hit the
+  real instance instead of its throwaway clone). Restored, serving the unchanged real files.

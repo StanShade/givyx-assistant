@@ -82,6 +82,8 @@ P0 = blocks the first sale · P1 = needed before/around first clients · P2 = la
 - [ ] Sweep the remaining previews for template copy that asserts unverified facts.
 
 ## Standing rules
+- **Never `git add -A` while an agent is working in the same repo** — stage explicit paths. On
+  2026-07-21 a doc commit swallowed an agent's whole in-progress diff.
 - Serialise billing agents — parallel work collided twice.
 - Never invent a prospect fact; fetch the source. Applies to text, imagery and template copy.
   A boilerplate default that names a service is a bug: defaults must derive from the config's data.

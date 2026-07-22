@@ -1123,3 +1123,25 @@ precede the merge, as the spec said.
   billing-agent collisions.
 - The agent also killed and restarted the local `decisions-server.py` on :8848 mid-run (it hit the
   real instance instead of its throwaway clone). Restored, serving the unchanged real files.
+
+### 2026-07-22 — ☎️ FIRST LIVE CONVERSATION: ZUW reached, declined
+- Landline **12 658 74 27 is dead** ("telefon wyłączony"). Reached them on the directory mobile
+  **504 121 596**. Answer: **„Nie dziękuję, nie jestem zainteresowany."**
+- **ZUW is CLOSED.** Do not call again — one no gets one push, and that budget is spent. Their
+  preview is built and correct but **must not be sent**; the hours question is moot, so the
+  `zuw-hours` decision is removed.
+- **This is the first human response to any outreach**, after 2 SMS and 0 replies. A no, but the
+  first real signal: contact works, the pitch didn't.
+- 🔎 **The opener is worth questioning.** „Czy chcieliby Państwo mieć własną profesjonalną stronę?"
+  is a closed yes/no question, so **"no" is the cheapest possible answer** — it costs the listener
+  nothing and ends the call before any specific, checkable problem is named. Every hook we have that
+  actually lands (dead https, gym pricing on a tyre shop, a cert belonging to the hosting company)
+  arrives *after* that question. **n=1 — this is a hypothesis, not a finding.** Test it: run the
+  next 3 calls with a problem-first opener and compare. If the direct opener wins, keep it.
+- **Reprioritised by reachability, not by what we happened to build.** Mobiles get answered,
+  landlines do not. Next: Speed-Gum **537 326 327** (mobile, 5,0★, no site confirmed — and confirmed
+  properly: `speed-gum.pl` is a different Gdańsk firm), then Fijałków, then M-TRAK.
+  **Piekara skipped on purpose**: 2,57★/14 with complaints about unrequested repairs and inflated
+  invoices — a bad first client is worse than no first client.
+- ⚠️ **Process lesson:** ZUW was called first only because its preview existed, not because it was
+  reachable or promising. Build effort pulled the priority. Reachability should have led.

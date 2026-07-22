@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21",
+  "updated": "2026-07-22",
   "items": [
     {
       "id": "lead-path-test",
@@ -33,17 +33,6 @@
       "detail": "I added <code>GIVYX_STRIPE_AUTOMATIC_TAX=true</code> to <code>env/shade.env</code> and pushed (ops <code>cfdcba4</code>); apply-ops recreated shade-api + shade-mcp and the run went green, which means both passed their healthchecks. After the deploy: <code>/health</code> 200, <code>/plans</code> still returns live Stripe price ids (so the Stripe key survived the recreate), and the status endpoint still reports livemode + tax active. What I can't see from outside is whether a Checkout Session now carries <code>automatic_tax.enabled</code> — nothing exposes the app-side flag. Hence one payment link. If VAT does <b>not</b> appear, tell me and I'll revert the commit.",
       "ifyou": "Low risk — you're invoicing manually anyway. But check before the first card payment.",
       "placeholder": "VAT shows / no VAT"
-    },
-    {
-      "id": "zuw-hours",
-      "pri": "soon",
-      "type": "ACTION",
-      "q": "Call ZUW (12 658 74 27) and confirm their opening hours",
-      "one": "Their preview states hours two credible sources disagree about.",
-      "rec": "One short call before that SMS goes out. Own site + Goodyear say Pn–Pt 8:00–19:00, Sob 8:00–14:00; Google + Panorama say 8:00–17:00, Sob 8:00–13:00. Also worth confirming they really do prostowanie felg — that came from a directory category and one review, not from them.",
-      "detail": "Everything else about ZUW is verified: trading since 1980, 16 tyre brands, Goodyear + Dębica dealer, 4,3★/117. Their rebuilt preview uses the Google hours and keeps prostowanie felg out of every headline, so it is safe to push but still not safe to send.",
-      "ifyou": "I'll keep the Google hours and mark that preview 'do not send until confirmed'.",
-      "placeholder": "e.g. 8-19, Sat 8-14 — and yes/no on prostowanie felg"
     }
   ]
 }

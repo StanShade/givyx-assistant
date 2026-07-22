@@ -85,12 +85,9 @@ offer — so the email he has is a kept promise, not cold outreach. Everything a
 ## Blocked on Stan (also in decisions.json → answer at ops.givyx.com)
 
 1. **Watch for a Speed-Gum reply** — email + SMS sent 2026-07-22. The one live thread.
-2. **One click to close out VAT:** Portal → a client's location → Manage plan → Send a payment link.
-   Tell me and I read the session back from Stripe to confirm 306,27 zł. The Stripe half is already
-   proven; this is the only link I can't exercise myself (the endpoint needs a Portal login).
-3. **Your flat number is on outbound mail** — the branded email footer prints
+2. **Your flat number is on outbound mail** — the branded email footer prints
    `Karola Bunscha 15A m.34A` from the Givyx location record. Fixable only in the Portal.
-4. **Watch for a D.W. Serwis reply** (sent 21-07, silent).
+3. **Watch for a D.W. Serwis reply** (sent 21-07, silent).
 
 ➡️ **Closed:** Bielarz (no reply, dropped) · **ZUW (called, declined — do not contact again)**.
 

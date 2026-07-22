@@ -13,17 +13,6 @@
       "placeholder": "wklej odpowiedź / cisza"
     },
     {
-      "id": "vat-link-check",
-      "pri": "soon",
-      "type": "ACTION",
-      "q": "Kliknij jeden payment link — VAT jest już podłączony, zostało jedno sprawdzenie",
-      "one": "VAT działa za darmo. Nie ustawiaj nic w Stripe.",
-      "rec": "Portal → lokalizacja klienta → <b>Manage plan → Send a payment link</b>. Napisz „zrobione”, a ja odczytam tę sesję ze Stripe i potwierdzę <b>249 + 57,27 = 306,27 zł</b>. Nie musisz nic kopiować.",
-      "detail": "Zrobione dziś: założyłem stałą stawkę <b>VAT 23% PL</b> (<code>txr_1Tw3Us…</code>) i podpiąłem ją do każdej pozycji na checkoucie. Sprawdziłem na żywej sesji Stripe: <b>249 → 306,27 zł</b>. <b>Stripe Tax zostaje wyłączony na stałe</b> — kosztuje 0,5% od transakcji bez darmowego progu, a „filing” to plan za 360 zł/mc, którego nie potrzebujesz, bo księgowa i tak składa JPK_V7. Przy okazji: w Stripe <b>nie było żadnej rejestracji VAT</b>, więc nawet po ustawieniu tax code Stripe policzyłby 0 zł podatku. Jedyne, czego nie mogę sam kliknąć, to sam Portal — endpoint wymaga zalogowanego użytkownika.",
-      "ifyou": "Ścieżka Stripe jest sprawdzona, ale nikt nie przeklikał jej z Portalu od początku do końca.",
-      "placeholder": "zrobione / nie działa"
-    },
-    {
       "id": "givyx-address",
       "pri": "soon",
       "type": "DECISION",

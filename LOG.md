@@ -1285,3 +1285,9 @@ produced two answers, one of them a request for an offer. Reachability beat mess
   buyer → clear the var, register in Stripe, switch to Stripe Tax.
 - 🟡 Left for Stan: one **Send a payment link** click from the Portal — that endpoint needs a logged-in
   Portal session, which is his to hold, not mine.
+- ✅ **Closed end to end 17:14.** Stan sent two payment links from the Portal; read back from Stripe:
+  **Studio 249 + 57,27 = 306,27 zł**, **Starter 149 + 34,27 = 183,27 zł**, both carrying
+  `{appId, tier}` metadata — so they came through `PlatformBillingService`, not my direct API probe.
+  That was the one link I could not exercise myself (the endpoint needs a Portal login), and it also
+  proves the deployed container picked up `GIVYX_STRIPE_TAX_RATE_ID`. Sessions from earlier the same
+  day show **VAT 0,00** — the before/after is visible in the account itself.

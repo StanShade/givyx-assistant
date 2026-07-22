@@ -81,6 +81,7 @@ P0 = blocks the first sale · P1 = needed before/around first clients · P2 = la
 - [ ] givyx.com conversion pass: risk reversal, zł pricing, case studies.
 - [ ] Sweep the remaining previews for template copy that asserts unverified facts.
 - [ ] Sync probe 2 delete me
+- [ ] resync probe delete me
 
 ## Standing rules
 - **Never `git add -A` while an agent is working in the same repo** — stage explicit paths. On

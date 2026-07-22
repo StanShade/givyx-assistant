@@ -2,37 +2,48 @@
   "updated": "2026-07-22",
   "items": [
     {
-      "id": "lead-path-test",
+      "id": "speedgum-reply",
       "pri": "now",
-      "type": "DECISION",
-      "q": "Want me to fire one test lead through the D.W. Serwis form?",
-      "one": "The SMS is live and the callback path has never actually been exercised.",
-      "rec": "Say <b>test it</b> and I'll submit one clearly-labelled test through the real public endpoint, then confirm whether the notification reaches you. Costs you a junk lead you can delete. My view: worth it — the page promises a 15-minute callback, and an untested alert path is how a first lead gets lost.",
-      "detail": "Minutes after you sent the SMS I checked where a lead would actually go, and <b>notifyEmails was EMPTY on all three preview forms</b>. Had the owner left his number, the lead would have been stored with no-one notified. I've set all three to stan.zak.inf@gmail.com and verified it stuck. What's still unproven is delivery: no submission has ever flowed through these forms, so form → lead → email is untested for these locations. I didn't fire a test unprompted — you'd declined that once and I'd already made one change you didn't ask for.",
-      "ifyou": "The path stays untested. Lead-failure alerting exists as a backstop, so a failure wouldn't be totally silent.",
-      "placeholder": "test it / leave it"
+      "type": "TEXT",
+      "q": "Odezwał się Tomasz ze Speed-Gum?",
+      "one": "To jedyny żywy wątek. Reszta to przygotowanie.",
+      "rec": "Wklej jego odpowiedź — cokolwiek napisał. Jeśli cisza, napisz „cisza” i zaplanuję jeden telefon kontrolny za 2 dni, nie więcej.",
+      "detail": "Mail poszedł na speed-gum@op.pl 2026-07-22 (branded, replyTo na Twój adres), SMS na 537 326 327. <b>On sam poprosił o tę ofertę</b> po telefonie, więc to nie jest zimny kontakt — to dotrzymana obietnica. Jeśli przyśle zdjęcia warsztatu, podmieniam galerię tego samego dnia (teraz są tam zdjęcia z jego wizytówki Google). Jeśli poda soboty / przechowalnię / olej — dopisuję do strony.",
+      "ifyou": "Nic się nie dzieje. To jedyny kontakt, który może dać pierwszego klienta.",
+      "placeholder": "wklej odpowiedź / cisza"
     },
     {
-      "id": "starter-rewrite",
-      "pri": "soon",
-      "type": "DECISION",
-      "q": "Starter: my numbers, and the exact clicks (the editor does have the toggle)",
-      "one": "Analytics ON + 149 zł. Both doable on p.givyx.com/admin/plans in about 2 minutes.",
-      "rec": "On <b>p.givyx.com/admin/plans</b>, Starter: (1) turn <b>Analytics ON</b>; (2) price <b>149</b> monthly, <b>1490</b> yearly, PLN; (3) leave <i>Most popular</i> off. Save. While you're there, consider turning <b>Most popular ON for Studio</b> — every tier currently has it off, so your pricing page points at nothing.",
-      "detail": "You delegated the numbers, so here they are with the reasoning. <b>Analytics ON</b> isn't really a choice: you decided every client sees their own leads and traffic, and <code>analytics:false</code> hides the Analytics nav entirely — Starter contradicts your own decision today. <b>149, not 100:</b> at 100 zł Starter is 40% of Studio, so any workshop told both numbers takes the cheaper one and you end up competing with your own 249 zł offer. At 149 the 100 zł gap visibly buys full AI, the mobile app, 3 locations and priority support. <b>Note:</b> pages stays at 5 whatever you type — it's hard-coded per tier in <code>PlanCatalog</code>, as are seo, tenantPayments and removeBranding. I'd have done this myself but admin writes are blocked; the Portal editor exposes exactly the toggles needed (Analytics, Mobile app, AI, support, limits, marketing copy).",
-      "ifyou": "Starter stays a 100 zł tier with no Analytics tab — a broken promise and a discount on your own offer.",
-      "placeholder": "done / different numbers"
-    },
-    {
-      "id": "vat-checkout-proof",
+      "id": "stripe-tax-code",
       "pri": "soon",
       "type": "ACTION",
-      "q": "Done — I shipped automatic tax. Confirm VAT on one payment link?",
-      "one": "Deployed and healthy, but only a real checkout proves it applies.",
-      "rec": "Generate one payment link (client's location → Manage plan → Send a payment link), open it, and check that VAT shows as its own line: <b>249 zł + 23% = 306,27 zł</b>. Don't pay it — just look, then let it expire.",
-      "detail": "I added <code>GIVYX_STRIPE_AUTOMATIC_TAX=true</code> to <code>env/shade.env</code> and pushed (ops <code>cfdcba4</code>); apply-ops recreated shade-api + shade-mcp and the run went green, which means both passed their healthchecks. After the deploy: <code>/health</code> 200, <code>/plans</code> still returns live Stripe price ids (so the Stripe key survived the recreate), and the status endpoint still reports livemode + tax active. What I can't see from outside is whether a Checkout Session now carries <code>automatic_tax.enabled</code> — nothing exposes the app-side flag. Hence one payment link. If VAT does <b>not</b> appear, tell me and I'll revert the commit.",
-      "ifyou": "Low risk — you're invoicing manually anyway. But check before the first card payment.",
-      "placeholder": "VAT shows / no VAT"
+      "q": "Ustaw domyślny tax code w Stripe, żebym mógł włączyć VAT z powrotem",
+      "one": "Automatyczny VAT jest wyłączony, bo zepsuł linki płatnicze.",
+      "rec": "Stripe Dashboard → Tax → Settings → ustaw <b>default tax code</b>. Potem wygeneruj jeden payment link i sprawdź, czy się otwiera i czy VAT jest osobną pozycją (249 → 306,27 zł). Napisz, że działa, a ja włączę <code>GIVYX_STRIPE_AUTOMATIC_TAX=true</code> z powrotem.",
+      "detail": "Włączenie tego 2026-07-22 sprawiło, że <b>nie dało się utworzyć linku płatniczego</b>: „You must specify a tax code in all line items”. Cofnąłem (ops <code>91696f7</code>), checkout znów działa — ale <b>bez VAT</b>. To w porządku, dopóki fakturujesz ręcznie; nie w porządku przed pierwszą płatnością kartą. Mój błąd: zaufałem własnemu endpointowi <code>automaticTaxSafeToEnable</code> zamiast przetestować samą operację.",
+      "ifyou": "Checkout działa, ale nie dolicza VAT. Bezpieczne, dopóki nikt nie płaci kartą.",
+      "placeholder": "ustawione / działa / nie działa"
+    },
+    {
+      "id": "givyx-address",
+      "pri": "soon",
+      "type": "DECISION",
+      "q": "Twój numer mieszkania idzie w stopce każdego maila — zostawiamy?",
+      "one": "„Karola Bunscha 15A m.34A” — adres domowy, w mailach do obcych ludzi.",
+      "rec": "Jeśli ma zniknąć: p.givyx.com → lokalizacja Givyx → ustawienia → zmień albo wyczyść adres. Wiersz z adresem pokazuje się <b>tylko</b> gdy pole jest wypełnione, więc puste = brak wiersza. Nie da się tego nadpisać w samym wysyłaniu maila.",
+      "detail": "Stopka brandowanego maila (<code>layout:\"givyx\"</code> + <code>locationId</code>) czyta logo, adres, telefon i e-mail z <b>rekordu lokalizacji</b>. Dla Givyx to dziś: Karola Bunscha 15A m.34A, 30-392 Kraków, +48 571 088 012, info@givyx.com. Adres rejestrowy jednoosobowej firmy jest normalny na korespondencji — ale <code>m.34A</code> to numer mieszkania, a mail poszedł już do Tomasza.",
+      "ifyou": "Zostaje tak jak jest — na każdym kolejnym mailu do prospektów.",
+      "placeholder": "zmieniam / zostawiam"
+    },
+    {
+      "id": "dwserwis-followup",
+      "pri": "soon",
+      "type": "DECISION",
+      "q": "D.W. Serwis milczy od 21-07 — jeden telefon czy odpuszczamy?",
+      "one": "Najlepszy haczyk jaki mamy, ale SMS nie zadziałał.",
+      "rec": "Mój wybór: <b>jeden telefon</b> na 502 402 802. Rozmowa daje to, czego SMS nie dał ani razu — słyszysz, dlaczego nie. Skrypt w <code>outreach/call-script.md</code>.",
+      "detail": "Wysłane 2026-07-21, cisza. Haczyk wciąż prawdziwy: pod „Najpopularniejsze usługi” na opony.krakow.pl stoją angielskie karnety na siłownię, $680 per month. Dwa SMS-y i zero odpowiedzi to za mała próba, żeby cokolwiek wnioskować o kanale — ale telefon do ZUW i do Speed-Gum dał odpowiedź w obu przypadkach.",
+      "ifyou": "Zostaje w zawieszeniu. Nie zamykam go bez Twojej decyzji.",
+      "placeholder": "dzwonię / odpuszczamy"
     }
   ]
 }

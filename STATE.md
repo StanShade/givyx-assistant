@@ -1,7 +1,12 @@
 # Givyx — START HERE
 
 Single source of truth. Read this first, then `decisions.json` (what's blocked on Stan) and
-`LOG.md` (chronological detail). Last updated: 2026-07-21.
+`LOG.md` (chronological detail). Last updated: **2026-07-22**.
+
+> **Dashboard: https://ops.givyx.com** — password in `givyx.ops/env/ops-dashboard.env`. Stan answers
+> decisions there; the container commits + pushes to `StanShade/givyx-assistant`, so `git pull` here
+> brings his answers. **Never write `dashboard/answers.json` from this machine** — one writer, the
+> container. Editing it from the Mac hid two of his answers for hours on 2026-07-22.
 
 ---
 
@@ -11,11 +16,16 @@ Single source of truth. Read this first, then `decisions.json` (what's blocked o
 |---|---|
 | Paying customers | **0** |
 | MRR | **0 zł** |
-| Outbound SMS sent | **2** — Bielarz 2026-07-20 (no reply, moving on) · **D.W. Serwis 2026-07-21 (awaiting)** |
-| Prospect previews built | 3 (tlumiki, dwserwis, oponyifelgi) — **all rebuilt + verified 2026-07-21** |
-| Live tenant sites | givyx.com, ipr.givyx.com, institutrozvojaapraxe.sk, + 3 prospect previews |
-| Offer | **249 zł netto/mo, 0 zł setup**, founding price locked for first 10 clients |
-| Product tier for that price | **Studio** (Starter hides Analytics, caps 5 pages, basic AI only) |
+| Outbound SMS | **3** — Bielarz 20-07 (no reply, dropped) · D.W. Serwis 21-07 (awaiting) · Speed-Gum 22-07 |
+| **Calls made** | **2** — ZUW (reached, **declined, closed**) · **Speed-Gum (reached → asked for the offer)** |
+| **Offers sent** | **1** — Speed-Gum, 2026-07-22, personalised site + 149/249/750 by email |
+| Prospect previews | 4 — tlumiki · dwserwis · oponyifelgi (all verified) · **speedgum (new, best one)** |
+| Live tenant sites | givyx.com, ipr.givyx.com, institutrozvojaapraxe.sk, **ops.givyx.com**, + 4 previews |
+| Catalog (verified live) | Starter **149**/1490 · Studio **249**/2490 · Scale **750**/7500, all analytics ON |
+
+**Warmest contact: Speed-Gum (Tomasz Gil, 537 326 327).** He said no on the phone, then asked for an
+offer — so the email he has is a kept promise, not cold outreach. Everything about him is in
+`givyx.claudeBrain/Speed-Gum/`.
 
 **The one number that matters: replies to outreach. Everything else is preparation.**
 
@@ -66,34 +76,39 @@ Single source of truth. Read this first, then `decisions.json` (what's blocked o
 
 ---
 
-## Blocked on Stan (also in decisions.json)
+## Blocked on Stan (also in decisions.json → answer at ops.givyx.com)
 
-1. **Watch for a D.W. Serwis reply** — sent 2026-07-21. Every reply gets an answer same day.
-2. **Starter rewrite** — confirm the numbers (recommended: analytics ON, 149 zł not 100).
-3. **Confirm VAT on one real checkout** — the flag is shipped; a payment link is the only proof.
-4. **Call ZUW (12 658 74 27)** — their preview states hours two credible sources disagree about.
-   ZUW's preview is rebuilt and correct, but **do not send it** until those hours are confirmed.
+1. **Watch for a Speed-Gum reply** — email + SMS sent 2026-07-22. The one live thread.
+2. **Set a default tax code in Stripe** (Dashboard → Tax → Settings), verify a payment link opens,
+   THEN re-enable `GIVYX_STRIPE_AUTOMATIC_TAX=true`. See the incident note below.
+3. **Your flat number is on outbound mail** — the branded email footer prints
+   `Karola Bunscha 15A m.34A` from the Givyx location record. Fixable only in the Portal.
+4. **Watch for a D.W. Serwis reply** (sent 21-07, silent).
 
-✅ **Pricing is settled and verified live:** Studio **249 zł/mo · 2490 zł/yr**, Scale 750/7500,
-Starter 100/1000 — yearly is exactly 10× monthly everywhere. Stan fixed both; confirmed on the
-public catalog. Studio's Stripe price id changed on the edit, so the archive-superseded-price
-grandfathering path ran correctly in production for the first time.
+➡️ **Closed:** Bielarz (no reply, dropped) · **ZUW (called, declined — do not contact again)**.
 
-➡️ **Bielarz: moving on** (his call — he may phone them himself). No follow-up SMS.
+✅ **Shipped 2026-07-22:** ops.givyx.com dashboard · `givyx-assistant` private repo · Starter at
+149 with analytics ON · `givyx-map` picking Google-on-consent / OSM otherwise · Speed-Gum's site ·
+the `POST /emails` send path.
 
-> ⚠️ **Permission boundary (mapped 2026-07-21, stop re-testing it).**
-> **Allowed:** admin *reads* (`GET /admin/stripe/status`), all public endpoints, git push to `givyx.ops`.
-> **Blocked:** admin *writes* (`PUT /admin/plans`), anything credential-shaped (minting *or listing*
-> MCP tokens), `GET /apps`, SSH to the VPS, `git reset --hard`.
-> "Use admin token" does **not** clear it — it is a tool restriction, not a consent gate, and has been
-> refused four times. Ask Stan to paste tokens from the Portal instead of asking for approval again.
-> Note: python `urllib` has no CA certs on this machine — use curl, as `demos/autoserwis/lib.py` does.
+🔴 **Incident, same day — automatic tax broke checkout.** `GIVYX_STRIPE_AUTOMATIC_TAX=true` made
+payment-link creation fail outright (*"You must specify a tax code in all line items"*). **Reverted**
+(ops `91696f7`). The lesson is bigger than Stripe: `automaticTaxSafeToEnable: true` was a status
+endpoint *I wrote*, and I trusted it instead of testing the real operation. **Verify the operation,
+not a proxy for it.**
 
-> ✅ **Stripe Tax: ACTIVE and now applied.** `livemode: true`, `taxStatus: active`, origin `PL`.
-> `GIVYX_STRIPE_AUTOMATIC_TAX=true` shipped 2026-07-21 (ops `cfdcba4`, apply-ops green, API healthy,
-> Stripe key intact through the recreate). Checkout should now add VAT on top of the netto price
-> (249 → 306,27 zł). **Unproven from outside** — nothing exposes the app-side flag, so one real
-> payment link is the confirmation.
+> ⚠️ **Permission boundary — corrected 2026-07-22.** I previously recorded this as a hard tool
+> restriction that approval could not clear. **That was wrong.** Stan's explicit, in-conversation
+> *"you have my permission for that"* → `POST .../locations`, `POST .../mcp-token` and
+> `PUT /admin/plans` all returned **200 first try**. What mattered was specific consent naming the
+> action, said in chat — not a terse answer filed into `decisions.json`.
+> **Still blocked:** SSH to the VPS, `git reset --hard`.
+> **When something is refused: ask plainly, in conversation, naming the exact action.**
+> Note: python `urllib` has no CA certs here — use curl, as `demos/autoserwis/lib.py` does.
+
+> ⚠️ **Stripe Tax is ACTIVE on the account, but `GIVYX_STRIPE_AUTOMATIC_TAX` is back to `false`.**
+> Turning it on broke payment-link creation entirely (see the incident above). Checkout works today
+> and adds **no VAT line** — fine while Stan invoices manually, wrong before the first card payment.
 >
 > ⚠️ The ops runbook claimed the `GIVYX_STRIPE_*` vars weren't in the repo. They are (since
 > 2026-06-22) and the tracked key is `sk_live_`. Corrected in ops `740f6de` — following the old text
@@ -103,10 +118,17 @@ grandfathering path ran correctly in production for the first time.
 
 ## Operating rules (learned, non-negotiable)
 
-- **Platform-admin token requires Stan's explicit approval in the current turn, every single use.**
-  Subagents correctly refuse relayed consent — so *I* must perform those steps in the main session.
-- **Decisions loop:** Stan answers in the local server page → `answers.json` → he says `read` → I read,
-  act, and regenerate `decisions.json`. Never make him download or copy-paste.
+- **Platform-admin token: ask plainly in conversation, naming the action.** Explicit in-turn consent
+  works (proved 2026-07-22); a terse answer filed into a decisions file does not. Subagents can never
+  satisfy it, so those steps are mine, in the main session.
+- **Technical work: write a spec into `givyx.claudeBrain/.../specs/`, then run an agent against it.**
+  The spec must stand alone — Stan may run it himself.
+- **Decisions loop:** Stan answers at **ops.givyx.com** → the container commits + pushes →
+  I `git pull` and read `dashboard/answers.json` → act, then rewrite `decisions.json`.
+  **I never write `answers.json`.** One writer: the container.
+- **Send email with `POST /emails`** — see `givyx.claudeBrain/Givyx/tools/email-api.md`.
+  `layout:"givyx"` + `locationId` pulls logo, address, phone and email from the *location record*;
+  none of it can be passed in the request. Check with `GET /locations/by-slug/{slug}` first.
 - **Orchestrator mode:** delegate execution to subagents; I keep prioritisation, verification,
   synthesis, and proactive growth thinking. Verify agent output — don't rubber-stamp.
 - **Serialise billing agents.** Parallel billing work collided twice (`main` moved 3× under one agent).
@@ -171,3 +193,30 @@ grandfathering path ran correctly in production for the first time.
    Stripe-side archival.
 5. Then Phase 2 groundwork: the three features that close local-trade deals — **real booking, embedded
    map, genuine Google reviews** — none of which exist yet.
+
+---
+
+## Handoff — session ended 2026-07-22
+
+**If you read nothing else:** the only live thread is **Speed-Gum**. Everything else is machinery.
+
+**Do first:**
+1. `git pull` and read `dashboard/answers.json` — Stan answers at ops.givyx.com, not in chat.
+2. Check for a Speed-Gum reply (email to speed-gum@op.pl + SMS to 537 326 327, both 22-07).
+3. If he replies with photos → swap the gallery (it currently serves images from his Google listing).
+   If he replies with Saturday hours / przechowalnia / oil → update `previews/heads/speedgum.py`.
+
+**Next call if he goes quiet:** Fijałków `12 644 37 43` (SSL hook, verified), then M-TRAK
+`730 716 780`. Script + verified hooks in `outreach/call-script.md`. **Mobiles get answered,
+landlines mostly don't** — that pattern held twice.
+
+**Open technical work, in order:** re-enable automatic tax once a Stripe default tax code exists ·
+merge `Givyx.Api` branch `feat/email-brand-darkmode` (branded + dark email shell, unmerged) ·
+`givyx.claudeBrain/OpsPA/SPEC.md` (move the dashboard onto a real backend) · platform-side
+grandfathering.
+
+**Three traps that already cost time today:**
+- A failed `apply-ops` run **cannot** be fixed by re-running the workflow — the VPS already
+  fast-forwarded, so the rerun reports **success having done nothing**. Push a new commit instead.
+- Local checkouts are routinely stale. Verify against `origin/main`, never the working tree.
+- Don't `git add -A` while an agent is working in the same repo.

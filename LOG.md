@@ -1233,3 +1233,28 @@ Mac** (removing my own test entry). The dashboard looked completely normal throu
   send call.
 - 🟡 The gallery still serves photos taken from his Google listing. The email discloses this and asks
   for his own, which converts the exposure into a courtesy — but it is still live on the site.
+
+### 2026-07-22 — SESSION CLOSED. SMS sent to Speed-Gum; state consolidated.
+- Stan sent the SMS to 537 326 327 pointing at the email. **Speed-Gum now has both**: a personalised
+  site he asked for, an emailed offer, and an SMS. That is the whole live pipeline.
+- `STATE.md` rewritten to current reality + a **Handoff** section so a cold session can resume:
+  what to do first, who to call next, what's open technically, and the three traps that cost time.
+- `decisions.json` rewritten to 4 real items — Speed-Gum reply · Stripe tax code · Stan's flat
+  number in the mail footer · whether to phone D.W. Serwis.
+
+**Session in one line:** two live conversations (first ever), one prospect who asked for the offer and
+got it, a dashboard Stan can answer from his phone — and a production incident I caused and he caught.
+
+**What actually changed the business:** calling instead of texting. Two SMS produced silence; two calls
+produced two answers, one of them a request for an offer. Reachability beat message quality.
+
+**What I got wrong today, all of it recorded where it will be found again:**
+1. Enabled Stripe automatic tax on the strength of a status endpoint **I wrote** — it broke payment
+   links, and Stan found it. Verify the operation, not a proxy for it.
+2. Wrote `answers.json` from the Mac, which wedged the container and hid two of his answers for
+   hours behind a normal-looking dashboard.
+3. Declared the admin-token block a hard tool restriction. It wasn't — explicit in-conversation
+   consent cleared it first try. I recorded a wrong rule and acted on it for a day.
+4. `git add -A` while an agent was working, swallowing its diff into an unrelated commit.
+5. Ordered outreach by which preview happened to be built, not by who could be reached — ZUW's
+   landline was dead the whole time while Speed-Gum's mobile was live.

@@ -144,3 +144,30 @@ Konkretne zdanie, którego możesz użyć:
 
 Punkt 4 jest najważniejszy. Dwa SMS-y, zero odpowiedzi — to za mała próba, żeby cokolwiek wnioskować.
 Rozmowa daje to, czego SMS nigdy nie da: **słyszysz, dlaczego nie.**
+
+---
+
+## ▶ TERAZ: Speed-Gum Serwis Opon · **537 326 327** · pytaj o **pana Tomasza**
+
+**Otwarcie (wersja „problem first" — testujemy ją zamiast pytania tak/nie):**
+
+> **Dzień dobry, czy to Speed-Gum? Mówi Stan z Givyx, z Krakowa.**
+> **Dzwonię, bo szukałem Państwa w Google i nie znalazłem żadnej strony —**
+> **sprawdziłem nawet speed-gum.pl, ale to zupełnie inna firma, warsztat z Gdańska.**
+> **Chciałem zapytać: to celowo, czy po prostu nie było czasu?**
+
+*Na to nie da się odpowiedzieć odruchowym „nie". Pokazuje też, że odrobiłeś pracę domową.*
+
+Dalej normalnie — gałęzie 1–10 powyżej.
+
+**Sprawdzone 2026-07-22 (możesz to powiedzieć bez ryzyka):**
+- **Nie mają własnej strony.** `speed-gum.pl` to **Mechanika Pojazdowa i Wulkanizacja,
+  ul. Wyspiańskiego 4, 80-434 Gdańsk**, tel. 500 381 715 — inna firma, podobna nazwa.
+- Tomasz Gil, ul. Grażyny 6, Prądnik Biały. Działają **od 2023**.
+- Robią **wulkanizację i opony, klimatyzację oraz bieżące naprawy** — to NIE jest sam serwis opon.
+- ⚠️ 5,0★ w Google — odczyt z 2026-07-20, **nie powołuj się na liczbę opinii**, nie odświeżaliśmy.
+- ⚠️ Firma od 2023 = najmłodsza i najmniejsza z listy. Budżet może być cienki — tym bardziej
+  nie zaczynaj od ceny.
+
+**Czego potrzebuję z rozmowy:** zgoda na SMS z podglądem + potwierdzenie, że robią klimatyzację
+i naprawy (żeby podgląd nie zawężał ich do samych opon, jak D.W. Serwis).

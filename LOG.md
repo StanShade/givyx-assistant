@@ -1441,3 +1441,26 @@ produced two answers, one of them a request for an offer. Reachability beat mess
   cut over — else the two diverge, which is the one-writer problem OpsPA exists to kill.
 - Note: `answers.json` grew 16 → 17 (savedAt 2026-07-23) since yesterday — the tool counts the live
   file, not a fixed number, so that surfaced correctly rather than being assumed.
+
+### 2026-07-23 — ops answer-pickup routine BUILT (local, prepare-don't-fire); + 2 real answers handled
+- Two answers were already waiting on the NEW dashboard (Stan, as pu_dbc4fbe): **speedgum-reply =
+  "no answer"** (still silent) and **givyx-address = "removed"**. Handled both myself, marked
+  processed. Verified the address fix live: the givyx location now reads `Karola Bunscha 15A` — the
+  `m.34A` flat number is GONE, so the branded email footer no longer leaks it.
+- Routine design (Stan's choices): **local launchd, not cloud** (no embedded secret, uses a local
+  token file) and **prepare-don't-fire** (safe work only; outward/irreversible steps stay for Stan).
+- Built `ops/routine/`: `pickup-answers.sh` (poll → detect new answers → bounded Claude → commit →
+  mark processed), `prompt.md`, `com.givyx.ops-routine.plist` (hourly), `README.md`.
+- **Safety is structural, not just prompt-deep:** all network + git live in the shell; the Claude step
+  gets **no token and no Bash** (`--allowedTools Read Edit Write Grep Glob WebFetch WebSearch`), so it
+  cannot email/deploy/touch a tenant even if a prompt tried. Never `git add -A` (stages only LOG.md +
+  drafts), so it can't swallow a live session's WIP.
+- **Tested piecewise:** detection (found both answers), context build, the multi-id parser (fixed a
+  real bug I caught in my own dry run — ids collided with the cursor on one line), the **loud 401**
+  path (writes `~/.givyx/ops-routine.FAILED`), and mark-processed (HTTP 200).
+- 🔴 **NOT proven: the Claude step.** Headless `claude -p` returns **401 auth** from inside this
+  sandboxed shell, so I couldn't validate it here. It must be run once in Stan's own terminal (README
+  "Validate before arming"), and that also answers the open launchd question — whether a background
+  job inherits the `claude` login. **launchd is NOT armed**; arming waits on that manual pass.
+- Cursor initialised to **47** (current), so the routine ignores all history and only wakes for future
+  answers. Token file intentionally empty — Stan mints the **pu_dbc4fbe** JWT via `POST /login`.

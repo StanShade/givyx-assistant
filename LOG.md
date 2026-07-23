@@ -21,6 +21,16 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 - Note for future searches: **all Givyx mail is in Gmail TRASH** (Stan trashes probes); this lead
   notification is the exception that reached INBOX. Search lead notifications with `in:anywhere`.
 
+### 2026-07-23 — Ref 23 implemented on a branch; billing handed off; booking + platform-sync in flight
+- Ref 23 (Stripe-side price archival) built by an agent on branch `feat/stripe-price-archival`
+  (Givyx.Api `7dc7cda`, NOT pushed). Verified the diff myself: gateway passed at the real callsite,
+  captures the OLD superseded price id, DB archive first then best-effort Stripe deactivate (try/catch →
+  L.Warning, no rollback), +2 tests, build clean, 872 tests green. Stan: the rest of the billing spec
+  (21/22/25) + this branch's merge go to **other agents** — I've stopped touching billing.
+- Moved on. Two read-only audits running: **platform sync (34/35)** — map the real apex↔main divergence
+  into a safe reconcile plan; **booking (28)** — ground the booking-calendar spec (current form/notify
+  path, tenant/hours model, feature toggles, renderer, the 3 surfaces). I'll write each spec from its audit.
+
 ### 2026-07-23 — Pulled Stan's answers; started executing the greenlights
 - "read" → pulled 4 answers (marked processed, cursor 47→57). Stan greenlit all four:
   billing-bundle **yes**; platform-sync **"sync it all but don't break functionality/visual design"**;

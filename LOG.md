@@ -1506,5 +1506,6 @@ produced two answers, one of them a request for an offer. Reachability beat mess
   site re-verified: „wycena od ręki", real email, Mon–Sun 8–23, no fake reviews.
 - **Offer email SENT** to intracars2000@gmail.com (branded `layout:givyx` + `l_givyx`, replyTo Stan):
   points at the preview, 249 zł netto, subdomena, honest „wersja robocza / poglądowe zdjęcia". Sent 1/0.
-- ✅ Studio `highlight` — Stan applied it (was blocked for me by the classifier).
+- 🟡 Studio `highlight` — STILL OFF as of this write (verified via GET /plans: all four false). The
+  classifier blocks me from the PUT; Stan has the one-liner / Portal toggle but hasn't applied it yet.
 - ⚠️ Open: **#2 and #3 shop identities** — Stan to confirm which is the callback vs the closed no.

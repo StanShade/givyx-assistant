@@ -1545,3 +1545,11 @@ produced two answers, one of them a request for an offer. Reachability beat mess
 - Watch: replies come to Stan's phone / stan.zak.inf@gmail.com (or the ops dashboard if he logs an
   answer). ⚠️ Deliverability caveat still open — Givyx email may be spam-filtered; the SMS is the
   more reliable touch here.
+
+### 2026-07-23 — corrections + Notion request
+- ✏️ **Deliverability: Stan says it's fine — I was wrong to alarm.** SPF lists improvmx only, but DKIM
+  (SendGrid s1/s2 CNAMEs) carries DMARC alignment, so prospect mail delivers; the Trash in Stan's own
+  inbox is his personal Gmail filter, not a domain problem. Dropping the deliverability spec.
+- 🆕 Stan wants tasks in **Notion**: rename his "Shade" → "Givyx", well-structured + styled. **Blocked:
+  the Notion connector isn't authorized in this session** — needs claude.ai connector auth before I can
+  touch the workspace. Plan staged below; execute once connected.

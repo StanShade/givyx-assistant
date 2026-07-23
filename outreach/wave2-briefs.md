@@ -191,8 +191,7 @@ De Vito is here only if you want a broken-site hook instead of an ownership one.
 ---
 
 ## Intra Cars — SMS to send from Stan's phone (after the offer email, 2026-07-23)
-**To: 509 541 377 (mobile)** — sent after the tiered offer email went to intracars2000@gmail.com.
+**To: 509 541 377 (mobile).** No site link in the SMS by design (Stan) — it points to the email,
+which carries the preview link. Leads with 149-for-the-site + everything-adjustable.
 
-> Dzień dobry, tu Stan z Givyx — rozmawialiśmy dziś przez telefon. Wysłałem na Wasz mail gotowy podgląd strony dla Intra Cars (z Waszym adresem, usługami i godzinami). Można go obejrzeć od razu tutaj: https://intracars.givyx.com/ — napiszcie proszę krótko, co o tym myślicie. Będę wdzięczny za każdą opinię. Pozdrawiam, Stanisław, Givyx Kraków
-
-*Why the link is in the SMS too: the emailed offer may be sitting in their spam (Givyx mail is being junked — see LOG 2026-07-23), so the SMS gives them a direct, one-tap way to the preview regardless.*
+> Dzień dobry, tu Stan z Givyx — rozmawialiśmy dziś przez telefon. Wysłałem Wam na maila gotowy podgląd strony dla Intra Cars, z linkiem do obejrzenia. Cena to 149 zł za samą stronę, a wszystko można dopasować i zmienić pod Was. Zerknijcie proszę na maila i napiszcie krótko, co o tym myślicie. Pozdrawiam, Stanisław, Givyx Kraków

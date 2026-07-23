@@ -21,6 +21,17 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 - Note for future searches: **all Givyx mail is in Gmail TRASH** (Stan trashes probes); this lead
   notification is the exception that reached INBOX. Search lead notifications with `in:anywhere`.
 
+### 2026-07-23 — Booking calendar spec written (Ref 28)
+- Booking audit landed. Key insight: booking = **sibling of the existing Forms feature** (~80% reuse —
+  submit pipeline, Postgres store pattern, owner-email notifier, Portal inbox, manifest widget, Meta
+  Lead) + two net-new things: a time dimension (weekly hours + derived slots — nothing exists today)
+  and an appointment lifecycle. Services already exist as `Offering` (kind=Service).
+- Wrote the spec: `claudeBrain/.../specs/2026-07-23-booking-calendar-mvp.md`. MVP = "request a slot,
+  owner confirms" (async, no locking). Baked the audit's defaults (weekly hours, one global slot length,
+  phone+optional email, email-only, owner-only cancel, coexist with the callback form, fire Meta Lead,
+  **store UTC + per-location tz from day 1**). Filed one material decision: `booking-capacity`
+  (single queue vs multi-bay — workshops often have several lifts). Ready for an implementing agent.
+
 ### 2026-07-23 — Ref 23 implemented on a branch; billing handed off; booking + platform-sync in flight
 - Ref 23 (Stripe-side price archival) built by an agent on branch `feat/stripe-price-archival`
   (Givyx.Api `7dc7cda`, NOT pushed). Verified the diff myself: gateway passed at the real callsite,

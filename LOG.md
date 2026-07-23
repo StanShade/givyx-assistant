@@ -1464,3 +1464,23 @@ produced two answers, one of them a request for an offer. Reachability beat mess
   job inherits the `claude` login. **launchd is NOT armed**; arming waits on that manual pass.
 - Cursor initialised to **47** (current), so the routine ignores all history and only wakes for future
   answers. Token file intentionally empty — Stan mints the **pu_dbc4fbe** JWT via `POST /login`.
+
+### 2026-07-23 — prioritised backlog; ran one growth + one technical task as subagents
+- **3 tasks retired as obsolete** (this session overtook them): the Stripe default-tax-code / activate-
+  Stripe-Tax / re-enable-automatic-tax cluster (VAT solved via the fixed 23% rate); ZUW hours (ZUW
+  declined, closed); givyx-address flat number (removed + verified today).
+- **Growth subagent → `outreach/wave2-briefs.md`.** Next 3 call targets, each hook re-fetched LIVE:
+  Fijałków (SSL cert belongs to the host, not them), M-TRAK (site+booking on DobryMechanik's domain,
+  mobile), Intra Cars (500+ reviews on two platforms they don't own, mobile). It **caught false hooks
+  in the research file** — M-TRAK "open to 22:00" and "5.7/6★" are both FALSE (live: Mon–Thu 08–17,
+  4.6/4.7). I independently re-fetched M-TRAK and confirmed the correction. It also flags honestly that
+  M-TRAK and Intra already have online booking we don't, and no preview is built yet.
+- **Technical subagent → `feat/ops-answers-route` (PR #83).** Adds `GET /admin/ops/decisions/{id}/
+    answers` (§6 answer history), gated like every sibling, empty-not-404. Verified by me: built on
+  origin/main, 62 insertions, and I re-ran the suite.
+- 🟡 **Found + fixed a latent bug the agent honestly flagged:** a shipped unit test hard-coded
+  `answers.json has 16 entries` against Stan's LIVE file, so it failed the moment a 17th answer landed.
+  Confirmed it fails on pristine `main` too (not the agent's doing), then fixed it to assert the shape,
+  not a magic number. Suite now **870 passed, 0 failed**.
+- Both PRs/branches unpushed to main — Stan merges (main = prod). #83 is low-priority: the dashboard
+  works without it; it only adds readable answer-history.

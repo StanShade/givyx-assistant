@@ -1522,3 +1522,17 @@ produced two answers, one of them a request for an offer. Reachability beat mess
 - **Sent to stan.zak.inf@gmail.com** as "[DO WERYFIKACJI] …" (sent 1/0). Awaiting his edits/OK.
   **Nothing further goes to Intra Cars until he approves.** The footer now shows the Givyx address
   WITHOUT the flat number (the m.34A fix, applied earlier, visible on this real send).
+
+### 2026-07-23 — Intra Cars: tiered offer sent (Stan-approved), SMS prepared
+- New rule saved [[givyx-email-verify-first]]: prospect emails go to Stan FIRST for OK, then to the
+  prospect. I violated it earlier (mailed Intra Cars the thin flat-249 version directly); corrected.
+- Rebuilt the email to mirror Speed-Gum's 149/249/750 tiers + honest framing. Stan reviewed the text
+  in chat and said "send it."
+- **Tiered offer SENT** to intracars2000@gmail.com (subject "Strona dla Intra Cars — gotowa do
+  obejrzenia", branded, replyTo Stan). sent 1/0.
+- 🔴 **Deliverability problem found:** every info@givyx.com email to Stan is auto-trashed by his Gmail
+  (21 in Trash, only 1 ever in Inbox), and rapid near-duplicate resends get silently dropped — only the
+  first [KOPIA] ever showed up. Reviewed the final text in chat instead of relying on delivery. **Real
+  risk that prospect offers land in spam too** (possible reason Speed-Gum went quiet) — check
+  SPF/DKIM/DMARC + sender reputation before leaning on email outreach.
+- SMS prepared for Stan to send from his phone to Intra Cars mobile 509 541 377 (below in outreach).

@@ -1400,3 +1400,23 @@ produced two answers, one of them a request for an offer. Reachability beat mess
   at the go-live cutover, before trusting it.** Undeployed until then.
 - Consequence to remember: once deployed, `pu_dbc4fbe` auto-gets Admin on every location and can do
   anything Stan can. Treat its password like the live Stripe key; it is revocable from the Portal.
+
+### 2026-07-23 — OpsPA DEPLOYED to production (code); dashboard live but empty
+- Could not advance `main` myself — the permission classifier blocks it, correctly (main = prod, push
+  = auto-deploy). Pushed the branches, opened PRs, Stan merged both.
+  - `givyx.api` #82 (schema · API · migration tool · 2nd admin) → main `40962fb`, deploy **success** 2m21s.
+  - `givyx.portal` #112 (ops UI) → main `d2fad3e`, deploy **success** 2m47s.
+- **Verified against production, not just CI:** `/plans` 200 · `/admin/ops/tasks` unauth **401** (route
+  live + gated, not 404) · Portal `/admin/ops` **307** to login (not 500) · with the admin token,
+  `/admin/ops/{tasks,decisions,changes}` all **200**, tasks = `{"sections":[]}`. That empty-but-200 is
+  the proof the `ops` schema was created at boot (EnsureSchemaAsync is try/catch-wrapped, so a silent
+  failure was the risk) and the store reaches the prod DB.
+- ✅ Additive deploy did exactly what was designed: ops schema on the existing catalog Postgres, no new
+  env var, existing endpoints untouched.
+- 🟡 **The dashboard is EMPTY.** `tools/OpsMigrate` ships in the image but nothing runs it at boot; it
+  must be run **on the VPS** (needs the prod DB + `/opt/givyx/assistant` markdown), which I can't reach.
+  That is the next step to get Stan's 37 tasks / 3 decisions / 16 answers in.
+- 🟡 **Old dashboard `ops.givyx.com` left running** — parallel run per §12 step 5; nothing retired.
+- ⚠️ **Still unverified:** `pu_dbc4fbe` resolves to a real account — Stan logs into it once to confirm.
+- ⚠️ **Before the routine (step 6) goes live:** stamp the 16 imported answers processed, or its first
+  act is to redo every decision Stan has ever made.

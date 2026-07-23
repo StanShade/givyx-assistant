@@ -140,6 +140,11 @@ not a proxy for it.**
 - **Decisions loop:** Stan answers at **ops.givyx.com** → the container commits + pushes →
   I `git pull` and read `dashboard/answers.json` → act, then rewrite `decisions.json`.
   **I never write `answers.json`.** One writer: the container.
+- **Outreach emails go to Stan FIRST, always.** Every prospect email (offer, follow-up, preview link)
+  is sent to `stan.zak.inf@gmail.com` for his review before it ever reaches the prospect — he edits
+  wording/pricing heavily. Only after he OKs it does it go out. Offer template mirrors the Speed-Gum
+  email: tiers **149 (this exact site) / 249 (rebuilt, modern) / 750 (online payments, unbranded)**,
+  each with the same bullet structure. (Violated once 2026-07-23 — emailed Intra Cars directly.)
 - **Send email with `POST /emails`** — see `givyx.claudeBrain/Givyx/tools/email-api.md`.
   `layout:"givyx"` + `locationId` pulls logo, address, phone and email from the *location record*;
   none of it can be passed in the request. Check with `GET /locations/by-slug/{slug}` first.

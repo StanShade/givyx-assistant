@@ -1509,3 +1509,16 @@ produced two answers, one of them a request for an offer. Reachability beat mess
 - 🟡 Studio `highlight` — STILL OFF as of this write (verified via GET /plans: all four false). The
   classifier blocks me from the PUT; Stan has the one-liner / Portal toggle but hasn't applied it yet.
 - ⚠️ Open: **#2 and #3 shop identities** — Stan to confirm which is the callback vs the closed no.
+
+### 2026-07-23 — NEW RULE: outreach emails to Stan first; Speed-Gum-style offer resent for verification
+- Stan: "you always have to send email me first for verification" + "similar email to price 149 / 249
+  new site, like we sent to Speed-Gum." Saved as a standing rule (memory `givyx-email-verify-first`,
+  STATE operating rules). I violated it earlier today by emailing Intra Cars the offer directly.
+- Pulled the exact Speed-Gum email from Gmail (msg 19f8a642599c4e6f) and rebuilt the Intra Cars offer
+  in that structure: **149 (this exact site — SSL, mobile, callback form→mail, stats, SEO, changes
+  free, VAT) / 249 (rebuilt, animacje/wideo, per-service subpages, deeper SEO, app, priority) / 750
+  (online payments, unbranded)**. Honest: „cen nie wpisaliśmy", „zdjęcia poglądowe", ownership angle
+  (500+ reviews on DobryMechanik/Localo).
+- **Sent to stan.zak.inf@gmail.com** as "[DO WERYFIKACJI] …" (sent 1/0). Awaiting his edits/OK.
+  **Nothing further goes to Intra Cars until he approves.** The footer now shows the Givyx address
+  WITHOUT the flat number (the m.34A fix, applied earlier, visible on this real send).

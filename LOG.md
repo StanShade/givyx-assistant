@@ -9,6 +9,97 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-07-23 — ✅ Lead path RE-PROVEN E2E on a current live form (Ref 13, P0)
+- Notion Ref 13 note claimed "no submission has ever flowed through a form". Verified instead of
+  assuming (hard-won lesson #5). Fired a real browser submit through **dwserwis.givyx.com/kontakt**:
+  name marked `TEST — E2E lead-path check, ignore (nie oddzwaniać)`, phone `000000000`, service Inne.
+- Front-end returned the success state ("Dziękujemy! Oddzwonimy do 15 minut…"), and a **tenant-branded**
+  notification email (subject `New "Oddzwonimy — callback" submission — D.W. Serwis`, from info@givyx.com)
+  landed in Stan's Gmail **INBOX** (not spam, not trash), unread+important, within seconds — carrying the
+  exact submitted fields. Path is live: form → lead recorded → notify email to the configured address.
+- Notion Ref 13 → **Done**. Leftover TEST lead sits in the dwserwis form log — Stan can archive it.
+- Note for future searches: **all Givyx mail is in Gmail TRASH** (Stan trashes probes); this lead
+  notification is the exception that reached INBOX. Search lead notifications with `in:anywhere`.
+
+### 2026-07-23 — Ops answer-pickup: shelved the launchd routine for a manual trigger (Ref 41, P1)
+- Decision (Stan): don't arm the hourly launchd job (its untested risk was `claude -p` auth under
+  launchd). Instead a manual loop: Stan answers decisions on the dashboard → writes "read" → Claude
+  pulls them **read-only** via the scoped routine token (`DRY_ONLY=1 bash ops/routine/pickup-answers.sh`,
+  which skips the launchd claude/commit/mark-processed step). Cursor advances locally so answers don't
+  re-surface; no API writes, no background job.
+- Enabler still needed: Stan mints the `pu_dbc4fbe` routine token once into `~/.givyx/ops-routine.token`
+  (his password). The old token expired (401 in the routine log) and its file is gone; cursor at 47.
+- Note: my ad-hoc admin-token curl to `/admin/ops/decisions` is classifier-blocked, but the routine
+  **script's** curl with the routine token is not (it polled fine until the token expired) — so the
+  read path is the routine token via the script, not the admin JWT. → Ref 41 Done (closed by decision).
+
+### 2026-07-23 — Studio highlight live (Ref 6, P0)
+- Stan toggled Studio as the recommended tier in the Portal (/admin/plans). Verified live:
+  `GET api.givyx.com/plans` → `studio: highlight=true`, all other tiers false. Pricing page now
+  recommends Studio. → Done.
+
+### 2026-07-23 — Confirmed archiving a price doesn't reprice subs (Ref 24, P1) + triaged the rest
+- Ref 24: verified against Stripe docs — "If you archive a price, any existing subscriptions that use
+  the price remain active until they're canceled." So archiving does NOT reprice/cancel existing subs;
+  our `PlanCatalogProvider.TierForStripePriceAsync` already resolves archived price ids to their tier.
+  Caveat: archiving deactivates payment links on that product — non-issue (links are fresh + 24h). → Done.
+- Tried to file ops-dashboard decisions for Stan-blocked items via the admin token; the **classifier
+  blocked the token call** (as designed — STATE "Never widen my own permissions"). So I can't POST to
+  /admin/ops/decisions from here. Fallback: surfaced the asks in the Notion task Notes + set In progress.
+- Set **In progress + NEEDS-STAN note**: Ref 6 (enable Studio highlight in Portal /admin/plans — API
+  PUT classifier-blocked) · Ref 27 (call M-TRAK 730 716 780). Left untouched: 11/12 (awaiting reply),
+  15 (downstream of a reply), 41 (already In progress, needs token mint).
+- Remaining are heavier engineering, not quick wins: billing (21/22/23/25 — spec+agent, serialize,
+  Stan greenlight) and product P2 (28/30/31/32/33/34/35/36). None are blocked on a one-line answer.
+
+### 2026-07-23 — Per-site checklist split into two gates (Ref 26, P1)
+- `READINESS.md` "MUST-DO per new client site" buried `NotifyEmails` (the pre-outreach step) in one
+  list with go-live items. Split it: **Gate 1 (before the preview link/SMS reaches the prospect)** =
+  set NotifyEmails + test one real submission and confirm the email; the link doesn't go out until it
+  passes. **Gate 2 (go-live proper)** = scoped Owner login, noindex→false, human publish, domain.
+- Closes the loophole behind the 2026-07-21 incident (all 3 forms had empty NotifyEmails with an SMS
+  already out). Also refreshed the Verdict line to reflect the lead path is now proven (Ref 13).
+
+### 2026-07-23 — Runbook: GHCR packages default to private (Ref 19, P1)
+- `deploy.sh` pulls the image anonymously (no `docker login` on the VPS). A **new** GHCR package is
+  created Private, so a brand-new service's first deploy fails `denied`/`unauthorized` until the
+  package is flipped Public — existing services are already public and unaffected.
+- Fixed docs (givyx.ops `cfc2930`, pushed, docs-only): added a CLAUDE.md §10 troubleshooting entry
+  (symptom + per-package fix: Package settings → Change visibility → Public) and corrected the
+  registry row that implied packages become public automatically.
+
+### 2026-07-23 — metrics.givyx.com auth mismatch = stale docs, not a hole (Ref 20, P1)
+- Runbook (CLAUDE.md) + README claimed `metrics.givyx.com` sits behind Caddy `basic_auth` with a
+  `BESZEL_ADMIN_HASH` in `env/caddy.env` (username `admin`). The actual Caddyfile block has **no**
+  basic_auth — it just proxies `beszel:8090`, and that hash is referenced only in the docs.
+- Verified before alarming (lesson #5): live `metrics.givyx.com` returns 200 = the Beszel SPA shell,
+  and `/api/collections/systems/records` returns `{"items":[],"totalItems":0}` — PocketBase's
+  auth-gated empty response. So **no data is exposed**; Beszel authenticates itself. The mismatch is
+  a documentation defect, and §9's password-reset procedure (edit env/caddy.env) was inert/misleading.
+- Fixed (givyx.ops `c0de41f`, pushed, docs-only → no deploy): rewrote CLAUDE.md §9 to the real
+  PocketBase superuser/users reset flow (`docker exec beszel /beszel superuser upsert …`, and the
+  `/_/` admin for the Hub `users` account), sourced from beszel.dev/guide/user-accounts; corrected
+  the endpoints table, dir tree, bcrypt note, and both README lines.
+
+### 2026-07-23 — ✅ Fixed the apply-ops silent-success retry bug (Ref 18, P1)
+- Root cause: `apply-ops.sh` did `git pull --ff-only` (advancing HEAD to NEW_SHA) *before* running
+  actions. If an action failed, the job went red but HEAD stayed at NEW_SHA — so a re-run computed
+  `OLD_SHA == NEW_SHA`, hit the "no changes, exit 0" branch, and **reported success having done
+  nothing**. The only recourse was pushing an empty commit (one of the three traps in STATE).
+- Fix (givyx.ops `d98b533`, pushed): record the last *fully-applied* SHA in `logs/last-applied.sha`,
+  diff from it (not from pre-pull HEAD), and write the marker **only** after all actions succeed. A
+  failed run leaves the marker behind → a plain re-run re-applies `marker..HEAD`. Added a base-SHA
+  existence guard (falls back to pre-pull HEAD if history was rewritten) and `logs/` to `.gitignore`.
+- Verified with a 4-scenario git simulation (fresh apply / apply fails / retry re-applies / true
+  no-op) — all pass. shellcheck + `bash -n` clean. `apply-ops.sh` isn't a workflow-watched path, so
+  the push doesn't deploy; the new script activates on the next apply invocation.
+
+### 2026-07-23 — Preview copy sweep clean (Ref 37, P2)
+- Ran `verify_copy.py` on all 5 built/live previews (dwserwis, intracars, oponyifelgi, speedgum,
+  tlumiki): **8,356 strings, all green** — no unclaimed service, no invented price, no `cennik`
+  without prices. Notion Ref 37 → Done. The 4 remaining head configs (allcars, automotomax,
+  fijalkow, mtrak, piekara) have no built demo, so there's nothing live to sweep for them.
+
 ### 2026-07-17 — Growth system established
 - Discovered current state: platform solid, plans shipped, payments mid-build, 0 paying.
 - Launched competitor landscape research (AI builders + subscription agencies + conversion patterns).

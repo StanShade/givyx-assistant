@@ -27,12 +27,23 @@ Gut-check done 2026-07-18. Status of every "can we actually deliver + is this cl
 | Own-domain EMAIL | ❌ don't promise | we don't host email |
 | Scale to ~10 tenants | ✅ | No hard blocker. Watch: 32K page ceiling (non-issue single-locale), noindex flip is MANUAL at launch, deploy is manual human click |
 
-## MUST-DO per new client site (onboarding checklist — from tech audit)
-1. Set the callback form's **NotifyEmails** (owner + Stan) — else leads land silently. TEST one real submission → confirm email arrives.
-2. Assign the **owner a scoped Portal login** (Owner/Admin role) so they see leads + analytics.
-3. **Flip SEO noindex → false** at go-live (manual; forget = invisible in Google).
-4. **Human publish**: deploy_to_production in Portal (agents blocked).
-5. Custom domain: client sets A record → VPS; add Caddy block + redeploy (or start on slug.givyx.com).
+## MUST-DO per new client site — TWO GATES (order matters)
+
+The moment a prospect gets the preview link, the callback form is **live and advertised**, and it
+promises a 15-minute callback. So lead delivery must be **proven before outreach** — not deferred to
+go-live. (Caught the hard way 2026-07-21: all 3 preview forms had `NotifyEmails` empty with an SMS
+already out. Re-proven E2E on a current form 2026-07-23.)
+
+### Gate 1 — BEFORE the preview link / SMS reaches the prospect
+1. Set the callback form's **NotifyEmails** (owner + Stan) — else leads land silently.
+2. **TEST one real submission → confirm the notification email arrives** (inbox, not spam).
+   The link/SMS does not go out until this passes.
+
+### Gate 2 — at go-live proper (client said yes)
+3. Assign the **owner a scoped Portal login** (Owner/Admin role) so they see leads + analytics.
+4. **Flip SEO noindex → false** (manual; forget = invisible in Google).
+5. **Human publish**: deploy_to_production in Portal (agents blocked).
+6. Custom domain: client sets A record → VPS; add Caddy block + redeploy (or stay on slug.givyx.com).
 
 ## Roadmap (not blocking Monday, build into platform later)
 - SMS/push lead notification (email-only is fragile for "15 min callback" promise) — fits paid-tier strategy.
@@ -41,4 +52,5 @@ Gut-check done 2026-07-18. Status of every "can we actually deliver + is this cl
 
 ## Verdict
 Creative + core platform are READY for a Monday test. The single must-do is per-site lead
-notification (being verified live now). Then: publish Intra Cars → send ONE SMS as a learning test.
+notification — the path is proven (E2E 2026-07-23), so per site it's just Gate 1 above before any
+link goes out. Then: publish → send ONE SMS as a learning test.

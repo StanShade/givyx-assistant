@@ -1420,3 +1420,24 @@ produced two answers, one of them a request for an offer. Reachability beat mess
 - ⚠️ **Still unverified:** `pu_dbc4fbe` resolves to a real account — Stan logs into it once to confirm.
 - ⚠️ **Before the routine (step 6) goes live:** stamp the 16 imported answers processed, or its first
   act is to redo every decision Stan has ever made.
+
+### 2026-07-23 — filled the production ops dashboard (tasks + decisions) over the API
+- "Fill it all by yourself": the prod DB is unreachable (givyx-db publishes no port) and I have no
+  SSH — so `OpsMigrate apply` (direct DB) can't run from here. Instead I added an **`api` mode** to
+  OpsMigrate that reuses the tested parser but writes through the deployed, admin-gated API
+  (`feat/ops-migrate` `58edb83`, pushed as a branch — a local dev tool, not deployed).
+- **Done and independently verified in production:** 37 tasks (P0 14 · P1 13 · P2 10) + 3 open
+  decisions (speedgum-reply, givyx-address, dwserwis-followup). Re-read straight from the API, not the
+  tool's own report; a continuation-line body survived intact (3 newlines). **Idempotent** — second
+  run created 0, everything already present (dedup by task body / decision slug, no random-id dupes).
+- 🔴 **The answers could NOT go via the API, by the endpoint's design.** `POST /decisions/{id}/answer`
+  404s unless the decision still exists and takes the question/timestamp from the live decision — so
+  the 16–17 historical answers (most referencing retired decisions) cannot round-trip through it. The
+  tool refuses to fake them (no synthetic closed decisions) and says so. **They remain safe, frozen in
+  `answers.json` in git (§9).** Getting them into the DB needs `apply` run where the DB is reachable.
+- ⚠️ **We are now in the parallel-run window with TWO dashboards.** New one (p.givyx.com/admin/ops):
+  tasks + open decisions, no answer history yet, routine not live. Old one (ops.givyx.com): full
+  history, still the mechanism git reads. **Answer on ONE only** until the answers are migrated and we
+  cut over — else the two diverge, which is the one-writer problem OpsPA exists to kill.
+- Note: `answers.json` grew 16 → 17 (savedAt 2026-07-23) since yesterday — the tool counts the live
+  file, not a fixed number, so that surfaced correctly rather than being assumed.

@@ -32,6 +32,13 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   layers for Ref 21/22/23/25 **before** writing the spec — don't redo shipped work. Agent running.
 - Recorded greenlights + plan on the other three (34/35, 28, 36) in Notion. Execution guardrail for
   billing: implement on a branch + PR, no auto-deploy to live billing; serialized (never parallel).
+- Billing audit landed (read-only agent). Findings: self-serve platform billing OFF, 0 paying platform
+  clients = readiness work, not a repair. Ref 23 (Stripe archival) is independent + zero-risk. Ref 21 =
+  the webhook already computes the grandfathered amount then discards it (AppPlan has no fields); unblocks
+  22 & 25. Wrote the spec: `claudeBrain/.../specs/2026-07-23-platform-grandfathering-billing-hardening.md`.
+  Two genuine product questions surfaced → filed as decisions `grandfather-manual-billed-amount` and
+  `grandfather-admin-screen` (with recommended defaults). Holding implementation until Stan answers those
+  two / says build-to-defaults; Ref 23 can start independently on his go.
 
 ### 2026-07-23 — Cleared the board: authored decisions for every remaining blocker
 - Discovery: the **routine token (pu_dbc4fbe) can AUTHOR decisions** — `POST /admin/ops/decisions`

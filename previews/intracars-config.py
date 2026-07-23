@@ -5,9 +5,7 @@ building the intracars.givyx.com preview. Values marked  # ⚠️CONFIRM  are be
 from public directory data and should be verified with the owner before go-live
 (the preview SMS already frames this as an adjustable draft).
 
-VERIFIED 2026-07-18: 523 Google reviews, 4.1★, open 7 DAYS 8:00-23:00, al. 29 Listopada 153, 31-406,
-email intracars2000@gmail.com. NOTE: they already have TWO microsites (intra-cars.localo.site +
-intra-cars.dobrywarsztat.info, the latter WITH online booking) — do NOT pitch "you have no website".
+Real public facts used: 424+ Google reviews, 4.1★, open to 23:00, al. 29 Listopada 153,
 autoserwis + wulkanizacja, phones 12 311 02 01 / 509 541 377.
 """
 
@@ -22,25 +20,25 @@ REGION = "małopolskie"
 PHONE_DISPLAY = "12 311 02 01"
 PHONE_FULL = "+48 12 311 02 01"
 PHONE_TEL = "tel:+48123110201"
-EMAIL = "intracars2000@gmail.com"  # VERIFIED public (2026-07-18)
+EMAIL = "intracars2000@gmail.com"   # VERIFIED public — cylex/directory listings + search, 2026-07-23
 MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Intra+Cars+al.+29+Listopada+153+Krak%C3%B3w"
 
-HOURS = [                          # VERIFIED: open 7 days a week 8:00-23:00
+HOURS = [                          # VERIFIED 7 days: DobryMechanik + Localo + search all agree
     ("Poniedziałek – Niedziela", "8:00 – 23:00"),
 ]
-OPEN_LINE = "Otwarte codziennie do 23:00"
+OPEN_LINE = "Otwarte codziennie do 23:00"   # day-agnostic — a static site must never say "dziś"
 
-# ---- trust strip (VERIFIED public facts, 2026-07-18) ----
+# ---- trust strip (real public differentiators) ----
 TRUST = [
-    ("523", "opinii w Google"),
+    ("424+", "opinii w Google"),
     ("4,1 ★", "średnia ocena"),
-    ("7 dni", "otwarte codziennie do 23:00"),
+    ("do 23:00", "otwarte także wieczorem"),
 ]
 
 # ---- services ----
-# Prices are NOT published by Intra Cars anywhere we could verify, so every price column is
-# "wycena od ręki" (the standing rule: never print a price the owner didn't set). The earlier
-# "od X zł" values were illustrative guesses and were removed 2026-07-23 before any offer went out.
+# No prices: Intra Cars publishes none we can verify, so every column is "wycena od ręki"
+# (the standing rule — never print a price the owner didn't set). Prior "od X zł" values were
+# illustrative guesses and were removed 2026-07-23 before the offer email.
 SERVICES = [
     ("Wulkanizacja i opony", "wycena od ręki",
      "Wymiana, wyważanie, przechowalnia.",
@@ -64,12 +62,16 @@ SERVICES = [
 SERVICES_NOTE = "Nie widzisz swojej usterki? Zadzwoń — powiemy od razu, czy pomożemy i ile to kosztuje."
 
 # ---- reviews ----
-# OFF. The four quotes here were FABRICATED (invented names/text presented as Google reviews) and
-# were removed 2026-07-23 before any offer went out. Intra Cars' real rating (4,1★ / 500+ opinii) is
-# genuine but we have no permission-cleared quote text, so the section is dropped rather than faked.
-# The honest rating + count belongs in the outreach message, with a link to their Google listing.
-SHOW_REVIEWS = False
+# Honest reviews section: no fabricated named testimonials. We show the real
+# aggregate Google rating and link to the live Google listing. The owner can add
+# real, hand-picked quotes here (list of (body, author, stars)) after signing.
 REVIEWS = []
+REVIEWS_BADGE = "Opinie z Google"
+REVIEWS_SUBHEAD = "4,1 / 5 — średnia z ponad 424 opinii w Google"
+GOOGLE_REVIEWS_CTA = "Zobacz opinie w Google"
+# No stable Google Maps place/CID URL is publicly exposed for this listing, so we
+# link to a Maps search for the business, which surfaces the profile and reviews.
+GOOGLE_REVIEWS_URL = MAPS_URL
 
 # ---- callback form ----
 FORM_SLUG = "oddzwonimy"
@@ -79,6 +81,8 @@ FORM_SUB = "w godzinach pracy"
 FORM_SUCCESS = "Dziękujemy! Oddzwonimy do 15 minut w godzinach pracy."
 FORM_SUBMIT = "Zamów rozmowę"
 FORM_FOOTER = "Wysyłając numer zgadzasz się na kontakt telefoniczny w sprawie Twojego zapytania."
+# Leads must reach a human before this link is ever advertised (P0 lesson: forms went live empty).
+FORM_NOTIFY_EMAILS = "stan.zak.inf@gmail.com"
 
 # ---- photos, theme, SEO: keep from autoserwis config.py (same look) ----
 # Only override SEO strings:
@@ -88,7 +92,34 @@ SEO_DESC = ("Autoserwis i wulkanizacja w Krakowie na al. 29 Listopada (Prądnik 
             "Zadzwoń: +48 12 311 02 01.")
 SEO_LANG = "pl"
 SEO_NOINDEX = True   # flip to False at go-live (after owner confirms details)
-# Empty on purpose: Intra Cars publishes no prices we can verify, so schema asserts no priceRange.
-# (Prior "40–1500 zł" was invented and removed 2026-07-23. base build_seo reads CFG.PRICE_RANGE
-# directly, so the key must exist — empty string emits no number rather than a false range.)
-PRICE_RANGE = ""
+PRICE_RANGE = ""     # empty on purpose — no verifiable prices, so schema asserts no range
+                     # (prior "40–1500 zł" was invented, removed 2026-07-23)
+
+# ---- photos (Unsplash, host allowlisted in givyx.websites) — kept from autoserwis ----
+def u(pid, w, h=None):
+    hp = f"&h={h}" if h else ""
+    return f"https://images.unsplash.com/{pid}?q=75&w={w}{hp}&auto=format&fit=crop"
+
+HERO_BG = u("photo-1625047509168-a7026f36de04", 1800)   # dark workshop bay
+VISIT_PHOTO = ("photo-1615906655593-ad0386982a0f", 900, 700)  # mechanic at engine, cropped landscape
+GALLERY = [  # (unsplash id, caption) — all cropped to uniform 4:3 (800x600)
+    ("photo-1615906655593-ad0386982a0f", "Diagnostyka pod maską"),
+    ("photo-1625047509168-a7026f36de04", "Hala serwisowa"),
+    ("photo-1530046339160-ce3e530c7d2f", "Narzędziownia"),
+    ("photo-1487754180451-c456f719a1fc", "Wymiana oleju"),
+    ("photo-1486262715619-67b85e0b08d3", "Serwis osprzętu silnika"),
+    ("photo-1632823469850-2f77dd9c7f93", "Dbałość o detale"),
+]
+GALLERY_W, GALLERY_H = 800, 600
+
+# ---- theme / palette — kept from autoserwis ----
+BG0 = "#0B0E11"      # page background
+BG1 = "#10141A"      # alternate section
+CARD = "#151B22"     # card surface
+BORDER = "#242C36"
+FG = "#F2F4F6"
+MUTED = "#9AA6B2"
+ACCENT = "#F5A524"        # amber — accents, prices, stars
+ACCENT_INK = "#14181D"    # dark text on amber buttons
+BTN_FORM = "#E8590C"      # form submit bg (white text needs darker orange)
+OK_GREEN = "#4ADE80"

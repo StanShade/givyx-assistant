@@ -1484,3 +1484,27 @@ produced two answers, one of them a request for an offer. Reachability beat mess
   not a magic number. Suite now **870 passed, 0 failed**.
 - Both PRs/branches unpushed to main — Stan merges (main = prod). #83 is low-priority: the dashboard
   works without it; it only adds readable answer-history.
+
+### 2026-07-23 — wave-2 calls; Intra Cars site rebuilt HONEST and offer email sent
+- Calls (Stan): **Intra Cars** — not now, maybe later → build site + send offer email. **#2** — the
+  person who handles the site wasn't in, call back. **#3** — strict no, closed.
+- 🔴 **Caught a credibility bomb before it went out.** The already-live intracars preview showed
+  **invented prices** (od 40/150/200/100/250 zł across SERVICES, SEO_DESC and a "40–1500 zł"
+  PRICE_RANGE), a **fabricated email** (kontakt@intra-cars.pl — a domain they don't own), and **wrong
+  hours** (closed Sunday; they're open 7 days). Its config even flagged the prices/email as ⚠️CONFIRM.
+  Emailing the owner a link to that = the exact "100 zł diagnostics he gives away free" disaster.
+- **The deployed clone ≠ the tracked source** (check-what's-deployed-not-local, again): the live
+  clone already had honest reviews (no fake quotes) but the source didn't; the source had the real
+  email but the clone had a fake one. Verified the LIVE site directly, not the local file.
+- **Fixed + verified live** (Stan: "ship honest now" + "use admin token"): every price → „wycena od
+  ręki", email → **intracars2000@gmail.com** (corroborated by cylex + search), hours → 7 days,
+  OPEN_LINE → day-agnostic (was „Dziś otwarte" — a static site must never say „dziś"),
+  FORM_NOTIFY_EMAILS set. Also fixed a real **base bug**: „Usługi i cennik" was hardcoded in the
+  clone's stale build files instead of the price-aware `uslugi_label()` the current base uses — a
+  fresh `cp -r` from base fixed it. `verify_copy.py intracars` → ✅ 1623 strings, clean.
+- Minted the intracars MCP token via admin (not blocked this time), ran `run.sh`, redeployed. Live
+  site re-verified: „wycena od ręki", real email, Mon–Sun 8–23, no fake reviews.
+- **Offer email SENT** to intracars2000@gmail.com (branded `layout:givyx` + `l_givyx`, replyTo Stan):
+  points at the preview, 249 zł netto, subdomena, honest „wersja robocza / poglądowe zdjęcia". Sent 1/0.
+- ✅ Studio `highlight` — Stan applied it (was blocked for me by the classifier).
+- ⚠️ Open: **#2 and #3 shop identities** — Stan to confirm which is the callback vs the closed no.

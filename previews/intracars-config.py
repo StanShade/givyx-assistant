@@ -37,21 +37,24 @@ TRUST = [
     ("7 dni", "otwarte codziennie do 23:00"),
 ]
 
-# ---- services (⚠️CONFIRM prices with owner — 'od' values are illustrative) ----
+# ---- services ----
+# Prices are NOT published by Intra Cars anywhere we could verify, so every price column is
+# "wycena od ręki" (the standing rule: never print a price the owner didn't set). The earlier
+# "od X zł" values were illustrative guesses and were removed 2026-07-23 before any offer went out.
 SERVICES = [
-    ("Wulkanizacja i opony", "od 40 zł / koło",
+    ("Wulkanizacja i opony", "wycena od ręki",
      "Wymiana, wyważanie, przechowalnia.",
      "Sezonowa wymiana opon z wyważaniem, naprawa przebitych opon, wymiana zaworków i czujników TPMS. Prowadzimy też przechowalnię kół — nie musisz targać opon do piwnicy."),
-    ("Wymiana oleju i filtrów", "od 150 zł",
-     "Olej + filtr w 30 minut, na poczekaniu.",
+    ("Wymiana oleju i filtrów", "wycena od ręki",
+     "Olej + filtr na poczekaniu.",
      "Wymiana oleju silnikowego i kompletu filtrów (olejowy, powietrza, kabinowy, paliwa). Używamy olejów zgodnych ze specyfikacją producenta. Zwykle na poczekaniu."),
-    ("Serwis klimatyzacji", "od 200 zł",
+    ("Serwis klimatyzacji", "wycena od ręki",
      "Nabicie, odgrzybianie, test szczelności.",
      "Pełny serwis klimatyzacji: kontrola i uzupełnienie czynnika, test szczelności układu, odgrzybianie, wymiana filtra kabinowego."),
-    ("Diagnostyka komputerowa", "od 100 zł",
+    ("Diagnostyka komputerowa", "wycena od ręki",
      "Odczyt błędów i jasna wycena naprawy.",
      "Profesjonalny odczyt i analiza błędów sterowników (silnik, ABS, airbag, DPF). Mówimy dokładnie co się dzieje i ile będzie kosztować naprawa."),
-    ("Układ hamulcowy", "od 250 zł",
+    ("Układ hamulcowy", "wycena od ręki",
      "Tarcze, klocki, płyn — od ręki.",
      "Wymiana tarcz i klocków, przewodów oraz płynu hamulcowego, naprawa zacisków. Sprawdzimy cały układ i powiemy uczciwie, co wymaga wymiany."),
     ("Mechanika ogólna", "wycena od ręki",
@@ -60,14 +63,13 @@ SERVICES = [
 ]
 SERVICES_NOTE = "Nie widzisz swojej usterki? Zadzwoń — powiemy od razu, czy pomożemy i ile to kosztuje."
 
-# ---- reviews (⚠️REPLACE with the shop's real Google reviews before go-live) ----
-REVIEWS = [
-    ("Szybko, konkretnie i uczciwa cena. Przyjechałem po godzinach — inni już zamknięci, a tu zrobili opony od ręki.", "Marek T.", "★★★★★"),
-    ("Serwis klimatyzacji zrobiony porządnie, bez wciskania dodatkowych usług. Cena taka jak podali przez telefon.", "Agnieszka W.", "★★★★★"),
-    ("Otwarte do 23:00 to ratunek dla pracujących. Wymiana opon w 20 minut, polecam.", "Piotr K.", "★★★★★"),
-    ("Dobra diagnostyka, sympatyczna obsługa. Jedyny minus to spory ruch — warto się umówić.", "Tomasz S.", "★★★★☆"),
-]
-REVIEWS_BADGE = "Opinie z Google"
+# ---- reviews ----
+# OFF. The four quotes here were FABRICATED (invented names/text presented as Google reviews) and
+# were removed 2026-07-23 before any offer went out. Intra Cars' real rating (4,1★ / 500+ opinii) is
+# genuine but we have no permission-cleared quote text, so the section is dropped rather than faked.
+# The honest rating + count belongs in the outreach message, with a link to their Google listing.
+SHOW_REVIEWS = False
+REVIEWS = []
 
 # ---- callback form ----
 FORM_SLUG = "oddzwonimy"
@@ -81,9 +83,12 @@ FORM_FOOTER = "Wysyłając numer zgadzasz się na kontakt telefoniczny w sprawie
 # ---- photos, theme, SEO: keep from autoserwis config.py (same look) ----
 # Only override SEO strings:
 SEO_TITLE = "Warsztat i wulkanizacja Kraków — Intra Cars (Prądnik Czerwony)"
-SEO_DESC = ("Autoserwis i wulkanizacja w Krakowie na al. 29 Listopada. Opony od 40 zł/koło, "
-            "wymiana oleju od 150 zł, diagnostyka od 100 zł. Otwarte do 23:00. "
+SEO_DESC = ("Autoserwis i wulkanizacja w Krakowie na al. 29 Listopada (Prądnik Czerwony). "
+            "Mechanika, wymiana oleju, klimatyzacja, opony. Otwarte codziennie do 23:00. "
             "Zadzwoń: +48 12 311 02 01.")
 SEO_LANG = "pl"
 SEO_NOINDEX = True   # flip to False at go-live (after owner confirms details)
-PRICE_RANGE = "40–1500 zł"
+# Empty on purpose: Intra Cars publishes no prices we can verify, so schema asserts no priceRange.
+# (Prior "40–1500 zł" was invented and removed 2026-07-23. base build_seo reads CFG.PRICE_RANGE
+# directly, so the key must exist — empty string emits no number rather than a false range.)
+PRICE_RANGE = ""

@@ -1553,3 +1553,12 @@ produced two answers, one of them a request for an offer. Reachability beat mess
 - 🆕 Stan wants tasks in **Notion**: rename his "Shade" → "Givyx", well-structured + styled. **Blocked:
   the Notion connector isn't authorized in this session** — needs claude.ai connector auth before I can
   touch the workspace. Plan staged below; execute once connected.
+
+### 2026-07-23 — tasks moved into Notion (Shade → Givyx)
+- Notion connector authorized. Renamed the "💘 Shade" hub page → **"🌐 Givyx"** (cover + intro added;
+  Website/App/Portal subpages kept). Workspace name "Shade" → Givyx is Stan's Settings action (API
+  can't rename a workspace).
+- Built a **Tasks** database (id e1db611f…, data source 9ee3466e…): Task · Priority (P0/P1/P2) ·
+  Status · Area (Growth/Payments/Platform/Ops/Product) · Ref · Notes. Views: Board by Status, Board by
+  Priority, P0 — sales-critical. Seeded **42 tasks** from TASKS.md (done-state + priority + area mapped;
+  obsolete items marked, live threads added). Location recorded in [[givyx-notion-tasks]].

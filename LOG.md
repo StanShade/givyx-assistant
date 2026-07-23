@@ -21,6 +21,33 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 - Note for future searches: **all Givyx mail is in Gmail TRASH** (Stan trashes probes); this lead
   notification is the exception that reached INBOX. Search lead notifications with `in:anywhere`.
 
+### 2026-07-23 — Product-quality benchmark: ~40 sites researched, 10 tasks created (Ref 42)
+- Stan: "focus on product quality." Ran 3 parallel research streams with a hard sourcing rule (every
+  claim from a FETCHED page; unverifiable items flagged, never guessed). Deliverable:
+  `research/2026-07-23-product-quality-benchmark.md`.
+- **Highest-conviction finding:** a **dated per-service cennik with a booking CTA on every line** —
+  reached independently by three sources in two unrelated verticals (MOTOEXPRESSO, Motointegrator,
+  ZnanyLekarz). Polish sites are the most price-transparent in the world; it's a market norm, not a risk.
+- **Biggest quality lever:** design-system discipline (clamp() per token w/ a body floor, inverted
+  tracking, sub-1.0 display leading, 2–3 colours + paired `--x`/`--on-x` tokens, one shadow, one easing,
+  one rhythm) — all free at generation time.
+- **An opening we can own:** 9 of 11 award-winning agency sites have ZERO `prefers-reduced-motion`, 3 have
+  no `<h1>`, one has 399/460 missing alts, 6 of 11 fail 44px tap targets. A generator can beat hand-built
+  agency work on measurable quality.
+- 🔴 **Our pricing claim is false in PLN.** Squarespace serves Polish pricing at 69–120 zł; Durable ~$22.
+  Our 149 zł entry is above both → decision `pricing-positioning-vs-market`. Rec: don't reprice, change the
+  comparison to **Booksy (145 zł netto/mo for booking software alone, no website)**.
+- 🔴 **The competitor we weren't counting: Motointegrator** (Inter Cars — same family as the Intra Cars
+  prospect) already gives ~7,971 PL workshops a free profile with per-service price list + per-line booking,
+  visible 1-star reviews, live hours, amenities and national SEO. Every pitch needs an answer to "why not
+  just use Motointegrator?" → the workshop **owns** the customer, brand and reviews instead of renting placement.
+- **Resolved a contradiction between streams:** registration-plate lookup. Stream 3 said build it (chains
+  do); stream 1 said don't — no independent anywhere has it, it needs a data licence, no verified free PL
+  API. Stream 1 wins; deferred to the 750 tier. Written into the booking spec so it isn't re-litigated.
+- **Created 10 implementation tasks** (cennik, design-system pass, a11y/hygiene baseline, review
+  score+count badge, live open/closed badge, guarantee-in-numbers, WhatsApp channel, UA+EN versions,
+  przegląd/OC reminders, real-premises photography) and folded findings into Ref 28 + Ref 31.
+
 ### 2026-07-23 — Booking calendar spec written (Ref 28)
 - Booking audit landed. Key insight: booking = **sibling of the existing Forms feature** (~80% reuse —
   submit pipeline, Postgres store pattern, owner-email notifier, Portal inbox, manifest widget, Meta

@@ -1385,3 +1385,18 @@ produced two answers, one of them a request for an offer. Reachability beat mess
 - ⚠️ Honest limit, stated without being pressed: **no live API call was ever made.** Every shape is
   type-checked against the API source, not observed. `next dev` proved only that the three routes
   exist and sit behind the auth gate.
+
+### 2026-07-23 — ops routine gets its own admin identity
+- Stan registered a second portal account for the routine and gave me its id: **`pu_dbc4fbe`**
+  (distinct from his own `pu_fff7048` — the first id he pasted WAS his own, which would have defeated
+  the point; caught it and asked again).
+- Added it to `PlatformAdmins.cs` on `feat/ops-routine-admin` (`1e35908`, off `feat/ops-migrate`),
+  with tests: both ids are admins, and they must stay distinct. Full suite green — **863 API + 115
+  MCP** — so nothing assumed a single-admin allowlist.
+- ⚠️ **Could not externally verify the id exists.** The user-lookup routes need the account to already
+  be a location member, which only happens once it becomes a platform admin (`EnsurePlatformAdminsAsync`),
+  and I don't have (and shouldn't have) its token. A wrong id here is harmless (never matches, grants
+  nothing) unless it collided with a real other user — unlikely for a random id. **Confirm it resolves
+  at the go-live cutover, before trusting it.** Undeployed until then.
+- Consequence to remember: once deployed, `pu_dbc4fbe` auto-gets Admin on every location and can do
+  anything Stan can. Treat its password like the live Stripe key; it is revocable from the Portal.

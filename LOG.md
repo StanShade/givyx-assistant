@@ -1536,3 +1536,12 @@ produced two answers, one of them a request for an offer. Reachability beat mess
   risk that prospect offers land in spam too** (possible reason Speed-Gum went quiet) — check
   SPF/DKIM/DMARC + sender reputation before leaning on email outreach.
 - SMS prepared for Stan to send from his phone to Intra Cars mobile 509 541 377 (below in outreach).
+
+### 2026-07-23 — Intra Cars SMS sent (Stan), awaiting reply
+- Stan sent the SMS to 509 541 377 (no site link, points to the email, 149-vs-249 hook, signed
+  Stanisław). **No reply yet.** Intra Cars now a live thread: tiered offer email + SMS out.
+- Live threads awaiting reply: **Speed-Gum** (since 22-07, silent) · **Intra Cars** (23-07, fresh) ·
+  D.W. Serwis (21-07, silent).
+- Watch: replies come to Stan's phone / stan.zak.inf@gmail.com (or the ops dashboard if he logs an
+  answer). ⚠️ Deliverability caveat still open — Givyx email may be spam-filtered; the SMS is the
+  more reliable touch here.

@@ -1,12 +1,16 @@
 # Givyx — START HERE
 
-Single source of truth. Read this first, then `decisions.json` (what's blocked on Stan) and
-`LOG.md` (chronological detail). Last updated: **2026-07-22**.
+Read this first, then `LOG.md` (chronological detail). Last updated: **2026-07-23**.
 
-> **Dashboard: https://ops.givyx.com** — password in `givyx.ops/env/ops-dashboard.env`. Stan answers
-> decisions there; the container commits + pushes to `StanShade/givyx-assistant`, so `git pull` here
-> brings his answers. **Never write `dashboard/answers.json` from this machine** — one writer, the
-> container. Editing it from the Mac hid two of his answers for hours on 2026-07-22.
+> ⚠️ **NEW MODEL (2026-07-23):**
+> - **Tasks live in Notion**, not this repo — it is the source of truth. Givyx → Tasks DB (page
+>   `17cb6a06-0d47-80b5-95ff-fbc322ab3311`). Update Notion after each task; on "sync" pull from it;
+>   Stan adds tasks too. `TASKS.md` here is frozen history. See memory `givyx-notion-tasks`.
+> - **Decisions go through the Portal ops dashboard: https://p.givyx.com/admin/ops** (deployed on the
+>   real backend this session). I author via `POST /admin/ops/decisions`, read via `GET /admin/ops/
+>   decisions` (or `/changes`). The old git `decisions.json` + `ops.givyx.com` container flow is retired.
+> - **Live growth threads:** Speed-Gum, Intra Cars (offers out, awaiting reply); M-TRAK (callback due).
+>   The one number that matters: replies to outreach.
 
 ---
 

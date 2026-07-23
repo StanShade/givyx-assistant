@@ -1562,3 +1562,16 @@ produced two answers, one of them a request for an offer. Reachability beat mess
   Status · Area (Growth/Payments/Platform/Ops/Product) · Ref · Notes. Views: Board by Status, Board by
   Priority, P0 — sales-critical. Seeded **42 tasks** from TASKS.md (done-state + priority + area mapped;
   obsolete items marked, live threads added). Location recorded in [[givyx-notion-tasks]].
+
+### 2026-07-23 — NEW OPERATING MODEL (Stan) + session-clear handoff
+- **Notion = source of truth for tasks.** Update Notion after each task; on "sync" I pull from the
+  Notion Tasks DB; Stan adds tasks too. TASKS.md frozen (banner added). Memory: `givyx-notion-tasks`.
+- **Decisions = Portal ops dashboard** (p.givyx.com/admin/ops). I author + read via /admin/ops API;
+  old git decisions.json / ops.givyx.com flow retired. Memory: `givyx-decisions-workflow` rewritten.
+- **Email rule:** every prospect email goes to Stan FIRST for OK, then to the prospect. Memory:
+  `givyx-email-verify-first`.
+- Memory index + STATE.md header updated to the new model. Session being cleared.
+- **Current live state for the next session:** 0 paying. Threads: Speed-Gum (offer 22-07, silent),
+  Intra Cars (tiered offer + SMS 23-07, awaiting; site rebuilt honest), M-TRAK (callback, mobile
+  730 716 780). Open on Stan: Studio `highlight` toggle; rename Notion workspace Shade→Givyx; mint
+  pu_dbc4fbe token + arm the ops routine. Unpushed/undeployed: nothing pending (branches merged).

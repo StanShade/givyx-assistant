@@ -1,6 +1,11 @@
-# Backlog — current
+# Backlog — FROZEN. Source of truth is Notion.
 
-Rewritten 2026-07-21. Read `STATE.md` first. Items needing Stan live in `dashboard/decisions.json`.
+> ⚠️ **As of 2026-07-23 the source of truth for tasks is Notion**, not this file. This is a stale
+> snapshot kept for history. Read/update tasks in the Notion **Givyx → Tasks** database
+> (page `17cb6a06-0d47-80b5-95ff-fbc322ab3311`, data source `collection://9ee3466e-1c1a-4982-8308-9b0f352826d0`).
+> Decisions (things blocked on Stan) go through the Portal ops dashboard: **p.givyx.com/admin/ops**.
+
+Rewritten 2026-07-21. Read `STATE.md` first.
 P0 = blocks the first sale · P1 = needed before/around first clients · P2 = later.
 
 ## P0 — blocks the first sale

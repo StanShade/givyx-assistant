@@ -9,6 +9,15 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-07-24 — ✅ Turned off the 23% VAT (Stan's go)
+- Cleared `GIVYX_STRIPE_TAX_RATE_ID` in givyx.ops `env/shade.env` (commit `7609fdb`, dormant rate id
+  kept in a comment). apply-ops deploy **verified GREEN** (run 30079876647 — SSH → shade-api recreated
+  on the VPS in 21s). New platform invoices are net: **249 zł stays 249**, no VAT line.
+- Corrected STATE.md (the VAT paragraph now reads VAT-exempt, superseding the 2026-07-22 fixed-23%).
+- Not yet E2E-verified at a live checkout (needs a Portal payment-link test or an admin-token check).
+- Remaining accountant follow-ups still open (Notion): invoice VAT-exempt labeling + legal basis ·
+  KSeF automation (connector TBD) · 240k threshold monitor · full docs/memory sweep.
+
 ### 2026-07-23 — Accountant guidance: VAT-exempt (not 23%) + KSeF; plan created
 - Stan's accountant clarified 4 points. The big one: Stan is **VAT-EXEMPT** (zwolnienie podmiotowe)
   under the **240,000 zł** limit → must NOT charge 23% VAT to Polish clients; invoice as *"sprzedaż

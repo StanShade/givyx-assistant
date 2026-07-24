@@ -66,12 +66,13 @@ offer — so the email he has is a kept promise, not cold outreach. Everything a
 - Stripe webhook idempotency (no double-charge/double-refund on replays).
 - Polish B2B VAT: netto (`tax_behavior=exclusive`), NIP collection, billing address. **Automatic tax
   defaults OFF** — enabling it before Stripe Tax is activated breaks *every* checkout.
-- **VAT is charged by a fixed 23% rate, not by Stripe Tax** (chosen 2026-07-22). `GIVYX_STRIPE_TAX_RATE_ID`
-  = `txr_1Tw3UsHunRjTnmlGOHa5sKyt` is pinned to every platform line item. Verified live: **249 + 57,27
-  = 306,27 zł**. Stripe Tax costs 0.5%/transaction with no free tier and needs a VAT registration we
-  never added; filing is a 360 zł/mo plan the księgowa makes pointless. **The rate cannot express EU
-  reverse charge** — before the first non-Polish VAT-registered buyer, clear the var and switch to
-  Stripe Tax. It is ignored whenever `GIVYX_STRIPE_AUTOMATIC_TAX=true`.
+- **NO VAT — Stan is VAT-exempt (2026-07-24, per accountant).** Under the 240,000 zł limit (zwolnienie
+  podmiotowe), so **no 23% VAT on Polish clients**; invoices are *"sprzedaż zwolniona z VAT"*. `GIVYX_STRIPE_TAX_RATE_ID`
+  is now **cleared** (givyx.ops `7609fdb`, deployed) → 249 zł stays 249 zł. The dormant rate id
+  `txr_1Tw3UsHunRjTnmlGOHa5sKyt` is kept in an env comment. **This supersedes the 2026-07-22 fixed-23%
+  decision** (which wrongly assumed VAT was charged). **Re-enable 23% only above 240k / after VAT
+  registration.** Stripe Tax stays OFF (`GIVYX_STRIPE_AUTOMATIC_TAX=false`). Open follow-ups (Notion,
+  Payments): invoice VAT-exempt labeling + legal basis · KSeF automation · 240k threshold monitor.
 - Payment-link flow: client's location → Manage plan → Send a payment link → copy → SMS.
   Recurring subscription; **links expire in 24h**, generate at send time.
 - Client-facing subscription card: plan, `249 zł / month netto`, status, next payment, real faktury.

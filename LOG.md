@@ -9,6 +9,24 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-07-23 — Accountant guidance: VAT-exempt (not 23%) + KSeF; plan created
+- Stan's accountant clarified 4 points. The big one: Stan is **VAT-EXEMPT** (zwolnienie podmiotowe)
+  under the **240,000 zł** limit → must NOT charge 23% VAT to Polish clients; invoice as *"sprzedaż
+  zwolniona z VAT"*. **This contradicts our shipped config** (fixed 23% rate pinned → 249 becomes
+  306,27) and **supersedes the 2026-07-22 fixed-23% decision** (which assumed VAT was charged).
+- Grounded the fix in code: `StripeGateway.cs:313-316` applies the rate only when
+  `GIVYX_STRIPE_TAX_RATE_ID` is set (env/shade.env:51) and no-ops when empty. So the fix = clear that
+  var → 249 stays 249. Infra stays dormant for re-enable above 240k.
+- KSeF (verified via ksef.podatki.gov.pl, ifirma.pl): mandatory 2026-04-01 for "other taxpayers",
+  VAT-exempt in scope, **but postponed to 2027-01-01 for ≤10,000 zł/month invoiced** — at 249 zł/client
+  Stan is under that until ~40 clients, so likely runway to Jan 2027 (confirm). Off-the-shelf Stripe→KSeF
+  connectors exist: S2K (direct), Stripto→Fakturownia/inFakt, or custom via KSeF API + FA(3) XML.
+- Created 5 Notion tasks (P0 VAT-off · invoice labeling · KSeF connector · 240k monitor · docs update)
+  + filed 2 decisions: `vat-exempt-go-live` (go to clear the 23%?), `ksef-integration-path` (which
+  connector + confirm the ≤10k postponement). Canadian client flow unchanged (point 4).
+- Flagship-template brainstorm paused mid-flight (offered visual companion) — resumes on Stan's word.
+
+
 ### 2026-07-23 — ✅ Lead path RE-PROVEN E2E on a current live form (Ref 13, P0)
 - Notion Ref 13 note claimed "no submission has ever flowed through a form". Verified instead of
   assuming (hard-won lesson #5). Fired a real browser submit through **dwserwis.givyx.com/kontakt**:

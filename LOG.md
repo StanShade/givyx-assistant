@@ -9,6 +9,14 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-07-24 — Accountant answers: Stripe-direct invoicing, art.113, KSeF to Jan 2027
+- Stan: (1) invoices DIRECTLY from Stripe (not Fakturownia/inFakt) → KSeF path = S2K (direct Stripe→KSeF);
+  (2) legal basis = art. 113 ust. 1 ustawy o VAT; (3) the ≤10k zł/month postponement applies → KSeF issuing
+  obligation starts 2027-01-01, not urgent.
+- Fastest labeling win handed to Stan: set the Stripe Dashboard invoice footer 'Sprzedaż zwolniona z VAT na
+  podstawie art. 113 ust. 1 ustawy o VAT'. Remaining: customer.tax_exempt='exempt' on PL customers (small code).
+- Notion tasks updated (KSeF → S2K/Jan2027; invoice labeling → art.113, unblocked).
+
 ### 2026-07-24 — ✅ Turned off the 23% VAT (Stan's go)
 - Cleared `GIVYX_STRIPE_TAX_RATE_ID` in givyx.ops `env/shade.env` (commit `7609fdb`, dormant rate id
   kept in a comment). apply-ops deploy **verified GREEN** (run 30079876647 — SSH → shade-api recreated

@@ -71,6 +71,25 @@ if zl and not any(any(c.isdigit() for c in (s[1] or "")) for s in CFG.SERVICES):
     print("  ❌ zł amounts rendered but config publishes no prices:", zl)
     bad = True
 
+# imagery provenance: a preview may only show photos the shop actually gave us.
+# Stock imagery under a first-person caption ("Tak wygląda nasza robota") claims someone
+# else's work as theirs. images.givyx.com = uploaded by us for this shop.
+img_urls = sorted({u for u in re.findall(r"https?://[^\s\"']+", blob)
+                   if re.search(r"\.(webp|jpe?g|png|avif)(\?|$)", u, re.I)
+                   or "unsplash" in u.lower()})
+foreign = [u for u in img_urls if "images.givyx.com" not in u]
+if foreign:
+    print(f"  ❌ IMAGERY NOT OURS ({len(foreign)}): photos not on images.givyx.com")
+    for u in foreign[:6]:
+        print(f"       {u[:110]}")
+    bad = True
+
+first_person = [s_ for s_ in strings
+                if any(k in s_.lower() for k in ("nasza robota", "nasza hala", "nasz warsztat"))]
+if foreign and first_person:
+    print(f"  ❌ FIRST-PERSON CAPTION OVER FOREIGN IMAGERY: {first_person[:3]}")
+    bad = True
+
 if not bad:
-    print("  ✅ no unclaimed service, no invented price, no 'cennik' without prices")
+    print("  ✅ no unclaimed service, no invented price, no 'cennik' without prices, imagery is ours")
 print(f"  strings checked: {len(strings)}")

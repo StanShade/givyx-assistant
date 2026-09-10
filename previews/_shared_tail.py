@@ -63,15 +63,24 @@ if "VISIT_PHOTO" not in globals():
 if "VISIT_ALT" not in globals():
     VISIT_ALT = "Mechanik przy silniku w hali serwisowej"
 
+# NO STOCK DEFAULT. Until 2026-09-10 this defaulted to six Unsplash photos, which the
+# gallery then captioned "Tak wygląda nasza robota" — stock images presented as the shop's
+# own work. Every head must now make the choice explicitly: real photos the shop gave us,
+# or no gallery at all.
 if "GALLERY" not in globals():
-    GALLERY = [
-        ("photo-1615906655593-ad0386982a0f", "Diagnostyka pod maską"),
-        ("photo-1625047509168-a7026f36de04", "Hala serwisowa"),
-        ("photo-1530046339160-ce3e530c7d2f", "Narzędziownia"),
-        ("photo-1487754180451-c456f719a1fc", "Wymiana oleju"),
-        ("photo-1486262715619-67b85e0b08d3", "Serwis osprzętu silnika"),
-        ("photo-1632823469850-2f77dd9c7f93", "Dbałość o detale"),
-    ]
+    raise RuntimeError(
+        "GALLERY is not set. A preview may never fall back to stock photos — the gallery "
+        "caption claims the work as the shop's own. In the head, set either:\n"
+        "  GALLERY = [(url, caption), ...]   # photos the shop actually gave us\n"
+        "  GALLERY = []                      # no gallery (also drop /galeria from nav+footer)"
+    )
+# Ownership-neutral by default; a head with its own verified photos may override with
+# first-person copy (see heads/speedgum.py).
+if "GALERIA_TITLE" not in globals():
+    GALERIA_TITLE = "Zakres naszych usług w obrazach"
+if "GALERIA_LEAD" not in globals():
+    GALERIA_LEAD = "Zdjęcia poglądowe usług, które wykonujemy."
+
 if "GALLERY_W" not in globals():
     GALLERY_W = 800
 if "GALLERY_H" not in globals():

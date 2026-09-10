@@ -290,8 +290,8 @@ Pattern: `<prospect>-<yyyymmdd>-<initials><n>`
 | Code | Prospect | Sent to | Date | Link |
 |---|---|---|---|---|
 | `mc-20260909-dk1` | **MUMIA-CAR** (Dawid Korbiel) | mumiacar@gmail.com | 2026-09-09 | dealership.givyx.com |
-| `dc-20260910-e1` | **DIESELCHIP** (inż. Paweł Stachera) | info@dieselchip.pl | *pending Stan's OK* | dealership.givyx.com |
-| `hb-20260910-e1` | **Holbrook Racing Engines** | sales@holbrookracingengines.com | *pending Stan's OK* | autoservice.givyx.com |
+| `dc-20260910-e1` | **DIESELCHIP** (inż. Paweł Stachera) | info@dieselchip.pl | **2026-09-10 SENT** | dealership.givyx.com |
+| `hb-20260910-e1` | **Holbrook Racing Engines** | sales@holbrookracingengines.com | **HELD — needs postal address (CAN-SPAM)** | autoservice.givyx.com |
 
 Full URL pattern:
 `https://dealership.givyx.com/?utm_source=email&utm_medium=oferta&utm_campaign=<prospect>&utm_content=<code>`
@@ -370,3 +370,25 @@ and **all local files** — `previews/heads/*.py`, the claudeBrain demo folders 
 Stan's call. Dossiers and this pipeline history stay too: the loss analysis is the asset, not the builds.
 
 No prospect with a location was lost by this — every one of the 5 was already closed before it ran.
+
+
+## Email campaign — autoservices (started 2026-09-10)
+
+Retargeted from dealerships: the flagship demo is an auto-repair site, so the prospect type
+moved to match it. Lists: `2026-09-10-service-centers-PL.md` · `2026-09-10-service-centers-US.md`.
+
+**Copy rule set by Stan 2026-09-10: the email is an OFFER, not an audit.** No listing of faults
+found on their site. Lead with a verified fact about what they do well, describe the experience
+of our site (scroll into the hall, then down into the engine), invite the click. The diagnostic
+research moves to call prep and the follow-up.
+
+**Pair chosen for template fit, not hook strength** — the film dives into an engine, so an engine
+shop reads native. Camper/RV prospects (Motosilesia, Big's RV, Arizona RV) fight the template.
+
+| Sent | Prospect | Result |
+|---|---|---|
+| 2026-09-10 | DIESELCHIP — info@dieselchip.pl — 249 zł/mies | awaiting reply |
+| HELD | Holbrook Racing Engines — $60/mo | blocked on Givyx postal address for the CAN-SPAM footer |
+
+**Open:** a click is only visible if the visitor accepts the cookie banner (analytics is
+consent-gated). To count every open we need a redirect that records the click before the site loads.

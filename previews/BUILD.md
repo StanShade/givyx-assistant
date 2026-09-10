@@ -71,13 +71,33 @@ see exactly what a rebuild would add or lose before pushing.
 - One location per slug (Portal → create location with that slug) + one MCP token per location.
 - After each preview verifies, Stan runs deploy_to_production for that location to serve it publicly.
 
-## Imagery must match the shop's actual trade
+## ⛔ Imagery must be the shop's OWN — stock is no longer a default (2026-09-10)
 
-`_shared_tail.py` ships a **generic mechanic** photo set (`HERO_BG`, `VISIT_PHOTO`, `GALLERY`)
-with captions like *Wymiana oleju*, *Diagnostyka pod maską*, *Serwis osprzętu silnika*. Those are
-**defaults only**. The tail is concatenated AFTER the head, so each value is guarded with
-`if "X" not in globals():` — a head that defines its own imagery wins, and heads that define none
-resolve exactly as before.
+`_shared_tail.py` used to ship a **generic mechanic** photo set as the `GALLERY` default, which the
+gallery page then headed *"Tak wygląda nasza robota"* — stock photos captioned as the shop's own
+work, on four live previews. `build_pages.py:457` already carried a comment forbidding exactly that
+while the default underneath it did it anyway.
+
+**Two guards now enforce it:**
+1. `GALLERY` has **no default**. A head must set either real photos or an explicit `GALLERY = []`.
+2. `tools/verify_copy.py` fails any render whose imagery is not on `images.givyx.com`, and fails
+   harder when a first-person caption ("nasza robota") sits over foreign imagery.
+3. `build_seo.py` refuses to publish a non-own image as `ogImage`/`LocalBusiness.image` — those are
+   published **as the business** by Google and every social preview. Set `OG_IMAGE` in the head.
+
+`GALERIA_TITLE`/`GALERIA_LEAD` now default to ownership-neutral copy. A head with verified photos
+of its own may override with first-person wording (see `heads/speedgum.py`).
+
+**Where photos come from:** the shop's own — sent by the owner, or their existing site/GBP shown
+back to them in the pitch. Upload to `images.givyx.com`; only then may they carry a first-person
+caption. `HERO_BG` and `VISIT_PHOTO` are still stock on most heads — `verify_copy.py` reports them.
+
+### How the guards interact with the head/tail split
+
+The tail is concatenated AFTER the head, so each value is guarded with `if "X" not in globals():` —
+a head that defines its own imagery wins. That is why guard 1 alone is not enough: **`dwserwis`,
+`tlumiki` and `oponyifelgi` each set their own Unsplash ids**, so they sail past a missing-default
+check. Guard 2 (`verify_copy.py`) is what catches them.
 
 Head-side overrides (all optional):
 
@@ -91,8 +111,9 @@ Head-side overrides (all optional):
 | `GALLERY_W`, `GALLERY_H` | ints | default 800×600 |
 
 Rules:
-- **Only `images.unsplash.com`** (renderer allowlist also has givyx.blob, shade.blob,
-  images.givyx.com). `plus.unsplash.com/premium_photo-…` is NOT allowlisted — it will not load.
+- **Renderer allowlist:** `images.givyx.com`, givyx.blob, shade.blob, `images.unsplash.com`.
+  `plus.unsplash.com/premium_photo-…` is NOT allowlisted — it will not load.
+  **Allowlisted ≠ permitted:** unsplash still loads, but `verify_copy.py` now fails the build for it.
 - **Never caption a service the shop doesn't offer.** Fetch and *look at* each photo before
   using it; Unsplash alt text is often wrong or the shot is a 3D render.
 - Fewer correct photos beat more wrong ones. Dropping the Galeria page is acceptable.

@@ -422,11 +422,11 @@ Every one independently spot-checked (title, zero source leaks, tel, rating, og:
 
 | slug | prospect | email | code | send |
 |---|---|---|---|---|
-| napierala | Auto Napierała, Poznań | autonapierala@op.pl | `np-20260911-e1` | on Stan's OK |
-| autofirma | Auto Firma, Legnica | tomekszewerniak@wp.pl | `af-20260911-e1` | on Stan's OK |
-| latusek | Mechanika Pojazdowa Latusek, Katowice | centrum.hamulcowe@poczta.onet.pl | `lt-20260911-e1` | on Stan's OK |
-| pietruszko | Pietruszko Auto Service, Olsztyn | pietruszko@poczta.fm | `pt-20260911-e1` | on Stan's OK (send last — capacity signal) |
-| rsauto | RS AUTO, Gdańsk | rsautogdansk@gmail.com | `rs-20260911-e1` | on Stan's OK (read its 1★ first) |
+| napierala | Auto Napierała, Poznań | autonapierala@op.pl | `np-20260911-e1` | **SENT 2026-09-11** |
+| autofirma | Auto Firma, Legnica | tomekszewerniak@wp.pl | `af-20260911-e1` | **SENT 2026-09-11** |
+| latusek | Mechanika Pojazdowa Latusek, Katowice | centrum.hamulcowe@poczta.onet.pl | `lt-20260911-e1` | **SENT 2026-09-11** |
+| pietruszko | Pietruszko Auto Service, Olsztyn | pietruszko@poczta.fm | `pt-20260911-e1` | **SENT 2026-09-11** (last) |
+| rsauto | RS AUTO, Gdańsk | rsautogdansk@gmail.com | `rs-20260911-e1` | **SENT 2026-09-11** |
 | troutman | Troutman Auto Care, NC | info@troutmanautocare.com | `tr-20260911-e1` | HELD — postal address |
 | adp | America's Diesel Performance, TX | info@dfwdieselrepair.com | `ad-20260911-e1` | HELD — postal address |
 | independenceauto | Independence Automotive, KY | Wlowe@independenceauto.shop | `ia-20260911-e1` | HELD — postal address |
@@ -446,3 +446,9 @@ service grid sits entirely under the scroll-film's tail and is invisible (reprod
 **Go-live gate (unchanged, per runbook §6):** synthetic booking availability · placeholder legal pages ·
 Givyx favicon · SMS. Plus per-clone: Independence's hero is a Street View capture; ADP's hero shows a
 customer's lettered truck and its pin is from their own map widget.
+
+**2026-09-11 afternoon — Stan's review fixes before the send:** maps un-gated everywhere (flag lives in 3
+places), ring titles one line (renderer df2a9eb+1c58a3e), phone open-card scrolls with the button under
+the text (cf0fd75), noindex on all nine, all nine published. Then Stan: "ok send" → the five PL offers
+went out, one call each, all `sent:true`. **Scoreboard: 10 PL emails sent in two days** (5 to the generic
+demo on 09-10, 5 to their own personalised site on 09-11). Replies → info@givyx.com.

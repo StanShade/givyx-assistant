@@ -476,3 +476,19 @@ each to their own site, footer = "This is an advertisement" + layout address + r
   (`force.givyx.com`, 5.0/31 Google, 8 services, their dyno rate card) built per the spec, noindex,
   own forms (tests arrived in Gmail). Logs: `givyx.claudeBrain/dealership/clones/{holbrook,force}.md`.
   Two US drafts sent to Stan for OK (`[DO SPRAWDZENIA] 2 maile US`). Big's RV dropped.
+
+## 2026-09-11 (night) — correction: tracking is NOT consent-gated any more
+The "⚠️ Tracking is consent-gated" note above (09-09) is stale. Since the 09-02 consent rework the beacon
+writes nothing to the device and fires for every visitor (`givyx.websites/utils/analytics.ts`,
+`consent.test.ts: "fires with no choice stored"`). **Every visit to every demo is recorded**, with
+`utm_campaign` = the prospect code. What is missing is a *read path for the assistant* (routine token →
+401 on `/api/analytics`); Stan can read it in the Portal per location. Task filed.
+
+## Follow-up schedule (rule: three touches per send, logged here)
+| Batch | Sent | D+3 SMS (Stan's phone) | D+5 email 2 (offer, reply CTA) | D+10 last |
+|---|---|---|---|---|
+| PL 09-10 five (generic demo) | 09-10 | **Mon 15 Sep** — 516 757 560 · 796 545 247 · 603 315 625 · 503 005 705 · 503 398 404 | 15–16 Sep, **with their own clone** (Ref 89) | 22 Sep |
+| PL 09-11 five (own site) | 09-11 | **Mon 15 Sep** — Auto Firma 695 194 119 · Latusek 601 951 909 · Pietruszko 602 332 740 · RS Auto 514 606 061 (Napierała: landline only → email) | Tue 16 Sep | Mon 22 Sep |
+| US 09-11 four (own site) | 09-11 | — (email only) | Tue 16 Sep | Mon 22 Sep |
+| Holbrook · Force | awaiting Stan's OK | — | D+5 | D+10 |
+| MUMIA-CAR | offer 09-09 | **callback OVERDUE — call 502 485 353 Fri 12 Sep** | | |

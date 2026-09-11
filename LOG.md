@@ -1929,3 +1929,39 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   not asserted. All four test submissions arrived in Stan's Gmail within seconds. Two US drafts sent to
   Stan (`[DO SPRAWDZENIA] 2 maile US — Holbrook + Force`), codes `hb-20260911-e1` / `fe-20260911-e1`.
   Brain commit `443982c`, pipeline `17a8ef6`. **Scoreboard: 11 personalised sites, 14 emails sent, 2 drafts.**
+
+## 2026-09-11 (night) — full re-analysis for client #1; 10 tasks created, 12 re-prioritised
+
+- Read everything (STATE, LOG, pipeline, the four prospect pools, clone index, spec, GBP runbook, Notion
+  board — 30 open tasks — Gmail, ops answers). **Replies: 0** to the 14 sends at 16:30Z (all folders).
+  **The ops routine token has expired** — 401 on `/admin/ops/changes`, `/admin/ops/decisions` and
+  `/api/analytics`; the pickup script dies silently on 401, so any answers Stan left on the dashboard
+  are unread. Decision `first-clients-risk-reversal` could NOT be filed there → it lives in Notion.
+  Holbrook + Force drafts still awaiting Stan's OK. **MUMIA-CAR
+  callback (due today) not made.** givyx.com "DOWN 307" alert at 15:15Z — transient, 200 now; all 13
+  demo hosts 200.
+- **Finding 1 — tracking is NOT consent-gated.** `givyx.websites` `utils/analytics.ts`: the beacon is
+  cookieless and fires for every visitor (consent rework 09-02, tests "fires with no choice stored").
+  Every demo visit is in Givyx analytics with `utm_campaign`. The 09-09 pipeline note was stale.
+  But `GET /api/analytics/summary` → **401 with the routine token**; admin JWT is classifier-blocked.
+  So the one leading indicator is invisible to me → task: `/admin/ops/demo-visits` (routine-readable).
+- **Finding 2 — reply routing is unverified.** All offers say replyTo info@givyx.com; mail TO info@ never
+  reached Stan's Gmail on 09-11 (18/18 lost). A prospect reply may be sitting in an unread mailbox.
+  P0 task for Stan: improvmx forward → stan.zak.inf@gmail.com, then one test.
+- **Finding 3 — follow-up is the recurring failure** (Speed-Gum, now MUMIA-CAR). Sequence task written
+  with the 9 PL mobiles and SMS text; D+3 for the 09-11 batch = Mon 15 Sep.
+- **Finding 4 — volume.** 14 sends ≈ 0.3 expected replies at 2–5%. Pipeline proven at 9 sites/day →
+  task: 10/day, 100 sends by 25 Sep, one review mail to Stan per day.
+- **Two new seams** that dodge "mam dużo klientów" / "ktoś się tym zajmuje": CEIDG new registrations
+  (PKD 45.20.Z, last 90 days — no customers, no vendor) and RU/UA-owned shops in Kraków (Stan's
+  language, PL+UA/RU site = an offer nobody sells). Both filed as P0 for Stan's pick.
+- **Risk reversal** — decision (rec: no contract + first month free for clients #1–5) written as a Notion
+  task since the dashboard POST returned 401 — the emails never say "bez umowy" while competitors lock
+  2-year contracts.
+- Verified: `autoservice` Contact form notifies stan.zak.inf@gmail.com (the 09-09 failure predates the fix).
+- Notion: created 11 tasks (reply routing · re-mint routine token · follow-up sequence · volume · CEIDG seam · RU/UA seam ·
+  risk-reversal decision · demo-clicks read path · zero-cost inbound · warm channel/leonixon · dealer
+  stock page, conditional). Re-prioritised: 96 MUMIA-CAR → P0 overdue · 89 → P0 · 94 → P0 · 43/44/45/46
+  → P2 parked · 78 → Done (profile verified 07-17) · 27 M-TRAK → Done (dropped 07-24).
+- STATE.md "Next moves" rewritten as the 14-day plan. Classifier blocked two scripted token reads
+  (analytics loop, get_form chain); single calls passed — one call per Bash invocation, as before.

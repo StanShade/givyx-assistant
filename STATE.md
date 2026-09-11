@@ -1,6 +1,6 @@
 # Givyx — START HERE
 
-Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-11**.
+Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-11 (evening)**.
 
 > ⚠️ **MODEL:**
 > - **Tasks live in Notion** (Givyx → Tasks DB, page `17cb6a06-0d47-80b5-95ff-fbc322ab3311`). Update
@@ -16,7 +16,8 @@ Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-1
 |---|---|
 | Paying customers | **0** |
 | MRR | **0 zł** |
-| **Emails sent** | **14 in two days** — 10 PL (5 generic demo 09-10 · 5 personalised site 09-11) + 4 US (personalised site 09-11) |
+| **Emails sent** | **14 in two days** — 10 PL (5 generic demo 09-10 · 5 personalised site 09-11) + 4 US (personalised site 09-11) · **+2 US drafts (Holbrook, Force) awaiting Stan's OK** · **replies: 0 as of 09-11 16:30Z — but see ⚠️ reply routing below** |
+| **Demo clicks** | **Recorded but unread.** The beacon is cookieless since the 09-02 consent rework — every visit to every `<slug>.givyx.com` is in Givyx analytics with `utm_campaign`. I cannot read it (routine token → 401 on `/api/analytics`); Stan can, in the Portal. Task filed. |
 | Calls made (Sept) | 13 touched → 11 conversations → 0 closed (workshops "mam dużo klientów", dealerships already served) |
 | Offers by email | MUMIA-CAR (09-09, generic demo, callback was due 09-11) |
 | **Personalised demo sites live** | **9** at `<slug>.givyx.com` — napierala · autofirma · latusek · pietruszko · rsauto · troutman · adp · independenceauto · herlehys. Published, **noindex**, maps un-gated, forms → info@givyx.com |
@@ -208,18 +209,33 @@ not a proxy for it.**
 
 ---
 
-## Next moves, in order
+## Next moves — the 14-day plan to client #1 (written 2026-09-11 evening)
 
-1. Stan unblocks the 4 items above.
-2. Rebuild + verify 3 previews → send D.W. Serwis SMS (**now the strongest target**: 4,8★/282 reviews
-   *and* their Google listing still says "add website", *and* $680/mo gym plans on their homepage).
-3. First reply → call → close on manual faktura at 249 zł. Stripe not required to close.
-4. Then: finish grandfathering on the platform side (Stan's own clients), `IsGrandfathered` flag,
-   Stripe-side archival.
-5. Then Phase 2 groundwork: the three features that close local-trade deals — **real booking, embedded
-   map, genuine Google reviews** — none of which exist yet.
+**Diagnosis in one line:** the machine works (11 sites in a day, 14 sends, forms proven), but four things
+are broken *around* it: replies may not reach Stan, clicks are recorded but unread, nobody follows up,
+and 14 sends is statistically nothing. Fix those, then add volume and two warm seams.
 
----
+| # | Move | Owner | When |
+|---|---|---|---|
+| 1 | **Reply routing** — improvmx `info@givyx.com` → `stan.zak.inf@gmail.com`, test one inbound mail | Stan, 5 min | **12 Sep** |
+| 2 | **MUMIA-CAR callback** (was due 09-11, not done) — 502 485 353 | Stan, 5 min | **12 Sep** |
+| 3 | OK the two US drafts (Holbrook, Force) → I send | Stan, 1 min | 12 Sep |
+| 3b | **Re-mint the ops routine token** (`~/.givyx/ops-routine.token`, 401 now) — your dashboard answers are unread until then | Stan, 3 min | 12 Sep |
+| 4 | Decide the **risk-reversal** for clients #1–5 (rec: no contract + first month free) — ops dashboard | Stan | 12 Sep |
+| 5 | **Demo clicks readable** — `/admin/ops/demo-visits` spec + agent (or Stan reads Portal analytics) | me | 12–15 Sep |
+| 6 | **Follow-up sequence** — D+3 SMS to the 9 PL mobiles (Mon 15 Sep), D+5 email 2 with the offer, D+10 last | Stan sends SMS, I draft | 15–22 Sep |
+| 7 | **Volume** — 10 personalised clones/day, one review mail to Stan/day, 50 sends/week, 100 by 25 Sep | me | daily |
+| 8 | Own-site clones for the 09-10 five (DIESELCHIP, LPG, MarkAuto, Motosilesia, WMW) as their email 2 | me | 15 Sep |
+| 9 | **New seams:** CEIDG new registrations (PKD 45.20.Z, last 90 days) · RU/UA-owned shops in Kraków (Stan calls in his language) | me list → Stan calls | 15–19 Sep |
+| 10 | Warm: ask IPR + Szymon for a review and a referral; leonixon status (paid? client #1?) | Stan | this week |
+| 11 | Go-live gate ready before the first yes (request-mode booking, legal pages, favicon, domain runbook) — Ref 94 | me (spec + agent) | by 19 Sep |
+| 12 | Zero-cost inbound: OLX listing + FB groups + GBP post, all "249 zł/mies, bez umowy" | Stan posts, I draft | 16 Sep |
+
+**Parked until client #1:** design-system pass, cennik, a11y baseline, review badge (Refs 43–46 → P2),
+platform sync (34/35), JSON-LD (33), map-in-builder (30). The GBP API application on **15 Sep** (Ref 84)
+stays — it is a calendar date, not a build.
+
+**Stan's daily budget for this plan: ~30 min** — one review mail, ≤3 calls to clickers, SMS on D+3.
 
 ## Handoff — session ended 2026-07-22
 

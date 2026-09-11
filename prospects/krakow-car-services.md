@@ -85,3 +85,90 @@ Tier 2 rows from single listings — give each a 30-second Google Maps glance be
 - **Free-mail addresses everywhere** (op.pl/interia/onet/wp) → own-domain email is a sellable
   bundle item.
 - All data = business contact info from public business directories.
+
+---
+
+## VERIFICATION PASS 2026-07-24 — the 8 untouched mobiles (live Google Maps, own fetches)
+
+First pass with **live Google Maps ratings** (previous numbers were directory mirrors).
+
+### ❌ REMOVE — do not contact
+- **Sebastian Klima Auto Styl** (662 082 808) — **the All Cars error repeating.** He owns
+  **autostyl-oklejanie.pl**: valid cert (issued 11-08-2026), mobile viewport, LocalBusiness JSON-LD
+  carrying his exact phone + address, a **published Cennik with real prices** (220/350/od 800/od 2500 zł),
+  Realizacje portfolio, blog, and per-city SEO landing pages for Niepołomice/Wieliczka. The old note
+  "branża wizualna bez portfolio" is **flatly wrong**. Pitching "no portfolio/price list" would be a
+  factual error in front of the prospect.
+- **Auto Szyby Maciej Jagiełło** (691 469 659) — **likely dead.** No Google listing at all
+  ("Maps can't find '691 469 659'"), ALEO profile 404s, NIP search returns nothing, address
+  os. Szkolne 8/**17** is a flat.
+- **A&M Mateczny** (502 424 525) — **no usable hook.** No Google Business Profile at all. Also ~200 m
+  from **Dream Car (4,8★ / 3 144 opinii, with "Book online")**. Don't spend a call.
+
+### ✅ VERIFIED CALL TARGETS (best first)
+1. **Cool-Car, W. Kujawski** — 500 898 986 — **4,6★ / 141 opinii** (Maps, 24-07). Owns **cool-car.pl
+   which returns HTTP 500** and prints *"There has been a critical error on this website"*; HTTPS cert
+   is `*.home.pl` → hostname mismatch warning; WordPress 5.8.15; only post "Witamy!" from **Dec 2021**.
+   No booking, no cennik. **Owner demonstrably active** (GBP post 6 days ago, replies to reviews).
+   Myjnia · wulkanizacja · klimatyzacja. **Strongest target by a distance.**
+2. **Robert Binkuś Auto Serwis Zawiła** — 888 364 905 — **4,4★ / 218 opinii** (Maps, 24-07). No own
+   domain; GBP "Strona" button → Facebook with **31 followers**, last post tagged by Meta as
+   **"AI content"**. dobrymechanik: 0 opinions, *"Warsztat nie udostępnia kalendarza online"*, cash only.
+   A review complained of month-long waits and **the owner publicly promised to shorten turnaround** →
+   direct booking pitch. Pays for Groupon (proven marketing spend).
+3. **De Vito S.C.** — 502 293 404 — **4,8★ / 67 opinii** (Maps, 24-07). devito.2ap.pl loads but: cert
+   mismatch (`*.usermd.net`), **no `viewport` meta at all** (no mobile layout), and the **tyre price list
+   is `Last-Modified: 7 Jul 2017`** still quoting 2017 prices (145/70R13 = 70 zł). Top review: *"nie da
+   się umówić z wyprzedzeniem… godzinna kolejka."* ⚠️ s.c. = two owners → decision friction.
+4. **Cyganik Marek** — 507 187 552 — **4,6★ / 51 opinii** (Maps, 24-07). **Google listing is UNCLAIMED**
+   ("Claim this business", no hours published); the "website" field points at a Cylex directory page.
+   ⚠️ An unverified negative review (botched ABS cable) — check before calling.
+5. **Auto Detailing Sieprawski** — 798 092 177 — low priority. His phone/GBP resolves to
+   **"Rock and Transport", a taxi service**; the only site under his number (rockandtransport.pl) is
+   **suspended by WeNet**. Detailing looks like a side activity. Ask, don't assume.
+
+**Evidence notes:** Cylex is Cloudflare-403 (all Cylex figures stay UNVERIFIED). Motointegrator is behind
+a bot challenge — "no online booking" unconfirmed there. But **none of Cool-Car, De Vito, Binkuś or
+Cyganik shows a "Book online" button on Google Maps** while nearby Dream Car does — that contrast is
+verified and usable.
+
+---
+
+## NEW PROSPECTS 2026-07-24 — Bosch-franchisee + aggregator seams (all Google figures live, in-browser)
+
+Seam result: **Bosch Car Service franchisees worked** (they pay for network membership = budget proven,
+and their microsites are weak). **Motointegrator seam FAILED** — Cloudflare 403 on every attempt, so
+nothing from there is verified; needs a real browser session if we want it.
+
+### ✅ MOBILE — call these
+| Business | Mobile | Google | Verified hook |
+|---|---|---|---|
+| **Auto-Serwis JA-RO s.c.** (Stoczniowców 1, Podgórze) | **501 465 114** | 4,7 / **137** | Google "website" field points at **dobrymechanik.pl — a page that also lists their competitors**. "Own your customers instead of renting placement" is literally true here |
+| **Auto Service Dominik Migas** / trades as **Bosch Car Service Carbelgium** (Chełmońskiego 264) | **500 222 411** | 4,5 / **228** | Appears online under **two different business names**; both site AND email (`CarbelgiumKR@bosch-service.pl`) sit on **Bosch's domain**. Pays Bosch for membership = budget proven |
+| **ASM Serwis** (Rożańskiego 72, Modlniczka ~15 min out) | **572 584 131** | 4,8 / **110** | **Pays for TWO rented web presences** (wymianaopon.pl + localo.site subdomain) and owns neither |
+| **Auto-Skoda Porębski** (Biskupińska 23) | **501 702 650** | 4,8 / **164** | Own site is valid + mobile-ready, but **no booking, no prices** — every appointment goes through the phone |
+| **AUTO-ZBYCH** (Dębskiego 33, Swoszowice) | **575 001 902** | 4,6 / **168** | Phone number is **plain text, not a `tel:` link** — a mobile visitor cannot tap to call |
+| **Expert Auto Serwis Robert Flak** (Ojcowska 143b) | **608 858 830** | **5,0** / 26 | Perfect 5,0 and the Google "website" field is literally **facebook.com** |
+| **AUTOLAB** (Ojcowska 178) | **575 635 006** | 4,7 / **82** | Publishes a **19-line cennik on dobrymechanik**, not on anything they own. Pitch = ownership (booking already works, just on someone else's platform) |
+| **AUTO-MECHANIKA K. Bonar** (Wrobela 36) | **509 040 442** | 4,5 / 31 | No website at all ("Add website" on Google) |
+| **Krotoszyński Andrzej** (Wrony 28, Dębniki) | **508 335 194** | 4,3 / 23 | No website at all |
+
+### ☎️ LANDLINE-ONLY (real problems, but landlines mostly don't get answered — consider in-person)
+| Business | Phone | Google | Verified hook |
+|---|---|---|---|
+| **Bosch Car Service Węgrzyn** (Poniatowskiego 38a) | 12 645 59 51 | 4,5 / **793** ← biggest review base found | Google lists them as "**& Wegrzyn Wegrzyn - Auto Service**" — a garbled name on 793 reviews |
+| **Bosch Car Service Barbakan** (Bieńczycka) | 12 333 66 33 | 4,1 / **239** | **"CENNIK" is in their main menu and the page has NO prices** — published 2020-12-10, unmodified since. Also no `tel:` link; site says Bieńczycka 5, Google says 3A |
+| **Bosch Service Sowier** (Wrocławska 97) | 12 631 06 00 | 4,4 / **226** | **Zero `viewport` meta anywhere** — renders desktop-width on a phone. Table layout, legacy iso-8859-2 |
+| **Bosch Car Service Bajmax** (Myślenicka 103) | 12 654 40 10 | 4,5 / **191** | Own domain throws a **cert hostname mismatch**, then 302s to plain **http://** |
+| **Mechanika Michał Gawin** (Królowej Jadwigi 213) | 12 425 11 00 | **4,9** / **140** | Google shows "**Claim this business**" — 4,9 from 140 reviews and they don't control their own listing |
+
+### ❌ EXCLUDED
+**Already have a good site WITH booking — do not contact:** Auto-Gum · AXOD (`axod.pl`, "Zarezerwuj termin")
+· Gampcar (Booksy) · Auto Gamma · Gładysek (5 domains — sophisticated web operator) · Dream Car (Euromaster,
+3 144 opinii).
+**Too big for 249 zł:** RM Filipowicz (KIA/Mitsubishi authorised dealer) · Emil Frey.
+**Defunct — do not call:** Auto-Service s.c., Barbary 9 (their listed domain is **NXDOMAIN**, no NASK record,
+Google shows the address permanently closed) · Auto-Service Wójtowicz (Google: permanently closed).
+
+**Quote Google figures only, and say "Google"** — aggregator counts differ wildly (AUTO-ZBYCH is 168 on
+Google vs 23 on dobrymechanik).

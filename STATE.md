@@ -1,37 +1,38 @@
 # Givyx — START HERE
 
-Read this first, then `LOG.md` (chronological detail). Last updated: **2026-07-23**.
+Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-11**.
 
-> ⚠️ **NEW MODEL (2026-07-23):**
-> - **Tasks live in Notion**, not this repo — it is the source of truth. Givyx → Tasks DB (page
->   `17cb6a06-0d47-80b5-95ff-fbc322ab3311`). Update Notion after each task; on "sync" pull from it;
->   Stan adds tasks too. `TASKS.md` here is frozen history. See memory `givyx-notion-tasks`.
-> - **Decisions go through the Portal ops dashboard: https://p.givyx.com/admin/ops** (deployed on the
->   real backend this session). I author via `POST /admin/ops/decisions`, read via `GET /admin/ops/
->   decisions` (or `/changes`). The old git `decisions.json` + `ops.givyx.com` container flow is retired.
-> - **Live growth threads:** Speed-Gum, Intra Cars (offers out, awaiting reply); M-TRAK (callback due).
->   The one number that matters: replies to outreach.
+> ⚠️ **MODEL:**
+> - **Tasks live in Notion** (Givyx → Tasks DB, page `17cb6a06-0d47-80b5-95ff-fbc322ab3311`). Update
+>   after each task; on "sync" pull from it. `TASKS.md` here is frozen history.
+> - **Decisions via the Portal ops dashboard** https://p.givyx.com/admin/ops (`/admin/ops/decisions`).
+> - **The one number that matters: replies to outreach.** They land at **info@givyx.com**.
 
 ---
 
-## Where the business actually is
+## Where the business actually is (2026-09-11)
 
 | | |
 |---|---|
 | Paying customers | **0** |
 | MRR | **0 zł** |
-| Outbound SMS | **3** — Bielarz 20-07 (no reply, dropped) · D.W. Serwis 21-07 (awaiting) · Speed-Gum 22-07 |
-| **Calls made** | **2** — ZUW (reached, **declined, closed**) · **Speed-Gum (reached → asked for the offer)** |
-| **Offers sent** | **1** — Speed-Gum, 2026-07-22, personalised site + 149/249/750 by email |
-| Prospect previews | 4 — tlumiki · dwserwis · oponyifelgi (all verified) · **speedgum (new, best one)** |
-| Live tenant sites | givyx.com, ipr.givyx.com, institutrozvojaapraxe.sk, **ops.givyx.com**, + 4 previews |
-| Catalog (verified live) | Starter **149**/1490 · Studio **249**/2490 · Scale **750**/7500, all analytics ON |
+| **Emails sent** | **14 in two days** — 10 PL (5 generic demo 09-10 · 5 personalised site 09-11) + 4 US (personalised site 09-11) |
+| Calls made (Sept) | 13 touched → 11 conversations → 0 closed (workshops "mam dużo klientów", dealerships already served) |
+| Offers by email | MUMIA-CAR (09-09, generic demo, callback was due 09-11) |
+| **Personalised demo sites live** | **9** at `<slug>.givyx.com` — napierala · autofirma · latusek · pietruszko · rsauto · troutman · adp · independenceauto · herlehys. Published, **noindex**, maps un-gated, forms → info@givyx.com |
+| Flagship demos | dealership.givyx.com (PL) · autoservice.givyx.com (EN) — both are AUTO-REPAIR sites; target = autoservices, not dealerships |
+| Catalog | Starter **149**/1490 · Studio **249**/2490 · Scale **750**/7500 · US pitched at **$60/mo** (Stan's call; US low band is $65–150) |
+| VAT | **exempt** (zwolnienie podmiotowe) — 249 zł stays 249 zł |
 
-**Warmest contact: Speed-Gum (Tomasz Gil, 537 326 327).** He said no on the phone, then asked for an
-offer — so the email he has is a kept promise, not cold outreach. Everything about him is in
-`givyx.claudeBrain/Speed-Gum/`.
+**What changed this week:** the target moved from dealerships to autoservices (the demo is an
+auto-repair site); the email moved from "here's our template" to **"we built a version for you"**
+(their name, phone, pin, services, photos, rating on their own subdomain); the copy moved from
+fault-listing to a warm offer. Ten Polish shops and four US shops now hold a link that is unique to
+them — a click is attributable without cookies.
 
-**The one number that matters: replies to outreach. Everything else is preparation.**
+**Playbook per prospect** (proven 9× on 09-11): `dealership/tools/new-tenant.sh` → `clonefrom --purge`
+→ `rewrite` host → build agent from `Givyx/superpowers/specs/2026-09-11-prospect-demo-clone.md` →
+`map-optout.py` → `update_seo` with `noIndex:true` → promote → email. Logs in `dealership/clones/`.
 
 ---
 
@@ -248,3 +249,59 @@ shell by 318 lines. The branch is dead; delete it.
   fast-forwarded, so the rerun reports **success having done nothing**. Push a new commit instead.
 - Local checkouts are routinely stale. Verify against `origin/main`, never the working tree.
 - Don't `git add -A` while an agent is working in the same repo.
+
+---
+
+# 📌 HANDOFF — session ended 2026-07-24
+
+## The one-line read
+**The market is buying; we keep arriving second.** Demand is proven (two shops signed with competitors
+while we were calling them), our conversation rate is excellent (9 of 11 touches became real
+conversations), and **nobody objected to the price or the product.** We lose on speed and on occupied
+vendor slots — so we changed segment.
+
+## Sales — 11 touches, 9 conversations, 0 closes
+| Outcome | Who |
+|---|---|
+| ❌ Lost to a competitor | Cool-Car (already signed) · Binkuś (**2-year contract, signed 2 weeks before we called**) |
+| ⏸️ Not now | JA-RO (restrukturyzacja) · ASM (building it themselves) · De Vito (a *znajomy* handles it) |
+| ❌ Declined | ZUW · Expert Flak (**had no website at all and still said no**) |
+| ⏳ Callback promised | **Cyganik (507 187 552) — chase 2026-07-26 if he hasn't rung** |
+| 💤 Dropped by Stan | Speed-Gum · Intra Cars · M-TRAK · D.W. Serwis |
+
+**The pattern: 4 of 9 said "someone already handles it."** Local trades have relationship-owned vendor
+slots you cannot cold-call past. And an empty slot doesn't mean openness (Flak had no site, said no).
+
+## → PIVOT: dealerships / komisy (list: `prospects/krakow-dealerships.md`)
+The economics are transformative and **verified from Otomoto's published pricing**:
+- A dealer with **21–30 cars pays Otomoto 4 159,99 zł net / 5 116,79 gross per 30 days.**
+  **Our top tier is 750 zł — ~18% of a bill they already accept.**
+- **API export is in EVERY Otomoto package, including Standard** — and these dealers' accounts already
+  carry `API_ACCESS`. Nobody must upgrade for us to sync stock. **A friend with WordPress cannot do this.**
+- **Verified stock desync** (site vs Otomoto): 77 Auto Group **0 vs 31** · Automeritum 15 vs 59 ·
+  v1rage 10 vs 25 · MMD 21 vs 31. ⚠️ Samochody z Klasą is **in sync (100/100)** — do NOT use the hook there.
+- ⛔ **F.H.U Piekarski — DO NOT CONTACT**: 2,8/26 with an odometer-rollback accusation.
+
+**Call order:** 77 Auto Group **792 717 779** (5,0/110, *zero cars on their site*) → MUMIA-CAR
+**502 485 353** (4,8/227; mumiacar.pl **301-redirects to their Otomoto page**) → MMD **579 016 551**.
+
+## 🔴 Open risks
+1. **Stock photos still live.** intracars/dwserwis/oponyifelgi/tlumiki serve Unsplash under *"Tak wygląda
+   nasza robota"*, captioned as their own work, and emitted as the business `image` in JSON-LD. **Root
+   cause is the default in `previews/_shared_tail.py` (GALLERY hardcodes 6 stock photos with
+   work-claiming captions).** Fix the default → rebuild; and `verify_copy.py` must gain an
+   imagery-provenance check (it passes today because it only validates services/prices).
+2. **The GBP 60-day clock has not started.** Live Google reviews AND the Place Actions booking link both
+   need a verified Givyx Google Business Profile **60+ days old**. Every day of delay is unrecoverable.
+3. **Compliance:** Google forbids caching ratings/reviews/hours (only lat/lng 30 days + place_id). The
+   planned review badge **must** use Places UI Kit or the GBP API — never store Places data.
+
+## Shipped today
+VAT-exempt change deployed (23% cleared, 249 stays 249) · lead path proven E2E · apply-ops retry bug
+fixed · metrics + GHCR runbooks corrected · per-site checklist split into two gates · task board
+reconciled (booking, grandfathering and card-on-file had all shipped untracked).
+
+## Research produced (all in `research/`)
+Product-quality benchmark (~40 sites) · audit of our own live sites · scroll-hero technical decision
+(**no evidence cinematic heroes convert; speed does — Vodafone A/B, +8% sales from LCP alone**) ·
+PL integration feasibility (**Zilo IS DobryMechanik — a competitor, not an integration target**).

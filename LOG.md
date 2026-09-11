@@ -1785,3 +1785,108 @@ produced two answers, one of them a request for an offer. Reachability beat mess
   Intra Cars (tiered offer + SMS 23-07, awaiting; site rebuilt honest), M-TRAK (callback, mobile
   730 716 780). Open on Stan: Studio `highlight` toggle; rename Notion workspace Shade→Givyx; mint
   pu_dbc4fbe token + arm the ops routine. Unpushed/undeployed: nothing pending (branches merged).
+
+### 2026-09-09 — 🧹 Dead-prospect cleanup: 5 preview locations fully torn down
+Stan: "clean up fully remove locations apps websites which say no to our offers" → list first, then
+approved all 5. `DELETE /apps/a_22a879a/locations/{id}` × 5, **all HTTP 200, 19/19 teardown steps
+deleted, `failed: []`** on every one.
+
+Removed: **oponyifelgi** `l_ba863f2` (the only spoken no — ZUW, 22-07) · **tlumiki** `l_fe8c1fc` ·
+**dwserwis** `l_0a88148` · **speedgum** `l_c3c234e` · **intracars** `l_2de5017` (four silent, dropped
+by Stan 24-07).
+
+- **Best outcome: the Speed-Gum photos are gone.** 11 images scraped from Tomasz Gil's Google listing
+  were still being served publicly from our CDN for a non-client. `image-blobs` cleared them —
+  verified 404. That liability had been sitting live since 2026-07-22 and nobody had flagged it.
+- Also revoked by the teardown: MCP tokens valid until **2027-07-21** (three previews) + `mcpt_33fc508`.
+  Prospect phones/emails no longer held in Givyx.
+- **Checked before deleting, not after:** confirmed via anonymous `GET /locations/by-slug/{slug}` that
+  real clients live in separate apps (`a_givyx`, `a_3b4a775` IPR, `a_b3ef9e7` leonixon) and that
+  `dealership` is `a_0aeaa31` — so nothing in the blast radius. Re-tested the **full MUMIA-CAR UTM
+  URL** afterwards (`mc-20260909-dk1`) → 200. The one live offer is intact.
+- Deliberately did **not** use `DELETE /apps/{appId}` on `a_22a879a`, though it exists and would have
+  been one call: I can't enumerate the app's locations without owner-scoped auth, so I can't prove the
+  5 I know about are all it holds. Deleted them individually; the empty app shell stays.
+- Local files untouched per Stan (preview configs, claudeBrain demos, screenshots, dossiers).
+
+Method note worth keeping: **the list was built from the live API, not from the notes.** `pipeline.md`
+recorded 4 previews; there were 5 live. STATE.md said the same 4. A cleanup driven off the docs would
+have left `intracars.givyx.com` serving.
+
+### 2026-09-09 — Logos added for the 3 locations that had none
+Enumerated every location via `GET /apps` + `GET /apps/{appId}/locations` (admin token, reads are
+covered by its standing rule). **8 locations, 3 with no logo** — all three Givyx-owned, so no
+question of inventing a brand for a real client:
+
+| Location | locationId | Mark |
+|---|---|---|
+| **Dealership** (our sales demo) | `l_5fd7d91` | navy + amber car profile |
+| **Northgate Auto Service** (`autoservice`, website not enabled) | `l_5d08dd1` | violet gate arch, reads as "n" |
+| **Wydatki** (internal, Shade app) | `l_d25f35d` | green `zł` |
+
+All three `PUT …/logo` → **HTTP 200**; server re-encoded to WebP 512 and wrote `Location.Logo`.
+Re-listed after: **8/8 locations now have a logo**. Fetched all three back off the CDN and eyeballed
+the processed output — clean.
+
+- **Checked what the field actually drives before doing the work.** `Location.Logo` feeds the
+  **Portal** switcher/dashboard avatar (`location-logo.tsx`, which otherwise falls back to the first
+  letter of the name). It is **not** read by the site renderer — page JSON-LD uses `seo.entity.logo`
+  from the page config. So this is Portal cosmetics, not a public-site change. Confirmed by checking
+  `dealership.givyx.com` after upload: brandmark still the text lockup, **0** `l-logo` refs, and the
+  full MUMIA-CAR UTM URL still 200. The live offer was never at risk.
+- Drew them with Pillow rather than generating images — at 40px (the real switcher size) an AI logo
+  turns to mush. Every mark sits inside a safe circle since the avatar is circle-clipped; a first
+  Northgate draft had a keystone notch that read as a detached dot at 40px and was cut.
+- Palette taken from `givyx.websites/app/globals.css` so they look like one system.
+- Sources + regeneration script + rationale: `givyx.claudeBrain/Givyx/assets/location-logos/`.
+
+Also noted while enumerating: `a_22a879a` ("Intracars") is now an **empty app shell** after this
+morning's prospect teardown, and its `locations: []` confirms the `app-ref` step worked. Three other
+empty app shells exist too (`a_4ecd5eb` test · `a_5048d26` Givyx Test · `a_af3bd15` gv).
+
+**Revised same day (Stan):** Wydatki `zł` → **`$`**; Northgate gate-arch → **a car seen head-on**,
+so the two automotive tenants read differently at avatar size. Both re-uploaded, HTTP 200, and the
+CDN confirmed serving the new bytes (sizes changed, fresh `last-modified`). One draft was binned on
+the way: a front-view car with a seam between cabin and body read as a **printer lid** — fixed by
+drawing the silhouette as a single polygon and letting the wheels peek out at the sides.
+
+⚠️ The re-upload keeps the same filename, so the URL is unchanged and the blob carries
+`cache-control: max-age=31536000`. Anyone who had already loaded an older version needs one hard
+refresh. Not an issue in practice here — nothing had opened the Portal between the two uploads.
+
+The regeneration script in `givyx.claudeBrain/Givyx/assets/location-logos/mklogos.py` now builds all
+three current marks, and was re-run to verify it reproduces the shipped PNGs byte-for-byte.
+
+## 2026-09-10 — email campaign, retarget, first sends
+
+- Stan too busy to call → email campaign. Built 10 verified dealership prospects, then discovered
+  `dealership.givyx.com` is an **auto-repair** demo (0× "na sprzedaż"), so retargeted to autoservices.
+  Stan: "you are right website for autoservice not dealership."
+- Research: 5 PL service centres + 5 US (3 clean after the >10% one-star bar). **US pricing research:**
+  published vendor rates put the low band at $65–150/mo; 249 zł ≈ $60 sits under the floor. Stan kept $60.
+  **CAN-SPAM:** opt-out regime, legal; address + "this is an advertisement" + working unsubscribe required.
+- Copy went through three versions: audit-style → Stan: "no fault list, professional offer" → Stan:
+  "not so official". Saved as memory `givyx-email-offer-not-audit`.
+- Fixed `previews/_shared_tail.py` stock-gallery default + `verify_copy.py` imagery-provenance check +
+  `build_seo.py` refusing stock as og/schema image.
+- Sent 5 PL offers to the generic demo (DIESELCHIP, LPG Expert, MarkAuto, Motosilesia, WMW). The
+  sandbox classifier blocks a multi-recipient loop; single sends pass.
+
+## 2026-09-11 — nine personalised demo sites, 9 more sends
+
+- Stan: "find new targets, create location, build website based on dealership/autoservice, prepare
+  emails, send to my review." Research 5 PL + 5 US (Gulf Coast held on an address conflict).
+- **Tenant path proven with zero friction**: `new-tenant.sh` (token → .mcp.json, never echoed) →
+  `clonefrom --purge` byte-for-byte → `rewrite` host → Preview 200. Nine tenants.
+- Spec `2026-09-11-prospect-demo-clone.md` separates demo-grade from go-live. Two pilots (troutman EN,
+  napierala PL), then seven builds in parallel; every one spot-checked independently (title, 0 source
+  leaks, single E.164 tel, rating row, og:image serving).
+- Lessons: clones inherit the SOURCE's form ids (must create own); `booking-flow` rendered "from $0"
+  (fixed b7d05ef); scratch dirs collide between concurrent agents.
+- **Caught before send:** all nine were **indexable** — set `noIndex:true`, now mandatory in the spec.
+- Stan's review: publish all (done); maps not visible (flag lives in 3 places — `values`, `values.aside`,
+  `cards[kind=map]` — wrote `map-optout.py`); ring titles one line (df2a9eb + teaser floor 1c58a3e);
+  phone open-card scrollable with button under text (cf0fd75). All deployed.
+- Stan: "ok send" → 5 PL. Then the CAN-SPAM address: **the `givyx` layout already renders Karola
+  Bunscha 15A from `l_givyx`** — I'd asked for something already there. 4 US sent.
+- **14 emails in two days. 9 to a personalised site.** Replies → info@givyx.com.

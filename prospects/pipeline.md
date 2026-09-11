@@ -411,3 +411,38 @@ known — CAN-SPAM requires it inside the message and it cannot be added after s
 
 **Sending note:** the sandbox classifier blocks a loop over multiple external recipients; single
 sends pass. Send one prospect per call, or add a Bash permission rule for curl to api.givyx.com.
+
+## 2026-09-11 — nine personalised demo sites built; review email sent to Stan
+
+Each prospect now has **their own tenant** at `<slug>.givyx.com` (Preview only, never published): their
+name, phone (E.164 dial links), geocoded pin, services in their wording, verified rating with read
+date, hours only if stated, prices only if published, their own photos where they had any, own
+booking + contact forms notifying info@givyx.com. Build logs: `givyx.claudeBrain/dealership/clones/`.
+Every one independently spot-checked (title, zero source leaks, tel, rating, og:image).
+
+| slug | prospect | email | code | send |
+|---|---|---|---|---|
+| napierala | Auto Napierała, Poznań | autonapierala@op.pl | `np-20260911-e1` | on Stan's OK |
+| autofirma | Auto Firma, Legnica | tomekszewerniak@wp.pl | `af-20260911-e1` | on Stan's OK |
+| latusek | Mechanika Pojazdowa Latusek, Katowice | centrum.hamulcowe@poczta.onet.pl | `lt-20260911-e1` | on Stan's OK |
+| pietruszko | Pietruszko Auto Service, Olsztyn | pietruszko@poczta.fm | `pt-20260911-e1` | on Stan's OK (send last — capacity signal) |
+| rsauto | RS AUTO, Gdańsk | rsautogdansk@gmail.com | `rs-20260911-e1` | on Stan's OK (read its 1★ first) |
+| troutman | Troutman Auto Care, NC | info@troutmanautocare.com | `tr-20260911-e1` | HELD — postal address |
+| adp | America's Diesel Performance, TX | info@dfwdieselrepair.com | `ad-20260911-e1` | HELD — postal address |
+| independenceauto | Independence Automotive, KY | Wlowe@independenceauto.shop | `ia-20260911-e1` | HELD — postal address |
+| herlehys | Herlehy's Complete Auto Repair, AZ | herlehysautorepair@gmail.com | `hl-20260911-e1` | HELD — postal address |
+
+Held without a tenant: Gulf Coast Diesel (address conflict). Yesterday's US three (Holbrook, Force,
+Big's RV) still point at the generic demo and still wait on the address; Holbrook + Force deserve
+their own clones next (engine shops); Big's RV fights the template.
+
+**Tracking without cookies:** the subdomain itself is unique per prospect, so a bare visit to
+`<slug>.givyx.com` is attributable even if the banner is ignored. The UTM code distinguishes a forward.
+
+**Renderer finding (givyx.websites, not a clone bug):** with no WebGL on desktop, a <8-card plain
+service grid sits entirely under the scroll-film's tail and is invisible (reproduced on the source
+`dealership` tenant). Affects RS AUTO's 6-card fallback. Fix: min-height on `.gx-as-plain`.
+
+**Go-live gate (unchanged, per runbook §6):** synthetic booking availability · placeholder legal pages ·
+Givyx favicon · SMS. Plus per-clone: Independence's hero is a Street View capture; ADP's hero shows a
+customer's lettered truck and its pin is from their own map widget.

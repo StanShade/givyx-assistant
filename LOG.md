@@ -1923,3 +1923,9 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
 - **Sent 1/0 each:** Rangeway (hello@rangeway.co, `rw-20260911-e1`), MenuFid (support@menufid.site, `mf-20260911-e1`).
 - **Jugadores held:** no email on the site, contact form is reCAPTCHA-gated (won't bypass). Stan submits by hand.
 - Note: givyx.com/pricing does not list the mobile app under Scale yet, but the email does — page should be updated.
+- **Holbrook + Force built** (agents, ~22 and ~33 min). Verified independently: titles, 0 leaks, one tel
+  each, noindex + `Disallow: /`, og:image 200, rating rows re-verified today (5.0/30 · 5.0/31 Google).
+  Force: "authorized Haltech dealer" and "18 years" from the research pack were NOT on any fetched page →
+  not asserted. All four test submissions arrived in Stan's Gmail within seconds. Two US drafts sent to
+  Stan (`[DO SPRAWDZENIA] 2 maile US — Holbrook + Force`), codes `hb-20260911-e1` / `fe-20260911-e1`.
+  Brain commit `443982c`, pipeline `17a8ef6`. **Scoreboard: 11 personalised sites, 14 emails sent, 2 drafts.**

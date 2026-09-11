@@ -292,6 +292,9 @@ Pattern: `<prospect>-<yyyymmdd>-<initials><n>`
 | `mc-20260909-dk1` | **MUMIA-CAR** (Dawid Korbiel) | mumiacar@gmail.com | 2026-09-09 | dealership.givyx.com |
 | `dc-20260910-e1` | **DIESELCHIP** (inż. Paweł Stachera) | info@dieselchip.pl | **2026-09-10 SENT** | dealership.givyx.com |
 | `hb-20260910-e1` | **Holbrook Racing Engines** | sales@holbrookracingengines.com | **HELD — needs postal address (CAN-SPAM)** | autoservice.givyx.com |
+| `rw-20260911-e1` | **Rangeway** (EV charging network, US) | hello@rangeway.co | **2026-09-11 SENT** | autoservice.givyx.com + givyx.com/pricing |
+| `mf-20260911-e1` | **MenuFid** (QR menus, FR) | support@menufid.site | **2026-09-11 SENT** | autoservice.givyx.com + givyx.com/pricing |
+| `jg-20260911-e1` | **Jugadores** (players/clubs app, AR) | contact form only (reCAPTCHA) | **HELD — Stan to submit the form by hand** | autoservice.givyx.com + givyx.com/pricing |
 
 Full URL pattern:
 `https://dealership.givyx.com/?utm_source=email&utm_medium=oferta&utm_campaign=<prospect>&utm_content=<code>`
@@ -434,6 +437,7 @@ Every one independently spot-checked (title, zero source leaks, tel, rating, og:
 | adp | America's Diesel Performance, TX | info@dfwdieselrepair.com | `ad-20260911-e1` | **SENT 2026-09-11** |
 | independenceauto | Independence Automotive, KY | Wlowe@independenceauto.shop | `ia-20260911-e1` | **SENT 2026-09-11** |
 | herlehys | Herlehy's Complete Auto Repair, AZ | herlehysautorepair@gmail.com | `hl-20260911-e1` | **SENT 2026-09-11** |
+| holbrook | Holbrook Racing Engines, MI | sales@holbrookracingengines.com | `hb-20260911-e1` | clone built 2026-09-11, not sent (`dealership/clones/holbrook.md`) |
 
 Held without a tenant: Gulf Coast Diesel (address conflict). Yesterday's US three (Holbrook, Force,
 Big's RV) still point at the generic demo and still wait on the address; Holbrook + Force deserve

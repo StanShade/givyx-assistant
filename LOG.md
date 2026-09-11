@@ -1912,3 +1912,14 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   agents dispatched for steps 4–13. Nothing sent.
 - Couldn't open today's `[givyx-ops] daily digest — 1 thing(s) need attention` (Gmail connector returns
   "caller does not have permission" on trashed threads). Every info@ mail to Stan still lands in Trash.
+
+## 2026-09-11 (evening) — 3 startup offers (non-auto, Stan's finds)
+
+- Stan: rangeway.co, menufid.site, jugadores.com.ar → generic "we build modern sites with animation/video"
+  offer, benefits list, autoservice.givyx.com as the Studio example, Starter/Studio/Scale mentioned
+  (mobile app under Scale), public $29/$49/$199 pricing (not the $60 the US shops got — flagged, Stan sent as-is).
+- Template = branded `layout:givyx` + `l_givyx`, green button, "This is an advertisement" + reply-unsubscribe.
+  Unique UTM per prospect on both the demo and the pricing link. Bodies: `outreach/2026-09-11-startups/`.
+- **Sent 1/0 each:** Rangeway (hello@rangeway.co, `rw-20260911-e1`), MenuFid (support@menufid.site, `mf-20260911-e1`).
+- **Jugadores held:** no email on the site, contact form is reCAPTCHA-gated (won't bypass). Stan submits by hand.
+- Note: givyx.com/pricing does not list the mobile app under Scale yet, but the email does — page should be updated.

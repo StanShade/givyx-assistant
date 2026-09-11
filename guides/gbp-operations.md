@@ -90,9 +90,10 @@ What this unlocks and why it matters is in `research/2026-07-24-integration-feas
 
 ## 7. Two housekeeping items still open
 
-1. **Add a second owner.** The whole asset hangs off one personal Gmail. Business Profile settings →
-   People and access → Add → Owner → e.g. `stan.zak.inf@gmail.com`. A new owner waits 7 days before
-   they can transfer primary ownership.
+1. **Second owner — DONE 2026-09-11.** Invite to `stan.zak.inf@gmail.com` as Owner accepted 13:53Z
+   (Gmail: "You are now an owner of Givyx"). A new owner waits 7 days before it can
+   transfer primary ownership. The profile also sits under a Business Manager organisation
+   (`om-7178703084732666736`) — that is likely the "organization account" the API prerequisites mention.
 2. **givyx.com/pricing shows USD** ($0/$29/$49/$199) while the profile and products say zł. Every
    Polish visitor from Maps hits that mismatch. Decision from Stan: PLN for Poland, USD elsewhere →
    needs a locale-aware pricing page (spec → Portal task).

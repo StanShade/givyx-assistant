@@ -1890,3 +1890,25 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
 - Stan: "ok send" → 5 PL. Then the CAN-SPAM address: **the `givyx` layout already renders Karola
   Bunscha 15A from `l_givyx`** — I'd asked for something already there. 4 US sent.
 - **14 emails in two days. 9 to a personalised site.** Replies → info@givyx.com.
+
+## 2026-09-11 (afternoon) — lead path was broken; found and fixed
+
+- Inbox check 14:30Z (stan.zak.inf@gmail.com, all folders): **0 replies** to the 14 sends (expected, same-day).
+  **0 of the 18 "Givyx Test" submissions** from the 09-11 clones present, although the API had logged
+  `Notified: true` for every one. Last form email in the mailbox was 09-09 (Northgate).
+- Fault split: set the troutman contact form to `info@givyx.com,stan.zak.inf@gmail.com`, fired one
+  submission (`resp_04662e20…`, 201). The Gmail copy arrived in 1 s, in Inbox. The info@ copy never did.
+  So SendGrid is fine; **the improvmx forward for info@givyx.com does not land in this Gmail.**
+  dealership/autoservice forms already pointed straight at the Gmail — that is why the 09-09 tests worked.
+- Fix: all 18 clone forms now `notifyEmails = info@givyx.com,stan.zak.inf@gmail.com` (each read back with
+  `get_form`). Spec step 11 updated to require both. **Still open for Stan:** where does improvmx forward
+  info@? Prospect *replies* to the offer emails (replyTo info@) go there too.
+- Notion sync: #87 GBP owner invite → Done (accepted 13:53Z per Gmail). #11 Speed-Gum, #12 Intra Cars
+  closed (dead since July, tenants 404). #59 stock photos closed (all 4 old previews 404, verified curl).
+  #60 provenance gate closed (shipped 09-10). #67 empty P0 row parked. #88 notes carry the finding.
+  Calendar event 15 Sep 09:00 for #84 (GBP API application).
+- Holbrook Racing Engines (`holbrook`, a_04fa64e/l_e9f0a8f) and Force Engineering (`force`,
+  a_219357c/l_395afd0) tenants created, cloned from the EN source, hosts rewritten, Preview 200. Two build
+  agents dispatched for steps 4–13. Nothing sent.
+- Couldn't open today's `[givyx-ops] daily digest — 1 thing(s) need attention` (Gmail connector returns
+  "caller does not have permission" on trashed threads). Every info@ mail to Stan still lands in Trash.

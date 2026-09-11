@@ -437,6 +437,8 @@ Every one independently spot-checked (title, zero source leaks, tel, rating, og:
 | adp | America's Diesel Performance, TX | info@dfwdieselrepair.com | `ad-20260911-e1` | **SENT 2026-09-11** |
 | independenceauto | Independence Automotive, KY | Wlowe@independenceauto.shop | `ia-20260911-e1` | **SENT 2026-09-11** |
 | herlehys | Herlehy's Complete Auto Repair, AZ | herlehysautorepair@gmail.com | `hl-20260911-e1` | **SENT 2026-09-11** |
+| holbrook | Holbrook Racing Engines, Livonia MI | sales@holbrookracingengines.com | `hb-20260911-e1` | built 09-11 15:05Z, **draft with Stan** |
+| force | Force Engineering, Plainwell MI | Force-ENG@hotmail.com | `fe-20260911-e1` | built 09-11 15:14Z, **draft with Stan** |
 | holbrook | Holbrook Racing Engines, MI | sales@holbrookracingengines.com | `hb-20260911-e1` | clone built 2026-09-11, not sent (`dealership/clones/holbrook.md`) |
 
 Held without a tenant: Gulf Coast Diesel (address conflict). Yesterday's US three (Holbrook, Force,
@@ -463,3 +465,14 @@ demo on 09-10, 5 to their own personalised site on 09-11). Replies → info@givy
 **2026-09-11 — US four sent:** Troutman (tr), ADP (ad), Independence (ia), Herlehy's (hl) — all `sent:true`,
 each to their own site, footer = "This is an advertisement" + layout address + reply-"unsubscribe".
 **Scoreboard: 14 emails in two days** (10 PL + 4 US). 9 of them point at a personalised site.
+
+## 2026-09-11 (late) — lead path fixed; Holbrook + Force built
+
+- **0 of the 18 test bookings from the 09-11 clones reached Stan** although the API logged `Notified:true`
+  to info@givyx.com. Fault-split on troutman: a copy to stan.zak.inf@gmail.com arrived in 1 s; the info@
+  copy never did. All 18 forms (and the two new ones) now notify `info@givyx.com,stan.zak.inf@gmail.com`.
+  **Open for Stan: where does improvmx forward info@? Prospect replies (replyTo info@) go there.**
+- Holbrook (`holbrook.givyx.com`, 5.0/30 Google, 7 services, published rates) and Force
+  (`force.givyx.com`, 5.0/31 Google, 8 services, their dyno rate card) built per the spec, noindex,
+  own forms (tests arrived in Gmail). Logs: `givyx.claudeBrain/dealership/clones/{holbrook,force}.md`.
+  Two US drafts sent to Stan for OK (`[DO SPRAWDZENIA] 2 maile US`). Big's RV dropped.

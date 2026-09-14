@@ -1993,3 +1993,18 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   PlatformAdmin-gated like the rest of `OpsApi`, per location: views, sessions, CTA clicks, form
   submits, first/last seen, by campaign/country/device, last 20 hits. Not merged, not deployed —
   Stan merges; apply-ops deploys. Needs the re-minted routine token to be useful.
+- **Afternoon:** batch 3 research landed (10 verified, 10 cities; KDM held on a NAP conflict, Zajdel held
+  on Q Service Castrol branding). CEIDG seam landed (73 new małopolskie workshops since mid-June; 22% with
+  a phone; top 3 have Google listings and no site) → `outreach/2026-09-14-call-script-new-workshops.md`.
+  Tenants created + cloned + host-rewritten for 12: dieselchip, lpgexpert, markauto, wmw (09-10 four) and
+  poslowski, idzikowski, spauto, bulek, carexpert, bartex, garage66, gamerc (batch 3).
+- **Incident:** 12 concurrent build agents hit the account's session limit (429, reset 16:00). The
+  09-10 four had reached the last step (titles, noindex, 0 leaks, forms with both notify addresses,
+  screenshots; dieselchip + lpgexpert logs written and test submissions in Gmail 10:06–10:12Z;
+  markauto + wmw missing only the form tests + log → finishing agent). Batch 3 agents died on their
+  first call — those 8 tenants still serve the Kowalski template on the prospect's slug (no links
+  anywhere; noindex comes with the build). Re-dispatched at 16:40 in waves of 4 (poslowski,
+  idzikowski, spauto, bulek first). **Lesson: cap concurrent build agents at 4; have agents write
+  the clone log early.**
+- Gotcha recorded in `dealership/clones/index.md`: curling a slug before its tenant exists caches a
+  404 in the renderer for ~60 s (stale-while-revalidate) — check `api.givyx.com/locations/by-slug/`.

@@ -437,8 +437,8 @@ Every one independently spot-checked (title, zero source leaks, tel, rating, og:
 | adp | America's Diesel Performance, TX | info@dfwdieselrepair.com | `ad-20260911-e1` | **SENT 2026-09-11** |
 | independenceauto | Independence Automotive, KY | Wlowe@independenceauto.shop | `ia-20260911-e1` | **SENT 2026-09-11** |
 | herlehys | Herlehy's Complete Auto Repair, AZ | herlehysautorepair@gmail.com | `hl-20260911-e1` | **SENT 2026-09-11** |
-| holbrook | Holbrook Racing Engines, Livonia MI | sales@holbrookracingengines.com | `hb-20260911-e1` | built 09-11 15:05Z, **draft with Stan** |
-| force | Force Engineering, Plainwell MI | Force-ENG@hotmail.com | `fe-20260911-e1` | built 09-11 15:14Z, **draft with Stan** |
+| holbrook | Holbrook Racing Engines, Livonia MI | sales@holbrookracingengines.com | `hb-20260911-e1` | **SENT 2026-09-14** (Friday's approved text, verbatim; promoted first) |
+| force | Force Engineering, Plainwell MI | Force-ENG@hotmail.com | `fe-20260911-e1` | **SENT 2026-09-14** (Friday's approved text, verbatim; promoted first) |
 | holbrook | Holbrook Racing Engines, MI | sales@holbrookracingengines.com | `hb-20260911-e1` | clone built 2026-09-11, not sent (`dealership/clones/holbrook.md`) |
 
 Held without a tenant: Gulf Coast Diesel (address conflict). Yesterday's US three (Holbrook, Force,
@@ -521,8 +521,7 @@ Held: KDM Szczecin (NAP conflict) · Zajdel Częstochowa (Q Service Castrol). Mo
 email 2 only (`ms-20260916-e2`). Drafts: `outreach/2026-09-15-email1-batch3.md`,
 `outreach/2026-09-16-email2-0910-four.md`. **Stan 2026-09-14 evening: "ok looks good publish" → all 12 promoted; "send all" → 12 emails sent (12/12 `sent:true`,
 email 2 = variant A: „bez umowy, rezygnacja w każdej chwili”, no first-month-free). Scoreboard: 23 personalised sites
-live, 28 emails sent to date, 0 replies (routing unverified).** Not sent: Holbrook + Force (US drafts, still awaiting OK),
-Motosilesia (generic-demo email 2), KDM + Zajdel (held).
+live, 28 emails sent to date, 0 replies (routing unverified).** Holbrook + Force sent 2026-09-14 (Stan: "send holbrook and force too") → 30 emails to date. Not sent: Motosilesia (generic-demo email 2), KDM + Zajdel (held).
 
 ### Follow-up dates for today's 12
 | Batch | D+3 SMS (Stan) | D+5 email | D+10 last |

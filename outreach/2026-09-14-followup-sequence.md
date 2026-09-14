@@ -8,7 +8,7 @@ corrected — D+3 for the 09-11 batch is **today, Mon 14 Sep** (15 Sep is a Tues
 | PL 09-11 five (own site) | Thu 09-11 | **SMS today, Mon 14 Sep** (4 mobiles; Napierała has a landline only → email 2 only) | **Wed 16 Sep** email 2 | Mon 21 Sep last touch |
 | US 09-11 four (own site) | Thu 09-11 | — (email only) | Wed 16 Sep email 2 | Mon 21 Sep |
 | PL 09-10 five (generic demo) | Wed 09-10 | **skip the generic-demo SMS** — one stronger touch instead: | **Wed 16 Sep: their OWN site + email 2 + SMS the same hour** (clones building 14–15 Sep) | Mon 22 Sep |
-| Holbrook · Force (US) | awaiting Stan's OK | — | D+5 after send | D+10 |
+| Holbrook · Force (US) | sent Mon 14 Sep | — (email only) | Fri 19 Sep email 2 | Wed 24 Sep |
 | MUMIA-CAR | offer 09-09 | callback overdue since Thu 11 Sep — **call today** | | |
 
 ---

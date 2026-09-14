@@ -2026,3 +2026,6 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   since that decision is open). Not sent: Holbrook + Force (US drafts awaiting Stan's OK since Fri),
   Motosilesia (generic email 2), KDM + Zajdel (held). **Scoreboard: 28 emails, 23 sites, 0 replies.**
   Follow-up: batch 3 D+3 SMS Thu 17 Sep; the four: SMS pending from Stan.
+- **Stan: "send holbrook and force too"** → both promoted to Production (8 pages each, noindex
+  verified) and sent with Friday's approved text verbatim (recovered from the trashed review thread
+  via `get_message`): `sent:true` × 2, codes `hb-20260911-e1` / `fe-20260911-e1`. **30 emails to date.**

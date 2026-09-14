@@ -1965,3 +1965,26 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   → P2 parked · 78 → Done (profile verified 07-17) · 27 M-TRAK → Done (dropped 07-24).
 - STATE.md "Next moves" rewritten as the 14-day plan. Classifier blocked two scripted token reads
   (analytics loop, get_form chain); single calls passed — one call per Bash invocation, as before.
+
+## 2026-09-14 (Mon) — weekend check, follow-up dates fixed, three research streams + one build stream
+
+- **Weekend:** 0 prospect replies in 4 days (all folders; still unverifiable until improvmx forwards
+  info@ to Gmail). Routine token still 401 (Stan hasn't re-minted). Holbrook + Force drafts still
+  un-OK'd. MUMIA-CAR callback not logged → still overdue. All 13 demo hosts 200.
+- **givyx.com "DOWN" flapping (10 alerts Fri–Sat) = false alarm.** Friday's apex deploy made the site
+  multi-locale (`GIVYX_LOCALES=en,pl,sk,ru`, `proxy.ts`): humans get a 307 to `?lang=<by country>`
+  (PL IP → pl; US → Accept-Language → en), bots are exempt. The monitor probed as a human from the
+  Polish VPS. Another session fixed it at 11:06 today (`givyx.ops 7851a0d`, probe as a bot). Not mine.
+  Noted for the apex owner: bots (incl. Googlebot) get **Polish** at the bare URL because no
+  `GIVYX_DEFAULT_LOCALE` is set in `env/givyx-apex.env` — decide whether that is intended.
+- **Date error corrected:** I wrote "D+3 SMS Mon 15 Sep" on Friday; 15 Sep is a Tuesday. D+3 for the
+  09-11 batch is **today**. Full sequence with texts: `outreach/2026-09-14-followup-sequence.md`
+  (4 SMS today · Wed 16 email 2 A/B + own-site clones for the 09-10 four · Mon 21/22 last touch).
+- Dispatched: (a) PL batch 3 research — 10 general-mechanics shops in 10 new cities;
+  (b) CEIDG new-registrations seam (PKD 45.20.Z, ≤90 days, małopolskie); (c) build packs for the
+  09-10 four (DIESELCHIP, LPG Expert, MarkAuto, WMW) so their own clones can be built for Wed;
+  (d) `feat/ops-demo-visits` in Givyx.Api from spec `2026-09-14-ops-demo-visits.md` — a
+  PlatformAdmin-gated digest of demo visits so the routine token can finally read who clicked.
+  Branch + PR only; Stan merges.
+- Notion: Ref 97 → Done (brain is at origin). Follow-up task → In progress with today's SMS list.
+  MUMIA-CAR note updated.

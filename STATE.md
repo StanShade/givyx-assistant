@@ -1,6 +1,6 @@
 # Givyx — START HERE
 
-Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-11 (evening)**.
+Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-14**.
 
 > ⚠️ **MODEL:**
 > - **Tasks live in Notion** (Givyx → Tasks DB, page `17cb6a06-0d47-80b5-95ff-fbc322ab3311`). Update
@@ -223,7 +223,7 @@ and 14 sends is statistically nothing. Fix those, then add volume and two warm s
 | 3b | **Re-mint the ops routine token** (`~/.givyx/ops-routine.token`, 401 now) — your dashboard answers are unread until then | Stan, 3 min | 12 Sep |
 | 4 | Decide the **risk-reversal** for clients #1–5 (rec: no contract + first month free) — ops dashboard | Stan | 12 Sep |
 | 5 | **Demo clicks readable** — `/admin/ops/demo-visits` spec + agent (or Stan reads Portal analytics) | me | 12–15 Sep |
-| 6 | **Follow-up sequence** — D+3 SMS to the 9 PL mobiles (Mon 15 Sep), D+5 email 2 with the offer, D+10 last | Stan sends SMS, I draft | 15–22 Sep |
+| 6 | **Follow-up sequence** — D+3 SMS to the four 09-11 mobiles (**Mon 14 Sep**), Wed 16 Sep email 2 (+ own-site clones for the 09-10 five), Mon 21 Sep last touch — texts in `outreach/2026-09-14-followup-sequence.md` | Stan sends SMS, I draft | 14–22 Sep |
 | 7 | **Volume** — 10 personalised clones/day, one review mail to Stan/day, 50 sends/week, 100 by 25 Sep | me | daily |
 | 8 | Own-site clones for the 09-10 five (DIESELCHIP, LPG, MarkAuto, Motosilesia, WMW) as their email 2 | me | 15 Sep |
 | 9 | **New seams:** CEIDG new registrations (PKD 45.20.Z, last 90 days) · RU/UA-owned shops in Kraków (Stan calls in his language) | me list → Stan calls | 15–19 Sep |

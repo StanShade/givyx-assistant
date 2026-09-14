@@ -487,8 +487,10 @@ writes nothing to the device and fires for every visitor (`givyx.websites/utils/
 ## Follow-up schedule (rule: three touches per send, logged here)
 | Batch | Sent | D+3 SMS (Stan's phone) | D+5 email 2 (offer, reply CTA) | D+10 last |
 |---|---|---|---|---|
-| PL 09-10 five (generic demo) | 09-10 | **Mon 15 Sep** — 516 757 560 · 796 545 247 · 603 315 625 · 503 005 705 · 503 398 404 | 15–16 Sep, **with their own clone** (Ref 89) | 22 Sep |
-| PL 09-11 five (own site) | 09-11 | **Mon 15 Sep** — Auto Firma 695 194 119 · Latusek 601 951 909 · Pietruszko 602 332 740 · RS Auto 514 606 061 (Napierała: landline only → email) | Tue 16 Sep | Mon 22 Sep |
-| US 09-11 four (own site) | 09-11 | — (email only) | Tue 16 Sep | Mon 22 Sep |
+| PL 09-10 five (generic demo) | 09-10 | skip (one stronger touch Wed instead) | **Wed 16 Sep: own clone + email 2 + SMS** — 516 757 560 · 796 545 247 · 503 005 705 · 503 398 404 (Motosilesia: generic demo only) | Mon 22 Sep |
+| PL 09-11 five (own site) | 09-11 | **Mon 14 Sep (today)** — Auto Firma 695 194 119 · Latusek 601 951 909 · Pietruszko 602 332 740 · RS Auto 514 606 061 (Napierała: landline only → email) | Wed 16 Sep | Mon 21 Sep |
+| US 09-11 four (own site) | 09-11 | — (email only) | Wed 16 Sep | Mon 21 Sep |
 | Holbrook · Force | awaiting Stan's OK | — | D+5 | D+10 |
-| MUMIA-CAR | offer 09-09 | **callback OVERDUE — call 502 485 353 Fri 12 Sep** | | |
+| MUMIA-CAR | offer 09-09 | **callback OVERDUE since Thu 11 Sep — call 502 485 353 today (Mon 14 Sep)** | | |
+
+Texts for every touch: `outreach/2026-09-14-followup-sequence.md` (dates corrected 09-14: D+3 = Mon 14 Sep).

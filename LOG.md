@@ -1988,3 +1988,8 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   Branch + PR only; Stan merges.
 - Notion: Ref 97 → Done (brain is at origin). Follow-up task → In progress with today's SMS list.
   MUMIA-CAR note updated.
+- **Shipped to a PR:** `feat/ops-demo-visits` → https://github.com/StanShade/givyx.api/pull/88
+  (741 additions, 1281 tests green, +26, TDD). `GET /admin/ops/demo-visits?since=&locations=`,
+  PlatformAdmin-gated like the rest of `OpsApi`, per location: views, sessions, CTA clicks, form
+  submits, first/last seen, by campaign/country/device, last 20 hits. Not merged, not deployed —
+  Stan merges; apply-ops deploys. Needs the re-minted routine token to be useful.

@@ -2015,3 +2015,7 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   GBP unclaimed; hours conflicts left unprinted), the asks (publish → send batch 3 Tue → send the
   four Wed + SMS), and the morning list still open. Email-1 drafts for batch 3 and email-2 drafts
   for the four committed. **Day total: 12 sites, 2 research pools, 1 PR, 0 sends, 0 replies.**
+- **Stan: "ok looks good publish"** → all 12 promoted to Production (`deploy_to_production`, 8 pages
+  each, 0 deleted, one call per tenant). Verified after promotion on every bare URL: Production title
+  == Preview, `noindex, nofollow`, robots `Disallow: /`, 0 template hits. Brain index updated + pushed.
+  Awaiting: "ok send batch 3" (Tue) and "ok send czwórka" (Wed).

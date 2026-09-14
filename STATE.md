@@ -16,11 +16,11 @@ Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-1
 |---|---|
 | Paying customers | **0** |
 | MRR | **0 zł** |
-| **Emails sent** | **14 in two days** — 10 PL (5 generic demo 09-10 · 5 personalised site 09-11) + 4 US (personalised site 09-11) · **+2 US drafts (Holbrook, Force) awaiting Stan's OK** · **replies: 0 as of 09-11 16:30Z — but see ⚠️ reply routing below** |
+| **Emails sent** | **16 to date** (14 in two days — 10 PL (5 generic demo 09-10 · 5 personalised site 09-11) + 4 US (personalised site 09-11) · **+2 US drafts (Holbrook, Force) awaiting Stan's OK** · **replies: 0 as of 09-11 16:30Z — but see ⚠️ reply routing below** |
 | **Demo clicks** | **Recorded but unread.** The beacon is cookieless since the 09-02 consent rework — every visit to every `<slug>.givyx.com` is in Givyx analytics with `utm_campaign`. I cannot read it (routine token → 401 on `/api/analytics`); Stan can, in the Portal. Task filed. |
 | Calls made (Sept) | 13 touched → 11 conversations → 0 closed (workshops "mam dużo klientów", dealerships already served) |
 | Offers by email | MUMIA-CAR (09-09, generic demo, callback was due 09-11) |
-| **Personalised demo sites live** | **9** at `<slug>.givyx.com` — napierala · autofirma · latusek · pietruszko · rsauto · troutman · adp · independenceauto · herlehys. Published, **noindex**, maps un-gated, forms → info@givyx.com |
+| **Personalised demo sites live** | **23** at `<slug>.givyx.com` — 11 sent (napierala · autofirma · latusek · pietruszko · rsauto · troutman · adp · independenceauto · herlehys · holbrook · force) + **12 built 09-14 awaiting Stan's OK** (dieselchip · lpgexpert · markauto · wmw · poslowski · idzikowski · spauto · bulek · carexpert · bartex · garage66 · gamerc). All **noindex**, maps un-gated, forms → info@ + Stan's Gmail. Index: `givyx.claudeBrain/dealership/clones/index.md` |
 | Flagship demos | dealership.givyx.com (PL) · autoservice.givyx.com (EN) — both are AUTO-REPAIR sites; target = autoservices, not dealerships |
 | Catalog | Starter **149**/1490 · Studio **249**/2490 · Scale **750**/7500 · US pitched at **$60/mo** (Stan's call; US low band is $65–150) |
 | VAT | **exempt** (zwolnienie podmiotowe) — 249 zł stays 249 zł |

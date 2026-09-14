@@ -2008,3 +2008,10 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   the clone log early.**
 - Gotcha recorded in `dealership/clones/index.md`: curling a slug before its tenant exists caches a
   404 in the renderer for ~60 s (stale-while-revalidate) — check `api.givyx.com/locations/by-slug/`.
+- **Evening:** all 12 builds done and independently re-verified (titles, noindex, 0 leaks × 8 pages,
+  E.164 tel, rating rows; 24 form-test notifications in Gmail). Waves of 4 held; no further 429.
+  Brain commit `46bfa9f` pushed (12 clone logs, index, ops spec). Review mail to Stan sent
+  (`sent:1`): 12 links, per-site caveats (Idzikowski Q-SERVICE sign; WMW/GAMERC no photos; MarkAuto
+  GBP unclaimed; hours conflicts left unprinted), the asks (publish → send batch 3 Tue → send the
+  four Wed + SMS), and the morning list still open. Email-1 drafts for batch 3 and email-2 drafts
+  for the four committed. **Day total: 12 sites, 2 research pools, 1 PR, 0 sends, 0 replies.**

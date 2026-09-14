@@ -494,3 +494,30 @@ writes nothing to the device and fires for every visitor (`givyx.websites/utils/
 | MUMIA-CAR | offer 09-09 | **callback OVERDUE since Thu 11 Sep — call 502 485 353 today (Mon 14 Sep)** | | |
 
 Texts for every touch: `outreach/2026-09-14-followup-sequence.md` (dates corrected 09-14: D+3 = Mon 14 Sep).
+
+## 2026-09-14 — twelve more personalised sites built (Preview, noindex); nothing sent
+
+Review mail to Stan 17:5xZ: `[DO SPRAWDZENIA] 12 stron`. Every clone: own booking + contact forms
+notifying `info@givyx.com,stan.zak.inf@gmail.com` (all 24 test submissions arrived in Gmail),
+`noindex, nofollow` + `Disallow: /`, 0 template leaks across 8 pages, one E.164 phone, rating row
+with read date. Logs: `givyx.claudeBrain/dealership/clones/<slug>.md` (commit 46bfa9f).
+
+| slug | prospect | email | plan | code |
+|---|---|---|---|---|
+| dieselchip | DIESELCHIP, Kania k. Barcina | info@dieselchip.pl | **email 2 Wed 16 Sep** (own site) + SMS 516 757 560 | `dc-20260916-e2` |
+| lpgexpert | LPG Expert, Białystok | biuro@montaz-gazu.bialystok.pl | email 2 Wed 16 Sep + SMS 796 545 247 | `lpg-20260916-e2` |
+| markauto | MarkAuto Serwis, Warszawa | serwis@markauto.pl | email 2 Wed 16 Sep + SMS 503 005 705 (GBP unclaimed → call prep) | `ma-20260916-e2` |
+| wmw | WMW Automotive, Łódź | kontakt@wmwautomotive.pl | email 2 Wed 16 Sep + SMS 503 398 404 (no own photos) | `wmw-20260916-e2` |
+| poslowski | Auto-Serwis Posłowski, Wrocław | poslowski10@gmail.com | **email 1 Tue 15 Sep** after Stan's OK | `ps-20260915-e1` |
+| idzikowski | Idzikowski Auto Serwis, Kielce | serwis@idzikowski.com.pl | email 1 Tue 15 Sep — ⚠ Q-SERVICE sign on their photo, Stan's call | `id-20260915-e1` |
+| spauto | Sp Auto, Bielsko-Biała | sp.auto.bb@gmail.com | email 1 Tue 15 Sep | `sp-20260915-e1` |
+| bulek | BULEK, Toruń | warsztat@bulek.pl | email 1 Tue 15 Sep | `bk-20260915-e1` |
+| carexpert | Car Expert Serwis, Bydgoszcz | carexpertserwis@op.pl | email 1 Tue 15 Sep | `ce-20260915-e1` |
+| bartex | Auto Serwis BARTEX, Opole | bartex.opole@onet.eu | email 1 Tue 15 Sep | `bx-20260915-e1` |
+| garage66 | GARAGE 66, Rzeszów | biuro@garage66.pl | email 1 Tue 15 Sep | `g6-20260915-e1` |
+| gamerc | GAMERC, Lublin | gamerc@onet.pl | email 1 Tue 15 Sep (no own photos) | `gm-20260915-e1` |
+
+Held: KDM Szczecin (NAP conflict) · Zajdel Częstochowa (Q Service Castrol). Motosilesia: generic-demo
+email 2 only (`ms-20260916-e2`). Drafts: `outreach/2026-09-15-email1-batch3.md`,
+`outreach/2026-09-16-email2-0910-four.md`. **Scoreboard: 23 personalised sites live on Preview
+(11 sent, 12 awaiting OK); 16 emails sent to date; 0 replies (routing unverified).**

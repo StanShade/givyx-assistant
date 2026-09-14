@@ -17,7 +17,9 @@ Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-1
 | Paying customers | **0** |
 | MRR | **0 zł** |
 | **Emails sent** | **16 to date** (14 in two days — 10 PL (5 generic demo 09-10 · 5 personalised site 09-11) + 4 US (personalised site 09-11) · **+2 US drafts (Holbrook, Force) awaiting Stan's OK** · **replies: 0 as of 09-11 16:30Z — but see ⚠️ reply routing below** |
-| **Demo clicks** | **Recorded but unread.** The beacon is cookieless since the 09-02 consent rework — every visit to every `<slug>.givyx.com` is in Givyx analytics with `utm_campaign`. I cannot read it (routine token → 401 on `/api/analytics`); Stan can, in the Portal. Task filed. |
+| **Demo clicks** | **Readable since 09-14** (admin token in the routine slot, exp 10-14). First read: generic demo → **MUMIA-CAR + Motosilesia opened it**; the nine 09-11 personalised sites → **0 tracked clicks in 3 days**. Today's 12 sends are the next data point (Wed morning). |
+| **Replies** | **Land in `stan.zak.shade@gmail.com`** — improvmx forwards every @givyx.com alias there (Stan's screenshot 09-14), not to the Gmail I can read. Stan checks it, or adds stan.zak.inf@gmail.com as a second forward target. |
+| **Offer for clients #1–5** | **Decided 09-14:** no contract, cancel any time, **first month free**. In every template from now; the 30 emails sent so far did not carry it, the D+5 follow-ups will. |
 | Calls made (Sept) | 13 touched → 11 conversations → 0 closed (workshops "mam dużo klientów", dealerships already served) |
 | Offers by email | MUMIA-CAR (09-09, generic demo, callback was due 09-11) |
 | **Personalised demo sites live** | **23** at `<slug>.givyx.com` — 11 sent (napierala · autofirma · latusek · pietruszko · rsauto · troutman · adp · independenceauto · herlehys · holbrook · force) + **12 built 09-14 awaiting Stan's OK** (dieselchip · lpgexpert · markauto · wmw · poslowski · idzikowski · spauto · bulek · carexpert · bartex · garage66 · gamerc). All **noindex**, maps un-gated, forms → info@ + Stan's Gmail. Index: `givyx.claudeBrain/dealership/clones/index.md` |
@@ -217,12 +219,12 @@ and 14 sends is statistically nothing. Fix those, then add volume and two warm s
 
 | # | Move | Owner | When |
 |---|---|---|---|
-| 1 | **Reply routing** — improvmx `info@givyx.com` → `stan.zak.inf@gmail.com`, test one inbound mail | Stan, 5 min | **12 Sep** |
+| 1 | **Reply routing** — improvmx forwards info@ to `stan.zak.shade@gmail.com` (found 09-14). Stan: check that mailbox now for replies; add `stan.zak.inf@gmail.com` as a second target so I can read them | Stan, 5 min | **15 Sep** |
 | 2 | **MUMIA-CAR callback** (was due 09-11, not done) — 502 485 353 | Stan, 5 min | **12 Sep** |
 | 3 | OK the two US drafts (Holbrook, Force) → I send | Stan, 1 min | 12 Sep |
-| 3b | **Re-mint the ops routine token** (`~/.givyx/ops-routine.token`, 401 now) — your dashboard answers are unread until then | Stan, 3 min | 12 Sep |
-| 4 | Decide the **risk-reversal** for clients #1–5 (rec: no contract + first month free) — ops dashboard | Stan | 12 Sep |
-| 5 | **Demo clicks readable** — `/admin/ops/demo-visits` spec + agent (or Stan reads Portal analytics) | me | 12–15 Sep |
+| 3b | ~~Routine token~~ — done 09-14 (admin JWT in the slot, expires 14 Oct) | — | ✅ |
+| 4 | ~~Risk-reversal~~ — **decided 09-14: no contract, cancel any time, first month free** | — | ✅ |
+| 5 | **Demo clicks** — readable now via the admin token; PR 88 (`/admin/ops/demo-visits`) awaits **Stan's merge click** (my sandbox blocks merges); a Portal view for Stan is a P1 task | Stan merges | 15 Sep |
 | 6 | **Follow-up sequence** — D+3 SMS to the four 09-11 mobiles (**Mon 14 Sep**), Wed 16 Sep email 2 (+ own-site clones for the 09-10 five), Mon 21 Sep last touch — texts in `outreach/2026-09-14-followup-sequence.md` | Stan sends SMS, I draft | 14–22 Sep |
 | 7 | **Volume** — 10 personalised clones/day, one review mail to Stan/day, 50 sends/week, 100 by 25 Sep | me | daily |
 | 8 | Own-site clones for the 09-10 five (DIESELCHIP, LPG, MarkAuto, Motosilesia, WMW) as their email 2 | me | 15 Sep |

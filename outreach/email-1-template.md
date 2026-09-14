@@ -29,6 +29,7 @@ phone, email — never in the body), `replyTo: info@givyx.com`, unique `utm_cont
 > **149 zł/mies.** — ta strona, jak w podglądzie · **249 zł/mies.** — rozbudowana, nowoczesna,
 > z rezerwacją online · **750 zł/mies.** — płatności online, bez brandingu Givyx.
 > Utrzymanie, zmiany i poprawki są w cenie — my dbamy o stronę, Wy o auta.
+> **Bez umowy, rezygnacja w każdej chwili, pierwszy miesiąc gratis.**
 >
 > Odpiszcie na tego maila albo zadzwońcie — chętnie dopasuję stronę pod Was.
 >
@@ -54,7 +55,7 @@ phone, email — never in the body), `replyTo: info@givyx.com`, unique `utm_cont
 > booking and contact — all on the phone. Takes 30 seconds to look.
 >
 > If you like it, it goes live on your own domain in 2 days. **$60/month**, maintenance and changes
-> included — we keep the site current, you keep fixing cars.
+> included — we keep the site current, you keep fixing cars. **No contract, cancel any time, first month free.**
 >
 > Reply to this email or call — happy to adjust anything.
 >
@@ -64,7 +65,6 @@ phone, email — never in the body), `replyTo: info@givyx.com`, unique `utm_cont
 
 `{{URL}}` = `https://{{slug}}.givyx.com/?utm_source=email&utm_medium=offer&utm_campaign={{slug}}&utm_content={{code}}`
 
-## Once the risk-reversal decision is made
-Add one line before the sign-off, both languages:
-PL `Bez umowy, rezygnacja w każdej chwili{{, pierwszy miesiąc gratis}}.` ·
-EN `No contract, cancel any time{{, first month free}}.`
+## Risk reversal — DECIDED 2026-09-14 (Stan)
+No contract, cancel any time, **first month free** for the first clients. The line above is now part of
+both templates. The 30 emails sent through 09-14 did not carry it; every D+5 follow-up does.

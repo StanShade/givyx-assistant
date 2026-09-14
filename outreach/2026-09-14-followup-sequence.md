@@ -34,8 +34,7 @@ Log each send in `prospects/pipeline.md` (date · who · "SMS D+3" · reply).
 
 ## 2. Email 2 — Wed 16 Sep (drafts; Stan OKs before send; one curl per prospect)
 
-Two variants because the risk-reversal decision is open. **A** = no contract + cancel any time.
-**B** = A + first month free. Tone rules: warm, short, offer not audit, one clear reply CTA.
+**Decided 2026-09-14: variant B** — no contract, cancel any time, first month free. Use `{{B}}` = „, pierwszy miesiąc gratis” / ", first month free" everywhere. Tone rules: warm, short, offer not audit, one clear reply CTA.
 
 ### PL — 09-11 five (their own site exists)
 Subject: `Wasza strona czeka — {{slug}}.givyx.com`

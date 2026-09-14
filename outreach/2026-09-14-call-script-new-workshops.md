@@ -38,7 +38,7 @@ Goal of the call = permission to send the preview link (SMS). Nothing more.
 - **„Kolega mi zrobi."** → „Super. Niech zrobi — a my możemy to potem utrzymywać i aktualizować,
   bo za rok kolega będzie miał inne rzeczy na głowie." (don't fight it; leave the door open)
 - **„Ile to kosztuje?"** → „149 zł miesięcznie za prostą stronę, 249 za rozbudowaną z rezerwacją
-  online. Bez opłaty wstępnej. {{bez umowy / pierwszy miesiąc gratis — once decided}}"
+  online. Bez umowy, bez opłaty wstępnej, pierwszy miesiąc gratis."
 
 ## After a „tak"
 

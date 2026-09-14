@@ -2029,3 +2029,12 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
 - **Stan: "send holbrook and force too"** → both promoted to Production (8 pages each, noindex
   verified) and sent with Friday's approved text verbatim (recovered from the trashed review thread
   via `get_message`): `sent:true` × 2, codes `hb-20260911-e1` / `fe-20260911-e1`. **30 emails to date.**
+- **Stan's answers (evening):** (1) improvmx already forwards — to **stan.zak.shade@gmail.com**, so every
+  reply so far went to a mailbox I cannot read; asked him to check it and add the inf@ address as a
+  second target. (4) He pasted a platform-admin JWT (pu_fff7048, exp 2026-10-14) → stored in the
+  routine slot; ops reads 200, no new dashboard answers; **and it reads `/api/analytics` for every
+  demo** — first read: generic demo clicked by **MUMIA-CAR** and **Motosilesia**; the nine 09-11
+  personalised sites **0 clicks in 3 days** → P0 task: spam placement + subject test before batch 4.
+  (5) Merge PR 88: my sandbox blocks merges ("merge without review") → Stan's click; he also wants a
+  Portal view → P1 task. (6) **Risk reversal decided: no contract, cancel any time, first month
+  free** → templates, sequence, posts, scripts updated. (7) RU/UA seam explained in chat.

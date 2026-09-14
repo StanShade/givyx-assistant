@@ -2,7 +2,7 @@
 
 Post only after the reply-routing task is done (leads arrive at info@givyx.com). Every claim
 below is true today: the demo sites exist, the prices are the live catalog, no delivery-time or
-result claims. Add `bez umowy / pierwszy miesiąc gratis` only once that decision is made.
+result claims. Decided 2026-09-14: „bez umowy, pierwszy miesiąc gratis” goes into every text below.
 
 ## OLX — Usługi › Informatyczne › Strony internetowe · Kraków (Stan's account)
 
@@ -17,7 +17,7 @@ result claims. Add `bez umowy / pierwszy miesiąc gratis` only once that decisio
 >
 > Abonament zamiast faktury za „projekt": 149 zł/mies. (prosta strona) · 249 zł/mies.
 > (rozbudowana, z rezerwacją online) · 750 zł/mies. (płatności online, bez naszego brandingu).
-> Bez opłaty wstępnej. Utrzymanie, zmiany i poprawki w cenie — my dbamy o stronę, Wy o auta.
+> Bez umowy, bez opłaty wstępnej, pierwszy miesiąc gratis. Utrzymanie, zmiany i poprawki w cenie — my dbamy o stronę, Wy o auta.
 >
 > Napisz nazwę warsztatu — zbudujemy wersję Waszej strony do obejrzenia zanim cokolwiek zapłacicie.
 >

@@ -528,3 +528,13 @@ live, 28 emails sent to date, 0 replies (routing unverified).** Holbrook + Force
 |---|---|---|---|
 | batch 3 (8, email 1 today) | **Thu 17 Sep** — Posłowski 603 169 095 · Idzikowski 691 776 127 · Sp Auto 534 510 386 · BULEK 500 512 693 · BARTEX 604 560 772 · GARAGE 66 730 778 778 · GAMERC 602 780 911 (Car Expert: landline only) | Fri 19 Sep email 2 | Wed 24 Sep |
 | 09-10 four (email 2 today) | SMS **now/tomorrow** — 516 757 560 · 796 545 247 · 503 005 705 · 503 398 404 | — | Mon 22 Sep last touch |
+
+## 2026-09-14 — first read of demo analytics (admin token) + where replies actually go
+- **Replies go to `stan.zak.shade@gmail.com`**: improvmx forwards `*@givyx.com` (incl. info@) there — Stan's
+  screenshot. Every "0 replies" so far was measured in `stan.zak.inf@gmail.com`, the wrong mailbox.
+- **Clicks (utm campaign sessions, 09-09 → 09-14):** generic demo `dealership.givyx.com` → **mumiacar 1**,
+  **motosilesia 1** (2 of 6 recipients). Nine personalised sites sent 09-11 → **0** campaign sessions and
+  0 non-PL sessions on every one (napierala, autofirma, latusek, pietruszko, rsauto, troutman, adp,
+  independenceauto, herlehys). Generic EN demo → 0. Small numbers; a P0 task tests spam placement +
+  subject before batch 4. Today's 12 sends are the next data point (read Wed 16 Sep morning).
+- **Decision (Stan):** first clients get no contract, cancel any time, first month free.

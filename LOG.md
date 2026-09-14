@@ -2019,3 +2019,10 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   each, 0 deleted, one call per tenant). Verified after promotion on every bare URL: Production title
   == Preview, `noindex, nofollow`, robots `Disallow: /`, 0 template hits. Brain index updated + pushed.
   Awaiting: "ok send batch 3" (Tue) and "ok send czwórka" (Wed).
+- **Stan: "send all"** → 12 emails sent (one curl each, all `sent:true`): batch 3 email 1 to poslowski,
+  idzikowski, spauto, bulek, carexpert, bartex, garage66, gamerc (Posłowski's "do 18:00" clause
+  removed first — site vs Google disagree on closing time) + own-site email 2 to DIESELCHIP, LPG
+  Expert, MarkAuto, WMW (variant A: „bez umowy, rezygnacja w każdej chwili”, no first-month-free
+  since that decision is open). Not sent: Holbrook + Force (US drafts awaiting Stan's OK since Fri),
+  Motosilesia (generic email 2), KDM + Zajdel (held). **Scoreboard: 28 emails, 23 sites, 0 replies.**
+  Follow-up: batch 3 D+3 SMS Thu 17 Sep; the four: SMS pending from Stan.

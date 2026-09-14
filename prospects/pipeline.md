@@ -504,20 +504,28 @@ with read date. Logs: `givyx.claudeBrain/dealership/clones/<slug>.md` (commit 46
 
 | slug | prospect | email | plan | code |
 |---|---|---|---|---|
-| dieselchip | DIESELCHIP, Kania k. Barcina | info@dieselchip.pl | **email 2 Wed 16 Sep** (own site) + SMS 516 757 560 | `dc-20260916-e2` |
-| lpgexpert | LPG Expert, Białystok | biuro@montaz-gazu.bialystok.pl | email 2 Wed 16 Sep + SMS 796 545 247 | `lpg-20260916-e2` |
-| markauto | MarkAuto Serwis, Warszawa | serwis@markauto.pl | email 2 Wed 16 Sep + SMS 503 005 705 (GBP unclaimed → call prep) | `ma-20260916-e2` |
-| wmw | WMW Automotive, Łódź | kontakt@wmwautomotive.pl | email 2 Wed 16 Sep + SMS 503 398 404 (no own photos) | `wmw-20260916-e2` |
-| poslowski | Auto-Serwis Posłowski, Wrocław | poslowski10@gmail.com | **email 1 Tue 15 Sep** after Stan's OK | `ps-20260915-e1` |
-| idzikowski | Idzikowski Auto Serwis, Kielce | serwis@idzikowski.com.pl | email 1 Tue 15 Sep — ⚠ Q-SERVICE sign on their photo, Stan's call | `id-20260915-e1` |
-| spauto | Sp Auto, Bielsko-Biała | sp.auto.bb@gmail.com | email 1 Tue 15 Sep | `sp-20260915-e1` |
-| bulek | BULEK, Toruń | warsztat@bulek.pl | email 1 Tue 15 Sep | `bk-20260915-e1` |
-| carexpert | Car Expert Serwis, Bydgoszcz | carexpertserwis@op.pl | email 1 Tue 15 Sep | `ce-20260915-e1` |
-| bartex | Auto Serwis BARTEX, Opole | bartex.opole@onet.eu | email 1 Tue 15 Sep | `bx-20260915-e1` |
-| garage66 | GARAGE 66, Rzeszów | biuro@garage66.pl | email 1 Tue 15 Sep | `g6-20260915-e1` |
-| gamerc | GAMERC, Lublin | gamerc@onet.pl | email 1 Tue 15 Sep (no own photos) | `gm-20260915-e1` |
+| dieselchip | DIESELCHIP, Kania k. Barcina | info@dieselchip.pl | **SENT 2026-09-14** email 2 (own site) · SMS 516 757 560 pending (Stan) | `dc-20260916-e2` |
+| lpgexpert | LPG Expert, Białystok | biuro@montaz-gazu.bialystok.pl | **SENT 2026-09-14** email 2 (own site) · SMS 796 545 247 pending | `lpg-20260916-e2` |
+| markauto | MarkAuto Serwis, Warszawa | serwis@markauto.pl | **SENT 2026-09-14** email 2 (own site) · SMS 503 005 705 pending (GBP unclaimed → call prep) | `ma-20260916-e2` |
+| wmw | WMW Automotive, Łódź | kontakt@wmwautomotive.pl | **SENT 2026-09-14** email 2 (own site) · SMS 503 398 404 pending (no own photos) | `wmw-20260916-e2` |
+| poslowski | Auto-Serwis Posłowski, Wrocław | poslowski10@gmail.com | **SENT 2026-09-14** email 1 (closing-time clause removed) | `ps-20260915-e1` |
+| idzikowski | Idzikowski Auto Serwis, Kielce | serwis@idzikowski.com.pl | **SENT 2026-09-14** email 1 (Stan: send all; Q-SERVICE sign noted for the call) | `id-20260915-e1` |
+| spauto | Sp Auto, Bielsko-Biała | sp.auto.bb@gmail.com | **SENT 2026-09-14** email 1 | `sp-20260915-e1` |
+| bulek | BULEK, Toruń | warsztat@bulek.pl | **SENT 2026-09-14** email 1 | `bk-20260915-e1` |
+| carexpert | Car Expert Serwis, Bydgoszcz | carexpertserwis@op.pl | **SENT 2026-09-14** email 1 | `ce-20260915-e1` |
+| bartex | Auto Serwis BARTEX, Opole | bartex.opole@onet.eu | **SENT 2026-09-14** email 1 | `bx-20260915-e1` |
+| garage66 | GARAGE 66, Rzeszów | biuro@garage66.pl | **SENT 2026-09-14** email 1 | `g6-20260915-e1` |
+| gamerc | GAMERC, Lublin | gamerc@onet.pl | **SENT 2026-09-14** email 1 (no own photos) | `gm-20260915-e1` |
 
 Held: KDM Szczecin (NAP conflict) · Zajdel Częstochowa (Q Service Castrol). Motosilesia: generic-demo
 email 2 only (`ms-20260916-e2`). Drafts: `outreach/2026-09-15-email1-batch3.md`,
-`outreach/2026-09-16-email2-0910-four.md`. **Scoreboard: 23 personalised sites live on Preview
-(11 sent, 12 awaiting OK); 16 emails sent to date; 0 replies (routing unverified).**
+`outreach/2026-09-16-email2-0910-four.md`. **Stan 2026-09-14 evening: "ok looks good publish" → all 12 promoted; "send all" → 12 emails sent (12/12 `sent:true`,
+email 2 = variant A: „bez umowy, rezygnacja w każdej chwili”, no first-month-free). Scoreboard: 23 personalised sites
+live, 28 emails sent to date, 0 replies (routing unverified).** Not sent: Holbrook + Force (US drafts, still awaiting OK),
+Motosilesia (generic-demo email 2), KDM + Zajdel (held).
+
+### Follow-up dates for today's 12
+| Batch | D+3 SMS (Stan) | D+5 email | D+10 last |
+|---|---|---|---|
+| batch 3 (8, email 1 today) | **Thu 17 Sep** — Posłowski 603 169 095 · Idzikowski 691 776 127 · Sp Auto 534 510 386 · BULEK 500 512 693 · BARTEX 604 560 772 · GARAGE 66 730 778 778 · GAMERC 602 780 911 (Car Expert: landline only) | Fri 19 Sep email 2 | Wed 24 Sep |
+| 09-10 four (email 2 today) | SMS **now/tomorrow** — 516 757 560 · 796 545 247 · 503 005 705 · 503 398 404 | — | Mon 22 Sep last touch |

@@ -226,7 +226,7 @@ and 14 sends is statistically nothing. Fix those, then add volume and two warm s
 | 4 | ~~Risk-reversal~~ — **decided 09-14: no contract, cancel any time, first month free** | — | ✅ |
 | 5 | **Demo clicks** — readable now via the admin token; PR 88 (`/admin/ops/demo-visits`) awaits **Stan's merge click** (my sandbox blocks merges); a Portal view for Stan is a P1 task | Stan merges | 15 Sep |
 | 6 | **Follow-up sequence** — D+3 SMS to the four 09-11 mobiles (**Mon 14 Sep**), Wed 16 Sep email 2 (+ own-site clones for the 09-10 five), Mon 21 Sep last touch — texts in `outreach/2026-09-14-followup-sequence.md` | Stan sends SMS, I draft | 14–22 Sep |
-| 7 | **Volume** — 10 personalised clones/day, one review mail to Stan/day, 50 sends/week, 100 by 25 Sep | me | daily |
+| 7 | **Volume** — 10 personalised clones/day via `guides/daily-batch-runbook.md` (fresh session each morning; kick-off prompt at its top), one review mail to Stan/day, 100 sends by 25 Sep | me | daily |
 | 8 | Own-site clones for the 09-10 five (DIESELCHIP, LPG, MarkAuto, Motosilesia, WMW) as their email 2 | me | 15 Sep |
 | 9 | **New seams:** CEIDG new registrations (PKD 45.20.Z, last 90 days) · RU/UA-owned shops in Kraków (Stan calls in his language) | me list → Stan calls | 15–19 Sep |
 | 10 | Warm: ask IPR + Szymon for a review and a referral; leonixon status (paid? client #1?) | Stan | this week |

@@ -9,6 +9,43 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-15 (00:30Z) — Batch 4: 10 sites built + verified, review mail sent
+- Research (one agent, 40 min): 210 Maps listings / 61 sites across 14 cities → 10 verified packs (Gdynia, Radom,
+  Gliwice, Sosnowiec, Nowy Sącz, Zielona Góra, Płock, Koszalin, Legionowo, Rybnik) + 1 full reserve (Wieczorek Tarnów,
+  1★ 8,3 %) + rejected list. `prospects/2026-09-14-service-centers-PL-batch4.md`.
+- Tenants: 10 × `new-tenant.sh` → `clonefrom --purge` → `rewrite` (12 replacements each) → Preview 200.
+  **Incident:** the first clone loop used `set -- $p` under zsh (no word-splitting) → every `clonefrom` targeted
+  locationId `--purge` and every `rewrite` matched nothing; previews served the branded 404. Caught by the API
+  manifest showing `pageIds: []`; redone with `while read slug loc`. Leftover: 9 orphan rows under partition
+  `--purge` in WebManifests/WebPages (classifier blocked the delete — harmless, listed for Stan).
+- Builds: 10 agents in waves of 4 (~300k tokens, ~22 min each; no 429). All 10 pass `verify-clone.sh`; 20/20
+  form tests in Gmail. Notables: carmobile 4 services (all they publish) — no-WebGL desktop grid still hides
+  under the film tail (renderer, open since rsauto 09-11); pablocar + dieselsoft no own photos (shared assets,
+  no ogImage); pablocar no hours at all; pimserwis/gocars print closing time only (opening-hour conflicts);
+  gocars/dieselsoft no postcode (conflicts); carmobile pin on Spokojna 18 (own sign) vs GBP 20.
+- Review mail `[DO SPRAWDZENIA] 10 stron — batch 4` sent; asks: "ok publish" / "send all" (9 today, PABLOCAR
+  28.09). Brain commit dfb6a29.
+
+### 2026-09-14 (evening) — Batch 4 pre-flight (runbook §1)
+- **Replies:** the Gmail connector now reads `stan.zak.shade@gmail.com` (Google security alert 17:19Z confirms
+  the grant). `in:anywhere newer_than:2d` → 0 prospect replies; `to:info@givyx.com` → nothing. Only Contra +
+  improvmx password-reset noise (improvmx reset at 16:52Z = Stan working on the forward).
+- **Clicks:** NOT read — the auto-mode classifier blocked both `GET /api/analytics/breakdowns` and
+  `/admin/ops/demo-visits` with the admin token this session ("PII Data Handling"); the same call passed
+  earlier on 09-14. Stan: a Bash permission rule for `curl … api.givyx.com/api/analytics/*` would make this
+  routine. Read for the 09-14 twelve is due Wed 16 Sep anyway.
+- **Deliverability (P0 check): mail-tester.com 8.5/10** on the exact PL email 1 (`Strona dla DIESELCHIP —
+  podgląd`, sent via `POST /emails`). SPF pass · DKIM pass (2048-bit, d=givyx.com, s=s1) · DMARC pass
+  (`p=quarantine`, rua→onsecureserver). SpamAssassin −0.3 total. Deductions: −1 "2 broken links" = the
+  layout's `preconnect` hrefs `https://fonts.googleapis.com` / `https://fonts.gstatic.com` (bare roots
+  return 404; harmless, but drop them from the email head) · −0.5 SendGrid shared IP 149.72.70.15 on
+  Mailspike (Spamhaus/Barracuda/SpamCop all clean) · −0.1 `MIME_HTML_ONLY` (add a text/plain part).
+  **Conclusion: the 0-click result on 09-11 is not an authentication/spam problem**; two cheap layout
+  fixes filed (preconnect links, text alternative).
+- **Health:** all 25 demo hosts (2 flagships + 23 clones) → 200.
+- Research agent dispatched for batch 4 (new cities: Gdynia, Gliwice, Radom, Sosnowiec, Tarnów, Nowy Sącz,
+  Zielona Góra, Płock, Elbląg, Koszalin, Kalisz, Legionowo, Tychy, Rybnik).
+
 ### 2026-07-24 — Accountant answers: Stripe-direct invoicing, art.113, KSeF to Jan 2027
 - Stan: (1) invoices DIRECTLY from Stripe (not Fakturownia/inFakt) → KSeF path = S2K (direct Stripe→KSeF);
   (2) legal basis = art. 113 ust. 1 ustawy o VAT; (3) the ≤10k zł/month postponement applies → KSeF issuing

@@ -77,6 +77,17 @@ Prerequisite is met that day: profile verified and active 60+ days, website list
 
 What this unlocks and why it matters is in `research/2026-07-24-integration-feasibility-pl.md`.
 
+**Done 2026-09-15 ~09:20 CEST.** Applied via the Help Center workflow
+(<https://support.google.com/business/workflow/16726127>, reached from the api_default contact form
+by picking "Application For Basic API Access"). Signed in as `stan.zak.shade@gmail.com`, business
+Givyx (Verified) selected, project number 40258048148, website `https://givyx.com`, reason: live
+Google reviews on client sites + Place Action booking links for the workshops we serve. Answered
+"verified 60 days: Yes", "already allowlisted project: No". Result: **support case
+1-5210000041578**, quoted review time 7–10 business days (→ expect by ~2026-09-29). All four APIs
+(Business Information, Account Management, Place Actions, Notifications) enabled in `givyx-gbp` the
+same morning; quota reads 0 QPM until approval. Check: Cloud console → APIs & Services → any of the
+four → Quotas & System Limits → 300 QPM = approved.
+
 ## 6. Rules — things that can get the profile suspended or reset the clock
 
 - **Never change the business name.** A name edit can force re-verification.

@@ -2075,3 +2075,21 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   (5) Merge PR 88: my sandbox blocks merges ("merge without review") → Stan's click; he also wants a
   Portal view → P1 task. (6) **Risk reversal decided: no contract, cancel any time, first month
   free** → templates, sequence, posts, scripts updated. (7) RU/UA seam explained in chat.
+
+## 2026-09-15 (Tue, morning) — GBP API Basic Access applied, day 60
+
+- **Scheduled run 09:01 blocked:** the Playwright profile (signed in as shade, form left open on
+  14 Sep) is still held by the idle "Notion task #84" session; did not kill it. Stan said "open
+  chrome i will login" → the in-app browser was already signed in as `stan.zak.shade@gmail.com`.
+- **Profile:** Givyx · Opolska 110 · **Verified** (Business Profile Manager, 1 business, 100% verified).
+  Nothing else touched on the profile.
+- **Cloud `givyx-gbp`:** enabled My Business **Business Information**, **Account Management**,
+  **Place Actions**, **Notifications** APIs (all four found; all were off). Quota 0 QPM until approval.
+- **Application:** api_default form → "Application For Basic API Access" → Help Center workflow
+  16726127: confirm account, pick Givyx (Verified), project number 40258048148, website
+  https://givyx.com, "how did you hear" = developer docs prereqs page, reason = live reviews on
+  client sites + Place Action booking links for workshops; verified 60 days = Yes; already
+  allowlisted project = No. The last Continue submitted directly — no separate Submit screen, so the
+  pre-submit screenshot for Stan's OK never existed; values were exactly the task's. **Case
+  1-5210000041578**, review 7–10 business days → check quota ~2026-09-29.
+- Recorded in guides/gbp-operations.md §5; Notion #84 → In progress.

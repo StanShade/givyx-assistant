@@ -1,3 +1,49 @@
+# Email 1 — v2 (2026-09-15, Stan's brief; supersedes v1 below for every batch from batch 4 on)
+
+**Offer changed:** one price — **249 zł/mies.**, no contract, cancel any time, **site built free, first month
+free**. The 149/249/750 ladder is no longer in the email. Benefits listed as "W cenie": maintenance, changes
+and fixes · further development and new features at no extra cost · online booking + contact form, every
+submission straight to their e-mail · e-mails to their customers (confirmations, reminders) at no extra cost ·
+option to add SMS to customers · works on the phone. Tone: professional offer, warm, personal.
+
+**Personal to each prospect — three fields, all from the research pack + the clone log:**
+`fakt` (what they do well, verified) · `na_stronie` (exactly what we put on their site: services, prices if
+quoted, photos used, rating, hours/booking) · `dlaczego` (1–2 sentences why the site matters for *them*).
+
+Builder: `ops/tools/build-email-v2.py spec.json` — specs per prospect in `outreach/batch4-specs/<slug>.json`.
+Subject: `Strona dla {{NAZWA}} — podgląd i oferta`. Send: `ops/tools/send-one.sh`, one prospect per call.
+
+> Dzień dobry,
+>
+> Z tej strony Stan z Givyx, z Krakowa. Zanim napisałem, sprawdziłem, jak pracujecie: {{fakt}}.
+>
+> Przygotowaliśmy wersję strony dla {{NAZWA}}: {{na_stronie}}.
+>
+> **[Zobacz stronę →]({{URL}})**
+>
+> {{dlaczego}}
+>
+> **Oferta**
+> - **249 zł/mies.** — bez umowy, rezygnacja w każdej chwili
+> - **Budowa strony gratis** i **pierwszy miesiąc gratis**
+> - Uruchomienie na Waszej domenie w 2 dni
+>
+> **W cenie**
+> - utrzymanie, zmiany i poprawki — piszecie, my robimy
+> - rozwój strony i nowe funkcje bez dopłat
+> - rezerwacja online i formularz kontaktowy — każde zgłoszenie od razu na Wasz e-mail
+> - e-maile do Waszych klientów (potwierdzenia, przypomnienia) — bez dopłat
+> - możliwość dodania SMS-ów do klientów
+> - strona działa na telefonie; my dbamy o stronę, Wy o auta
+>
+> Jeśli coś ma wyglądać inaczej — usługi, ceny, zdjęcia — odpiszcie, dopasuję. Albo zadzwońcie.
+>
+> Pozdrawiam,
+> Stan
+> Givyx
+
+---
+
 # Email 1 — the "we built a version for you" offer · template (PL + EN)
 
 Reconstructed 2026-09-14 from the rules Stan set on 09-10/09-11 (the sent bodies were composed

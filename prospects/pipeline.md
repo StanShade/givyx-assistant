@@ -550,7 +550,7 @@ Logs: `givyx.claudeBrain/dealership/clones/<slug>.md` (commit dfb6a29). Review m
 customers first + button, no Google-rating clause, "Na stronie jest …" personal to each, 249 zł/mies. only (no
 149/750), budowa gratis + pierwszy miesiąc gratis, "W cenie" list (utrzymanie, rozwój bez dopłat, e-maile do
 klientów, opcja SMS), explicit contact line (571 088 012 or reply). Stan: "i like this last variant the most you
-can sand it all" → 9 sent 2026-09-15 ~01:1xZ, 9/9 `sent:true`. Specs: `outreach/batch4-specs/`.
+can sand it all" → 9 sent 2026-09-15 ~11:3xZ, 9/9 `sent:true`. Specs: `outreach/batch4-specs/`.
 
 | slug | prospect | email | plan | code |
 |---|---|---|---|---|

@@ -9,7 +9,7 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
-### 2026-09-15 (01:1xZ) — Batch 4 published + 9 sent (email v3)
+### 2026-09-15 (11:3xZ) — Batch 4 published + 9 sent (email v3)
 - Stan "ok publish" → 10 promoted (8/8 pages each), re-verified on bare URLs; brain eb7ed39.
 - Stan rewrote the offer in two rounds: (1) 249 zł only, site built free, first month free, benefits list
   (maintenance, development + new features free, customer e-mails free, optional SMS), personal to each;

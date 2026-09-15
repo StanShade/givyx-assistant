@@ -580,3 +580,11 @@ clicks on the 09-14 twelve NOT read (classifier blocked the analytics curl) — 
 | PABLOCAR | 1 Oct (508 431 860) | 3 Oct | 8 Oct |
 
 **Scoreboard after batch 4: 33 personalised sites live · 39 offer emails sent to date (30 + 9) · replies: 0 visible (shade mailbox).**
+
+## 2026-09-15 — ARMCAR Autoserwis (Warszawa) — Stan's warm call, Belarus angle
+Stan spotted https://www.instagram.com/armcarpl (owners look Belarusian) and wants to call them as a potential
+first customer. Research pack + RU conversation script: `outreach/2026-09-15-call-script-armcar.md`.
+Facts: ARMCAR HOLDING sp. z o.o. (KRS 0001027204, reg. 27.03.2023), owners Nikita Anpilogov + Dzianis Nikanau,
+Wał Zawadowski 135, tel. 501 792 367, prostoautoserwis@gmail.com. **No website** (Google website field =
+instagram.com). 4,7/159 Google, Orły Motoryzacji laureate 2023–26, BMW partner, IG/TikTok content in Russian.
+Next: Stan calls → if "yes", build `armcar.givyx.com` (PL + RU) from the pack + his call notes, send link, D+2 callback.

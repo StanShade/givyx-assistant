@@ -4,11 +4,17 @@ Written 2026-09-14 after batches 2 and 3 (23 sites, 30 emails). A fresh session 
 end. **Stan pastes the kick-off prompt below; everything else is here.** Time: ~5 h wall-clock with
 build agents in waves of 4. Stan's part: one review reply ("ok publish", "send all") and the SMS.
 
-## 0. Kick-off prompt (paste into the fresh session)
+## 0. Kick-off prompt (paste into the fresh session — same text every day)
 
-> Run `guides/daily-batch-runbook.md` in `/Users/stan/Code/givyx/PersonalAssistant` for batch 4:
-> pre-flight, then research 10, build 10, verify, one review email to me, wait for my "ok publish" /
-> "send all", then send and record. Read STATE.md and the memory index first.
+> Run `guides/daily-batch-runbook.md` in `/Users/stan/Code/givyx/PersonalAssistant` for today's batch
+> (next number after the last one in `prospects/pipeline.md`): pre-flight, then research **5 PL + 5 US**
+> with the buy-score filter, build, verify, one review email to me with the full email texts, wait for my
+> "ok publish" / "send all", then send and record. Read STATE.md and the memory index first.
+
+**Daily quota (Stan, 2026-09-15): 5 Polish + 5 US prospects, chosen very carefully for who can really
+buy — quality over count. If fewer than 5 qualify in a country, send fewer and say why.** Email rules:
+`outreach/email-1-template.md` v3 (no Google-rating clause, hook first, 249 zł / $60, built free + first
+month free, benefits list, explicit contact line).
 
 ## 1. Pre-flight (15 min, before any research)
 
@@ -26,44 +32,99 @@ build agents in waves of 4. Stan's part: one review reply ("ok publish", "send a
    `campaigns[]` = tracked clicks (prospect's code) · `countryDevice[]` = any non-PL session on a PL
    site is not us. Location ids: `givyx.claudeBrain/dealership/clones/index.md`. Report clickers to
    Stan — a clicker gets his call, not email 2. (If PR 88 is merged: `GET /admin/ops/demo-visits?since=`
-   does all tenants in one call.)
-4. **Deliverability check (P0, batch 4 only, until answered):** 0 of 9 personalised emails clicked
-   in 3 days vs 2 of 6 generic ones. Send the PL email through `POST /emails` to a mail-tester.com
-   address (open mail-tester.com, copy the address, send with `ops/tools/send-one.sh`, read the
-   score page with WebFetch). Report the score and any SPF/DKIM/DMARC finding. Batch 4 uses the
-   plainer subject `Strona dla {{NAZWA}} — podgląd` (already in `ops/tools/build-email-json.py`).
+   does all tenants in one call.) If the classifier blocks the curl ("PII"), ask Stan in-turn for the read
+   or for a Bash rule — do not skip silently; report "clicks unread" in the review mail.
+4. ~~Deliverability check~~ — **done 09-14: mail-tester 8.5/10, SPF/DKIM/DMARC pass** (deductions = layout
+   preconnect links, SendGrid shared IP, no text/plain; Notion P1 task). Re-run only if the sender/layout changes.
 5. Health: every existing demo host returns 200 (`for s in …; do curl -s -o /dev/null -w "$s %{http_code}\n" https://$s.givyx.com/; done`).
 
-## 2. Research 10 (one agent, ~60–90 min)
+## 2. Research 5 PL + 5 US (two agents in parallel, ~60–90 min)
 
-Dispatch ONE `general-purpose` agent with this brief (fill the city list):
+### 2a. Who can really buy — the buy score (Stan, 2026-09-15)
 
-> Deliverable: `/Users/stan/Code/givyx/PersonalAssistant/prospects/<YYYY-MM-DD>-service-centers-PL-batch<N>.md`
-> with 10 verified Polish general-mechanics workshops in the exact structure of
-> `prospects/2026-09-14-service-centers-PL-batch3.md` (read it first; copy the method and the
-> per-prospect build pack: legal/trading name · address · phone(s) as displayed · email + WHERE seen on
-> their own page · platform/analytics · services in THEIR wording · prices only if published · hours
-> only if stated (site vs Google, note conflicts) · 3–6 own photo URLs returning 200 · Google rating +
-> full star histogram + read date · what they do well · growth motive · what is missing · `{{FAKT}}`
-> line in Polish).
-> Hard rules: every fact from a page you fetched; email visible in their OWN site source; Google
-> histogram read on the Maps place page (Playwright MCP or the Browser pane; UNVERIFIED if it won't
-> render, never a directory count); reject >10 % one-star; general mechanics / engine / diesel /
-> electromechanics only (no campers, tyre-only, detailing-only, body-only, dealers, chains — a
-> Q-Service / Bosch / Motointegrator partner sign counts as a chain: flag it); growth motive
-> required (ads/GTM, second revenue line, fleet/B2B, long hours, specialist niche, or a site that
-> visibly loses leads). Cities NOT already used: see "cities used" below. Exclude any name found by
-> `grep -ril <name> prospects/`. End with a send order and a Rejected list. Do not contact anyone.
+Rank by **likelihood to pay 249 zł / $60 a month for a site from a stranger's email**, not by how well
+they fit the demo. Score every candidate 0–10; **send only ≥ 7**; the pack must show the score and
+the evidence for each point. A pack full of shops with good sites and nothing to gain is a wasted day.
 
-**Cities used so far (do not repeat):** Kraków area, Poznań, Legnica, Katowice, Olsztyn, Gdańsk,
+| Signal | Points | Evidence that counts (fetched, not assumed) |
+|---|---|---|
+| **Need** (0–4) | 4 | no website at all / Facebook-only / site dead, http-only or "w budowie" / footer ≥ 3 years old with dead links or RSS errors / booking or "umów wizytę" leaks to a directory (dobrymechanik, motointegrator) / phone-only booking with long hours or many bays (booking friction) |
+| | 3 | old DIY or agency site untouched ≥ 2 years, stock photos, no booking, no mobile layout |
+| | 2 | working site missing booking, hours or click-to-call |
+| | 1 | decent site (nothing to fix but polish) |
+| | 0 | **rebuilt in the last 12 months or vendor-managed → reject** (they have no need or an occupied vendor slot — 4 of 9 calls in July died on "someone already handles it") |
+| **Ability to pay / shape** (0–3) | 3 | 2–10 people evident (several bays or lifts, team photo, hiring, fleet clients, second revenue line), single location, owner-run |
+| | 2 | small but clearly active: reviews in the last 30 days, ≥ 40 reviews total, hours listed |
+| | 1 | one-person garage |
+| | 0 | chain / franchise / partner-network sign / multi-location / body-, tyre-, detailing-, camper-only → **reject** |
+| **Reachability** (0–2) | 2 | mobile number **and** e-mail on their own site or own Facebook page **and** the owner is named |
+| | 1 | e-mail only (landline) |
+| | 0 | no e-mail anywhere they own → **reject** (put on Stan's call list instead) |
+| **Growth motive** (0–1) | 1 | hiring · new hall/equipment posts · ads or tracking installed (GTM/GA/pixel) · fleet/B2B page · niche people drive to |
+
+Hard rejects regardless of score: > 10 % one-star · chain/partner (Q-Service, Bosch Car Service,
+Motointegrator, Premio, ProfiAuto, EuroWarsztat, O.K. Serwis, Castrol platform; US: Meineke, Midas,
+Firestone, Christian Brothers, Jiffy Lube, Pep Boys, Grease Monkey, Tuffy, Monro, AAMCO, Valvoline,
+Precision Tune) · vendor-managed site (US source markers: Thryv `thryvId`, hibu `hibuYear`, Dieselmatic,
+Kukui, Autoshop Solutions, Podium, Shopgenie, Mitchell1, mechanicnet, "Powered by" agency) · rebuilt
+≤ 12 months · already in `prospects/` (`grep -ril <name> prospects/`) · shop closed for holiday (hold, don't drop).
+
+**Calibration on batch 4 (scored after the fact):** Turbo Żółw 9 (agency site abandoned 2023, GTM text leak,
+RSS error, no booking; 5 bays; hiring) · Carmobile 9 (booking leaks to dobrymechanik) · GO CARS 9 (http-only,
+no analytics, JS leaking into text; 6 bays; 24h) · VAG 9 (2018 static site; hiring; niches) · M-AUTO 8 ·
+Auto Perfetto 8 · P&M 7 (2013 site) · Sylwek 7 · PABLOCAR 7 · **Dieselsoft 5 → would NOT be sent** (site
+rebuilt 2026-08-31, need = 0). That is the bar.
+
+### 2b. Where high-need shops hide (search these, not only "mechanik <city>")
+
+PL: Maps result lists where the listing has **no website button or the website is a Facebook link** ·
+dobrymechanik / motointegrator profiles with an empty "strona www" · `site:facebook.com "warsztat
+samochodowy" <miasto>` (FB-only shops; their e-mail on the FB "Informacje" tab counts as their own) ·
+`"mechanik" <miasto> "strona w budowie"` · OLX / pracuj.pl job ads "mechanik samochodowy <miasto>" (hiring
+= growth) · CEIDG new registrations PKD 45.20.Z (`prospects/2026-09-14-ceidg-new-workshops.md`) ·
+shops running Google Ads on "mechanik <miasto>" (they pay for leads). A Facebook-only shop is a valid
+prospect: e-mail from its "Informacje" tab, photos from its own page (list the CDN URLs — they expire in
+hours, so the build agent downloads them the same session), hours from the page, stars from Maps.
+US: Google Maps "auto repair <town>" in towns of 10–80k · Yelp / CARFAX / RepairPal / Birdeye listings
+with **no website or a free-subdomain site** (`site:wixsite.com`, `site:godaddysites.com`,
+`site:business.site`, `site:weebly.com` + "auto repair") · Facebook-only shops · ASE-certified
+independents. Maps renders blank in the pane for US → read stars from CARFAX / Birdeye / Yelp and say
+which; never invent a Google number.
+
+### 2c. Briefs
+
+Dispatch **two** `general-purpose` agents at once (PL and US), each with:
+
+> Deliverable: `prospects/<YYYY-MM-DD>-<PL|US>-batch<N>.md` with **5** prospects scoring **≥ 7 on the buy
+> score in `guides/daily-batch-runbook.md` §2a** (read §2a–§2b first; copy the per-prospect build pack
+> structure of `prospects/2026-09-14-service-centers-PL-batch4.md` — for US, of
+> `prospects/2026-09-11-autoservice-US.md`). Per prospect: buy score with one line of evidence per point ·
+> legal/trading name · address · phone(s) as displayed · e-mail + WHERE seen on a page they own ·
+> platform / vendor markers / site age · services in THEIR wording · prices only if published · hours only
+> if stated (site vs Google/Yelp, note conflicts) · 3–6 own photo URLs returning 200 (or "no own photos") ·
+> star histogram + source + read date · what they do well · what is missing · growth motive · a
+> `hook` (one sentence about THEIR customers that makes them want to see the example — no rating
+> mention) and a `fakt` line (verified facts, **never a review count or rating**).
+> Hard rules: every fact from a page you fetched; e-mail on a page they own; reject > 10 % one-star,
+> chains/partners, vendor-managed or ≤ 12-month-old sites, multi-location, wrong shape; exclude names
+> found by `grep -ril <name> prospects/`. Screen ≥ 30 candidates across the sources in §2b, deep-verify
+> the best 8, deliver the top 5 by buy score (send order = score). End with Reserves and a Rejected list
+> with reasons. Keep the file on disk as you go. Do not contact anyone. Report in < 250 words.
+> PL cities not yet used: (see list below). US: avoid the states already used (NC, TX, KY, AZ, MI) unless a
+> different metro.
+
+**PL cities used so far (do not repeat):** Kraków area, Poznań, Legnica, Katowice, Olsztyn, Gdańsk,
 Warszawa, Łódź, Białystok, Siemianowice, Barcin, Wrocław, Szczecin, Kielce, Toruń, Częstochowa,
-Bielsko-Biała, Bydgoszcz, Opole, Rzeszów, Lublin. **Next:** Gdynia, Gliwice, Radom, Sosnowiec,
-Tarnów, Nowy Sącz, Zielona Góra, Płock, Elbląg, Koszalin, Kalisz, Legionowo, Tychy, Rybnik, Olsztyn-area.
-Batch-3 reserves (Motcars, Jedzie Warsztat, 71 Warsztat Premium — all Wrocław; Carmobile Gdynia; Omega
-Gliwice; Wencel Opole; AUTO PAW Gdynia; Auto Rozwój Częstochowa) may be used if re-verified.
+Bielsko-Biała, Bydgoszcz, Opole, Rzeszów, Lublin, Gdynia, Radom, Gliwice, Sosnowiec, Nowy Sącz, Zielona
+Góra, Płock, Koszalin, Legionowo, Rybnik. **Next:** Tarnów (Wieczorek is a full reserve, 1★ 8,3 %), Elbląg,
+Kalisz, Tychy, Słupsk, Gorzów, Włocławek, Piotrków, Ostrów Wlkp., Jelenia Góra, Nowy Targ, Zamość, Chełm,
+Suwałki, Ełk, Grudziądz, Inowrocław, Stalowa Wola, Mielec, Tarnobrzeg, Przemyśl, Krosno.
+Reserves with full packs: `prospects/2026-09-14-service-centers-PL-batch4.md` §Reserves (OMT Tarnów,
+Euro Auto Serwis Koszalin, Auto Pasjonaci Legionowo, AUTO-JAR Radom, Kubeczek Rybnik, AUTO PAW Gdynia);
+US reserves in `prospects/2026-09-11-autoservice-US.md` (AB&T Round Rock, South Sound WA — re-score first).
 
 **Held, do not build:** KDM Szczecin (address conflict), Zajdel Częstochowa (Q Service Castrol),
-Gulf Coast Diesel (address conflict), Motosilesia (campers).
+Gulf Coast Diesel (address conflict), Motosilesia (campers). **PABLOCAR Zielona Góra: built, e-mail on 28.09.**
 
 ## 3. Tenants: create → clone → rewrite (main session, ~3 min each)
 
@@ -72,14 +133,18 @@ exists** (the renderer caches the 404 for 60 s+). Check availability with
 `curl -s -o /dev/null -w "%{http_code}" https://api.givyx.com/locations/by-slug/<slug>` (404 = free).
 
 ```
-dealership/tools/new-tenant.sh "<Business Name>" <slug> pl        # prints appId/locationId; token → .mcp.json, never echo it
+dealership/tools/new-tenant.sh "<Business Name>" <slug> pl|en     # prints appId/locationId; token → .mcp.json, never echo it
 cd /Users/stan/Code/givyx/Givyx.Api/tools/GivyxTestSetup
 export StorageConnectionString="$(sed 's/^\xEF\xBB\xBF//' ../../.env | tr -d '\r' | grep -m1 '^StorageConnectionString=' | cut -d= -f2-)"
 export JwtSecret="$(sed 's/^\xEF\xBB\xBF//' ../../.env | tr -d '\r' | grep -m1 '^JwtSecret=' | cut -d= -f2-)"
-dotnet run --no-build -- clonefrom l_5fd7d91 <locationId> --purge          # PL source (EN: l_5d08dd1)
-dotnet run --no-build -- rewrite <locationId> '"https://dealership.givyx.com' '"https://<slug>.givyx.com'
+dotnet run --no-build -- clonefrom l_5fd7d91 <locationId> --purge          # PL source `dealership`; US: l_5d08dd1 `autoservice`
+dotnet run --no-build -- rewrite <locationId> '"https://dealership.givyx.com' '"https://<slug>.givyx.com'   # US: autoservice.givyx.com
 ```
-Expect `DONE — manifest + 8 page(s) cloned` and `12 replacement(s)`. Then `curl …/?preview=1` → 200.
+Expect `DONE — manifest + 8 page(s) cloned` and `12 replacement(s)`. Then `curl …/?preview=1` → 200 **and**
+`GET https://api.givyx.com/apps/<appId>/locations/<locationId>/web-manifests?type=Preview` shows 8 `pageIds`.
+⚠️ **zsh does not word-split `$var`**: loop with `while read -r slug loc; do …; done <<'EOF'`, never
+`for p in …; do set -- $p` — on 09-15 that sent every clone to a bogus `--purge` partition while the tool
+reported success.
 Add a row to `dealership/clones/index.md` (slug · business · pl · l_5fd7d91 · appId · locationId · date · state).
 ⚠️ Never `dotnet run` the API project itself (it writes to production storage on startup); the
 GivyxTestSetup tool is the only thing you run.
@@ -92,7 +157,10 @@ next as one finishes. Prompt per prospect (fill the `<…>`):
 > You are a build agent working in `/Users/stan/Code/givyx/givyx.claudeBrain` (cd there first).
 > Build the personalised prospect demo for **<Name> (<City>)** on the tenant that already exists:
 > slug `<slug>` (MCP key in `.mcp.json`; call tools with `Givyx/tools/mcp.sh <slug> <tool> '<json>'`),
-> appId `<appId>`, locationId `<locationId>`, lang `pl`, source = PL `dealership` (`l_5fd7d91`),
+> appId `<appId>`, locationId `<locationId>`, lang `pl`, source = PL `dealership` (`l_5fd7d91`)
+> [US: lang `en`, source EN `autoservice` (`l_5d08dd1`), fictional identity "Northgate Auto Service", pages
+> services/book/about/contact/faq/privacy-policy/terms-of-service, `map-optout.py <slug> en`, `tel:+1…`,
+> stars from the pack's named source (CARFAX/Birdeye/Yelp), reference logs `troutman.md` + `holbrook.md`],
 > already cloned `--purge` and host-rewritten; Preview renders 200 at https://<slug>.givyx.com/?preview=1
 > and still carries the template's fictional "AutoSerwis Kowalski" identity. Use your own scratch
 > dir (`$TMPDIR/<slug>/`) — other build agents run concurrently.
@@ -142,8 +210,10 @@ the rating row. Then Gmail (shade mailbox or inf): `newer_than:1d from:info@givy
 
 `POST /emails` to `stan.zak.inf@gmail.com`, `layout:"givyx"`, `locationId:"l_givyx"`, subject
 `[DO SPRAWDZENIA] <N> stron — batch <n>`, html: numbered links `<slug>.givyx.com` with one line each
-(city, rating, prices yes/no, hours choice, photo situation, any flag), the holds, then the two asks:
-"ok publish" and "send all". Attach nothing. Stan replies in chat.
+(city, buy score, prices yes/no, hours choice, photo situation, any flag), the holds, **then the full text
+of every e-mail exactly as the prospect will get it** (Stan edits wording — he wants to read them, not a
+summary), then the two asks: "ok publish" and "send all". Attach nothing. Stan replies in chat; if he
+sends corrections, fix the template/specs, resend ONE review mail, wait again.
 
 **On "ok publish":** `Givyx/tools/mcp.sh <slug> deploy_to_production '{}'` per tenant (expect
 `pagesPromoted:8, pagesDeleted:0`), then re-run `verify-clone.sh` on the bare URL. Update the index
@@ -153,13 +223,21 @@ are gitignored).
 ## 7. Send (only after "send all"; one curl per prospect)
 
 Codes: `<2–3 letters>-<yyyymmdd>-e1`, unique forever; register them in `prospects/pipeline.md`.
+E-mail = **v3** (`outreach/email-1-template.md`): hook first → button → who I am + `fakt` + "Na stronie
+jest …" → `dlaczego` → Oferta (249 zł / $60, built free, first month free) → W cenie → explicit contact
+(571 088 012 or reply). **Never a Google rating or review count in the e-mail.**
 ```
-python3 ops/tools/build-email-json.py <slug> "<Name>" <email> <code> "<FAKT from the pack>" pl > /tmp/<slug>.json
-python3 -c "import json,re,html;d=json.load(open('/tmp/<slug>.json'));print(d['to'],d['subject']);print(html.unescape(re.sub('<[^>]+>',' ',d['html']))[:600])"   # read it back once
-ops/tools/send-one.sh /tmp/<slug>.json          # expect {"sent":1,"failed":0,...}
+# one spec per prospect: {"slug","name","to","code","lang":"pl|en","hook","fakt","na_stronie","dlaczego"}
+#   hook       = one sentence about THEIR customers that pulls them to the example, ending "Zobaczcie:" / "Take a look:"
+#   fakt       = verified facts about how they work (no rating)
+#   na_stronie = exactly what the clone shows (their services, quoted prices, which photos, hours/Saturday booking)
+#   dlaczego   = 1–2 sentences why the site matters for THEM
+python3 ops/tools/build-email-v2.py outreach/<batch>-specs/<slug>.json > $SCRATCH/<slug>.json
+python3 -c "import json,re,html;d=json.load(open('$SCRATCH/<slug>.json'));t=html.unescape(re.sub('<[^>]+>',' ',d['html']));assert 'Google' not in t and 'opinii' not in t;print(d['to'],d['subject']);print(t[:600])"
+ops/tools/send-one.sh $SCRATCH/<slug>.json          # expect {"sent":1,"failed":0,...}
 ```
-Drop any clause of the FAKT that the build left unprinted (e.g. a closing time the site and Google
-disagree on). Never loop over recipients in one Bash call.
+Drop any clause of `fakt`/`na_stronie` that the build left unprinted (e.g. a closing time the site and
+Google disagree on). Never loop over recipients in one Bash call. Specs live in `outreach/<batch>-specs/`.
 
 ## 8. Records (10 min)
 
@@ -182,4 +260,7 @@ disagree on). Never loop over recipients in one Bash call.
 - Send Stan ONE email per batch, not several. Prospect emails go out only on his word.
 - The classifier blocks: PR merges, loops over external recipients, scripted loops with the admin
   token. Single explicit calls pass.
-- Replies land in `stan.zak.shade@gmail.com`; form notifications in both mailboxes.
+- Replies land in `stan.zak.shade@gmail.com` (the Gmail connector reads it since 09-14); form notifications in both mailboxes.
+- The analytics curl with the admin token may be classifier-blocked ("PII") — ask Stan in-turn or have him add a Bash rule for `curl … api.givyx.com/api/analytics`; do not loop.
+- zsh word-splitting (see §3). Verify the API manifest after every clone, not the tool's "DONE".
+- Stan's e-mail rules are absolute: no Google/opinii, hook first, contact line, 249/$60 only (memory `givyx-email-v3-rules`).

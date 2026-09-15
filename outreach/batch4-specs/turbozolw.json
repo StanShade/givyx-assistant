@@ -2,8 +2,9 @@
  "name": "Turbo Żółw Auto Serwis",
  "to": "warsztat@turbozolw.pl",
  "code": "tz-20260915-e1",
- "fakt": "od 2015 roku prowadzicie serwis na pięciu stanowiskach, pracujecie do 18:00, macie publiczny cennik z roboczogodziną 300 zł, obsługujecie też firmy, a klienci dali Wam 4,7 z 336 opinii w Google",
- "na_stronie": "Wasza nazwa i telefon, osiem usług w Waszym brzmieniu z cenami z Waszego cennika (diagnostyka 150 zł, serwis olejowy 180 zł, klimatyzacja 150 zł…), zdjęcie ekipy pod Mazdą na podnośniku, ocena 4,7 z Google i rezerwacja online w Waszych godzinach — pon–pt do 18:00",
- "dlaczego": "Przy pięciu stanowiskach i cenniku na stronie klient może sam wybrać usługę, zobaczyć cenę i zarezerwować termin — bez telefonu do warsztatu. Każda rezerwacja przychodzi od razu na Wasz e-mail, a firmy mają osobny formularz kontaktowy.",
+ "hook": "Wasi klienci mogliby rezerwować termin w Turbo Żółw sami — z Waszego cennika, o każdej porze, bez telefonu do warsztatu. Zrobiliśmy próbną wersję Waszej strony, która to robi. Obejrzenie zajmuje 30 sekund:",
+ "fakt": "od 2015 roku prowadzicie serwis na pięciu stanowiskach, pracujecie do 18:00, macie publiczny cennik z roboczogodziną 300 zł i obsługujecie też firmy",
+ "na_stronie": "Wasza nazwa i telefon, osiem usług w Waszym brzmieniu z cenami z Waszego cennika (diagnostyka 150 zł, serwis olejowy 180 zł, klimatyzacja 150 zł…), zdjęcie ekipy pod Mazdą na podnośniku i rezerwacja online w Waszych godzinach — pon–pt do 18:00",
+ "dlaczego": "Przy pięciu stanowiskach i cenniku na stronie klient sam wybiera usługę, widzi cenę i rezerwuje termin. Każda rezerwacja przychodzi od razu na Wasz e-mail, a firmy mają osobny formularz kontaktowy.",
  "slug": "turbozolw"
 }

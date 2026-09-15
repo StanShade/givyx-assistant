@@ -1,4 +1,12 @@
-# Email 1 — v2 (2026-09-15, Stan's brief; supersedes v1 below for every batch from batch 4 on)
+# Email 1 — v3 (2026-09-15, Stan's second round; supersedes everything below)
+
+Stan's rules: **never mention Google reviews/ratings in the email** (the rating stays on the site, not in the
+copy) · **open with a hook about their customers** that pulls them to the example, button right under it ·
+**explicit contact line**: call 571 088 012 or just reply to this mail; number in the signature too.
+Structure: hook → button → who I am + `fakt` + "Na stronie jest {na_stronie}" → `dlaczego` → Oferta →
+W cenie → Jak się skontaktować → signature. Spec fields: `hook`, `fakt`, `na_stronie`, `dlaczego`.
+
+# Email 1 — v2 (2026-09-15, Stan's brief; superseded by v3 above)
 
 **Offer changed:** one price — **249 zł/mies.**, no contract, cancel any time, **site built free, first month
 free**. The 149/249/750 ladder is no longer in the email. Benefits listed as "W cenie": maintenance, changes

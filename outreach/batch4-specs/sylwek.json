@@ -2,8 +2,9 @@
  "name": "Auto Serwis Sylwek",
  "to": "ssylwek@poczta.onet.pl",
  "code": "sy-20260915-e1",
- "fakt": "działacie od 1995 roku, robicie remonty silników, spawanie i konserwację, pracujecie też w soboty do 13:00, a klienci dali Wam 4,8 z 84 opinii w Google",
- "na_stronie": "Wasza nazwa i telefon, osiem usług w Waszym brzmieniu (mechanika, diagnostyka, remont silnika, elektryka, klimatyzacja, ogumienie, spawanie, konserwacja), zdjęcia remontu silnika i konserwacji z Waszej hali, ocena 4,8 z Google i rezerwacja online — pon–pt 8–16 i w soboty do 13:00",
- "dlaczego": "Trzydzieści lat i remonty silników pokazane na własnych zdjęciach to coś, czego nie ma większość warsztatów — strona to pokazuje, a klient może od razu zarezerwować sobotni termin. Każda rezerwacja przychodzi na Wasz e-mail.",
+ "hook": "Remont silnika pokazany na własnych zdjęciach i sobotni termin do zarezerwowania jednym kliknięciem — tego nie ma większość warsztatów. Zrobiliśmy próbną wersję strony Auto Serwis Sylwek, która to pokazuje. Obejrzenie zajmuje 30 sekund:",
+ "fakt": "działacie od 1995 roku, robicie remonty silników, spawanie i konserwację i pracujecie też w soboty do 13:00",
+ "na_stronie": "Wasza nazwa i telefon, osiem usług w Waszym brzmieniu (mechanika, diagnostyka, remont silnika, elektryka, klimatyzacja, ogumienie, spawanie, konserwacja), zdjęcia remontu silnika i konserwacji z Waszej hali oraz rezerwacja online — pon–pt 8–16 i w soboty do 13:00",
+ "dlaczego": "Trzydzieści lat doświadczenia widać na stronie od razu, a klient może zarezerwować sobotni termin bez dzwonienia. Każda rezerwacja przychodzi na Wasz e-mail.",
  "slug": "sylwek"
 }

@@ -2,8 +2,9 @@
  "name": "GO CARS Auto Serwis",
  "to": "info@go-cars.pl",
  "code": "gc-20260915-e1",
- "fakt": "macie pięć stanowisk plus podnośnik dla dostawczych powyżej 3,5 tony, serwis 4x4 i pomoc drogową 24h, pracujecie też w soboty, a w Google macie 4,8 z 252 opinii",
- "na_stronie": "Wasza nazwa i telefon, osiem usług dokładnie z Waszej oferty (elektryka, mechanika, diagnostyka, klimatyzacja, opony, części, pomoc drogowa 24h, 4x4 OffRoad), zdjęcie ekipy przed halą, ocena 4,8 z Google i rezerwacja online — także na soboty",
- "dlaczego": "Pomoc drogowa 24h i serwis 4x4 to usługi, których ludzie szukają na telefonie, często w nocy — na Waszej stronie numer jest jednym dotknięciem, a rezerwacja na sobotę zajmuje pół minuty. Każde zgłoszenie od razu trafia na Wasz e-mail.",
+ "hook": "Ktoś szuka pomocy drogowej o drugiej w nocy albo serwisu 4x4 na sobotę — na telefonie. Zrobiliśmy próbną wersję strony GO CARS, na której Wasz numer jest jednym dotknięciem, a rezerwacja na sobotę zajmuje pół minuty. Zobaczcie:",
+ "fakt": "macie pięć stanowisk plus podnośnik dla dostawczych powyżej 3,5 tony, serwis 4x4 i pomoc drogową 24h i pracujecie też w soboty",
+ "na_stronie": "Wasza nazwa i telefon, osiem usług dokładnie z Waszej oferty (elektryka, mechanika, diagnostyka, klimatyzacja, opony, części, pomoc drogowa 24h, 4x4 OffRoad), zdjęcie ekipy przed halą i rezerwacja online — także na soboty",
+ "dlaczego": "Pomoc drogowa i 4x4 przyciągają klientów spoza stałej bazy — takich, którzy trafiają na Was pierwszy raz i muszą od razu zadzwonić albo się umówić. Każde zgłoszenie ze strony przychodzi od razu na Wasz e-mail.",
  "slug": "gocars"
 }

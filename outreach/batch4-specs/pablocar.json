@@ -2,8 +2,9 @@
  "name": "PABLOCAR",
  "to": "paweladt@wp.pl",
  "code": "pb-20260928-e1",
- "fakt": "macie dwadzieścia lat doświadczenia w diagnostyce, klimatyzacji i usterkach elektrycznych, opisujecie naprawę w ośmiu krokach z fotorelacją i gwarancją, a klienci dali Wam 4,9 z 357 opinii w Google",
- "na_stronie": "Wasza nazwa i telefon, osiem usług w Waszym brzmieniu (klimatyzacja i jej płukanie, diagnostyka, turbosprężarki, kodowanie sterowników, zabezpieczenia, usterki elektryczne, DPF), Wasz ośmiostopniowy proces naprawy w sekcji pytań, ocena 4,9 z Google i rezerwacja online",
- "dlaczego": "4,9 z 357 opinii i opisany proces naprawy z gwarancją to Wasz najmocniejszy argument — na stronie widać go od razu, a klient, który się przekona, może zarezerwować termin bez dzwonienia. Jeśli macie własne zdjęcia hali, wstawimy je bez dopłat.",
+ "hook": "Klient, który przeczyta Wasz ośmiostopniowy opis naprawy z fotorelacją i gwarancją, chce się od razu umówić — a nie szukać numeru. Zrobiliśmy próbną wersję strony PABLOCAR z tym opisem i rezerwacją online. Obejrzenie zajmuje 30 sekund:",
+ "fakt": "macie dwadzieścia lat doświadczenia w diagnostyce, klimatyzacji i usterkach elektrycznych i opisujecie naprawę w ośmiu krokach z fotorelacją i gwarancją",
+ "na_stronie": "Wasza nazwa i telefon, osiem usług w Waszym brzmieniu (klimatyzacja i jej płukanie, diagnostyka, turbosprężarki, kodowanie sterowników, zabezpieczenia, usterki elektryczne, DPF), Wasz proces naprawy w sekcji pytań i rezerwacja online",
+ "dlaczego": "Opisany proces z gwarancją to Wasz najmocniejszy argument — na stronie widać go od razu, a klient, który się przekona, rezerwuje termin bez dzwonienia. Jeśli macie własne zdjęcia hali, wstawimy je bez dopłat.",
  "slug": "pablocar"
 }

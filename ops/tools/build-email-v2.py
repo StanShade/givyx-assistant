@@ -3,7 +3,7 @@
 249 zł/mies., site built free, first month free, benefits list, and three personal fields per prospect.
 
 usage: build-email-v2.py spec.json > out.json
-spec = {"slug","name","to","code","fakt","na_stronie","dlaczego"}   (all facts from the research pack)
+spec = {"slug","name","to","code","hook","fakt","na_stronie","dlaczego"}  (no Google-rating clause anywhere — Stan 2026-09-15)   (all facts from the research pack)
 """
 import html as H, json, sys
 
@@ -21,9 +21,10 @@ def main():
     name = H.escape(s["name"]); slug = s["slug"]
     url = f"https://{slug}.givyx.com/?utm_source=email&utm_medium=oferta&utm_campaign={slug}&utm_content={s['code']}"
     body = (p("Dzień dobry,")
-        + p(f"Z tej strony Stan z Givyx, z Krakowa. Zanim napisałem, sprawdziłem, jak pracujecie: {s['fakt']}.")
-        + p(f"Przygotowaliśmy wersję strony dla {name}: {s['na_stronie']}.")
+        + p(s["hook"])
         + btn(url, "Zobacz stronę →")
+        + p(f"Z tej strony Stan z Givyx, z Krakowa. Zanim napisałem, sprawdziłem, jak pracujecie: {s['fakt']}. "
+            f"Na stronie jest {s['na_stronie']}.")
         + p(s["dlaczego"])
         + p("<strong>Oferta</strong>")
         + ul(["<strong>249 zł/mies.</strong> — bez umowy, rezygnacja w każdej chwili",
@@ -36,8 +37,9 @@ def main():
               "e-maile do Waszych klientów (potwierdzenia, przypomnienia) — bez dopłat",
               "możliwość dodania SMS-ów do klientów",
               "strona działa na telefonie; my dbamy o stronę, Wy o auta"])
-        + p("Jeśli coś ma wyglądać inaczej — usługi, ceny, zdjęcia — odpiszcie, dopasuję. Albo zadzwońcie.")
-        + p("Pozdrawiam,<br>Stan<br>Givyx"))
+        + p("<strong>Jak się skontaktować:</strong> zadzwońcie do mnie na <a href=\"tel:+48571088012\" style=\"color:#0f7a5a;font-weight:600\">571 088 012</a> "
+            "albo po prostu odpiszcie na tego maila — odpowiem tego samego dnia. Jeśli coś ma wyglądać inaczej (usługi, ceny, zdjęcia), dopasuję.")
+        + p("Pozdrawiam,<br>Stan<br>Givyx · 571 088 012 · info@givyx.com"))
     req = {"to": [s["to"]], "subject": f"Strona dla {s['name']} — podgląd i oferta", "layout": "givyx",
            "locationId": "l_givyx", "eyebrow": "Oferta", "title": f"Strona dla {s['name']}", "badge": "",
            "replyTo": "info@givyx.com", "html": body}

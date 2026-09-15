@@ -2,8 +2,9 @@
  "name": "Auto Perfetto",
  "to": "autoperfetto@gmail.com",
  "code": "ap-20260915-e1",
- "fakt": "macie własną halę z częściami zamiennymi na Papieskiej, robicie diagnostykę oficjalnym oprogramowaniem, regenerację DPF i FAP, klimatyzację R134a i R1234yf, obsługujecie też floty, a w Google macie 4,6 z 75 opinii",
- "na_stronie": "Wasza nazwa i telefon, sześć usług w Waszym brzmieniu (naprawa osobowych i dostawczych, diagnostyka oficjalnym oprogramowaniem, DPF/FAP, klimatyzacja, opony, części), zdjęcia Waszego budynku w dzień i nocą z podświetlonym szyldem, ocena 4,6 z Google i rezerwacja online pon–pt 8–17",
- "dlaczego": "Regeneracja DPF i diagnostyka dealerskim oprogramowaniem to usługi, po które klienci dojeżdżają z daleka — na stronie mają je opisane Waszymi słowami, z rezerwacją i formularzem dla flot. Każde zgłoszenie od razu na Wasz e-mail.",
+ "hook": "Po regenerację DPF czy diagnostykę oficjalnym oprogramowaniem klienci dojeżdżają z daleka — i najpierw sprawdzają warsztat w telefonie. Zrobiliśmy próbną wersję strony Auto Perfetto z Waszą halą, usługami i rezerwacją online. Obejrzenie zajmuje 30 sekund:",
+ "fakt": "macie własną halę z częściami zamiennymi na Papieskiej, robicie diagnostykę oficjalnym oprogramowaniem, regenerację DPF i FAP, klimatyzację R134a i R1234yf i obsługujecie też floty",
+ "na_stronie": "Wasza nazwa i telefon, sześć usług w Waszym brzmieniu (naprawa osobowych i dostawczych, diagnostyka oficjalnym oprogramowaniem, DPF/FAP, klimatyzacja, opony, części), zdjęcia Waszego budynku w dzień i nocą z podświetlonym szyldem oraz rezerwacja online pon–pt 8–17",
+ "dlaczego": "Strona ma osobny formularz dla flot i rezerwację dla klientów prywatnych — każde zgłoszenie od razu na Wasz e-mail. Jeśli coś ma być inaczej, zmieniamy bez dopłat.",
  "slug": "autoperfetto"
 }

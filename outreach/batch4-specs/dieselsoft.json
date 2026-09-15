@@ -2,8 +2,9 @@
  "name": "Dieselsoft Auto-Mechanika",
  "to": "dieselsoft@wp.pl",
  "code": "ds-20260915-e1",
- "fakt": "jesteście rodzinną firmą od 1982 roku, regenerujecie wtryskiwacze Common Rail, obsługujecie DPF/FAP/EGR/SCR, kalibrujecie systemy ADAS i mierzycie moc na hamowni Insoric, a w Google macie 4,9 z 77 opinii",
- "na_stronie": "Wasza nazwa i telefon, osiem usług dokładnie z Waszej listy (chiptuning, RaceChip, zabezpieczenia, wtryskiwacze Common Rail, serwis mechaniczny i elektromechaniczny, elektronika, DPF/FAP/EGR/SCR, ADAS), ocena 4,9 z Google i rezerwacja online pon–pt 8–16",
- "dlaczego": "Regeneracja wtryskiwaczy i kalibracja ADAS to usługi, po które klienci szukają specjalisty w całym regionie — na stronie mają je opisane Waszymi słowami i mogą od razu wysłać zapytanie lub zarezerwować termin. Jeśli macie własne zdjęcia warsztatu i hamowni, wstawimy je bez dopłat.",
+ "hook": "Po regenerację wtryskiwaczy Common Rail czy kalibrację ADAS klienci szukają specjalisty w całym regionie — i najpierw sprawdzają go w telefonie. Zrobiliśmy próbną wersję strony Dieselsoft z Waszymi usługami i rezerwacją online. Obejrzenie zajmuje 30 sekund:",
+ "fakt": "jesteście rodzinną firmą od 1982 roku, regenerujecie wtryskiwacze Common Rail, obsługujecie DPF/FAP/EGR/SCR, kalibrujecie systemy ADAS i mierzycie moc na hamowni Insoric",
+ "na_stronie": "Wasza nazwa i telefon, osiem usług dokładnie z Waszej listy (chiptuning, RaceChip, zabezpieczenia, wtryskiwacze Common Rail, serwis mechaniczny i elektromechaniczny, elektronika, DPF/FAP/EGR/SCR, ADAS) i rezerwacja online pon–pt 8–16",
+ "dlaczego": "Każda usługa ma swoją kartę z rezerwacją i zapytaniem o wycenę — zgłoszenia trafiają od razu na Wasz e-mail. Jeśli macie własne zdjęcia warsztatu i hamowni, wstawimy je bez dopłat.",
  "slug": "dieselsoft"
 }

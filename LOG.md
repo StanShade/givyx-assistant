@@ -9,6 +9,18 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-15 (01:1xZ) — Batch 4 published + 9 sent (email v3)
+- Stan "ok publish" → 10 promoted (8/8 pages each), re-verified on bare URLs; brain eb7ed39.
+- Stan rewrote the offer in two rounds: (1) 249 zł only, site built free, first month free, benefits list
+  (maintenance, development + new features free, customer e-mails free, optional SMS), personal to each;
+  (2) no "opinii w Google" anywhere, hook about their customers first, explicit contact (call 571 088 012 or reply).
+  Built `ops/tools/build-email-v2.py` + per-prospect specs (`outreach/batch4-specs/`); template v3 in
+  `outreach/email-1-template.md`. Two review mails (v2, v3) with all ten bodies; Stan picked v3.
+- Sent 9/9 (`sent:true` each, one curl per prospect): turbozolw · pimserwis · gocars · mauto · carmobile ·
+  autoperfetto · sylwek · dieselsoft · vagserwis. PABLOCAR held to 28.09 (request file saved).
+- **Scoreboard: 33 sites live, 39 emails sent, 0 replies visible.** Next data point: clicks on the 09-14
+  twelve + today's nine, Wed 16 Sep morning (analytics curl needs a permission rule or Stan's in-turn OK).
+
 ### 2026-09-15 (00:30Z) — Batch 4: 10 sites built + verified, review mail sent
 - Research (one agent, 40 min): 210 Maps listings / 61 sites across 14 cities → 10 verified packs (Gdynia, Radom,
   Gliwice, Sosnowiec, Nowy Sącz, Zielona Góra, Płock, Koszalin, Legionowo, Rybnik) + 1 full reserve (Wieczorek Tarnów,

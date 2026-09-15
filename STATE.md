@@ -1,6 +1,6 @@
 # Givyx — START HERE
 
-Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-14**.
+Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-15**.
 
 > ⚠️ **MODEL:**
 > - **Tasks live in Notion** (Givyx → Tasks DB, page `17cb6a06-0d47-80b5-95ff-fbc322ab3311`). Update
@@ -16,15 +16,15 @@ Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-1
 |---|---|
 | Paying customers | **0** |
 | MRR | **0 zł** |
-| **Emails sent** | **16 to date** (14 in two days — 10 PL (5 generic demo 09-10 · 5 personalised site 09-11) + 4 US (personalised site 09-11) · **+2 US drafts (Holbrook, Force) awaiting Stan's OK** · **replies: 0 as of 09-11 16:30Z — but see ⚠️ reply routing below** |
+| **Emails sent** | **39 to date** (batch 4: 9 on 09-15 with email v3 — 249 zł only, built free, first month free, no Google clause, hook first; PABLOCAR held to 28.09) · earlier: **16** (14 in two days — 10 PL (5 generic demo 09-10 · 5 personalised site 09-11) + 4 US (personalised site 09-11) · **+2 US drafts (Holbrook, Force) awaiting Stan's OK** · **replies: 0 as of 09-11 16:30Z — but see ⚠️ reply routing below** |
 | **Demo clicks** | **Readable since 09-14** (admin token in the routine slot, exp 10-14). First read: generic demo → **MUMIA-CAR + Motosilesia opened it**; the nine 09-11 personalised sites → **0 tracked clicks in 3 days**. Today's 12 sends are the next data point (Wed morning). |
 | **Replies** | **Land in `stan.zak.shade@gmail.com`** — improvmx forwards every @givyx.com alias there (Stan's screenshot 09-14), not to the Gmail I can read. Stan checks it, or adds stan.zak.inf@gmail.com as a second forward target. |
 | **Offer for clients #1–5** | **Decided 09-14:** no contract, cancel any time, **first month free**. In every template from now; the 30 emails sent so far did not carry it, the D+5 follow-ups will. |
 | Calls made (Sept) | 13 touched → 11 conversations → 0 closed (workshops "mam dużo klientów", dealerships already served) |
 | Offers by email | MUMIA-CAR (09-09, generic demo, callback was due 09-11) |
-| **Personalised demo sites live** | **23** at `<slug>.givyx.com` — 11 sent (napierala · autofirma · latusek · pietruszko · rsauto · troutman · adp · independenceauto · herlehys · holbrook · force) + **12 built 09-14 awaiting Stan's OK** (dieselchip · lpgexpert · markauto · wmw · poslowski · idzikowski · spauto · bulek · carexpert · bartex · garage66 · gamerc). All **noindex**, maps un-gated, forms → info@ + Stan's Gmail. Index: `givyx.claudeBrain/dealership/clones/index.md` |
+| **Personalised demo sites live** | **33** at `<slug>.givyx.com` — batch 4 (turbozolw · pimserwis · gocars · mauto · carmobile · autoperfetto · sylwek · pablocar · dieselsoft · vagserwis) published 09-15; earlier **23** — 11 sent (napierala · autofirma · latusek · pietruszko · rsauto · troutman · adp · independenceauto · herlehys · holbrook · force) + **12 built 09-14 awaiting Stan's OK** (dieselchip · lpgexpert · markauto · wmw · poslowski · idzikowski · spauto · bulek · carexpert · bartex · garage66 · gamerc). All **noindex**, maps un-gated, forms → info@ + Stan's Gmail. Index: `givyx.claudeBrain/dealership/clones/index.md` |
 | Flagship demos | dealership.givyx.com (PL) · autoservice.givyx.com (EN) — both are AUTO-REPAIR sites; target = autoservices, not dealerships |
-| Catalog | Starter **149**/1490 · Studio **249**/2490 · Scale **750**/7500 · US pitched at **$60/mo** (Stan's call; US low band is $65–150) |
+| Catalog | Starter **149**/1490 · Studio **249**/2490 · Scale **750**/7500 · US pitched at **$60/mo**. **Email offer since 09-15 (Stan): 249 zł/mies. only, site built free, first month free, no contract; benefits list; no Google-rating clause; hook first; contact 571 088 012 or reply** — `outreach/email-1-template.md` v3 |
 | VAT | **exempt** (zwolnienie podmiotowe) — 249 zł stays 249 zł |
 
 **What changed this week:** the target moved from dealerships to autoservices (the demo is an

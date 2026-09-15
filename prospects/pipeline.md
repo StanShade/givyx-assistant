@@ -546,21 +546,24 @@ Wieczorek held on 1★ 8,3 %). Tenants → clone → rewrite → 10 build agents
 own booking + contact forms notifying `info@givyx.com,stan.zak.inf@gmail.com` (20/20 test submissions in Gmail),
 `noindex, nofollow` + `Disallow: /`, 0 template leaks across 8 pages, one E.164 phone, rating row with read date.
 Logs: `givyx.claudeBrain/dealership/clones/<slug>.md` (commit dfb6a29). Review mail to Stan 2026-09-15 ~00:2xZ:
-`[DO SPRAWDZENIA] 10 stron — batch 4`. Email payloads staged in the session scratchpad (`build-email-json.py`, PL
-template with the 09-14 line: bez umowy, rezygnacja w każdej chwili, pierwszy miesiąc gratis).
+`[DO SPRAWDZENIA] 10 stron — batch 4`. **Email rewritten twice on Stan's feedback before sending (v3, `outreach/email-1-template.md`):** hook about their
+customers first + button, no Google-rating clause, "Na stronie jest …" personal to each, 249 zł/mies. only (no
+149/750), budowa gratis + pierwszy miesiąc gratis, "W cenie" list (utrzymanie, rozwój bez dopłat, e-maile do
+klientów, opcja SMS), explicit contact line (571 088 012 or reply). Stan: "i like this last variant the most you
+can sand it all" → 9 sent 2026-09-15 ~01:1xZ, 9/9 `sent:true`. Specs: `outreach/batch4-specs/`.
 
 | slug | prospect | email | plan | code |
 |---|---|---|---|---|
-| turbozolw | Turbo Żółw Auto Serwis, Legionowo | warsztat@turbozolw.pl | awaiting "send all" | `tz-20260915-e1` |
-| pimserwis | P&M Serwis, Koszalin | biuro@pimserwis.pl | awaiting "send all" (hours: closing only, 9 vs 8 opening) | `pm-20260915-e1` |
-| gocars | GO CARS Auto Serwis, Radom | info@go-cars.pl | awaiting "send all" (closing only, no postcode) | `gc-20260915-e1` |
-| mauto | M-AUTO, Rybnik | m-auto.rybnik@wp.pl | awaiting "send all" (cennik quoted) | `mau-20260915-e1` |
-| carmobile | Carmobile Serwis, Gdynia | carmobileserwis@gmail.com | awaiting "send all" (Spokojna 18; 4 services; GBP-only hours) | `cm-20260915-e1` |
-| autoperfetto | Auto Perfetto, Nowy Sącz | autoperfetto@gmail.com | awaiting "send all" (6 services) | `ap-20260915-e1` |
-| sylwek | Auto Serwis Sylwek, Sosnowiec | ssylwek@poczta.onet.pl | awaiting "send all" (Saturday bookable) | `sy-20260915-e1` |
-| pablocar | PABLOCAR, Zielona Góra | paweladt@wp.pl | **HOLD until 28.09** (shop closed 9–27.09; no photos, no hours) | `pb-20260928-e1` |
-| dieselsoft | Dieselsoft Auto-Mechanika, Płock | dieselsoft@wp.pl | awaiting "send all" (no photos; GBP-only hours; no postcode) | `ds-20260915-e1` |
-| vagserwis | VAG Serwis W.K. Kolasińscy, Gliwice | serwis@vag-serwis.eu | awaiting "send all" (dry FAKT — owner argues with reviewers) | `vg-20260915-e1` |
+| turbozolw | Turbo Żółw Auto Serwis, Legionowo | warsztat@turbozolw.pl | **SENT 2026-09-15** (email v3) | `tz-20260915-e1` |
+| pimserwis | P&M Serwis, Koszalin | biuro@pimserwis.pl | **SENT 2026-09-15** (email v3; hours: closing only, 9 vs 8 opening) | `pm-20260915-e1` |
+| gocars | GO CARS Auto Serwis, Radom | info@go-cars.pl | **SENT 2026-09-15** (email v3; closing only, no postcode) | `gc-20260915-e1` |
+| mauto | M-AUTO, Rybnik | m-auto.rybnik@wp.pl | **SENT 2026-09-15** (email v3; cennik quoted) | `mau-20260915-e1` |
+| carmobile | Carmobile Serwis, Gdynia | carmobileserwis@gmail.com | **SENT 2026-09-15** (email v3; Spokojna 18; 4 services; GBP-only hours) | `cm-20260915-e1` |
+| autoperfetto | Auto Perfetto, Nowy Sącz | autoperfetto@gmail.com | **SENT 2026-09-15** (email v3; 6 services) | `ap-20260915-e1` |
+| sylwek | Auto Serwis Sylwek, Sosnowiec | ssylwek@poczta.onet.pl | **SENT 2026-09-15** (email v3; Saturday bookable) | `sy-20260915-e1` |
+| pablocar | PABLOCAR, Zielona Góra | paweladt@wp.pl | **HOLD until 28.09** — request ready in `outreach/batch4-specs/pablocar.request.json`, send with `ops/tools/send-one.sh` (shop closed 9–27.09) | `pb-20260928-e1` |
+| dieselsoft | Dieselsoft Auto-Mechanika, Płock | dieselsoft@wp.pl | **SENT 2026-09-15** (email v3; no photos; GBP-only hours; no postcode) | `ds-20260915-e1` |
+| vagserwis | VAG Serwis W.K. Kolasińscy, Gliwice | serwis@vag-serwis.eu | **SENT 2026-09-15** (email v3; dry FAKT — owner argues with reviewers) | `vg-20260915-e1` |
 
 Mobiles for the D+3 SMS (Stan): Turbo Żółw 881 009 000 · P&M 501 667 537 · GO CARS 515 543 195 · M-AUTO 501 378 085 ·
 Carmobile 516 306 324 · Auto Perfetto 792 670 514 · Sylwek 663 510 725 · Dieselsoft 508 286 910 · VAG 505 095 855 ·
@@ -569,3 +572,11 @@ PABLOCAR 508 431 860 (after 28.09).
 Pre-flight 2026-09-14 evening: 0 replies (shade mailbox now readable) · mail-tester 8,5/10 on the exact PL email
 (SPF/DKIM/DMARC pass; deductions = layout preconnect links, SendGrid shared IP on Mailspike, no text/plain) ·
 clicks on the 09-14 twelve NOT read (classifier blocked the analytics curl) — read Wed 16 Sep · 25/25 hosts 200.
+
+### Follow-up dates for batch 4 (9 sent 2026-09-15; PABLOCAR 28.09)
+| Batch | D+3 SMS (Stan) | D+5 email 2 | D+10 last |
+|---|---|---|---|
+| batch 4 (9) | **Thu 18 Sep** — Turbo Żółw 881 009 000 · P&M 501 667 537 · GO CARS 515 543 195 · M-AUTO 501 378 085 · Carmobile 516 306 324 · Auto Perfetto 792 670 514 · Sylwek 663 510 725 · Dieselsoft 508 286 910 · VAG 505 095 855 | Sat 20 Sep → send **Mon 22 Sep** | Thu 25 Sep |
+| PABLOCAR | 1 Oct (508 431 860) | 3 Oct | 8 Oct |
+
+**Scoreboard after batch 4: 33 personalised sites live · 39 offer emails sent to date (30 + 9) · replies: 0 visible (shade mailbox).**

@@ -1,6 +1,6 @@
 # Givyx — START HERE
 
-Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-15**.
+Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-16**.
 
 > ⚠️ **MODEL:**
 > - **Tasks live in Notion** (Givyx → Tasks DB, page `17cb6a06-0d47-80b5-95ff-fbc322ab3311`). Update
@@ -16,13 +16,13 @@ Read this first, then `LOG.md` (chronological detail). Last updated: **2026-09-1
 |---|---|
 | Paying customers | **0** |
 | MRR | **0 zł** |
-| **Emails sent** | **39 to date** (batch 4: 9 on 09-15 with email v3 — 249 zł only, built free, first month free, no Google clause, hook first; PABLOCAR held to 28.09) · earlier: **16** (14 in two days — 10 PL (5 generic demo 09-10 · 5 personalised site 09-11) + 4 US (personalised site 09-11) · **+2 US drafts (Holbrook, Force) awaiting Stan's OK** · **replies: 0 as of 09-11 16:30Z — but see ⚠️ reply routing below** |
+| **Emails sent** | **48 to date** (batch 5: 9 on 09-16 — 5 PL + 4 US, v3, buy score ≥ 8/≥ 7; VRservis + Rock Street held as call targets, no service list) · earlier **39** (batch 4: 9 on 09-15 with email v3 — 249 zł only, built free, first month free, no Google clause, hook first; PABLOCAR held to 28.09) · earlier: **16** (14 in two days — 10 PL (5 generic demo 09-10 · 5 personalised site 09-11) + 4 US (personalised site 09-11) · **+2 US drafts (Holbrook, Force) awaiting Stan's OK** · **replies: 0 as of 09-11 16:30Z — but see ⚠️ reply routing below** |
 | **Demo clicks** | **Readable since 09-14** (admin token in the routine slot, exp 10-14). First read: generic demo → **MUMIA-CAR + Motosilesia opened it**; the nine 09-11 personalised sites → **0 tracked clicks in 3 days**. Today's 12 sends are the next data point (Wed morning). |
 | **Replies** | **Land in `stan.zak.shade@gmail.com`** — improvmx forwards every @givyx.com alias there (Stan's screenshot 09-14), not to the Gmail I can read. Stan checks it, or adds stan.zak.inf@gmail.com as a second forward target. |
 | **Offer for clients #1–5** | **Decided 09-14:** no contract, cancel any time, **first month free**. In every template from now; the 30 emails sent so far did not carry it, the D+5 follow-ups will. |
 | Calls made (Sept) | 13 touched → 11 conversations → 0 closed (workshops "mam dużo klientów", dealerships already served) |
 | Offers by email | MUMIA-CAR (09-09, generic demo, callback was due 09-11) |
-| **Personalised demo sites live** | **33** at `<slug>.givyx.com` — batch 4 (turbozolw · pimserwis · gocars · mauto · carmobile · autoperfetto · sylwek · pablocar · dieselsoft · vagserwis) published 09-15; earlier **23** — 11 sent (napierala · autofirma · latusek · pietruszko · rsauto · troutman · adp · independenceauto · herlehys · holbrook · force) + **12 built 09-14 awaiting Stan's OK** (dieselchip · lpgexpert · markauto · wmw · poslowski · idzikowski · spauto · bulek · carexpert · bartex · garage66 · gamerc). All **noindex**, maps un-gated, forms → info@ + Stan's Gmail. Index: `givyx.claudeBrain/dealership/clones/index.md` |
+| **Personalised demo sites live** | **42** at `<slug>.givyx.com` — **batch 5 (strzelecki · autojack · autoexpert · kwdiagnostics · autocel · jnjauto · tenauto · jacksonsauto · masauto) sent 09-16 but still on Preview — `deploy_to_production` classifier-blocked, Stan promotes** · batch 4 (turbozolw · pimserwis · gocars · mauto · carmobile · autoperfetto · sylwek · pablocar · dieselsoft · vagserwis) published 09-15; earlier **23** — 11 sent (napierala · autofirma · latusek · pietruszko · rsauto · troutman · adp · independenceauto · herlehys · holbrook · force) + **12 built 09-14 awaiting Stan's OK** (dieselchip · lpgexpert · markauto · wmw · poslowski · idzikowski · spauto · bulek · carexpert · bartex · garage66 · gamerc). All **noindex**, maps un-gated, forms → info@ + Stan's Gmail. Index: `givyx.claudeBrain/dealership/clones/index.md` |
 | Flagship demos | dealership.givyx.com (PL) · autoservice.givyx.com (EN) — both are AUTO-REPAIR sites; target = autoservices, not dealerships |
 | Catalog | Starter **149**/1490 · Studio **249**/2490 · Scale **750**/7500 · US pitched at **$60/mo**. **Email offer since 09-15 (Stan): 249 zł/mies. only, site built free, first month free, no contract; benefits list; no Google-rating clause; hook first; contact 571 088 012 or reply** — `outreach/email-1-template.md` v3 |
 | VAT | **exempt** (zwolnienie podmiotowe) — 249 zł stays 249 zł |
@@ -226,7 +226,7 @@ and 14 sends is statistically nothing. Fix those, then add volume and two warm s
 | 4 | ~~Risk-reversal~~ — **decided 09-14: no contract, cancel any time, first month free** | — | ✅ |
 | 5 | **Demo clicks** — readable now via the admin token; PR 88 (`/admin/ops/demo-visits`) awaits **Stan's merge click** (my sandbox blocks merges); a Portal view for Stan is a P1 task | Stan merges | 15 Sep |
 | 6 | **Follow-up sequence** — D+3 SMS to the four 09-11 mobiles (**Mon 14 Sep**), Wed 16 Sep email 2 (+ own-site clones for the 09-10 five), Mon 21 Sep last touch — texts in `outreach/2026-09-14-followup-sequence.md` | Stan sends SMS, I draft | 14–22 Sep |
-| 7 | **Volume, carefully** — **5 PL + 5 US/day** via `guides/daily-batch-runbook.md` (fresh session each morning; kick-off prompt at its top), chosen by the **buy score ≥ 7** (§2a: need · ability to pay · reachability · growth), one review mail/day with the full e-mail texts; quality over count (Stan 09-15) | me | daily |
+| 7 | **Volume, carefully** — **5 PL + 5 US/day** (batch 5 done 09-16: 9 sent, 2 held for lack of any published services — those go to the call list) via `guides/daily-batch-runbook.md` (fresh session each morning; kick-off prompt at its top), chosen by the **buy score ≥ 7** (§2a: need · ability to pay · reachability · growth), one review mail/day with the full e-mail texts; quality over count (Stan 09-15) | me | daily |
 | 8 | Own-site clones for the 09-10 five (DIESELCHIP, LPG, MarkAuto, Motosilesia, WMW) as their email 2 | me | 15 Sep |
 | 9 | **New seams:** CEIDG new registrations (PKD 45.20.Z, last 90 days) · RU/UA-owned shops in Kraków (Stan calls in his language) | me list → Stan calls | 15–19 Sep |
 | 10 | Warm: ask IPR + Szymon for a review and a referral; leonixon status (paid? client #1?) | Stan | this week |

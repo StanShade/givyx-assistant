@@ -581,6 +581,49 @@ clicks on the 09-14 twelve NOT read (classifier blocked the analytics curl) — 
 
 **Scoreboard after batch 4: 33 personalised sites live · 39 offer emails sent to date (30 + 9) · replies: 0 visible (shade mailbox).**
 
+## 2026-09-16 — batch 5: nine personalised sites built (Preview, noindex), review mail, Stan "send all" → 9 sent
+
+Research packs: `prospects/2026-09-15-PL-batch5.md` (5 PL, buy score ≥ 8, four of five with no working website — FB/IG-only or
+dead domain; 224 Maps listings in 14 new cities) and `prospects/2026-09-15-US-batch5.md` (5 US, ≥ 7, free-subdomain Wix / FB-only;
+~75 screened, Birdeye `countByRating` histograms). Built 9 of the 10: **VRservis Stalowa Wola (9) and Rock Street Mankato (7) held** —
+no service list on any page they own, a demo would have to invent services (call candidates instead). Reserve **Auto-Cel Piotrków (8)**
+swapped in. Tenants → clone → rewrite → 9 build agents in waves of 4 (no 429; one research agent died on an API error and was
+re-run). Every clone: own booking + contact forms notifying `info@givyx.com,stan.zak.inf@gmail.com`, `noindex, nofollow` +
+`Disallow: /`, 0 template leaks across 8 pages, one E.164 phone, rating row with source + read date. 17/18 test notifications in the
+shade mailbox — **both Mas Auto Repair booking tests (Notified:true at the API) never reached shade**; contact form did → Stan checks inf.
+Logs: `givyx.claudeBrain/dealership/clones/<slug>.md`. Review mail 2026-09-15 ~19:2xZ `[DO SPRAWDZENIA] 9 stron — batch 5`;
+Stan 09-16: "send all" → 9/9 `sent:true` 07:4xZ (email v3; specs `outreach/batch5-specs/`). **`deploy_to_production` was
+classifier-blocked ("Production Deploy") — all nine still serve Preview on the bare URL (what the prospects see); promotion pending
+Stan's rule/click.**
+
+| slug | prospect | email | plan | code |
+|---|---|---|---|---|
+| strzelecki | Auto Serwis Dariusz Strzelecki, Ostrów Wlkp. | strzeleckidariusz@wp.pl | **SENT 2026-09-16** (v3; score 9; IG-only; no own photos; GBP hours) | `dst-20260915-e1` |
+| autojack | Auto-Jack Jacek Zieliński, Włocławek | jack19770@op.pl | **SENT 2026-09-16** (v3; score 9; FB-only; open to 20 + Sat; own gearbox photos) | `aj-20260915-e1` |
+| autoexpert | Auto Expert, Gorzów Wlkp. | autoexpert.gorzow@gmail.com | **SENT 2026-09-16** (v3; score 9; no website; 3 services only; NO hours printed) | `aex-20260915-e1` |
+| kwdiagnostics | KW Diagnostics, Grudziądz | kwdiagnostics.service@gmail.com | **SENT 2026-09-16** (v3; score 8; FB-only; Mercedes electronics; no own photos) | `kwd-20260915-e1` |
+| autocel | Auto-Cel Szymon Cel, Piotrków Tryb. | biuro@auto-cel.com.pl | **SENT 2026-09-16** (v3; score 8 reserve; 2022 one-pager; no own photos; GBP hours) | `acl-20260915-e1` |
+| jnjauto | JNJ Complete Auto Repair, Orland Park IL | jnjcompleteauto@gmail.com | **SENT 2026-09-16** (v3 EN; score 9; free Wix, moved Aug 2026; no own photos) | `jnj-20260915-e1` |
+| tenauto | Ten Auto Repair And Tires, Seminole FL | tenautorepair5601@gmail.com | **SENT 2026-09-16** (v3 EN; score 9; free Wix; 5 own photos) | `ten-20260915-e1` |
+| jacksonsauto | Jackson's Automotive Repair of Saratoga, Gansevoort NY | 1jacksonsauto@gmail.com | **SENT 2026-09-16** (v3 EN; score 8; $80 rate printed; Sat omitted) | `jax-20260915-e1` |
+| masauto | Mas Auto Repair, Frederick MD | masautorepair24@gmail.com | **SENT 2026-09-16** (v3 EN; score 8; SureCritic rating; opening times only; ⚠ booking notify) | `mas-20260915-e1` |
+| — | VRservis Rafał Sowa, Stalowa Wola | vrserviswarsztat@gmail.com | **HELD** — no service list anywhere they own; vr-servis.pl → 503; **call 669 930 150** | — |
+| — | Rock Street Auto, Mankato MN | Rockstreetauto@gmail.com | **HELD** — FB-only, no services/hours/photos; +1 507-720-6211 | — |
+
+Mobiles for the D+3 SMS (Stan): Strzelecki 720 830 909 · Auto-Jack 669 820 145 · Auto Expert 600 249 761 · KW Diagnostics 453 225 237 ·
+Auto-Cel 501 464 440. US four: e-mail only.
+
+Pre-flight 2026-09-15 evening: 0 replies (shade, 3 days) · clicks on the 09-14 twelve read for 5/21 tenants (dieselchip, lpgexpert,
+markauto, wmw, poslowski) → 0 campaign sessions, only our PL build sessions; 5th curl classifier-blocked ("PII") → rest unread ·
+35/35 hosts 200.
+
+### Follow-up dates for batch 5 (9 sent 2026-09-16)
+| Batch | D+3 SMS (Stan) | D+5 email 2 | D+10 last |
+|---|---|---|---|
+| batch 5 (9) | **Fri 19 Sep** — Strzelecki 720 830 909 · Auto-Jack 669 820 145 · Auto Expert 600 249 761 · KW 453 225 237 · Auto-Cel 501 464 440 (US: no SMS) | Sun 21 Sep → send **Mon 22 Sep** | Fri 26 Sep |
+
+**Scoreboard after batch 5: 42 personalised sites built (33 published + 9 on Preview) · 48 offer emails sent to date (39 + 9) · replies: 0 visible (shade mailbox).**
+
 ## 2026-09-15 — ARMCAR Autoserwis (Warszawa) — Stan's warm call, Belarus angle
 Stan spotted https://www.instagram.com/armcarpl (owners look Belarusian) and wants to call them as a potential
 first customer. Research pack + RU conversation script: `outreach/2026-09-15-call-script-armcar.md`.

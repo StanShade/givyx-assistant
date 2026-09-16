@@ -2135,3 +2135,9 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
 - **Open for Stan:** check inf Gmail for the two
   "Booking — Mas Auto Repair" notifications · analytics Bash rule · VRservis + Rock Street as call targets ·
   D+3 SMS Fri 19 Sep (five PL mobiles in pipeline.md).
+
+## 2026-09-16 (Wed, 08:2xZ) — click read across all 32 tenants sent since 09-14
+- Stan asked in-turn; 32 analytics curls via a scratch helper script all passed (yesterday's inline curl died on the 5th).
+- **Auto Perfetto opened its site** (1 campaign session, email/oferta, Gmail referral, no conversion) → Stan calls
+  792 670 514 instead of email 2. Everything else 0 campaign clicks; untagged PL sessions are ours/Stan's.
+- Openers to date: 3 of 45 personalised/generic sends (MUMIA-CAR, Motosilesia on the generic demo; Auto Perfetto on own site).

@@ -559,7 +559,7 @@ can sand it all" → 9 sent 2026-09-15 ~11:3xZ, 9/9 `sent:true`. Specs: `outreac
 | gocars | GO CARS Auto Serwis, Radom | info@go-cars.pl | **SENT 2026-09-15** (email v3; closing only, no postcode) | `gc-20260915-e1` |
 | mauto | M-AUTO, Rybnik | m-auto.rybnik@wp.pl | **SENT 2026-09-15** (email v3; cennik quoted) | `mau-20260915-e1` |
 | carmobile | Carmobile Serwis, Gdynia | carmobileserwis@gmail.com | **SENT 2026-09-15** (email v3; Spokojna 18; 4 services; GBP-only hours) | `cm-20260915-e1` |
-| autoperfetto | Auto Perfetto, Nowy Sącz | autoperfetto@gmail.com | **SENT 2026-09-15** (email v3; 6 services) | `ap-20260915-e1` |
+| autoperfetto | Auto Perfetto, Nowy Sącz | autoperfetto@gmail.com | **SENT 2026-09-15** (email v3; 6 services) · **CLICKED** (1 session `email / oferta`, read 09-16 08:2xZ) → **Stan calls 792 670 514 / 536 793 376**, no email 2 | `ap-20260915-e1` |
 | sylwek | Auto Serwis Sylwek, Sosnowiec | ssylwek@poczta.onet.pl | **SENT 2026-09-15** (email v3; Saturday bookable) | `sy-20260915-e1` |
 | pablocar | PABLOCAR, Zielona Góra | paweladt@wp.pl | **HOLD until 28.09** — request ready in `outreach/batch4-specs/pablocar.request.json`, send with `ops/tools/send-one.sh` (shop closed 9–27.09) | `pb-20260928-e1` |
 | dieselsoft | Dieselsoft Auto-Mechanika, Płock | dieselsoft@wp.pl | **SENT 2026-09-15** (email v3; no photos; GBP-only hours; no postcode) | `ds-20260915-e1` |
@@ -622,6 +622,13 @@ markauto, wmw, poslowski) → 0 campaign sessions, only our PL build sessions; 5
 | batch 5 (9) | **Fri 19 Sep** — Strzelecki 720 830 909 · Auto-Jack 669 820 145 · Auto Expert 600 249 761 · KW 453 225 237 · Auto-Cel 501 464 440 (US: no SMS) | Sun 21 Sep → send **Mon 22 Sep** | Fri 26 Sep |
 
 **Scoreboard after batch 5: 42 personalised sites live · 48 offer emails sent to date (39 + 9) · replies: 0 visible (shade mailbox).**
+
+## 2026-09-16 08:2xZ — analytics read, all 32 tenants sent since 09-14 (admin token, helper script — no classifier block)
+- **1 tracked email click: Auto Perfetto** (batch 4) — 1 PL session, campaign `autoperfetto`, source `email / oferta`, via Gmail
+  (referral channel), 0 conversions. → Stan's call list (792 670 514), skip email 2.
+- 0 campaign clicks on the other 31 (batch 5 two hours old; batch 4 one day; 09-14 twelve + Holbrook/Force two days).
+  Untagged PL sessions = our build/verify runs (Mon 10:00 block) and Stan's review-mail clicks (bare URLs).
+- Running tally of openers: MUMIA-CAR + Motosilesia (generic demo, 09-09/10) · Auto Perfetto (own site, 09-15). 3 of 45.
 
 ## 2026-09-15 — ARMCAR Autoserwis (Warszawa) — Stan's warm call, Belarus angle
 Stan spotted https://www.instagram.com/armcarpl (owners look Belarusian) and wants to call them as a potential

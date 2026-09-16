@@ -592,9 +592,8 @@ re-run). Every clone: own booking + contact forms notifying `info@givyx.com,stan
 `Disallow: /`, 0 template leaks across 8 pages, one E.164 phone, rating row with source + read date. 17/18 test notifications in the
 shade mailbox — **both Mas Auto Repair booking tests (Notified:true at the API) never reached shade**; contact form did → Stan checks inf.
 Logs: `givyx.claudeBrain/dealership/clones/<slug>.md`. Review mail 2026-09-15 ~19:2xZ `[DO SPRAWDZENIA] 9 stron — batch 5`;
-Stan 09-16: "send all" → 9/9 `sent:true` 07:4xZ (email v3; specs `outreach/batch5-specs/`). **`deploy_to_production` was
-classifier-blocked ("Production Deploy") — all nine still serve Preview on the bare URL (what the prospects see); promotion pending
-Stan's rule/click.**
+Stan 09-16: "send all" → 9/9 `sent:true` 07:4xZ (email v3; specs `outreach/batch5-specs/`). **`deploy_to_production` was classifier-blocked on the first try; Stan "ok publish" 09-16 ~08:0xZ → 9/9 promoted
+(`pagesPromoted:8, pagesDeleted:0`), bare URLs re-verified identical.**
 
 | slug | prospect | email | plan | code |
 |---|---|---|---|---|
@@ -622,7 +621,7 @@ markauto, wmw, poslowski) → 0 campaign sessions, only our PL build sessions; 5
 |---|---|---|---|
 | batch 5 (9) | **Fri 19 Sep** — Strzelecki 720 830 909 · Auto-Jack 669 820 145 · Auto Expert 600 249 761 · KW 453 225 237 · Auto-Cel 501 464 440 (US: no SMS) | Sun 21 Sep → send **Mon 22 Sep** | Fri 26 Sep |
 
-**Scoreboard after batch 5: 42 personalised sites built (33 published + 9 on Preview) · 48 offer emails sent to date (39 + 9) · replies: 0 visible (shade mailbox).**
+**Scoreboard after batch 5: 42 personalised sites live · 48 offer emails sent to date (39 + 9) · replies: 0 visible (shade mailbox).**
 
 ## 2026-09-15 — ARMCAR Autoserwis (Warszawa) — Stan's warm call, Belarus angle
 Stan spotted https://www.instagram.com/armcarpl (owners look Belarusian) and wants to call them as a potential

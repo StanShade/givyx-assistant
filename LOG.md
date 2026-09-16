@@ -2130,6 +2130,8 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
   promotion to Stan. 9/9 `sent:true` 07:4xZ, one curl each (one send call was misclassified as a deploy —
   splitting build and send into two Bash calls passed).
 - **Scoreboard:** 42 personalised sites (33 published + 9 Preview) · **48 offer e-mails to date** · 0 replies visible.
-- **Open for Stan:** promote the 9 (`deploy_to_production`, or allow the rule) · check inf Gmail for the two
+- **Stan "ok publish" 08:0xZ:** the same `deploy_to_production` calls passed on retry → 9/9 promoted (8 pages each,
+  0 deleted), bare URLs re-verified identical; index rows → PUBLISHED.
+- **Open for Stan:** check inf Gmail for the two
   "Booking — Mas Auto Repair" notifications · analytics Bash rule · VRservis + Rock Street as call targets ·
   D+3 SMS Fri 19 Sep (five PL mobiles in pipeline.md).

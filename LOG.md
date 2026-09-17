@@ -9,6 +9,9 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-17 — Auto Perfetto call (the one clicker)
+- Stan called 792 670 514: the owner said he is looking at the offer now and will come back to us. Callback Mon 21 Sep if silent; excluded from email 2. First live conversation from the personalised-site motion (1 click → 1 conversation in 48 sends).
+
 ### 2026-09-17 (08:2xZ) — Batch 6: 10 sites built, published, 10 sent (5 PL + 5 US)
 - Pre-flight (09-16 evening): 0 replies in shade (2 d) · clicks read for batches 4+5 with the scratch helper (18 calls, no
   classifier block): 0 new campaign sessions, Auto Perfetto still the only clicker · 44/44 hosts 200.

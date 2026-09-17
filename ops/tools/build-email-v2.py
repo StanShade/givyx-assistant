@@ -39,7 +39,8 @@ def main():
               "strona działa na telefonie; my dbamy o stronę, Wy o auta"])
         + p("<strong>Jak się skontaktować:</strong> zadzwońcie do mnie na <a href=\"tel:+48571088012\" style=\"color:#0f7a5a;font-weight:600\">571 088 012</a> "
             "albo po prostu odpiszcie na tego maila — odpowiem tego samego dnia. Jeśli coś ma wyglądać inaczej (usługi, ceny, zdjęcia), dopasuję.")
-        + p("Pozdrawiam,<br>Stan<br>Givyx · 571 088 012 · info@givyx.com"))
+        + p("Pozdrawiam,<br>Stan<br>Givyx · 571 088 012 · info@givyx.com")
+        + s.get("append_html", ""))   # optional extra block (e.g. a RU version) after the PL signature
     if s.get("lang","pl") == "en":
         url = f"https://{slug}.givyx.com/?utm_source=email&utm_medium=offer&utm_campaign={slug}&utm_content={s['code']}"
         body = (p("Hi,")

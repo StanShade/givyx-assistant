@@ -678,3 +678,13 @@ block → 0 new campaign sessions; Auto Perfetto remains the only tracked clicke
 | batch 6 (10) | **Sun 20 Sep → send Mon 21 Sep** — Gucio 667 275 290 · Moto-Gazda 790 597 171 · Super Serwis 669 519 717 · Auto-Klinika 509 733 020 (ZUM landline, US: no SMS) | Tue 22 Sep | Sun 27 Sep → Mon 28 Sep |
 
 **Scoreboard after batch 6: 52 personalised sites live · 58 offer emails sent to date (48 + 10) · replies: 0 visible (shade mailbox).**
+
+## 2026-09-17 — ARMCAR Autoserwis (Warszawa) — Stan called; "send the offer by e-mail" → armcar.givyx.com built (PL + RU)
+Stan's RU call to 501 792 367 (2026-09-17): neither Nikita nor Denis answered; the person on the line asked for an offer
+letter by e-mail. Research refreshed today → `prospects/2026-09-17-armcar.md` (buy score 8; e-mail `prostoautoserwis@gmail.com`
+verified on their own FB page; GBP hours pon–pt 9–18 / sob 10–15 owner-edited 7 Apr 2026; 4,7/159 read 09-17; 8 GBP owner
+photos downloaded + plate-blurred). Tenant `armcar` a_f5b70f1 / l_7129b6f, PL clone built + verified on Preview (log
+`givyx.claudeBrain/dealership/clones/armcar.md`; forms form_53227eb1… booking / form_9afd1def… contact, both notify
+info@ + Stan's Gmail); RU locale layer (`?lang=ru`, PL/RU switch) added as a second step. E-mail spec
+`outreach/armcar-specs/armcar.json` — PL v3 body + RU block (`append_html`), code **arm-20260917-e1**, to
+prostoautoserwis@gmail.com. Waiting for Stan's OK on the text + "ok publish" + "send".

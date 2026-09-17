@@ -2181,3 +2181,11 @@ mails to Stan; he rewrote the letter himself (RU, first person, dealership-softw
 signed it Слава. Sent 17:xx to prostoautoserwis@gmail.com, code arm-20260917-e1. Lessons: (1) a bilingual clone = PL build first,
 RU layer second, ~2× the tokens of a PL clone; (2) the renderer has no `ru` booking pack — calendar vocabulary stays PL; (3) a warm
 lead's letter is Stan's voice, not the v3 template — `build-email-v2.py` got an `append_html` hook for such blocks.
+### 2026-09-17 (evening) — SMS relay working; 23 D+3 texts out
+- iPhone iMessage was "Waiting for activation / No Addresses"; the phone number had no tick in Send & Receive. Once Stan
+  ticked it, Text Message Forwarding paired and Mac Messages exposed an SMS account. `ops/tools/send-sms.sh` sends one
+  text per call from Stan's own number. First version passed the text via `system attribute` → Mac-Roman mojibake reached
+  M-AUTO and Carmobile; fixed (`read … as «class utf8»`), tested on a family number, both resent with an apology line.
+- Copy changes on the fly: `https://` on the link (Android previews; Apple never previews green SMS) and signature
+  **Stanisław** (rule saved: PL Stanisław · RU Слава · EN Stan — apply to the email builder + ARMCAR draft next).
+- 23/32 sent (groups A–D); E on Fri 19 Sep, F on Mon 21 Sep. Click read tomorrow morning.

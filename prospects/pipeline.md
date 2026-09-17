@@ -694,3 +694,10 @@ prostoautoserwis@gmail.com. Stan rewrote the letter in his own words (RU, signed
 - **SMS D+3 SENT 2026-09-17 (Stan, from phone):** Turbo Żółw 881 009 000 · P&M 501 667 537 · GO CARS 515 543 195.
 - Text Message Forwarding iPhone → Mac enabled 09-17 ~17:0x; Mac Messages shows an SMS account. Test text to
   571 088 012 sent from the Mac. Remaining 29 go out from the Mac on Stan's "go", one per call, Stan's own number.
+- **SMS D+3 SENT 2026-09-17 17:5x–18:5x (from the Mac via Text Message Forwarding, Stan's number, one per call):**
+  groups A–D complete — M-AUTO · Carmobile · Sylwek · Dieselsoft · VAG (batch 4) · Posłowski · Idzikowski · Sp Auto ·
+  BULEK · BARTEX · GARAGE 66 · GAMERC (batch 3) · DIESELCHIP · LPG Expert · MarkAuto · WMW (09-10 four) · Auto Firma ·
+  Latusek · Pietruszko · RS AUTO (09-11 four). **23 of 32 sent today** (3 by Stan + 20 relay). M-AUTO and Carmobile got a
+  garbled first text (helper encoding bug) and a corrected resend with an apology line. Text now carries `https://` (Android
+  link preview) and is signed **Stanisław**. Remaining: E batch 5 (Fri 19 Sep) · F batch 6 (Mon 21 Sep).
+- Tool: `ops/tools/send-sms.sh <slug> [prefix]` — reads the CSV, sends via Messages' SMS account, UTF-8 through a file.

@@ -86,7 +86,7 @@ Subject: `Your site is waiting — {{slug}}.givyx.com`
 > **{{slug}}.givyx.com** — your services, your phone, your reviews, on one fast page.
 >
 > It stays up through the end of the month. If you like it, it goes live on your own domain in
-> 2 days. $60/month, **no contract, cancel any time**{{B: , first month free}}. We keep it updated;
+> 2 days. $49/month, **no contract, cancel any time**{{B: , first month free}}. We keep it updated;
 > you keep fixing cars.
 >
 > Takes 30 seconds to look. A one-word "yes" or "no" reply is all I need.

@@ -48,7 +48,7 @@ def main():
             + p(f"Stan here, from Givyx. Before writing I looked at how you work: {s['fakt']}. On the site: {s['na_stronie']}.")
             + p(s["dlaczego"])
             + p("<strong>The offer</strong>")
-            + ul(["<strong>$60/month</strong> — no contract, cancel any time",
+            + ul(["<strong>$49/month</strong> — no contract, cancel any time",
                   "<strong>Site built free</strong> and <strong>first month free</strong>",
                   "Live on your own domain in 2 days"])
             + p("<strong>Included</strong>")

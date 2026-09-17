@@ -13,7 +13,7 @@ build agents in waves of 4. Stan's part: one review reply ("ok publish", "send a
 
 **Daily quota (Stan, 2026-09-15): 5 Polish + 5 US prospects, chosen very carefully for who can really
 buy — quality over count. If fewer than 5 qualify in a country, send fewer and say why.** Email rules:
-`outreach/email-1-template.md` v3 (no Google-rating clause, hook first, 249 zł / $60, built free + first
+`outreach/email-1-template.md` v3 (no Google-rating clause, hook first, 249 zł / $49, built free + first
 month free, benefits list, explicit contact line).
 
 ## 1. Pre-flight (15 min, before any research)
@@ -42,7 +42,7 @@ month free, benefits list, explicit contact line).
 
 ### 2a. Who can really buy — the buy score (Stan, 2026-09-15)
 
-Rank by **likelihood to pay 249 zł / $60 a month for a site from a stranger's email**, not by how well
+Rank by **likelihood to pay 249 zł / $49 a month for a site from a stranger's email**, not by how well
 they fit the demo. Score every candidate 0–10; **send only ≥ 7**; the pack must show the score and
 the evidence for each point. A pack full of shops with good sites and nothing to gain is a wasted day.
 
@@ -228,7 +228,7 @@ are gitignored).
 
 Codes: `<2–3 letters>-<yyyymmdd>-e1`, unique forever; register them in `prospects/pipeline.md`.
 E-mail = **v3** (`outreach/email-1-template.md`): hook first → button → who I am + `fakt` + "Na stronie
-jest …" → `dlaczego` → Oferta (249 zł / $60, built free, first month free) → W cenie → explicit contact
+jest …" → `dlaczego` → Oferta (249 zł / $49, built free, first month free) → W cenie → explicit contact
 (571 088 012 or reply). **Never a Google rating or review count in the e-mail.**
 ```
 # one spec per prospect: {"slug","name","to","code","lang":"pl|en","hook","fakt","na_stronie","dlaczego"}
@@ -267,7 +267,7 @@ Google disagree on). Never loop over recipients in one Bash call. Specs live in 
 - Replies land in `stan.zak.shade@gmail.com` (the Gmail connector reads it since 09-14); form notifications in both mailboxes.
 - The analytics curl with the admin token may be classifier-blocked ("PII") — ask Stan in-turn or have him add a Bash rule for `curl … api.givyx.com/api/analytics`; do not loop.
 - zsh word-splitting (see §3). Verify the API manifest after every clone, not the tool's "DONE".
-- Stan's e-mail rules are absolute: no Google/opinii, hook first, contact line, 249/$60 only (memory `givyx-email-v3-rules`).
+- Stan's e-mail rules are absolute: no Google/opinii, hook first, contact line, 249/$49 only (memory `givyx-email-v3-rules`).
 - **No published service list → hold, don't build** (batch 5: VRservis, Rock Street). A demo ring must show
   THEIR services; with none evidenced it would invent them. Put them on Stan's call list; swap in a reserve.
   Three evidenced services is enough for an honest 3-card ring (Auto Expert) — print no hours if none are published.

@@ -67,10 +67,10 @@ built before the prospect pays. No delivery-time, uptime or result claims.
 
 **Primary text**
 > Running an auto shop with a website that's "coming soon" or from 2015?
-> I build websites for auto shops on a monthly plan — from $29/month, no build fee, first month free.
+> I build websites for auto shops on a monthly plan — $49/month, no build fee, first month free.
 > Leave your shop's name and phone number and I'll build a version of your site you can look at before you pay anything.
 
-**Headline:** Auto shop website from $29/month
+**Headline:** Auto shop website, $49/month
 **Description:** No contract · first month free · cancel any time
 **CTA button:** Get quote
 
@@ -79,16 +79,16 @@ built before the prospect pays. No delivery-time, uptime or result claims.
 **Primary text**
 > Drivers search Google and pick the shop that shows services, prices and a phone number up front.
 > If your shop only has a Facebook page, leave the name — I'll build a version of your website and
-> you'll see it on your phone before paying anything. From $29/month, no contract, first month free.
+> you'll see it on your phone before paying anything. $49/month, no contract, first month free.
 > One person + AI, not an agency.
 
 **Headline:** See your website before you pay
-**Description:** Auto repair, tires, detailing · from $29/month
+**Description:** Auto repair, tires, detailing · $49/month
 **CTA button:** Get quote
 
-Price note: the EN site says Starter $29 / Studio $49 / Scale $199 and the ad quotes the site. The
-US emails pitch $60/month. One of the two has to change before a US lead reads $29 and hears $60 on
-the call — Stan's decision, flagged 2026-09-17.
+Price: **$49/month (Studio) everywhere in English** — Stan's decision 2026-09-17. The ad, the EN
+emails (builder + template + follow-ups updated the same day) and the site's Studio price agree.
+The ad quotes $49, not "from $29", so the call never has to walk a price up.
 
 ## Instant form PL (one form, both PL ads)
 

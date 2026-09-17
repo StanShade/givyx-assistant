@@ -45,7 +45,7 @@ def main():
             + btn(url, "See your site →")
             + p("It opens with a drive into the shop and a dive under the hood, then your services, online booking "
                 "and contact — all on the phone. Takes 30 seconds to look.")
-            + p("If you like it, it goes live on your own domain in 2 days. <strong>$60/month</strong>, maintenance and "
+            + p("If you like it, it goes live on your own domain in 2 days. <strong>$49/month</strong>, maintenance and "
                 "changes included — we keep the site current, you keep fixing cars. "
                 "<strong>No contract, cancel any time, first month free.</strong>")
             + p("Reply to this email or call — happy to adjust anything.")

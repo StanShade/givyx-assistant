@@ -108,7 +108,7 @@ phone, email — never in the body), `replyTo: info@givyx.com`, unique `utm_cont
 > It opens with a drive into the shop and a dive under the hood, then your services, online
 > booking and contact — all on the phone. Takes 30 seconds to look.
 >
-> If you like it, it goes live on your own domain in 2 days. **$60/month**, maintenance and changes
+> If you like it, it goes live on your own domain in 2 days. **$49/month**, maintenance and changes
 > included — we keep the site current, you keep fixing cars. **No contract, cancel any time, first month free.**
 >
 > Reply to this email or call — happy to adjust anything.

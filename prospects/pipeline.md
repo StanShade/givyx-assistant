@@ -637,3 +637,44 @@ Facts: ARMCAR HOLDING sp. z o.o. (KRS 0001027204, reg. 27.03.2023), owners Nikit
 Wał Zawadowski 135, tel. 501 792 367, prostoautoserwis@gmail.com. **No website** (Google website field =
 instagram.com). 4,7/159 Google, Orły Motoryzacji laureate 2023–26, BMW partner, IG/TikTok content in Russian.
 Next: Stan calls → if "yes", build `armcar.givyx.com` (PL + RU) from the pack + his call notes, send link, D+2 callback.
+
+## 2026-09-16/17 — batch 6: ten personalised sites built (Preview, noindex), review mail, Stan "ok publish" + "send all" → 10 sent
+
+Research packs: `prospects/2026-09-16-PL-batch6.md` (5 PL, buy score ≥ 8, four FB-only + one free prv.pl page; 247 Maps listings in 28 new
+cities) and `prospects/2026-09-16-US-batch6.md` (5 US, ≥ 7, free WordPress.com / Google Sites / GoDaddy / Wix; ~140 screened, Birdeye
+histograms). All 10 built — no holds this time; PL call-list candidates with e-mail but no service list: **Minkiewicz Suwałki** (502 065 045,
+serwisminkiewicz@gmail.com), **Pan Samochodzik Lubin** (579 274 477, kontakt@pansamochodzik.lubin.pl); US held (no service list): Fred's Garage OH,
+Clark's Auto World NJ, Honest Auto Repair PA, Boondocks MN, A&I TN. Tenants → clone → rewrite (while-read loop, manifests verified 8 pageIds
+each) → 10 build agents in waves of 4 (no 429). FB CDN photos pre-downloaded to the scratchpad before dispatch. Every clone: own booking +
+contact forms notifying `info@givyx.com,stan.zak.inf@gmail.com`, `noindex, nofollow` + `Disallow: /`, 0 template leaks across 8 pages, one
+E.164 phone, rating row with named source (Google PL, Birdeye US). **20/20 test notifications in the shade mailbox.** US hours conflicts
+(site vs Google) → only the agreeing part printed (Sena's "until 5 pm", Tony's days only, Performance "Mon–Thu from 9 am", Precision
+Tue–Fri, Elite "Mon–Thu until 6 pm"). Logs: `givyx.claudeBrain/dealership/clones/<slug>.md`. Review mail 2026-09-16 ~20:5xZ
+`[DO SPRAWDZENIA] 10 stron — batch 6`; Stan 09-17: "ok publish and then send all" → 10/10 promoted (`pagesPromoted:8, pagesDeleted:0`,
+bare URLs re-verified identical), then 10/10 `sent:true` 08:2xZ (email v3; specs `outreach/batch6-specs/`; "Google" scrubbed from every body).
+
+| slug | prospect | email | plan | code |
+|---|---|---|---|---|
+| gucio | Auto Serwis Gucio, Leszno | autoserwisgucio@wp.pl | **SENT 2026-09-17** (v3; score 9; FB-only; 1 own photo; GBP hours, Sat bookable) | `guc-20260916-e1` |
+| motogazda | Moto-Gazda Mechanika Pojazdowa, Nowy Targ | moto.gazda@gmail.com | **SENT 2026-09-17** (v3; score 9; FB-only; 3 services; own work photos + logo) | `mg-20260916-e1` |
+| zumsc | Zakład Usług Motoryzacyjnych s.c. Lesiak, Bełchatów | zumsc@poczta.onet.pl | **SENT 2026-09-17** (v3; score 9; prv.pl page; split hours as text; 1 own photo; landline only) | `zum-20260916-e1` |
+| superserwis | Super Serwis Żory, Żory | sserwiszory@gmail.com | **SENT 2026-09-17** (v3; score 8; FB-only; 3 own photos; address 75 vs 75C) | `ssz-20260916-e1` |
+| autoklinika | Auto-Klinika Łomża, Łomża | auto_klinika@op.pl | **SENT 2026-09-17** (v3; score 8; FB-only; 3 services; no own photos) | `akl-20260916-e1` |
+| senasauto | Sena's Auto Repair, Española NM | senasauto@hotmail.com | **SENT 2026-09-17** (v3 EN; score 10; free WordPress.com; shop front + team photo; "until 5 pm") | `sen-20260916-e1` |
+| tonysauto | Tony's Auto Repair, Glendora CA | Tonysautorepair1212@gmail.com | **SENT 2026-09-17** (v3 EN; score 9; Google Sites; no own photos; days only; ⚠ Yelp 1★ 11,7 %) | `ton-20260916-e1` |
+| performanceauto | Performance Automotive, Willoughby OH | portsperfauto@gmail.com | **SENT 2026-09-17** (v3 EN; score 8; GoDaddy free; 6 own photos; "Mon–Thu from 9") | `pfa-20260916-e1` |
+| precisionauto | Precision Automotive, Morristown TN | Precisionauto@musfiber.com | **SENT 2026-09-17** (v3 EN; score 8; Wix free; no own photos; Tue–Fri 8–6; owner named) | `pra-20260916-e1` |
+| eliteauto | Elite Auto Repair LLC, Dalton GA | aeliteautorepair@gmail.com | **SENT 2026-09-17** (v3 EN; score 7; Wix free; no own photos; "Mon–Thu until 6"; phone type unverified) | `ela-20260916-e1` |
+
+Mobiles for the D+3 SMS (Stan): Gucio 667 275 290 · Moto-Gazda 790 597 171 (WhatsApp) · Super Serwis 669 519 717 · Auto-Klinika 509 733 020.
+ZUM: landline only (44 632 11 94) — no SMS. US five: e-mail only.
+
+Pre-flight 2026-09-16 evening: 0 replies (shade, 2 days) · clicks read for batch 5 (9) + batch 4 (9) via the helper script, no classifier
+block → 0 new campaign sessions; Auto Perfetto remains the only tracked clicker · 44/44 hosts 200.
+
+### Follow-up dates for batch 6 (10 sent 2026-09-17)
+| Batch | D+3 SMS (Stan) | D+5 email 2 | D+10 last |
+|---|---|---|---|
+| batch 6 (10) | **Sun 20 Sep → send Mon 21 Sep** — Gucio 667 275 290 · Moto-Gazda 790 597 171 · Super Serwis 669 519 717 · Auto-Klinika 509 733 020 (ZUM landline, US: no SMS) | Tue 22 Sep | Sun 27 Sep → Mon 28 Sep |
+
+**Scoreboard after batch 6: 52 personalised sites live · 58 offer emails sent to date (48 + 10) · replies: 0 visible (shade mailbox).**

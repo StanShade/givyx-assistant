@@ -9,6 +9,23 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-17 (08:2xZ) — Batch 6: 10 sites built, published, 10 sent (5 PL + 5 US)
+- Pre-flight (09-16 evening): 0 replies in shade (2 d) · clicks read for batches 4+5 with the scratch helper (18 calls, no
+  classifier block): 0 new campaign sessions, Auto Perfetto still the only clicker · 44/44 hosts 200.
+- Research: two agents in parallel. PL `prospects/2026-09-16-PL-batch6.md` — 247 Maps listings in 28 new cities → Gucio Leszno 9,
+  Moto-Gazda Nowy Targ 9, ZUM Bełchatów 9, Super Serwis Żory 8, Auto-Klinika Łomża 8 (four FB-only, one free prv.pl page);
+  call-list holds with e-mail but no service list: Minkiewicz Suwałki, Pan Samochodzik Lubin. US `prospects/2026-09-16-US-batch6.md`
+  — ~140 screened → Sena's NM 10, Tony's CA 9, Performance OH 8, Precision TN 8, Elite GA 7 (free WordPress/Google Sites/GoDaddy/Wix).
+- Tenants: 10 × `new-tenant.sh` → `clonefrom --purge` → `rewrite` via `while read` (manifests verified 8 pageIds each). FB CDN + site
+  photos pre-downloaded to the scratchpad before dispatch (CDN URLs expire). Builds in waves of 4, no 429, ~0.3M tokens each.
+- Verified: 10/10 `verify-clone.sh` clean (title, noindex, Disallow, leaks=0, one tel:, rating row); 20/20 form-test notifications in
+  shade (Moto-Gazda contact was threaded, not lost). US hours conflicts → only the agreeing part printed. Tony's flagged (Yelp 1★ 11,7 %).
+- Emails: specs `outreach/batch6-specs/` (pack hooks rewritten from fault-lists to offers; "Google" scrubbed even as "search on Google");
+  review mail 09-16 ~20:5xZ with all 10 bodies. Stan 09-17: "ok publish and then send all" → 10/10 promoted, bare URLs re-verified,
+  10/10 `sent:true` 08:2xZ, one curl each. Brain 6621d34 + index rows PUBLISHED/SENT.
+- **Scoreboard: 52 sites live, 58 emails sent, 0 replies visible.** D+3 SMS Mon 21 Sep (4 PL mobiles; ZUM landline; US e-mail only).
+- Gotcha: I appended the `Co-Authored-By` trailer to two commits out of habit — CLAUDE.md forbids it; amended before push.
+
 ### 2026-09-15 (11:3xZ) — Batch 4 published + 9 sent (email v3)
 - Stan "ok publish" → 10 promoted (8/8 pages each), re-verified on bare URLs; brain eb7ed39.
 - Stan rewrote the offer in two rounds: (1) 249 zł only, site built free, first month free, benefits list

@@ -110,15 +110,19 @@ Dispatch **two** `general-purpose` agents at once (PL and US), each with:
 > found by `grep -ril <name> prospects/`. Screen ≥ 30 candidates across the sources in §2b, deep-verify
 > the best 8, deliver the top 5 by buy score (send order = score). End with Reserves and a Rejected list
 > with reasons. Keep the file on disk as you go. Do not contact anyone. Report in < 250 words.
-> PL cities not yet used: (see list below). US: avoid the states already used (NC, TX, KY, AZ, MI) unless a
+> PL cities not yet used: (see list below). US: avoid the states already used (NC, TX, KY, AZ, MI, IL, FL, NY, MD, NM, CA, OH, TN, GA) unless a
 > different metro.
 
 **PL cities used so far (do not repeat):** Kraków area, Poznań, Legnica, Katowice, Olsztyn, Gdańsk,
 Warszawa, Łódź, Białystok, Siemianowice, Barcin, Wrocław, Szczecin, Kielce, Toruń, Częstochowa,
 Bielsko-Biała, Bydgoszcz, Opole, Rzeszów, Lublin, Gdynia, Radom, Gliwice, Sosnowiec, Nowy Sącz, Zielona
-Góra, Płock, Koszalin, Legionowo, Rybnik. **Next:** Tarnów (Wieczorek is a full reserve, 1★ 8,3 %), Elbląg,
-Kalisz, Tychy, Słupsk, Gorzów, Włocławek, Piotrków, Ostrów Wlkp., Jelenia Góra, Nowy Targ, Zamość, Chełm,
-Suwałki, Ełk, Grudziądz, Inowrocław, Stalowa Wola, Mielec, Tarnobrzeg, Przemyśl, Krosno.
+Góra, Płock, Koszalin, Legionowo, Rybnik, Stalowa Wola, Włocławek, Ostrów Wlkp., Gorzów, Grudziądz, Słupsk, Piotrków,
+Zamość, Jelenia Góra, Inowrocław, Mielec, Konin, Siedlce (batch 5), Leszno, Nowy Targ, Bełchatów, Żory, Łomża, Suwałki, Lubin,
+Ostrołęka + the rest of the batch-6 screening log (batch 6). **Next:** Tarnów (Wieczorek is a full reserve, 1★ 8,3 %), Elbląg,
+Kalisz, Tychy, Chełm, Ełk, Tarnobrzeg, Przemyśl, Krosno, Wałbrzych, Świdnica, Głogów, Piła, Gniezno, Tczew, Kołobrzeg, Stargard,
+Nysa, Racibórz, Oświęcim, Dębica, Puławy, Ciechanów, Kutno, Sieradz, Bolesławiec, Ostróda, Iława — check the batch-6 pack's
+screening log first, it lists which of these were already scanned.
+Call-list holds with verified e-mail but no service list (batch 6): Minkiewicz Suwałki, Pan Samochodzik Lubin — do not build.
 Reserves with full packs: `prospects/2026-09-14-service-centers-PL-batch4.md` §Reserves (OMT Tarnów,
 Euro Auto Serwis Koszalin, Auto Pasjonaci Legionowo, AUTO-JAR Radom, Kubeczek Rybnik, AUTO PAW Gdynia);
 US reserves in `prospects/2026-09-11-autoservice-US.md` (AB&T Round Rock, South Sound WA — re-score first).

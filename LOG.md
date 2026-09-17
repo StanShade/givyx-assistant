@@ -9,6 +9,15 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-17 (afternoon) — shade mailbox connected; D+3 SMS backlog prepared
+- Stan switched the Gmail connector to `stan.zak.shade@gmail.com` (where improvmx delivers). Read 8 days, all folders:
+  **0 prospect replies.** The only @givyx.com traffic is our own notifications.
+- Corrected my own stale read: the 12 sites of 09-14 were **sent 09-14** (pipeline rows 507–518), not "awaiting OK".
+- **No D+3 SMS has gone out for any September batch.** Prepared the full backlog — 32 texts, grouped A–F by urgency,
+  verbatim v3 wording — `outreach/2026-09-17-sms-d3-backlog.md`. Stan sends from his phone; I log on his "sent".
+- Mas Auto Repair booking-notification gap: **dropped by Stan** ("not important; only if they accept the offer").
+- ARMCAR (called today, asked for the offer): tenant cloned, site build not started, email spec drafted (uncommitted
+  WIP from another session: `outreach/armcar-specs/armcar.json`, `build-email-v2.py` append_html). Awaiting "go".
 ### 2026-09-17 — Auto Perfetto call (the one clicker)
 - Stan called 792 670 514: the owner said he is looking at the offer now and will come back to us. Callback Mon 21 Sep if silent; excluded from email 2. First live conversation from the personalised-site motion (1 click → 1 conversation in 48 sends).
 

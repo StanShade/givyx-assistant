@@ -688,3 +688,9 @@ photos downloaded + plate-blurred). Tenant `armcar` a_f5b70f1 / l_7129b6f, PL cl
 info@ + Stan's Gmail); RU locale layer (`?lang=ru`, PL/RU switch) added as a second step. E-mail spec
 `outreach/armcar-specs/armcar.json` — PL v3 body + RU block (`append_html`), code **arm-20260917-e1**, to
 prostoautoserwis@gmail.com. Waiting for Stan's OK on the text + "ok publish" + "send".
+
+## 2026-09-17 — D+3 SMS: backlog prepared; first sends
+- Backlog of 32 texts: `outreach/2026-09-17-sms-d3-backlog.md` (+ `.csv`). Group A first.
+- **SMS D+3 SENT 2026-09-17 (Stan, from phone):** Turbo Żółw 881 009 000 · P&M 501 667 537 · GO CARS 515 543 195.
+- Text Message Forwarding iPhone → Mac enabled 09-17 ~17:0x; Mac Messages shows an SMS account. Test text to
+  571 088 012 sent from the Mac. Remaining 29 go out from the Mac on Stan's "go", one per call, Stan's own number.

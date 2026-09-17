@@ -11,13 +11,13 @@ Text length: 234 chars with Polish letters → 3 SMS segments; fine.
 
 ## A — batch 4 (email 09-15, D+3 due tomorrow Thu 18 Sep) — send FIRST
 
-**1. Turbo Żółw — 881 009 000** (`turbozolw`)
+**1. ✅ SENT 09-17 (Stan, manual) — Turbo Żółw — 881 009 000** (`turbozolw`)
 > Dzień dobry, Stan z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: turbozolw.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-**2. P&M Serwis — 501 667 537** (`pimserwis`)
+**2. ✅ SENT 09-17 (Stan, manual) — P&M Serwis — 501 667 537** (`pimserwis`)
 > Dzień dobry, Stan z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: pimserwis.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-**3. GO CARS — 515 543 195** (`gocars`)
+**3. ✅ SENT 09-17 (Stan, manual) — GO CARS — 515 543 195** (`gocars`)
 > Dzień dobry, Stan z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: gocars.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
 **4. M-AUTO — 501 378 085** (`mauto`)

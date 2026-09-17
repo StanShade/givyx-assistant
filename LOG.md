@@ -2170,3 +2170,14 @@ three current marks, and was re-run to verify it reproduces the shipped PNGs byt
 - **Auto Perfetto opened its site** (1 campaign session, email/oferta, Gmail referral, no conversion) → Stan calls
   792 670 514 instead of email 2. Everything else 0 campaign clicks; untagged PL sessions are ours/Stan's.
 - Openers to date: 3 of 45 personalised/generic sends (MUMIA-CAR, Motosilesia on the generic demo; Auto Perfetto on own site).
+
+## 2026-09-17 — ARMCAR Autoserwis (Warszawa): call → bilingual demo → Stan's own letter sent
+Stan called 501 792 367 (RU script); neither owner answered, the person on the line asked for an offer by e-mail. Research refreshed
+(`prospects/2026-09-17-armcar.md`: e-mail verified on their FB page, GBP hours/description of 7 Apr 2026, 30+ owner photos on GBP →
+8 chosen, plates blurred). Tenant `armcar` (a_f5b70f1 / l_7129b6f) cloned from `dealership`; PL build agent (330k tokens, 26 min) then a
+RU-layer agent (410k, 40 min): every visible string `{pl,ru}`, hrefs carry `?lang=ru`, `language-switch` pill in the navbar,
+`seo.locales ["pl","ru"]`, noindex. First bilingual clone — the renderer needed no change. Both form tests reached Gmail. Two review
+mails to Stan; he rewrote the letter himself (RU, first person, dealership-software background, mobile-app story, no price) and
+signed it Слава. Sent 17:xx to prostoautoserwis@gmail.com, code arm-20260917-e1. Lessons: (1) a bilingual clone = PL build first,
+RU layer second, ~2× the tokens of a PL clone; (2) the renderer has no `ru` booking pack — calendar vocabulary stays PL; (3) a warm
+lead's letter is Stan's voice, not the v3 template — `build-email-v2.py` got an `append_html` hook for such blocks.

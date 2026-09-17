@@ -687,7 +687,7 @@ photos downloaded + plate-blurred). Tenant `armcar` a_f5b70f1 / l_7129b6f, PL cl
 `givyx.claudeBrain/dealership/clones/armcar.md`; forms form_53227eb1… booking / form_9afd1def… contact, both notify
 info@ + Stan's Gmail); RU locale layer (`?lang=ru`, PL/RU switch) added as a second step. E-mail spec
 `outreach/armcar-specs/armcar.json` — PL v3 body + RU block (`append_html`), code **arm-20260917-e1**, to
-prostoautoserwis@gmail.com. Waiting for Stan's OK on the text + "ok publish" + "send".
+prostoautoserwis@gmail.com. Stan rewrote the letter in his own words (RU, signed Слава, no price — "обсудим потом"; `outreach/armcar-specs/armcar-ru-letter.json`) → **SENT 2026-09-17** to prostoautoserwis@gmail.com, subject «ARMCAR — собрал для вас пример сайта», button → `?lang=ru`, code arm-20260917-e1. Site still Preview (bare URL serves it; promote on Stan's "ok publish"). Follow-up: Stan calls D+2 (Fri 19.09) — a click shows in analytics under campaign `armcar`.
 
 ## 2026-09-17 — D+3 SMS: backlog prepared; first sends
 - Backlog of 32 texts: `outreach/2026-09-17-sms-d3-backlog.md` (+ `.csv`). Group A first.

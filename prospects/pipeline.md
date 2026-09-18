@@ -744,3 +744,9 @@ Pre-flight 2026-09-17 evening: 0 replies (shade, 4 days) · clicks read for batc
 | batch 7 (10) | **Mon 21 Sep** — Tecław 733 722 779 · Top Car 795 257 661 · FOX 662 598 272 · Auto-Flower 691 774 145 · Golik 784 533 204 (US: no SMS) | Wed 23 Sep | Mon 28 Sep |
 
 **Scoreboard after batch 7: 62 personalised sites live · 69 offer emails sent to date (59 + 10) · replies: 0 visible (shade mailbox).**
+
+## 2026-09-18 07:0xZ — D+3 SMS: groups E + F sent (backlog complete, 32/32)
+- **SMS SENT 2026-09-18 (Mac relay, Stan's number, one per call):** batch 5 — Strzelecki · Auto-Jack · Auto Expert · KW Diagnostics ·
+  Auto-Cel (D+2) · batch 6 — Gucio · Moto-Gazda · Super Serwis · Auto-Klinika (D+1; text adjusted to „Wczoraj wysłałem maila”).
+- `send-sms.sh` fix: `first account whose service type is SMS` threw (two Messages accounts error on the property) → loop with try.
+- Batch 7's five (group G) queued in the CSV for **Mon 21 Sep**. Click read for all texted tenants: tomorrow morning.

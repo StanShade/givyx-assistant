@@ -2214,3 +2214,5 @@ lead's letter is Stan's voice, not the v3 template — `build-email-v2.py` got a
 - Next: D+3 SMS for batch 7 on Mon 21 Sep (5 PL mobiles in pipeline.md); batch 5 SMS Fri 19 Sep; batch 6 SMS Mon 21 Sep;
   click read tomorrow morning. Next PL cities: the batch-7 "not opened" FB-only list + Tarnów/Kalisz/Tychy/Oświęcim/Bolesławiec/
   Ostróda/Iława/Stargard (scanned, see the pack's screening log for who is left).
+- 07:0xZ, Stan "send sms": remaining 9 D+3 texts sent via the Mac relay (batch 5 ×5 at D+2, batch 6 ×4 at D+1 with "Wczoraj"
+  wording). Helper fixed (account filter threw). SMS backlog 32/32 complete; batch 7's five queued as group G for Mon 21 Sep.

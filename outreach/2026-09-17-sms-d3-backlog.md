@@ -86,38 +86,43 @@ Text length: 234 chars with Polish letters → 3 SMS segments; fine.
 **23. ✅ SENT 09-17 (Mac relay) — RS AUTO — 514 606 061** (`rsauto`)
 > Dzień dobry, Stanisław z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: https://rsauto.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-## E — batch 5 (email 09-16) — Fri 19 Sep
+## E — batch 5 (email 09-16) — sent 09-18 (D+2)
 
-**24. Auto Strzelecki — 720 830 909** (`strzelecki`)
+**24. ✅ SENT 09-18 (Mac relay) — Auto Strzelecki — 720 830 909** (`strzelecki`)
 > Dzień dobry, Stanisław z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: https://strzelecki.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-**25. Auto-Jack — 669 820 145** (`autojack`)
+**25. ✅ SENT 09-18 (Mac relay) — Auto-Jack — 669 820 145** (`autojack`)
 > Dzień dobry, Stanisław z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: https://autojack.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-**26. Auto Expert — 600 249 761** (`autoexpert`)
+**26. ✅ SENT 09-18 (Mac relay) — Auto Expert — 600 249 761** (`autoexpert`)
 > Dzień dobry, Stanisław z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: https://autoexpert.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-**27. KW Diagnostics — 453 225 237** (`kwdiagnostics`)
+**27. ✅ SENT 09-18 (Mac relay) — KW Diagnostics — 453 225 237** (`kwdiagnostics`)
 > Dzień dobry, Stanisław z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: https://kwdiagnostics.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-**28. Auto-Cel — 501 464 440** (`autocel`)
+**28. ✅ SENT 09-18 (Mac relay) — Auto-Cel — 501 464 440** (`autocel`)
 > Dzień dobry, Stanisław z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: https://autocel.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-## F — batch 6 (email 09-17) — Mon 21 Sep
+## F — batch 6 (email 09-17) — sent 09-18 (D+1, text says „Wczoraj wysłałem maila”)
 
-**29. Gucio — 667 275 290** (`gucio`)
+**29. ✅ SENT 09-18 (Mac relay) — Gucio — 667 275 290** (`gucio`)
 > Dzień dobry, Stanisław z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: https://gucio.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-**30. Moto-Gazda (WhatsApp) — 790 597 171** (`motogazda`)
+**30. ✅ SENT 09-18 (Mac relay) — Moto-Gazda (WhatsApp) — 790 597 171** (`motogazda`)
 > Dzień dobry, Stanisław z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: https://motogazda.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-**31. Super Serwis — 669 519 717** (`superserwis`)
+**31. ✅ SENT 09-18 (Mac relay) — Super Serwis — 669 519 717** (`superserwis`)
 > Dzień dobry, Stanisław z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: https://superserwis.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
-**32. Auto-Klinika — 509 733 020** (`autoklinika`)
+**32. ✅ SENT 09-18 (Mac relay) — Auto-Klinika — 509 733 020** (`autoklinika`)
 > Dzień dobry, Stanisław z Givyx. Kilka dni temu wysłałem maila — zbudowaliśmy dla Was gotową stronę: https://autoklinika.givyx.com. Zobaczcie na telefonie, to 30 sekund. Pierwszy miesiąc gratis, bez umowy. Jeśli nie na temat — krótkie „nie” wystarczy.
 
 ---
 
 After sending: tell me "sent A" / "sent A–C" etc. and I log each in `prospects/pipeline.md` (date · who · SMS D+3)
 and pull the click read the next morning — a text with the link is the touch most likely to produce a visible click.
+
+## G — batch 7 (email 09-18) — Mon 21 Sep (rows in the CSV; `ops/tools/send-sms.sh <slug>`)
+
+**33. AutoGarage Tecław — 733 722 779** (`teclaw`) · **34. Top Car Garage — 795 257 661** (`topcargarage`) · **35. FOX AUTO — 662 598 272** (`foxauto`) ·
+**36. AUTO-FLOWER SERWIS — 691 774 145** (`autoflower`) · **37. Auto Golik Serwis — 784 533 204** (`golik`) — same text as E, link `https://<slug>.givyx.com`.

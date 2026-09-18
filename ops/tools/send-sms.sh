@@ -19,7 +19,17 @@ on run argv
   set f to POSIX file (item 2 of argv)
   set msg to read f as «class utf8»
   tell application "Messages"
-    set smsAcct to first account whose service type is SMS
+    -- `first account whose service type is SMS` fails when another account errors on the property
+    set smsAcct to missing value
+    repeat with a in accounts
+      try
+        if (service type of a as string) is "SMS" and enabled of a then
+          set smsAcct to a
+          exit repeat
+        end if
+      end try
+    end repeat
+    if smsAcct is missing value then error "no enabled SMS account in Messages"
     send msg to participant phone of smsAcct
   end tell
 end run

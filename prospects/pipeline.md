@@ -756,3 +756,6 @@ Pre-flight 2026-09-17 evening: 0 replies (shade, 4 days) · clicks read for batc
 - Proposed follow-up text (Stan's call): ask when the owner is in + ask them to pass the link; then Stan calls. Email 2 for
   Auto Expert is replaced by this thread — treat as a **call target**.
 - Scoreboard: replies 1 (SMS, staff) · e-mail replies 0.
+- **Follow-up SMS SENT 2026-09-18 (Mac relay, Stan "ok send"):** "Dzięki za odpowiedź! Kiedy szef będzie na miejscu? Chętnie zadzwonię —
+  albo proszę mu przekazać link, to 30 sekund na telefonie: https://autoexpert.givyx.com. Stanisław, Givyx". Next: Stan calls
+  600 249 761 when they name a time (or tomorrow late morning if silent).

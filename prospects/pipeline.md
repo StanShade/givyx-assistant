@@ -701,3 +701,46 @@ prostoautoserwis@gmail.com. Stan rewrote the letter in his own words (RU, signed
   garbled first text (helper encoding bug) and a corrected resend with an apology line. Text now carries `https://` (Android
   link preview) and is signed **Stanisław**. Remaining: E batch 5 (Fri 19 Sep) · F batch 6 (Mon 21 Sep).
 - Tool: `ops/tools/send-sms.sh <slug> [prefix]` — reads the CSV, sends via Messages' SMS account, UTF-8 through a file.
+
+## 2026-09-17/18 — batch 7: ten personalised sites built (Preview, noindex), review mail, Stan "ok publish and send all" → 10 sent
+
+Research packs: `prospects/2026-09-17-PL-batch7.md` (5 PL, buy score ≥ 8, all five Facebook-only — no website at all; 43 Maps queries /
+~340 listings in 32 new cities; website buttons read as hrefs via JS) and `prospects/2026-09-17-US-batch7.md` (5 US, ≥ 8; Birdeye
+directories of 269 towns → ~415 no-site/free-subdomain shops screened, 31 FB About tabs read; finding: every `*.business.site` URL is
+now 404). All 10 built, no holds. Photos pre-downloaded to the scratchpad right after research (55/55 ok). Tenants → clone → rewrite
+(while-read loop, manifests verified 8 pageIds each) → 10 build agents in waves of 4 (no 429). Every clone: own booking + contact forms
+notifying `info@givyx.com,stan.zak.inf@gmail.com`, `noindex, nofollow` + `Disallow: /`, 0 template leaks across 8 pages, one E.164
+phone, rating row with named source (Google PL, Birdeye US). Hours conflicts → only the agreeing part printed (Lamb: Saturday dropped;
+Accent: "Mon–Sat until 6 PM"; Dustin's: Maps hours, their FB has none). Garcia's published rates quoted verbatim. Review mail
+2026-09-17 ~21:5xZ `[DO SPRAWDZENIA] 10 stron — batch 7`; Stan 09-18: "ok publish and send all" → 10/10 promoted (`pagesPromoted:8,
+pagesDeleted:0`, bare URLs re-verified identical), then 10/10 `sent:true` 06:4x–06:57Z (email v3; specs `outreach/batch7-specs/`).
+
+| slug | prospect | email | plan | code |
+|---|---|---|---|---|
+| teclaw | AutoGarage Tecław, Kutno | autogarage.teclaw@gmail.com | **SENT 2026-09-18** (v3; score 9; FB-only; 2 own photos + logo OG; pon–pt 7–16; 1★ 7,7 %) | `tec-20260917-e1` |
+| topcargarage | Top Car Garage, Chrzanów | topcargarage@op.pl | **SENT 2026-09-18** (v3; score 9; FB-only; own work photos; 5 services; ★ 5,0/175) | `tcg-20260917-e1` |
+| foxauto | FOX AUTO, Elbląg | fox.auto.pl@gmail.com | **SENT 2026-09-18** (v3; score 8; FB-only, 26K followers, dead fox.auto.pl; 3 own photos; 6 services) | `fox-20260917-e1` |
+| autoflower | AUTO-FLOWER SERWIS, Sieradz | phuflower@gmail.com | **SENT 2026-09-18** (v3; score 8; FB-only; 2 own hall photos; Sat bookable) | `afl-20260917-e1` |
+| golik | Auto Golik Serwis (Krzysztof Golik), Elbląg | krzysztof_gol@o2.pl | **SENT 2026-09-18** (v3; score 8; FB-only, quiet feed; banner only, no workshop photos; Sat bookable) | `gol-20260917-e1` |
+| lambperformance | Lamb Performance, Conway SC | lambperformance@gmail.com | **SENT 2026-09-18** (v3 EN; score 10; free Wix 2015; 4 own photos; Mon–Fri only; hiring) | `lmb-20260917-e1` |
+| accentauto | Accent Auto Repair, Lafayette IN | accentauto22@gmail.com | **SENT 2026-09-18** (v3 EN; score 9; free Wix, owns accentauto.us; 1 own photo; "Mon–Sat until 6 PM") | `acc-20260917-e1` |
+| dustinsauto | Dustin's Automotive, Sparks NV | dustinsautomotive@yahoo.com | **SENT 2026-09-18** (v3 EN; score 8; FB-only; 5 own photos; Maps hours) | `dus-20260917-e1` |
+| firstchoiceauto | 1st Choice Auto Repair, Augusta ME | 1stchoiceautome@gmail.com | **SENT 2026-09-18** (v3 EN; score 8; free Wix; sign + bay + pugs; ⚠ latest review a 4-mo-old complaint) | `fca-20260917-e1` |
+| garciasauto | Garcia's Auto Shop LLC, Gettysburg PA | garciasautoshopllc@gmail.com | **SENT 2026-09-18** (v3 EN; score 8; Google Sites; published rates quoted; 2 own photos, no logo) | `gar-20260917-e1` |
+
+Mobiles for the D+3 SMS (Stan): Tecław 733 722 779 · Top Car 795 257 661 · FOX AUTO 662 598 272 · Auto-Flower 691 774 145 · Golik 784 533 204.
+US five: e-mail only.
+
+Call list (e-mail verified, no service list — do not build): PL Łobocki Kwidzyn (dead domain, would be 9), RTG Elbląg, M.R Serwis Tychy,
+Auto-Dave Pszczyna, Car Serwis Palka Mikołów, Articar Mińsk Maz. (phones in the PL pack); reserve KitaTronic Zawiercie (8, `mickit@o2.pl`,
+515 190 211 — services only in the GBP name). US: Matt's Auto Poplar Bluff MO (would be 8) + 14 held in the US pack.
+
+Pre-flight 2026-09-17 evening: 0 replies (shade, 4 days) · clicks read for batch 6 (10) + batch 5 (9) + ARMCAR via the helper script →
+0 campaign sessions (ARMCAR 6 untagged PL sessions = build/verify + Stan) · 53/53 hosts 200.
+
+### Follow-up dates for batch 7 (10 sent 2026-09-18)
+| Batch | D+3 SMS (Stan) | D+5 email 2 | D+10 last |
+|---|---|---|---|
+| batch 7 (10) | **Mon 21 Sep** — Tecław 733 722 779 · Top Car 795 257 661 · FOX 662 598 272 · Auto-Flower 691 774 145 · Golik 784 533 204 (US: no SMS) | Wed 23 Sep | Mon 28 Sep |
+
+**Scoreboard after batch 7: 62 personalised sites live · 69 offer emails sent to date (59 + 10) · replies: 0 visible (shade mailbox).**

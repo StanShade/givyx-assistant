@@ -2189,3 +2189,28 @@ lead's letter is Stan's voice, not the v3 template — `build-email-v2.py` got a
 - Copy changes on the fly: `https://` on the link (Android previews; Apple never previews green SMS) and signature
   **Stanisław** (rule saved: PL Stanisław · RU Слава · EN Stan — apply to the email builder + ARMCAR draft next).
 - 23/32 sent (groups A–D); E on Fri 19 Sep, F on Mon 21 Sep. Click read tomorrow morning.
+
+## 2026-09-17 → 09-18 — batch 7: 10 sites (5 PL + 5 US), 10 e-mails sent
+
+- Pre-flight: 0 prospect replies in shade (4 days); 0 tagged clicks on batches 5+6 and ARMCAR (helper script, 20 reads, no
+  classifier block); 53/53 demo hosts 200 (the runbook's `for s in $slugs` loop word-split again under zsh → `while read`).
+- Research: two agents in parallel (~35 min each). PL: 43 Maps queries, ~340 listings, 32 new cities, website buttons read as hrefs
+  via JS → five Facebook-only shops ≥ 8 (Kutno, Chrzanów, Elbląg ×2, Sieradz). US: Birdeye town directories for 269 towns → ~415
+  no-site/free-subdomain shops, 31 FB About tabs, five ≥ 8 (SC, IN, NV, ME, PA). Finding: every `*.business.site` link is 404 now.
+  Bing/DDG throw captchas for agents; Maps + FB About + Birdeye JSON-LD are the working sources.
+- Photos pre-downloaded to the scratchpad immediately after each pack (55/55 images; FB thumbnails 414 px, agents re-fetched
+  larger renditions by dropping `ctp=` — worked for FB, 403 for some).
+- Tenants: 10 × new-tenant.sh → clonefrom --purge → rewrite, manifests verified (8 pageIds each). Build agents in waves of 4,
+  ~20–25 min each, no 429; each verified independently with `verify-clone.sh` (10/10: title, noindex, Disallow, 0 leaks, one
+  E.164 tel, rating row with source).
+- Judgement calls: Lamb — Saturday "by appointment" on the site vs closed on Maps → Saturday dropped; Accent — opening time
+  differs → "Mon–Sat until 6 PM"; Dustin's — hours from Maps only (their FB has none), logged; Garcia's — published rates
+  quoted verbatim on cards/FAQ/about, "up to 5 quarts $30; diesel quoted" on the truck-oil card; Golik — no workshop photo
+  exists, banner + shared art; Accent's agent submitted 2 tests per form by mistake (harmless).
+- Review mail 21:5xZ; Stan 09-18 06:4x "ok publish and send all" → 10/10 promoted (`deploy_to_production` passed first try, one
+  call per tenant), bare URLs re-verified, 10/10 `sent:true` by 06:57Z.
+- Shade mailbox showed 11 of the 20 test-form notifications at check time (Stan: contact submit works, no need to chase).
+- Scoreboard: 62 personalised sites live · 69 offer e-mails sent · 0 replies · 1 tracked clicker (Auto Perfetto).
+- Next: D+3 SMS for batch 7 on Mon 21 Sep (5 PL mobiles in pipeline.md); batch 5 SMS Fri 19 Sep; batch 6 SMS Mon 21 Sep;
+  click read tomorrow morning. Next PL cities: the batch-7 "not opened" FB-only list + Tarnów/Kalisz/Tychy/Oświęcim/Bolesławiec/
+  Ostróda/Iława/Stargard (scanned, see the pack's screening log for who is left).

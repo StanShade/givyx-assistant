@@ -118,11 +118,12 @@ Warszawa, Łódź, Białystok, Siemianowice, Barcin, Wrocław, Szczecin, Kielce,
 Bielsko-Biała, Bydgoszcz, Opole, Rzeszów, Lublin, Gdynia, Radom, Gliwice, Sosnowiec, Nowy Sącz, Zielona
 Góra, Płock, Koszalin, Legionowo, Rybnik, Stalowa Wola, Włocławek, Ostrów Wlkp., Gorzów, Grudziądz, Słupsk, Piotrków,
 Zamość, Jelenia Góra, Inowrocław, Mielec, Konin, Siedlce (batch 5), Leszno, Nowy Targ, Bełchatów, Żory, Łomża, Suwałki, Lubin,
-Ostrołęka + the rest of the batch-6 screening log (batch 6). **Next:** Tarnów (Wieczorek is a full reserve, 1★ 8,3 %), Elbląg,
+Ostrołęka + the rest of the batch-6 screening log (batch 6), Kutno, Chrzanów, Elbląg, Sieradz + the 32 cities in the batch-7 screening log (batch 7: Tarnów, Kalisz, Tychy, Oświęcim, Bolesławiec, Ostróda, Iława, Stargard, Skierniewice, Jarosław, Sanok, Pabianice, Biała Podlaska, Żyrardów, Sochaczew, Mińsk Maz., Wołomin, Otwock, Wejherowo, Malbork, Kwidzyn, Chojnice, Szczecinek, Nowa Sól, Żary, Zawiercie, Jaworzno, Olkusz, Bochnia, Gorlice, Myślenice, Wadowice, Cieszyn, Pszczyna, Mikołów, Tarnowskie Góry, Zgierz, Łuków, Świnoujście were scanned — the batch-7 pack's "Phone-only" and "Directory / Facebook-only, not opened" lists are the next seam there). **Next:** Tarnów (Wieczorek is a full reserve, 1★ 8,3 %), Elbląg,
 Kalisz, Tychy, Chełm, Ełk, Tarnobrzeg, Przemyśl, Krosno, Wałbrzych, Świdnica, Głogów, Piła, Gniezno, Tczew, Kołobrzeg, Stargard,
 Nysa, Racibórz, Oświęcim, Dębica, Puławy, Ciechanów, Kutno, Sieradz, Bolesławiec, Ostróda, Iława — check the batch-6 pack's
 screening log first, it lists which of these were already scanned.
 Call-list holds with verified e-mail but no service list (batch 6): Minkiewicz Suwałki, Pan Samochodzik Lubin — do not build.
+Batch 7 call list (e-mail, no service list): Łobocki Kwidzyn, RTG Elbląg, M.R Serwis Tychy, Auto-Dave Pszczyna, Palka Mikołów, Articar Mińsk Maz.; reserve KitaTronic Zawiercie (services only in the GBP name — ask Stan). US batch 7 held: Matt's Poplar Bluff MO + 14 in the pack. US states now used: + SC, IN, NV, ME, PA.
 Reserves with full packs: `prospects/2026-09-14-service-centers-PL-batch4.md` §Reserves (OMT Tarnów,
 Euro Auto Serwis Koszalin, Auto Pasjonaci Legionowo, AUTO-JAR Radom, Kubeczek Rybnik, AUTO PAW Gdynia);
 US reserves in `prospects/2026-09-11-autoservice-US.md` (AB&T Round Rock, South Sound WA — re-score first).
@@ -285,5 +286,8 @@ Google disagree on). Never loop over recipients in one Bash call. Specs live in 
 - **Analytics read:** an inline `curl … | python3` with the admin token is classifier-blocked ("Production Reads"); the same
   call wrapped in a scratch script (`an.sh <slug> <locationId> <from-date>`, unwrap `data`, print `campaigns`/`countryDevice`/
   `channels`) passes — one tenant per Bash call, 18/18 on 09-16.
+- **Batch 7:** the runbook's own health-check one-liner (`for s in …`) word-splits under zsh — use `while read -r s; do …; done < <(…)`.
+  US research: `*.business.site` is dead (all 404) — treat a business.site link as "no website"; Bing/DDG captcha agents, use Maps + FB About + Birdeye `countByRating`.
+  Build agents can re-fetch full-size FB photos by dropping `ctp=` from the CDN URL (403 for some) — tell them in the prompt.
 - **Batch 6 spec lesson:** the research packs' `hook` lines lean on faults ("dead link", "click to edit me") and the phrase
   "search on Google" — rewrite hooks as offers and scrub the word "Google" entirely before the assert, not just ratings.

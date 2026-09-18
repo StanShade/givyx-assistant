@@ -750,3 +750,9 @@ Pre-flight 2026-09-17 evening: 0 replies (shade, 4 days) · clicks read for batc
   Auto-Cel (D+2) · batch 6 — Gucio · Moto-Gazda · Super Serwis · Auto-Klinika (D+1; text adjusted to „Wczoraj wysłałem maila”).
 - `send-sms.sh` fix: `first account whose service type is SMS` threw (two Messages accounts error on the property) → loop with try.
 - Batch 7's five (group G) queued in the CSV for **Mon 21 Sep**. Click read for all texted tenants: tomorrow morning.
+
+## 2026-09-18 09:0x local — FIRST SMS REPLY: Auto Expert (Gorzów) → "Nie ma szefa"
+- 600 249 761 answered the D+3 text within minutes: **"Nie ma szefa"** — the mobile is answered by staff, owner absent. Warm, not a no.
+- Proposed follow-up text (Stan's call): ask when the owner is in + ask them to pass the link; then Stan calls. Email 2 for
+  Auto Expert is replaced by this thread — treat as a **call target**.
+- Scoreboard: replies 1 (SMS, staff) · e-mail replies 0.

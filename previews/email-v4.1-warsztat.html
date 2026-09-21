@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>Strona dla Test Warsztat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style type="text/css">
+    :root { color-scheme: light dark; supported-color-schemes: light dark; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0;
+      padding: 0;
+      background-color: #edf1ef;
+      /* Decorative only — the solid colour above is what Outlook renders. */
+      background-image: radial-gradient(ellipse 900px 420px at 50% 0%, #dcefe6 0%, #edf1ef 70%);
+      background-repeat: no-repeat;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    table { border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; }
+    table td { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; vertical-align: top; }
+
+    .body { background-color: #edf1ef;
+            background-image: radial-gradient(ellipse 900px 420px at 50% 0%, #dcefe6 0%, #edf1ef 70%);
+            background-repeat: no-repeat; width: 100%; }
+    .container { margin: 0 auto !important; max-width: 680px; padding: 40px 0; width: 680px; }
+    .content { box-sizing: border-box; display: block; margin: 0 auto; max-width: 680px; padding: 0 16px; }
+
+    .main { background: #ffffff; border: 1px solid #e1e7e3; border-radius: 18px; width: 100%;
+            box-shadow: 0 1px 2px rgba(16,32,26,0.04), 0 12px 32px rgba(16,32,26,0.07); }
+    .gx-head { padding: 24px 40px; border-bottom: 1px solid #eef2f0; }
+    .gx-wordmark { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 21px; color: #12211c; letter-spacing: -0.01em; text-decoration: none; line-height: 1.25; }
+    .wrapper { box-sizing: border-box; padding: 40px 40px 0; }
+    .gx-tail { box-sizing: border-box; padding: 0 40px 36px; }
+
+    h1, .title { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 30px; line-height: 1.18;
+                 color: #12211c; letter-spacing: -0.015em; margin: 0 0 14px; }
+    h2 { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 22px; line-height: 1.25; color: #12211c; margin: 30px 0 10px; }
+    h3 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 16px; color: #12211c; margin: 28px 0 8px; }
+
+    p { color: #4a5a52; margin: 0 0 16px; }
+    ul, ol { color: #4a5a52; margin: 0 0 16px; padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    a { color: #0f7a5a; }
+    hr { border: 0; border-top: 1px solid #eef2f0; margin: 30px 0; }
+    strong { color: #12211c; }
+
+    /* Tinted callout for a highlighted fact. Content opts in with class="gx-panel". */
+    .gx-panel { background: #f6f9f7; border: 1px solid #e6ede9; border-radius: 12px;
+                padding: 18px 20px; margin: 0 0 18px; }
+    .gx-panel-label { font-size: 13px; color: #6b7a73; margin-bottom: 3px; }
+    .gx-panel-value { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: 600; color: #12211c; }
+
+    /* Label/value rows. Content opts in with class="gx-meta". */
+    .gx-meta td { padding: 5px 0; font-size: 14px; color: #6b7a73; }
+    .gx-meta td.v { text-align: right; font-weight: 500; color: #12211c; }
+
+    /* Tenant contact details at the foot of the card, under a rule. */
+    .gx-contact { box-sizing: border-box; padding: 0 40px 30px; border-top: 1px solid #eef2f0;
+                  padding-top: 22px; }
+    .gx-contact-name { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 600; font-size: 15px; color: #12211c; margin-bottom: 6px; }
+    .gx-contact-row { font-size: 13px; line-height: 1.6; color: #6b7a73; margin: 0; }
+    .gx-contact-row a { color: #6b7a73; text-decoration: none; }
+
+    .footer { clear: both; padding-top: 26px; text-align: center; width: 100%; }
+    .footer td, .footer p, .footer span, .footer a { color: #859289; font-size: 12px; text-align: center; line-height: 1.6; }
+
+    .preheader { color: transparent; display: none; height: 0; max-height: 0; max-width: 0;
+                 opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0; }
+
+    .btn table { width: auto; }
+    /* Spacing on the cell, not a margin on the table — Outlook's Word engine ignores
+       margins on table elements. */
+    .btn > tbody > tr > td { padding: 6px 0 22px; }
+    .btn a {
+      background-color: #0f7a5a;
+      border-radius: 10px;
+      color: #ffffff !important;
+      display: inline-block;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0;
+      padding: 14px 26px;
+      text-decoration: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      table.body p, table.body ul, table.body ol, table.body td,
+      table.body span, table.body a { font-size: 16px !important; }
+      table.body h1, table.body .title { font-size: 25px !important; }
+      table.body .gx-head { padding: 20px 24px !important; }
+      table.body .wrapper { padding: 28px 24px 0 !important; }
+      table.body .gx-tail { padding: 0 24px 28px !important; }
+      table.body .gx-contact { padding: 20px 24px 24px !important; }
+      table.body .content { padding: 0 !important; }
+      table.body .container { padding: 0 !important; padding-top: 12px !important; width: 100% !important; }
+      table.body .main { border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important; }
+      table.body .btn table, table.body .btn a { max-width: 100% !important; width: 100% !important; }
+      table.body .btn a { text-align: center; }
+    }
+
+    /* Clients that honour the query get a designed dark rendering instead
+       of an auto-inverted one. !important because several inline their
+       own overrides first. */
+    @media (prefers-color-scheme: dark) {
+      body, .body { background-color: #0a1310 !important;
+                    background-image: radial-gradient(ellipse 900px 420px at 50% 0%, #12271f 0%, #0a1310 70%) !important; }
+      .main { background: #101c18 !important; border-color: #1e2e28 !important; box-shadow: none !important; }
+      .gx-head { border-bottom-color: #1e2e28 !important; }
+      h1, h2, h3, .title, .gx-wordmark, strong, .gx-panel-value { color: #e8f0ec !important; }
+      p, li, ul, ol { color: #b6c6bd !important; }
+      a { color: #34d399 !important; }
+      hr { border-top-color: #1e2e28 !important; }
+      .gx-eyebrow { color: #34d399 !important; }
+      .gx-pill { background: #122a22 !important; color: #34d399 !important; }
+      .gx-panel { background: #16241f !important; border-color: #22332c !important; }
+      .gx-panel-label, .gx-meta td { color: #93a69c !important; }
+      .gx-contact { border-top-color: #1e2e28 !important; }
+      .gx-contact-name { color: #e8f0ec !important; }
+      .gx-contact-row, .gx-contact-row a, .gx-built, .gx-built a { color: #93a69c !important; }
+      .gx-meta td.v { color: #e8f0ec !important; }
+      .footer td, .footer p, .footer span, .footer a, .gx-fine { color: #93a69c !important; }
+      .btn a { background-color: #34d399 !important; color: #04120c !important; }
+    }
+
+    @media all {
+      .ExternalClass { width: 100%; }
+      .ExternalClass, .ExternalClass p, .ExternalClass span,
+      .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+      .apple-link a { color: inherit !important; font-family: inherit !important; font-size: inherit !important;
+                      font-weight: inherit !important; line-height: inherit !important; text-decoration: none !important; }
+      #MessageViewBody a { color: inherit; text-decoration: none; font-size: inherit;
+                           font-family: inherit; font-weight: inherit; line-height: inherit; }
+    }
+    </style>
+  </head>
+  <body style="background-color:#edf1ef;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+      <tr>
+        <td>&nbsp;</td>
+        <td class="container">
+          <div class="content">
+
+            <span class="preheader">Strona dla Test Warsztat</span>
+
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main">
+
+              <tr>
+                <td class="gx-head">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td style="vertical-align:middle;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td style="vertical-align:middle;width:40px;"><img src="https://images.givyx.com/brand/givyx/logo-256.png" width="40" height="40" alt=""
+     style="display:block;border:0;width:40px;height:40px;border-radius:10px;" /></td>
+                            <td style="vertical-align:middle;padding-left:10px;">
+                              <a href="https://givyx.com" class="gx-wordmark" style="color:#12211c;text-decoration:none;font-size:21px;line-height:1.25;">Givyx</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td style="vertical-align:middle;text-align:right;">
+  <span class="gx-pill" style="display:inline-block;white-space:nowrap;background:#eaf6f0;color:#0f7a5a;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:6px 10px;border-radius:999px;">Oferta</span>
+</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="wrapper">
+                  
+                  <h1 class="title">Strona dla Test Warsztat</h1>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="gx-tail">
+                  <p>Dzień dobry,</p><p>Z tej strony Stanisław z Givyx, z Krakowa. Robimy strony dla warsztatów samochodowych — takie, które klient otwiera na telefonie, widzi usługi, godziny i dojazd, i od razu rezerwuje wizytę albo dzwoni.</p><table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr><td align="center" style="padding:20px 0 6px"><table role="presentation" cellspacing="0" cellpadding="0" style="width:auto;margin:0 auto"><tr><td class="btn" style="background:#0f7a5a;border-radius:12px;box-shadow:0 6px 16px rgba(15,122,90,0.28)"><a href="https://warsztat.givyx.com/?utm_source=email&amp;utm_medium=oferta&amp;utm_campaign=generic-warsztat&amp;utm_content=test-20260921" style="display:inline-block;box-sizing:border-box;text-align:center;padding:16px 38px;color:#ffffff;font-weight:700;text-decoration:none;font-size:16px;line-height:1.3;border-radius:12px">Zobacz przykładową stronę&nbsp;→</a></td></tr></table><div style="font-size:13px;color:#6b7a74;margin-top:10px">warsztat.givyx.com · otwiera się na telefonie</div></td></tr></table><p>Zjedźcie pod maskę silnika — to 30 sekund na telefonie.</p><p>Wersję dla Test Warsztat — z Waszą nazwą, usługami, zdjęciami i numerem — przygotujemy do obejrzenia zanim cokolwiek zapłacicie. Wystarczy odpisać „tak” albo nazwę firmy.</p><p><strong>Oferta</strong></p><ul style="margin:6px 0 14px;padding-left:20px"><li style='margin:3px 0'><strong>249 zł/mies.</strong> — bez umowy, rezygnacja w każdej chwili</li><li style='margin:3px 0'><strong>Budowa strony gratis</strong> i <strong>pierwszy miesiąc gratis</strong></li><li style='margin:3px 0'>Uruchomienie na Waszej domenie w 2 dni</li></ul><p><strong>W cenie</strong></p><ul style="margin:6px 0 14px;padding-left:20px"><li style='margin:3px 0'>utrzymanie, zmiany i poprawki — piszecie, my robimy</li><li style='margin:3px 0'>rozwój strony i nowe funkcje bez dopłat</li><li style='margin:3px 0'>rezerwacja online i formularz kontaktowy — każde zgłoszenie od razu na Wasz e-mail</li><li style='margin:3px 0'>e-maile do Waszych klientów (potwierdzenia, przypomnienia) — bez dopłat</li><li style='margin:3px 0'>możliwość dodania SMS-ów do klientów</li><li style='margin:3px 0'>strona działa na telefonie; my dbamy o stronę, Wy o auta</li></ul><p><strong>Jak się skontaktować:</strong> zadzwońcie do mnie na <a href="tel:+48571088012" style="color:#0f7a5a;font-weight:600">571 088 012</a> albo po prostu odpiszcie na tego maila — odpowiem tego samego dnia.</p><p>Pozdrawiam,</p><hr style="border:0;border-top:1px solid #e3ebe7;margin:26px 0 18px"><p style="margin:0 0 12px;line-height:1.45"><strong style="font-size:16px">Stanisław Zakharevich</strong><br><span style="font-size:14px;color:#6b7a74">Director of Givyx</span></p><table role="presentation" cellspacing="0" cellpadding="0" style="width:auto"><tr><td style="padding-right:10px"><a href="tel:+48571088012" title="571 088 012" style="text-decoration:none"><img src="https://images.givyx.com/brand/givyx/ic-phone.png" width="36" height="36" alt="571 088 012" style="display:block;border:0;width:36px;height:36px"></a></td><td style="padding-right:10px"><a href="mailto:info@givyx.com" title="info@givyx.com" style="text-decoration:none"><img src="https://images.givyx.com/brand/givyx/ic-mail.png" width="36" height="36" alt="info@givyx.com" style="display:block;border:0;width:36px;height:36px"></a></td><td style="padding-right:10px"><a href="https://givyx.com" title="givyx.com" style="text-decoration:none"><img src="https://images.givyx.com/brand/givyx/ic-globe.png" width="36" height="36" alt="givyx.com" style="display:block;border:0;width:36px;height:36px"></a></td><td style="padding-right:10px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Karola+Bunscha+15A%2C+30-392+Krak%C3%B3w" title="Karola Bunscha 15A, Kraków" style="text-decoration:none"><img src="https://images.givyx.com/brand/givyx/ic-pin.png" width="36" height="36" alt="Karola Bunscha 15A, Kraków" style="display:block;border:0;width:36px;height:36px"></a></td></tr></table>
+                </td>
+              </tr>
+
+              <tr>
+  <td class="gx-contact">
+    <div class="gx-contact-name">Givyx</div>
+    <p class="gx-contact-row" style="margin:0;font-size:13px;line-height:1.6;color:#6b7a73;">Karola Bunscha 15A, 30-392 Krak&#243;w, Polska</p>
+    <p class="gx-contact-row" style="margin:0;font-size:13px;line-height:1.6;color:#6b7a73;"><a href="tel:+48571088012" style="color:#6b7a73;text-decoration:none;">+48 571 088 012</a></p>
+    <p class="gx-contact-row" style="margin:0;font-size:13px;line-height:1.6;color:#6b7a73;"><a href="mailto:info@givyx.com" style="color:#6b7a73;text-decoration:none;">info@givyx.com</a></p>
+  </td>
+</tr>
+
+            </table>
+
+            <div class="footer">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="content-block">
+                    
+                    <p class="gx-built" style="margin:0;font-size:12px;color:#859289;">&copy; 2026 Built with <a href="https://givyx.com" style="color:#859289;text-decoration:underline;">Givyx</a></p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </body>
+</html>

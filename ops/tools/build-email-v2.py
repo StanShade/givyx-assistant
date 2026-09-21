@@ -6,15 +6,9 @@ usage: build-email-v2.py spec.json > out.json
 spec = {"slug","name","to","code","hook","fakt","na_stronie","dlaczego", "lang": "pl"|"en"}  (no Google-rating clause anywhere — Stan 2026-09-15)   (all facts from the research pack)
 """
 import html as H, json, sys
+from email_parts import p, ul, cta, signature, request, ADDRESS
 
-def btn(url, label):
-    return ('<table role="presentation" cellspacing="0" cellpadding="0" style="margin:18px 0"><tr>'
-            '<td style="background:#0f7a5a;border-radius:10px">'
-            f'<a href="{H.escape(url)}" style="display:inline-block;padding:14px 30px;color:#fff;'
-            f'font-weight:600;text-decoration:none;font-size:15px">{label}</a></td></tr></table>')
-
-def p(t): return f"<p>{t}</p>"
-def ul(items): return '<ul style="margin:6px 0 14px;padding-left:20px">' + "".join(f"<li style='margin:3px 0'>{i}</li>" for i in items) + "</ul>"
+# Look (pill, CTA, signature by language, text part, no shell contact block) = email_parts.py, v4.1 (21 Sep).
 
 def main():
     s = json.load(open(sys.argv[1]))
@@ -22,8 +16,8 @@ def main():
     url = f"https://{slug}.givyx.com/?utm_source=email&utm_medium=oferta&utm_campaign={slug}&utm_content={s['code']}"
     body = (p("Dzień dobry,")
         + p(s["hook"])
-        + btn(url, "Zobacz stronę →")
-        + p(f"Z tej strony Stan z Givyx, z Krakowa. Zanim napisałem, sprawdziłem, jak pracujecie: {s['fakt']}. "
+        + cta(url, "Zobacz stronę&nbsp;→", f"{slug}.givyx.com · otwiera się na telefonie")
+        + p(f"Z tej strony Stanisław z Givyx, z Krakowa. Zanim napisałem, sprawdziłem, jak pracujecie: {s['fakt']}. "
             f"Na stronie jest {s['na_stronie']}.")
         + p(s["dlaczego"])
         + p("<strong>Oferta</strong>")
@@ -39,13 +33,14 @@ def main():
               "strona działa na telefonie; my dbamy o stronę, Wy o auta"])
         + p("<strong>Jak się skontaktować:</strong> zadzwońcie do mnie na <a href=\"tel:+48571088012\" style=\"color:#0f7a5a;font-weight:600\">571 088 012</a> "
             "albo po prostu odpiszcie na tego maila — odpowiem tego samego dnia. Jeśli coś ma wyglądać inaczej (usługi, ceny, zdjęcia), dopasuję.")
-        + p("Pozdrawiam,<br>Stan<br>Givyx · 571 088 012 · info@givyx.com")
-        + s.get("append_html", ""))   # optional extra block (e.g. a RU version) after the PL signature
+        + p("Pozdrawiam,")
+        + s.get("append_html", "")   # optional extra block (e.g. a RU version) before the signature
+        + signature("pl"))
     if s.get("lang","pl") == "en":
         url = f"https://{slug}.givyx.com/?utm_source=email&utm_medium=offer&utm_campaign={slug}&utm_content={s['code']}"
         body = (p("Hi,")
             + p(s["hook"])
-            + btn(url, "See your site →")
+            + cta(url, "See your site&nbsp;→", f"{slug}.givyx.com · opens on your phone")
             + p(f"Stan here, from Givyx. Before writing I looked at how you work: {s['fakt']}. On the site: {s['na_stronie']}.")
             + p(s["dlaczego"])
             + p("<strong>The offer</strong>")
@@ -62,16 +57,13 @@ def main():
             + p("<strong>How to reach me:</strong> just reply to this email, or call / WhatsApp "
                 "<a href=\"tel:+48571088012\" style=\"color:#0f7a5a;font-weight:600\">+48 571 088 012</a> — I answer the same day. "
                 "If anything should look different (services, prices, photos), I'll adjust it.")
-            + p("Stan<br>Givyx · info@givyx.com")
-            + '<p style="color:#6b7280;font-size:13px">This is an advertisement. Reply "unsubscribe" and you won\'t hear from me again.</p>')
-        req = {"to": [s["to"]], "subject": f"A site for {s['name']} — preview and offer", "layout": "givyx",
-               "locationId": "l_givyx", "eyebrow": "Offer", "title": f"A site for {s['name']}", "badge": "",
-               "replyTo": "info@givyx.com", "html": body}
-        print(json.dumps(req, ensure_ascii=False)); return
-    req = {"to": [s["to"]], "subject": f"Strona dla {s['name']} — podgląd i oferta", "layout": "givyx",
-           "locationId": "l_givyx", "eyebrow": "Oferta", "title": f"Strona dla {s['name']}", "badge": "",
-           "replyTo": "info@givyx.com", "html": body}
-    print(json.dumps(req, ensure_ascii=False))
+            + p("Best,")
+            + signature("en")
+            # CAN-SPAM: the postal address must be in words (the signature only has a map icon now).
+            + f'<p style="color:#6b7280;font-size:13px;margin-top:16px">This is an advertisement. Givyx, {ADDRESS}, Poland. '
+              'Reply "unsubscribe" and you won\'t hear from me again.</p>')
+        print(json.dumps(request(s["to"], f"A site for {s['name']} — preview and offer", f"A site for {s['name']}", body, "en"), ensure_ascii=False)); return
+    print(json.dumps(request(s["to"], f"Strona dla {s['name']} — podgląd i oferta", f"Strona dla {s['name']}", body, "pl"), ensure_ascii=False))
 
 if __name__ == "__main__":
     main()

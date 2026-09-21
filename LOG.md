@@ -28,6 +28,17 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   Bash allow rule for `ops/tools/send-one.sh`. Specs in `outreach/generic-20260921/`.
 - Niche demos: spec `givyx.claudeBrain/Givyx/superpowers/specs/2026-09-21-niche-demo-sites.md`; three build agents (fizjo,
   remonty, szkolajazdy) + one research agent (4 niche lists × 30, Kraków first) running.
+- **Email look v4.1 (Stan's review of the seed, morning):** (1) API PR #89 merged + deployed 08:27Z — shell 600→680 px, font
+  preconnect hints dropped (mail-tester −1), header pill 12 px sentence case (was a huge uppercase OFERTA on phones),
+  new `showContact` flag on POST /emails. (2) Builders: "Oferta" as the header pill (badge) not the eyebrow; pill CTA with
+  the bare demo host under it; signature under a rule = rounded logo tile (`sig-mark-128.png`, cut from
+  `givyx_logo_asset/cut/icon`) + name/title/tagline **by language** (PL Stanisław Zakharevich · Dyrektor, Givyx · Strony
+  internetowe i aplikacje mobilne; EN Stan Zakharevich · Director; RU Слава Захаревич · Директор) + 7 icon-only links
+  (phone, WhatsApp, mail, site, Instagram, LinkedIn, map; icons `ic-*.png` on images.givyx.com, sources in
+  `ops/brand-icons/`); shell contact block off; **text/plain part on every send** (the old mail was HTML-only — a
+  Promotions/spam signal). Shared in `ops/tools/email_parts.py`; `build-email-v2.py` (personalised, PL/EN) and
+  `build-email-v4.py` (generic) both import it. Two seeds to Stan's Gmail (pre- and post-deploy); Stan: "I like the result".
+  Stan's earlier finding: the seed had landed in **Promotions** — tab of the new one still to be reported.
 
 ### 2026-09-17 (afternoon) — shade mailbox connected; D+3 SMS backlog prepared
 - Stan switched the Gmail connector to `stan.zak.shade@gmail.com` (where improvmx delivers). Read 8 days, all folders:

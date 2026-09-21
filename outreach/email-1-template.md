@@ -1,3 +1,13 @@
+# Email 1 — look v4.1 (2026-09-21, Stan's OK) on top of copy v3
+
+Shared parts in `ops/tools/email_parts.py` (both builders import it): header **pill** "Oferta"/"Offer" beside the
+logo · pill CTA + bare demo host caption · signature under a rule — rounded Givyx tile, **name/title/tagline by
+language** (PL Stanisław Zakharevich · Dyrektor, Givyx · Strony internetowe i aplikacje mobilne · EN Stan
+Zakharevich · Director, Givyx · Websites & mobile apps · RU Слава Захаревич · Директор, Givyx · Сайты и мобильные
+приложения), 7 icon links (phone, WhatsApp, mail, site, Instagram `givyx.ai`, LinkedIn `company/givyx`, map) ·
+shell contact block off (`showContact:false`) · `text` part on every send. US mails keep the CAN-SPAM line with the
+postal address in words. Preview: `previews/email-v4.1-warsztat.html`. Generic variant: `build-email-v4.py`.
+
 # Email 1 — v3 (2026-09-15, Stan's second round; supersedes everything below)
 
 Stan's rules: **never mention Google reviews/ratings in the email** (the rating stays on the site, not in the

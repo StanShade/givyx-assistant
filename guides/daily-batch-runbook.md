@@ -231,6 +231,15 @@ Codes: `<2–3 letters>-<yyyymmdd>-e1`, unique forever; register them in `prospe
 E-mail = **v3** (`outreach/email-1-template.md`): hook first → button → who I am + `fakt` + "Na stronie
 jest …" → `dlaczego` → Oferta (249 zł / $49, built free, first month free) → W cenie → explicit contact
 (571 088 012 or reply). **Never a Google rating or review count in the e-mail.**
+Look = **v4.1** (21 Sep, Stan's OK) from `ops/tools/email_parts.py`, shared by both builders: "Oferta"/"Offer"
+as the header **pill** next to the logo (badge, never eyebrow) · pill-shaped CTA with the bare demo host under
+it · signature under a rule = rounded logo tile + name/title/tagline **by language** (PL Stanisław Zakharevich ·
+Dyrektor, Givyx · Strony internetowe i aplikacje mobilne / EN Stan Zakharevich · Director, Givyx · Websites &
+mobile apps / RU Слава Захаревич · Директор, Givyx) + 7 icon-only links (phone, WhatsApp, mail, givyx.com,
+Instagram, LinkedIn, map) · `showContact:false` (the shell's contact block is off — the signature has it) ·
+a `text` part always (multipart/alternative; HTML-only mail goes to Promotions/spam). Do not hand-write a
+signature or a button in a spec — change `email_parts.py` and every builder follows. Generic (no per-prospect
+site) sends use `build-email-v4.py niche.json prospect.json` with `outreach/niches/<niche>.json` (`lang` there).
 ```
 # one spec per prospect: {"slug","name","to","code","lang":"pl|en","hook","fakt","na_stronie","dlaczego"}
 #   hook       = one sentence about THEIR customers that pulls them to the example, ending "Zobaczcie:" / "Take a look:"

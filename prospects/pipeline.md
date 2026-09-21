@@ -803,3 +803,5 @@ on reply („odpiszcie tak”). #01 sent 08:1xZ from the session on the v4 look;
 | Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
 |---|---|---|---|
 | G1 (29) | **Thu 24 Sep** — all 29 mobiles above (text: generic v4 SMS, link warsztat.givyx.com?utm_campaign=sms-<code>) | Fri 26 Sep | Thu 1 Oct |
+
+- **ARMCAR 2026-09-21 ~11:xxZ — SMS to the reception line 501 792 367 (RU, Слава, Mac relay):** letter of 09-17 had 0 opens (armcar.givyx.com: 0 sessions since 09-18); text says the offer went to prostoautoserwis@gmail.com and asks for a direct contact / time with the management (owners are Belarusian; Stan wants a personal line to Nikita/Dzianis, not the reception). Next: Stan calls when they answer; if silent, call the shop line Wed 23 Sep.

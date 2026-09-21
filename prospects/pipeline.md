@@ -559,7 +559,7 @@ can sand it all" → 9 sent 2026-09-15 ~11:3xZ, 9/9 `sent:true`. Specs: `outreac
 | gocars | GO CARS Auto Serwis, Radom | info@go-cars.pl | **SENT 2026-09-15** (email v3; closing only, no postcode) | `gc-20260915-e1` |
 | mauto | M-AUTO, Rybnik | m-auto.rybnik@wp.pl | **SENT 2026-09-15** (email v3; cennik quoted) | `mau-20260915-e1` |
 | carmobile | Carmobile Serwis, Gdynia | carmobileserwis@gmail.com | **SENT 2026-09-15** (email v3; Spokojna 18; 4 services; GBP-only hours) | `cm-20260915-e1` |
-| autoperfetto | Auto Perfetto, Nowy Sącz | autoperfetto@gmail.com | **SENT 2026-09-15** (email v3; 6 services) · **CLICKED** (1 session `email / oferta`, read 09-16 08:2xZ) → **Stan called 2026-09-17**: owner is looking at the offer now, will get back; **Stan calls again Mon 21 Sep** if silent; no email 2 | `ap-20260915-e1` |
+| autoperfetto | Auto Perfetto, Nowy Sącz | autoperfetto@gmail.com | **SENT 2026-09-15** (email v3; 6 services) · **CLICKED** (1 session `email / oferta`, read 09-16 08:2xZ) → **Stan called 2026-09-17**: owner is looking at the offer now, will get back; **Stan called Mon 21 Sep**: owner says he will look at it tomorrow (Tue 22 Sep) and call Stan back; **if silent, Stan calls Wed 23 Sep**; no email 2 | `ap-20260915-e1` |
 | sylwek | Auto Serwis Sylwek, Sosnowiec | ssylwek@poczta.onet.pl | **SENT 2026-09-15** (email v3; Saturday bookable) | `sy-20260915-e1` |
 | pablocar | PABLOCAR, Zielona Góra | paweladt@wp.pl | **HOLD until 28.09** — request ready in `outreach/batch4-specs/pablocar.request.json`, send with `ops/tools/send-one.sh` (shop closed 9–27.09) | `pb-20260928-e1` |
 | dieselsoft | Dieselsoft Auto-Mechanika, Płock | dieselsoft@wp.pl | **SENT 2026-09-15** (email v3; no photos; GBP-only hours; no postcode) | `ds-20260915-e1` |

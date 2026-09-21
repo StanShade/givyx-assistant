@@ -26,6 +26,7 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 - Generic list: 42 PL shops (`prospects/2026-09-21-PL-autoservice-generic.md`, 29 clean). **29/29 sent**: #01 from the session
   (v4 look), #02–29 by Stan from his terminal ~10:5xZ (v4.1 look) — the classifier blocks external sends from the session and
   refuses to let me add my own allow rule. Scoreboard 98 e-mails. D+3 SMS Thu 24 Sep. Specs `outreach/generic-20260921/`.
+- Auto Perfetto (Stan's call 09-21): owner will look tomorrow (22 Sep) and call back; if silent Stan calls Wed 23 Sep.
 - Niche demos LIVE on Preview: fizjo.givyx.com · remonty.givyx.com · szkolajazdy.givyx.com (fictional brands, noindex, forms
   Notified:true). Niche lists: fizjo 32 · szkoły jazdy 32 · dentyści 32 · remonty 7 (thin: most have no GBP). Email configs
   `outreach/niches/{fizjo,remonty,szkolajazdy}.json`. Other agent shipped look v4.1 (pill CTA, signature block, text part,

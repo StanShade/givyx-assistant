@@ -759,3 +759,47 @@ Pre-flight 2026-09-17 evening: 0 replies (shade, 4 days) · clicks read for batc
 - **Follow-up SMS SENT 2026-09-18 (Mac relay, Stan "ok send"):** "Dzięki za odpowiedź! Kiedy szef będzie na miejscu? Chętnie zadzwonię —
   albo proszę mu przekazać link, to 30 sekund na telefonie: https://autoexpert.givyx.com. Stanisław, Givyx". Next: Stan calls
   600 249 761 when they name a time (or tomorrow late morning if silent).
+
+## 2026-09-21 — generic batch G1: 29 PL auto shops, e-mail v4/v4.1, NO per-prospect site (Stan's pivot)
+
+Source `prospects/2026-09-21-PL-autoservice-generic.md` (29 clean of 42; panoramafirm listings → one Maps check each). Every mail links
+`warsztat.givyx.com` (clone of `dealership`, noindex, Preview) with the prospect code in `utm_campaign`; the personalised build is offered
+on reply („odpiszcie tak”). #01 sent 08:1xZ from the session on the v4 look; #02–29 sent ~10:5xZ by Stan from his terminal on the v4.1 look
+(the auto-mode classifier blocks external sends from the session). 29/29 `sent:true`. Specs `outreach/generic-20260921/`.
+
+| # | prospect | city | e-mail | mobile | code | state |
+|---|---|---|---|---|---|---|
+| 01 | D1 Garage | Bolesławiec | rapida@wp.pl | 500 456 769 | `gw-20260921-01` | **SENT 2026-09-21** |
+| 02 | Auto-Serwis Bednarski | Iława | autoserwisbednarski@wp.pl | 606 436 433 | `gw-20260921-02` | **SENT 2026-09-21** |
+| 03 | Auto-Serwis Wilemski | Iława | wilema@op.pl | 698 753 294 | `gw-20260921-03` | **SENT 2026-09-21** |
+| 04 | KM Serwis | Kalisz | kmielewczyk1@wp.pl | 664 489 109 | `gw-20260921-04` | **SENT 2026-09-21** |
+| 05 | Piekarski Autoserwis | Kalisz | carserwis76@wp.pl | 691 705 793 | `gw-20260921-05` | **SENT 2026-09-21** |
+| 06 | Mechanika Świątnicki | Kalisz | siano18@vp.pl | 606 475 687 | `gw-20260921-06` | **SENT 2026-09-21** |
+| 07 | Perfect Car | Stargard | perfectcar-stargard@o2.pl | 695 922 780 | `gw-20260921-07` | **SENT 2026-09-21** |
+| 08 | Auto Naprawa Dudek | Stargard | dudi-27@wp.pl | 512 235 967 | `gw-20260921-08` | **SENT 2026-09-21** |
+| 09 | OS Serwis | Sanok | osserwis@onet.pl | 519 427 876 | `gw-20260921-09` | **SENT 2026-09-21** |
+| 10 | Mechanika Pojazdowa Lefik | Pabianice | tomek-poland1989@o2.pl | 787 481 992 | `gw-20260921-10` | **SENT 2026-09-21** |
+| 11 | Auto Complex | Zabrze | autocomplexzabrze@vp.pl | 606 649 771 | `gw-20260921-11` | **SENT 2026-09-21** |
+| 12 | Mechanika Rogalski | Tychy | jrogalski@interia.pl | 507 463 366 | `gw-20260921-12` | **SENT 2026-09-21** |
+| 13 | Łabuś Autoserwis | Chorzów | dlabus@poczta.fm | 604 463 870 | `gw-20260921-13` | **SENT 2026-09-21** |
+| 14 | Luk Serwis | Chorzów | luk.serwis@o2.pl | 502 568 387 | `gw-20260921-14` | **SENT 2026-09-21** |
+| 15 | Lukas Servis | Bytom | lukaszxr@wp.pl | 600 919 067 | `gw-20260921-15` | **SENT 2026-09-21** |
+| 16 | Orzeł Serwis 4x4 | Bytom | orzel4x4@outlook.com | 511 961 665 | `gw-20260921-16` | **SENT 2026-09-21** |
+| 17 | Car Service Kursewicz | Radomsko | mkursewicz@poczta.onet.pl | 518 044 200 | `gw-20260921-17` | **SENT 2026-09-21** |
+| 18 | Darkar | Radomsko | ldelta@poczta.onet.pl | 500 188 739 | `gw-20260921-18` | **SENT 2026-09-21** |
+| 19 | Speed Service | Zawiercie | lukasz_j83@o2.pl | 669 502 000 | `gw-20260921-19` | **SENT 2026-09-21** |
+| 20 | Moto-Centrum | Zawiercie | moto-centrum2@wp.pl | 792 054 224 | `gw-20260921-20` | **SENT 2026-09-21** |
+| 21 | HITUS | Wołomin | tom401@op.pl | 668 035 181 | `gw-20260921-21` | **SENT 2026-09-21** |
+| 22 | Auto Nowicki | Kwidzyn | auto-nowicki@wp.pl | 516 080 881 | `gw-20260921-22` | **SENT 2026-09-21** |
+| 23 | Auto-Express | Szczecinek | michal.matwiejczuk@vp.pl | 889 220 319 | `gw-20260921-23` | **SENT 2026-09-21** |
+| 24 | Mechanika Nowacki | Wołomin | nowackicars@gmail.com | 798 331 003 | `gw-20260921-24` | **SENT 2026-09-21** |
+| 25 | LUKCAR | Otwock | lukcar@interia.pl | 501 782 825 | `gw-20260921-25` | **SENT 2026-09-21** |
+| 26 | Stefmar | Sochaczew | auto.stefmar@gmail.com | 508 121 005 | `gw-20260921-26` | **SENT 2026-09-21** |
+| 27 | Auto-Precyzja | Jaworzno | serafin-78@tlen.pl | 502 050 758 | `gw-20260921-27` | **SENT 2026-09-21** |
+| 28 | MAR-GAB | Kluczbork | mar-gab.1kl@wp.pl | 693 184 897 | `gw-20260921-28` | **SENT 2026-09-21** |
+| 29 | Warsztat Frączek | Chrzanów | marcin221283@wp.pl | 697 871 602 | `gw-20260921-29` | **SENT 2026-09-21** |
+
+### Follow-up dates for G1 (29 sent 2026-09-21)
+| Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
+|---|---|---|---|
+| G1 (29) | **Thu 24 Sep** — all 29 mobiles above (text: generic v4 SMS, link warsztat.givyx.com?utm_campaign=sms-<code>) | Fri 26 Sep | Thu 1 Oct |

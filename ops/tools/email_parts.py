@@ -39,7 +39,7 @@ def cta(url, label, hint):
             # class="btn": the shell's dark-mode rule for `.btn a` keeps the label readable on the green
             f'<td class="btn" style="background:{ACCENT};background-image:linear-gradient(180deg,#149470 0%,{ACCENT} 100%);'
             'border-radius:999px;box-shadow:0 8px 20px rgba(15,122,90,0.30)">'
-            f'<a href="{H.escape(url)}" style="display:inline-block;box-sizing:border-box;text-align:center;padding:17px 44px;color:#ffffff;'
+            f'<a href="{H.escape(url)}" style="display:inline-block;box-sizing:border-box;text-align:center;padding:17px 32px;color:#ffffff;'
             f'font-weight:700;text-decoration:none;font-size:16px;line-height:1.3;letter-spacing:0.01em;border-radius:999px">{label}</a>'
             '</td></tr></table>'
             f'<div style="font-size:13px;color:{MUTED};margin-top:12px">{hint}</div>'

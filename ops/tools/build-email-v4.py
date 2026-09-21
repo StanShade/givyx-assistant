@@ -3,12 +3,12 @@
 no per-prospect site, one demo link per niche, the personalised version is offered on reply.
 
 v4.1 (21 Sep, Stan): "Oferta" as the header pill next to the logo (not an eyebrow), pill CTA,
-signature under a rule (logo, "Stanisław Zakharevich / Director of Givyx", tagline, icon-only links:
+signature under a rule (logo, name/title/tagline by language — PL Stanisław, EN Stan, RU Слава — icon-only links:
 phone, WhatsApp, mail, site, Instagram, LinkedIn, map) instead of the shell's contact block
 (`showContact:false`, API PR #89), and a text/plain part so the mail goes out multipart/alternative.
 
 usage: build-email-v4.py niche.json prospect.json > out.json
-niche    = {"campaign","demo_url","subject","intro","link_hint","closing","title_prefix"}   (outreach/niches/<niche>.json)
+niche    = {"campaign","demo_url","subject","intro","link_hint","closing","title_prefix","lang"?}   (outreach/niches/<niche>.json)
 prospect = {"name","to","code"}
 """
 import html as H, json, re, sys
@@ -19,7 +19,15 @@ PHONE, PHONE_TEL, EMAIL, SITE = "571 088 012", "+48571088012", "info@givyx.com",
 MAPS = "https://www.google.com/maps/search/?api=1&query=Karola+Bunscha+15A%2C+30-392+Krak%C3%B3w"
 INSTAGRAM, LINKEDIN = "https://www.instagram.com/givyx.ai", "https://www.linkedin.com/company/givyx/"
 LOGO = "https://images.givyx.com/brand/givyx/sig-mark-128.png"   # rounded tile cut from givyx_logo_asset/cut/icon
-TAGLINE = "Strony internetowe z rezerwacją online — budujemy, utrzymujemy, rozwijamy · Kraków"
+# Signature by language (niche "lang", default pl): name form, title and tagline all follow it.
+SIG = {
+    "pl": {"name": "Stanisław Zakharevich", "title": "Dyrektor, Givyx", "tagline": "Strony internetowe i aplikacje mobilne",
+           "phone": "Telefon", "mail": "E-mail", "site": "Strona", "map": "Karola Bunscha 15A, Kraków"},
+    "en": {"name": "Stan Zakharevich", "title": "Director, Givyx", "tagline": "Websites & mobile apps",
+           "phone": "Phone", "mail": "E-mail", "site": "Website", "map": "Karola Bunscha 15A, Kraków, Poland"},
+    "ru": {"name": "Слава Захаревич", "title": "Директор, Givyx", "tagline": "Сайты и мобильные приложения",
+           "phone": "Телефон", "mail": "E-mail", "site": "Сайт", "map": "Karola Bunscha 15A, Kraków"},
+}
 
 def cta(url, label, hint):
     # Pill button: solid green for Outlook, a soft gradient where the client allows background-image.
@@ -39,31 +47,38 @@ def icon(name, href, title):
     return (f'<td style="padding-right:8px"><a href="{H.escape(href)}" title="{title}" style="text-decoration:none">'
             f'<img src="{ICONS % name}" width="34" height="34" alt="{title}" style="display:block;border:0;width:34px;height:34px"></a></td>')
 
-def signature():
-    links = (icon("phone", f"tel:{PHONE_TEL}", PHONE)
+def signature(lang):
+    t = SIG[lang]
+    links = (icon("phone", f"tel:{PHONE_TEL}", f"{t['phone']}: {PHONE}")
              + icon("whatsapp", f"https://wa.me/{PHONE_TEL.lstrip('+')}", "WhatsApp")
              + icon("mail", f"mailto:{EMAIL}", EMAIL)
              + icon("globe", SITE, "givyx.com")
              + icon("instagram", INSTAGRAM, "Instagram")
              + icon("linkedin", LINKEDIN, "LinkedIn")
-             + icon("pin", MAPS, "Karola Bunscha 15A, Kraków"))
+             + icon("pin", MAPS, t["map"]))
     # Icons go under the logo/name row, not beside it: seven tiles plus the logo do not fit a phone.
     return (f'<hr style="border:0;border-top:1px solid {RULE};margin:26px 0 18px">'
             '<table role="presentation" cellspacing="0" cellpadding="0" style="width:auto"><tr>'
             f'<td style="vertical-align:top;padding-right:14px;width:64px"><a href="{SITE}"><img src="{LOGO}" width="64" height="64" alt="Givyx" '
             'style="display:block;border:0;width:64px;height:64px"></a></td>'
-            '<td style="vertical-align:top">'
-            '<p style="margin:0 0 2px;line-height:1.35"><strong style="font-size:16px">Stanisław Zakharevich</strong><br>'
-            f'<span style="font-size:14px;color:{MUTED}">Director of Givyx</span></p>'
-            f'<p style="margin:0;font-size:13px;line-height:1.5;color:{MUTED}">{TAGLINE}</p>'
+            '<td style="vertical-align:middle">'
+            f'<p style="margin:0 0 2px;line-height:1.35"><strong style="font-size:16px">{t["name"]}</strong><br>'
+            f'<span style="font-size:14px;color:{MUTED}">{t["title"]}</span></p>'
+            f'<p style="margin:0;font-size:13px;line-height:1.5;color:{MUTED}">{t["tagline"]}</p>'
             '</td></tr></table>'
             f'<table role="presentation" cellspacing="0" cellpadding="0" style="width:auto;margin-top:14px"><tr>{links}</tr></table>')
+
+def signature_text(lang):
+    t = SIG[lang]
+    return (f"--\n{t['name']}\n{t['title']}\n{t['tagline']}\n"
+            f"{PHONE} ({t['phone']}/WhatsApp) · {EMAIL} · givyx.com\n{INSTAGRAM} · {LINKEDIN}\nKarola Bunscha 15A, 30-392 Kraków\n")
 
 def p(t): return f"<p>{t}</p>"
 def ul(items): return '<ul style="margin:6px 0 14px;padding-left:20px">' + "".join(f"<li style='margin:3px 0'>{i}</li>" for i in items) + "</ul>"
 
 def main():
     n = json.load(open(sys.argv[1])); s = json.load(open(sys.argv[2]))
+    lang = n.get("lang", "pl")
     name = H.escape(s["name"])
     url = f"{n['demo_url']}?utm_source=email&utm_medium=oferta&utm_campaign={n['campaign']}&utm_content={s['code']}"
     bare = re.sub(r"^https?://|/$", "", n["demo_url"])
@@ -92,14 +107,13 @@ def main():
         + p("<strong>W cenie</strong>") + ul(included)
         + p("<strong>Jak się skontaktować:</strong> " + contact.replace(PHONE, f'<a href="tel:{PHONE_TEL}" style="color:{ACCENT};font-weight:600">{PHONE}</a>'))
         + p("Pozdrawiam,")
-        + signature())
+        + signature(lang))
 
     bullets = lambda items: "".join(f"- {i}\n" for i in items)
     text = (f"{n['title_prefix']} {s['name']}\n\nDzień dobry,\n\n{n['intro']}\n\n"
             f"Zobacz przykładową stronę: {url}\n{n['link_hint']}\n\n{H.unescape(version)}\n\n"
             f"Oferta\n{bullets(offer)}\nW cenie\n{bullets(included)}\n"
-            f"Jak się skontaktować: {contact}\n\nPozdrawiam,\n\n--\nStanisław Zakharevich\nDirector of Givyx\n{TAGLINE}\n"
-            f"{PHONE} (tel./WhatsApp) · {EMAIL} · givyx.com\n{INSTAGRAM} · {LINKEDIN}\nKarola Bunscha 15A, 30-392 Kraków\n")
+            f"Jak się skontaktować: {contact}\n\nPozdrawiam,\n\n" + signature_text(lang))
 
     req = {"to": [s["to"]], "subject": n["subject"], "layout": "givyx", "locationId": "l_givyx",
            "eyebrow": "", "title": f"{n['title_prefix']} {name}", "badge": "Oferta",

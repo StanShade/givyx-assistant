@@ -8,13 +8,15 @@ niche    = {"campaign","demo_url","subject","intro","link_hint","closing","title
 prospect = {"name","to","code"}
 """
 import html as H, json, re, sys
-from email_parts import p, ul, cta, signature, request, PHONE, PHONE_TEL, ACCENT
+from email_parts import p, ul, cta, signature, request, tagged, PHONE, PHONE_TEL, ACCENT
 
 def main():
     n = json.load(open(sys.argv[1])); s = json.load(open(sys.argv[2]))
     lang = n.get("lang", "pl")
     name = H.escape(s["name"])
-    url = f"{n['demo_url']}?utm_source=email&utm_medium=oferta&utm_campaign={n['campaign']}&utm_content={s['code']}"
+    # utm_campaign = the prospect code, not the niche: analytics drops utm_content, and one generic demo
+    # serves every prospect, so the code is the only thing that says who clicked.
+    url = tagged(n["demo_url"], "oferta", s["code"])
     bare = re.sub(r"^https?://|/$", "", n["demo_url"])
     body = (p("Dzień dobry,")
         + p(n["intro"])
@@ -36,7 +38,7 @@ def main():
         + p(f"<strong>Jak się skontaktować:</strong> zadzwońcie do mnie na <a href=\"tel:{PHONE_TEL}\" style=\"color:{ACCENT};font-weight:600\">{PHONE}</a> "
             "albo po prostu odpiszcie na tego maila — odpowiem tego samego dnia.")
         + p("Pozdrawiam,")
-        + signature(lang))
+        + signature(lang, s["code"]))
     print(json.dumps(request(s["to"], n["subject"], f"{n['title_prefix']} {name}", body, lang), ensure_ascii=False))
 
 if __name__ == "__main__":

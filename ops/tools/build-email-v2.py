@@ -35,7 +35,7 @@ def main():
             "albo po prostu odpiszcie na tego maila — odpowiem tego samego dnia. Jeśli coś ma wyglądać inaczej (usługi, ceny, zdjęcia), dopasuję.")
         + p("Pozdrawiam,")
         + s.get("append_html", "")   # optional extra block (e.g. a RU version) before the signature
-        + signature("pl"))
+        + signature("pl", s["code"]))
     if s.get("lang","pl") == "en":
         url = f"https://{slug}.givyx.com/?utm_source=email&utm_medium=offer&utm_campaign={slug}&utm_content={s['code']}"
         body = (p("Hi,")
@@ -58,7 +58,7 @@ def main():
                 "<a href=\"tel:+48571088012\" style=\"color:#0f7a5a;font-weight:600\">+48 571 088 012</a> — I answer the same day. "
                 "If anything should look different (services, prices, photos), I'll adjust it.")
             + p("Best,")
-            + signature("en")
+            + signature("en", s["code"])
             # CAN-SPAM: the postal address must be in words (the signature only has a map icon now).
             + f'<p style="color:#6b7280;font-size:13px;margin-top:16px">This is an advertisement. Givyx, {ADDRESS}, Poland. '
               'Reply "unsubscribe" and you won\'t hear from me again.</p>')

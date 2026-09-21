@@ -27,6 +27,11 @@ SIG = {
            "phone": "Телефон", "phone_show": "+48 " + PHONE, "map": ADDRESS, "badge": "Предложение"},
 }
 
+def tagged(url, medium, campaign):
+    """UTM for our analytics. It stores utm_source/medium/campaign only (utm_content is dropped), so the
+    prospect code goes in utm_campaign — that is the only way a click stays attributable to one mail."""
+    return f"{url}{'&' if '?' in url else '?'}utm_source=email&utm_medium={medium}&utm_campaign={campaign}"
+
 def p(t): return f"<p>{t}</p>"
 def ul(items): return '<ul style="margin:6px 0 14px;padding-left:20px">' + "".join(f"<li style='margin:3px 0'>{i}</li>" for i in items) + "</ul>"
 
@@ -50,12 +55,16 @@ def icon(name, href, title):
     return (f'<td style="padding-right:8px"><a href="{H.escape(href)}" title="{title}" style="text-decoration:none">'
             f'<img src="{ICONS % name}" width="34" height="34" alt="{title}" style="display:block;border:0;width:34px;height:34px"></a></td>')
 
-def signature(lang):
+def signature(lang, code):
+    """`code` = the prospect's e-mail code: the givyx.com links (logo + globe) are tagged with it, so a
+    click from the signature shows up on tenant l_givyx as campaign <code>, medium "signature".
+    Phone/WhatsApp/mail/Instagram/LinkedIn/Maps leave our domain and cannot be tracked."""
     t = SIG[lang]
+    site = tagged(SITE + "/", "signature", code)
     links = (icon("phone", f"tel:{PHONE_TEL}", f"{t['phone']}: {t['phone_show']}")
              + icon("whatsapp", f"https://wa.me/{PHONE_TEL.lstrip('+')}", "WhatsApp")
              + icon("mail", f"mailto:{EMAIL}", EMAIL)
-             + icon("globe", SITE, "givyx.com")
+             + icon("globe", site, "givyx.com")
              + icon("instagram", INSTAGRAM, "Instagram")
              + icon("linkedin", LINKEDIN, "LinkedIn")
              + icon("pin", MAPS, t["map"]))
@@ -63,7 +72,7 @@ def signature(lang):
     return ('<!--sig-->'
             f'<hr style="border:0;border-top:1px solid {RULE};margin:26px 0 18px">'
             '<table role="presentation" cellspacing="0" cellpadding="0" style="width:auto"><tr>'
-            f'<td style="vertical-align:top;padding-right:14px;width:64px"><a href="{SITE}"><img src="{LOGO}" width="64" height="64" alt="Givyx" '
+            f'<td style="vertical-align:top;padding-right:14px;width:64px"><a href="{H.escape(site)}"><img src="{LOGO}" width="64" height="64" alt="Givyx" '
             'style="display:block;border:0;width:64px;height:64px"></a></td>'
             '<td style="vertical-align:middle">'
             f'<p style="margin:0 0 2px;line-height:1.35"><strong style="font-size:16px">{t["name"]}</strong><br>'

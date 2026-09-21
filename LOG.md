@@ -39,6 +39,13 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   Promotions/spam signal). Shared in `ops/tools/email_parts.py`; `build-email-v2.py` (personalised, PL/EN) and
   `build-email-v4.py` (generic) both import it. Two seeds to Stan's Gmail (pre- and post-deploy); Stan: "I like the result".
   Stan's earlier finding: the seed had landed in **Promotions** — tab of the new one still to be reported.
+- Stan: "make sure a click on any button, incl. the website in my signature, is clear in analytics." Found that analytics
+  stores utm_source/medium/campaign only — `utm_content` (where the prospect code lived) is dropped, so generic-demo clicks
+  were anonymous. Fix in `email_parts.tagged()`: **utm_campaign = prospect code**, medium `oferta`/`offer` for the button,
+  `signature` for the givyx.com links (logo + globe). Verified live: two browser clicks with code `sigtest-20260921` →
+  `l_1a9facb` campaigns `[sigtest-20260921 · email / oferta]`, `l_givyx` `[sigtest-20260921 · email / signature]`.
+  Runbook §1.3: read `l_givyx` daily too. External links (tel, WhatsApp, mail, IG, LinkedIn, Maps) are not trackable.
+  Seeds #3 and #4 to Stan (720 px shell, PR #90 merged + deployed 09:49Z): "looks great".
 
 ### 2026-09-17 (afternoon) — shade mailbox connected; D+3 SMS backlog prepared
 - Stan switched the Gmail connector to `stan.zak.shade@gmail.com` (where improvmx delivers). Read 8 days, all folders:

@@ -29,8 +29,13 @@ month free, benefits list, explicit contact line).
    curl -s -H "Authorization: Bearer $(tr -d '[:space:]' < ~/.givyx/ops-routine.token)" \
      "https://api.givyx.com/api/analytics/breakdowns?locationId=<locationId>&from=<send-day>T00:00:00Z&to=<today>T23:59:59Z"
    ```
-   `campaigns[]` = tracked clicks (prospect's code) · `countryDevice[]` = any non-PL session on a PL
-   site is not us. Location ids: `givyx.claudeBrain/dealership/clones/index.md`. Report clickers to
+   `campaigns[]` = tracked clicks: **`name` = the prospect's e-mail code, `source` = which link** —
+   `email / oferta` (the button on a PL mail), `email / offer` (US), `email / signature` (givyx.com from
+   the signature logo/globe). Since 09-21 every builder puts the code in `utm_campaign` (analytics drops
+   `utm_content`), so the generic demo (`warsztat` = `l_1a9facb`) is per-prospect too. **Read `l_givyx` as
+   well every day** — that is where signature clicks land, for every mail regardless of tenant. Phone,
+   WhatsApp, mail, Instagram, LinkedIn and Maps leave our domain and are not tracked. `countryDevice[]` =
+   any non-PL session on a PL site is not us. Location ids: `givyx.claudeBrain/dealership/clones/index.md`. Report clickers to
    Stan — a clicker gets his call, not email 2. (If PR 88 is merged: `GET /admin/ops/demo-visits?since=`
    does all tenants in one call.) If the classifier blocks the curl ("PII"), ask Stan in-turn for the read
    or for a Bash rule — do not skip silently; report "clicks unread" in the review mail.

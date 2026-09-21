@@ -1,0 +1,258 @@
+[
+ {
+  "name": "Szel-Med Grzegorz Szeliga",
+  "to": "szel_med@op.pl",
+  "city": "Kraków",
+  "mobile": "695 581 814",
+  "code": "gf-20260921-01",
+  "slug": "szelmedgrzeg"
+ },
+ {
+  "name": "Waszego gabinetu",
+  "to": "ania.zajaczkowska@gmail.com",
+  "city": "Kraków",
+  "mobile": "606 829 780",
+  "code": "gf-20260921-02",
+  "slug": "annazajaczko"
+ },
+ {
+  "name": "Fizjoterapia Edukacja dr Tomasz Ridan",
+  "to": "tomasz.ridan@gmail.com",
+  "city": "Kraków",
+  "mobile": "601 436 574",
+  "code": "gf-20260921-03",
+  "slug": "fizjoterapia"
+ },
+ {
+  "name": "Magdalena Wójciak Fizjoterapia Manualna Fizjoczech",
+  "to": "magda.czech@op.pl",
+  "city": "Kraków",
+  "mobile": "662 436 662",
+  "code": "gf-20260921-04",
+  "slug": "magdalenawoj"
+ },
+ {
+  "name": "Michał Łukaszewski Fizjoterapia",
+  "to": "lukaszewski.michal@poczta.onet.pl",
+  "city": "Kraków",
+  "mobile": "511 571 916",
+  "code": "gf-20260921-05",
+  "slug": "michaukaszew"
+ },
+ {
+  "name": "Waszego gabinetu",
+  "to": "przystanfizjo@gmail.com",
+  "city": "Kraków",
+  "mobile": "604 790 729",
+  "code": "gf-20260921-06",
+  "slug": "przystanagni"
+ },
+ {
+  "name": "REHABILITACJA Bądź w dobrej formie",
+  "to": "info@badzwdobrejformie.pl",
+  "city": "Kraków",
+  "mobile": "516 676 202",
+  "code": "gf-20260921-07",
+  "slug": "rehabilitacj"
+ },
+ {
+  "name": "Stacja Zdrowie - Fizjoterapia",
+  "to": "kontakt@stacjazdrowie.com",
+  "city": "Kraków",
+  "mobile": "785 615 959",
+  "code": "gf-20260921-08",
+  "slug": "stacjazdrowi"
+ },
+ {
+  "name": "Stanek Jakub Fizjoterapia",
+  "to": "stanek19@vp.pl",
+  "city": "Kraków",
+  "mobile": "504 228 143",
+  "code": "gf-20260921-09",
+  "slug": "stanekjakubf"
+ },
+ {
+  "name": "Sylwia Mętel Fizjoterapia Personalna",
+  "to": "smetel@interia.pl",
+  "city": "Kraków",
+  "mobile": "606 480 472",
+  "code": "gf-20260921-10",
+  "slug": "sylwiametelf"
+ },
+ {
+  "name": "Terapia Manualna Marcin Woźniak",
+  "to": "wozniakmw@gmail.com",
+  "city": "Kraków",
+  "mobile": "792 658 134",
+  "code": "gf-20260921-11",
+  "slug": "terapiamanua"
+ },
+ {
+  "name": "Medmas Michał Gąsiorowski",
+  "to": "migasiorowski@gmail.com",
+  "city": "Katowice",
+  "mobile": "512 241 667",
+  "code": "gf-20260921-12",
+  "slug": "medmasmichag"
+ },
+ {
+  "name": "Waszego gabinetu",
+  "to": "erni1992@op.pl",
+  "city": "Katowice",
+  "mobile": "509 916 870",
+  "code": "gf-20260921-13",
+  "slug": "domorehernes"
+ },
+ {
+  "name": "Fizjohelp Alicja Dłubis",
+  "to": "alianna007@gmail.com",
+  "city": "Katowice",
+  "mobile": "505 345 595",
+  "code": "gf-20260921-14",
+  "slug": "fizjohelpali"
+ },
+ {
+  "name": "Fizjolympic Gabinet Fizjoterapii Filip Lysko",
+  "to": "fizjolympic@gmail.com",
+  "city": "Katowice",
+  "mobile": "530 797 641",
+  "code": "gf-20260921-15",
+  "slug": "fizjolympicg"
+ },
+ {
+  "name": "Gabinet Rehabilitacji Przemysław Paduch",
+  "to": "paddi@poczta.fm",
+  "city": "Katowice",
+  "mobile": "604 633 371",
+  "code": "gf-20260921-16",
+  "slug": "gabinetrehab"
+ },
+ {
+  "name": "Gabinet Terapii Manualnej i Fizykoterapii Klonnek Ewa",
+  "to": "eklonnek@interia.pl",
+  "city": "Katowice",
+  "mobile": "601 180 077",
+  "code": "gf-20260921-17",
+  "slug": "gabinetterap"
+ },
+ {
+  "name": "Górka Arnold Centrum Rehabilitacji",
+  "to": "arnoldgorka@wp.pl",
+  "city": "Wrocław",
+  "mobile": "695 424 332",
+  "code": "gf-20260921-18",
+  "slug": "gorkaarnoldc"
+ },
+ {
+  "name": "Acusrehmed Magda Jagiełowicz-Strzała",
+  "to": "kontakt@acusrehmed.pl",
+  "city": "Poznań",
+  "mobile": "668 180 809",
+  "code": "gf-20260921-19",
+  "slug": "acusrehmedma"
+ },
+ {
+  "name": "ACTIVMEDIC Rehabilitacja Piotr Lauren",
+  "to": "rehabilitacja@activmedic.pl",
+  "city": "Łódź",
+  "mobile": "504 124 124",
+  "code": "gf-20260921-20",
+  "slug": "activmedicre"
+ },
+ {
+  "name": "Bejbuśki Fizjoterapia Dziecięca Paulina Dębska",
+  "to": "bejbuski.fizjo@gmail.com",
+  "city": "Łódź",
+  "mobile": "504 217 887",
+  "code": "gf-20260921-21",
+  "slug": "bejbuskifizj"
+ },
+ {
+  "name": "Fizjo Plus Mariusz Ubych",
+  "to": "fizjoplus.lodz@gmail.com",
+  "city": "Łódź",
+  "mobile": "505 996 533",
+  "code": "gf-20260921-22",
+  "slug": "fizjoplusmar"
+ },
+ {
+  "name": "Fizjocomplex Robert Nowicki Fizjoterapia i Osteopatia",
+  "to": "robertnowicki.rehabilitacja@gmail.com",
+  "city": "Łódź",
+  "mobile": "660 368 653",
+  "code": "gf-20260921-23",
+  "slug": "fizjocomplex"
+ },
+ {
+  "name": "Gabinet Fizjoterapii Patryk Chojnacki",
+  "to": "gfpatrykchojnacki@gmail.com",
+  "city": "Łódź",
+  "mobile": "509 130 823",
+  "code": "gf-20260921-24",
+  "slug": "gabinetfizjo"
+ },
+ {
+  "name": "Niewodniczy Maciej Gabinet Rehabilitacji",
+  "to": "maciekn@orange.pl",
+  "city": "Łódź",
+  "mobile": "501 056 507",
+  "code": "gf-20260921-25",
+  "slug": "niewodniczym"
+ },
+ {
+  "name": "Mały Dom Ulgi w Bólu Gabinet Terapii Manualnej i Osteopatii",
+  "to": "tom.lew@onet.eu",
+  "city": "Gdańsk",
+  "mobile": "692 497 774",
+  "code": "gf-20260921-26",
+  "slug": "maydomulgiwb"
+ },
+ {
+  "name": "Woźny Krzysztof Rehabilitacja",
+  "to": "kwozny7@wp.pl",
+  "city": "Lublin",
+  "mobile": "603 766 120",
+  "code": "gf-20260921-27",
+  "slug": "woznykrzyszt"
+ },
+ {
+  "name": "Fizjoactive Adrian Smolarz",
+  "to": "fizjoactive.rzeszow@gmail.com",
+  "city": "Rzeszów",
+  "mobile": "696 485 322",
+  "code": "gf-20260921-28",
+  "slug": "fizjoactivea"
+ },
+ {
+  "name": "Mk Med Rzeszów Michał Kliba",
+  "to": "mkmedrzeszow@wp.pl",
+  "city": "Rzeszów",
+  "mobile": "793 995 085",
+  "code": "gf-20260921-29",
+  "slug": "mkmedrzeszow"
+ },
+ {
+  "name": "Rehabilitacja REHA SILESIA w Gliwicach",
+  "to": "kontakt@rehasilesia.pl",
+  "city": "Gliwice",
+  "mobile": "507 989 720",
+  "code": "gf-20260921-30",
+  "slug": "rehabilitacj"
+ },
+ {
+  "name": "FU Fizjotrend Maria Fela",
+  "to": "mariafela@op.pl",
+  "city": "Tarnów",
+  "mobile": "519 052 524",
+  "code": "gf-20260921-31",
+  "slug": "fufizjotrend"
+ },
+ {
+  "name": "Fizjoterapia Krzysztof Korman",
+  "to": "krzysztof.korman92@gmail.com",
+  "city": "Tarnów",
+  "mobile": "787 581 650",
+  "code": "gf-20260921-32",
+  "slug": "fizjoterapia"
+ }
+]

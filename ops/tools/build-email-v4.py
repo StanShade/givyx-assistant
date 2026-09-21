@@ -18,7 +18,7 @@ ICONS = "https://images.givyx.com/brand/givyx/ic-%s.png"
 PHONE, PHONE_TEL, EMAIL, SITE = "571 088 012", "+48571088012", "info@givyx.com", "https://givyx.com"
 MAPS = "https://www.google.com/maps/search/?api=1&query=Karola+Bunscha+15A%2C+30-392+Krak%C3%B3w"
 INSTAGRAM, LINKEDIN = "https://www.instagram.com/givyx.ai", "https://www.linkedin.com/company/givyx/"
-LOGO = "https://images.givyx.com/brand/givyx/mark-256.png"
+LOGO = "https://images.givyx.com/brand/givyx/sig-mark-128.png"   # rounded tile cut from givyx_logo_asset/cut/icon
 TAGLINE = "Givyx — strony internetowe i rezerwacje online dla lokalnych firm · Kraków"
 
 def cta(url, label, hint):
@@ -50,8 +50,8 @@ def signature():
     # Icons go under the logo/name row, not beside it: seven tiles plus the logo do not fit a phone.
     return (f'<hr style="border:0;border-top:1px solid {RULE};margin:26px 0 18px">'
             '<table role="presentation" cellspacing="0" cellpadding="0" style="width:auto"><tr>'
-            f'<td style="vertical-align:top;padding-right:14px;width:56px"><a href="{SITE}"><img src="{LOGO}" width="56" height="56" alt="Givyx" '
-            'style="display:block;border:0;width:56px;height:56px"></a></td>'
+            f'<td style="vertical-align:top;padding-right:14px;width:64px"><a href="{SITE}"><img src="{LOGO}" width="64" height="64" alt="Givyx" '
+            'style="display:block;border:0;width:64px;height:64px"></a></td>'
             '<td style="vertical-align:top">'
             '<p style="margin:0 0 2px;line-height:1.35"><strong style="font-size:16px">Stanisław Zakharevich</strong><br>'
             f'<span style="font-size:14px;color:{MUTED}">Director of Givyx</span></p>'

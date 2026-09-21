@@ -19,7 +19,7 @@ PHONE, PHONE_TEL, EMAIL, SITE = "571 088 012", "+48571088012", "info@givyx.com",
 MAPS = "https://www.google.com/maps/search/?api=1&query=Karola+Bunscha+15A%2C+30-392+Krak%C3%B3w"
 INSTAGRAM, LINKEDIN = "https://www.instagram.com/givyx.ai", "https://www.linkedin.com/company/givyx/"
 LOGO = "https://images.givyx.com/brand/givyx/sig-mark-128.png"   # rounded tile cut from givyx_logo_asset/cut/icon
-TAGLINE = "Givyx — strony internetowe i rezerwacje online dla lokalnych firm · Kraków"
+TAGLINE = "Strony internetowe z rezerwacją online — budujemy, utrzymujemy, rozwijamy · Kraków"
 
 def cta(url, label, hint):
     # Pill button: solid green for Outlook, a soft gradient where the client allows background-image.

@@ -1,0 +1,205 @@
+[
+ {
+  "name": "D1 Garage",
+  "to": "rapida@wp.pl",
+  "city": "Bolesławiec",
+  "code": "gw-20260921-01",
+  "slug": "d1garage"
+ },
+ {
+  "name": "Auto-Serwis Bednarski",
+  "to": "autoserwisbednarski@wp.pl",
+  "city": "Iława",
+  "code": "gw-20260921-02",
+  "slug": "autoserwisbe"
+ },
+ {
+  "name": "Auto-Serwis Wilemski",
+  "to": "wilema@op.pl",
+  "city": "Iława",
+  "code": "gw-20260921-03",
+  "slug": "autoserwiswi"
+ },
+ {
+  "name": "KM Serwis",
+  "to": "kmielewczyk1@wp.pl",
+  "city": "Kalisz",
+  "code": "gw-20260921-04",
+  "slug": "kmserwis"
+ },
+ {
+  "name": "Piekarski Autoserwis",
+  "to": "carserwis76@wp.pl",
+  "city": "Kalisz",
+  "code": "gw-20260921-05",
+  "slug": "piekarskiaut"
+ },
+ {
+  "name": "Mechanika Świątnicki",
+  "to": "siano18@vp.pl",
+  "city": "Kalisz",
+  "code": "gw-20260921-06",
+  "slug": "mechanikaswi"
+ },
+ {
+  "name": "Perfect Car",
+  "to": "perfectcar-stargard@o2.pl",
+  "city": "Stargard",
+  "code": "gw-20260921-07",
+  "slug": "perfectcar"
+ },
+ {
+  "name": "Auto Naprawa Dudek",
+  "to": "dudi-27@wp.pl",
+  "city": "Stargard",
+  "code": "gw-20260921-08",
+  "slug": "autonaprawad"
+ },
+ {
+  "name": "OS Serwis",
+  "to": "osserwis@onet.pl",
+  "city": "Sanok",
+  "code": "gw-20260921-09",
+  "slug": "osserwis"
+ },
+ {
+  "name": "Mechanika Pojazdowa Lefik",
+  "to": "tomek-poland1989@o2.pl",
+  "city": "Pabianice",
+  "code": "gw-20260921-10",
+  "slug": "mechanikapoj"
+ },
+ {
+  "name": "Auto Complex",
+  "to": "autocomplexzabrze@vp.pl",
+  "city": "Zabrze",
+  "code": "gw-20260921-11",
+  "slug": "autocomplex"
+ },
+ {
+  "name": "Mechanika Rogalski",
+  "to": "jrogalski@interia.pl",
+  "city": "Tychy",
+  "code": "gw-20260921-12",
+  "slug": "mechanikarog"
+ },
+ {
+  "name": "Łabuś Autoserwis",
+  "to": "dlabus@poczta.fm",
+  "city": "Chorzów",
+  "code": "gw-20260921-13",
+  "slug": "abusautoserw"
+ },
+ {
+  "name": "Luk Serwis",
+  "to": "luk.serwis@o2.pl",
+  "city": "Chorzów",
+  "code": "gw-20260921-14",
+  "slug": "lukserwis"
+ },
+ {
+  "name": "Lukas Servis",
+  "to": "lukaszxr@wp.pl",
+  "city": "Bytom",
+  "code": "gw-20260921-15",
+  "slug": "lukasservis"
+ },
+ {
+  "name": "Orzeł Serwis 4x4",
+  "to": "orzel4x4@outlook.com",
+  "city": "Bytom",
+  "code": "gw-20260921-16",
+  "slug": "orzeserwis4x"
+ },
+ {
+  "name": "Car Service Kursewicz",
+  "to": "mkursewicz@poczta.onet.pl",
+  "city": "Radomsko",
+  "code": "gw-20260921-17",
+  "slug": "carserviceku"
+ },
+ {
+  "name": "Darkar",
+  "to": "ldelta@poczta.onet.pl",
+  "city": "Radomsko",
+  "code": "gw-20260921-18",
+  "slug": "darkar"
+ },
+ {
+  "name": "Speed Service",
+  "to": "lukasz_j83@o2.pl",
+  "city": "Zawiercie",
+  "code": "gw-20260921-19",
+  "slug": "speedservice"
+ },
+ {
+  "name": "Moto-Centrum",
+  "to": "moto-centrum2@wp.pl",
+  "city": "Zawiercie",
+  "code": "gw-20260921-20",
+  "slug": "motocentrum"
+ },
+ {
+  "name": "HITUS",
+  "to": "tom401@op.pl",
+  "city": "Wołomin",
+  "code": "gw-20260921-21",
+  "slug": "hitus"
+ },
+ {
+  "name": "Auto Nowicki",
+  "to": "auto-nowicki@wp.pl",
+  "city": "Kwidzyn",
+  "code": "gw-20260921-22",
+  "slug": "autonowicki"
+ },
+ {
+  "name": "Auto-Express",
+  "to": "michal.matwiejczuk@vp.pl",
+  "city": "Szczecinek",
+  "code": "gw-20260921-23",
+  "slug": "autoexpress"
+ },
+ {
+  "name": "Mechanika Nowacki",
+  "to": "nowackicars@gmail.com",
+  "city": "Wołomin",
+  "code": "gw-20260921-24",
+  "slug": "mechanikanow"
+ },
+ {
+  "name": "LUKCAR",
+  "to": "lukcar@interia.pl",
+  "city": "Otwock",
+  "code": "gw-20260921-25",
+  "slug": "lukcar"
+ },
+ {
+  "name": "Stefmar",
+  "to": "auto.stefmar@gmail.com",
+  "city": "Sochaczew",
+  "code": "gw-20260921-26",
+  "slug": "stefmar"
+ },
+ {
+  "name": "Auto-Precyzja",
+  "to": "serafin-78@tlen.pl",
+  "city": "Jaworzno",
+  "code": "gw-20260921-27",
+  "slug": "autoprecyzja"
+ },
+ {
+  "name": "MAR-GAB",
+  "to": "mar-gab.1kl@wp.pl",
+  "city": "Kluczbork",
+  "code": "gw-20260921-28",
+  "slug": "margab"
+ },
+ {
+  "name": "Warsztat Frączek",
+  "to": "marcin221283@wp.pl",
+  "city": "Chrzanów",
+  "code": "gw-20260921-29",
+  "slug": "warsztatfrac"
+ }
+]

@@ -9,6 +9,26 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-21 (Mon) — pivot: generic e-mails, no per-prospect builds; niche demos started
+- Weekend: 0 prospect replies (shade, 4 d). Click read on 39 tenants since 09-15: baseline 1 desktop + 1 mobile PL direct per
+  tenant (ours). Above baseline after Friday's SMS: **Auto Expert 4 sessions (+1 mobile, +1 referral)**, **Gucio 3 (+1 mobile)**;
+  Strzelecki/Auto-Jack +1 desktop each (probably ours). SMS links were untagged → inference, not proof.
+- Stan (weekend): stop building a site per e-mail; keep e-mailing auto shops with a generic template; add niches. Picks:
+  fizjoterapia, remonty/hydraulik/elektryk, szkoły jazdy, **dentists (only no/bad site; pitch an app — open question: no app
+  product exists to demo, asked Stan what he means)**.
+- `warsztat.givyx.com` = clone of `dealership` (a_470d125 / l_1a9facb), noindex, maps visible, Preview. Stan "ok publish" →
+  `deploy_to_production` classifier-blocked twice; the bare URL serves Preview anyway, so e-mails can use it.
+- Email v4 (generic, Stan OK'd): `ops/tools/build-email-v4.py niche.json prospect.json`, niche config
+  `outreach/niches/warsztat.json`; signature Stanisław; link `warsztat.givyx.com?utm_campaign=generic-warsztat&utm_content=<code>`;
+  build offered on reply („odpiszcie tak"). Seed to mail-tester: **8/10** — SPF/DKIM/DMARC pass; −1 SendGrid shared IP
+  149.72.120.130 on mailspike + SWINOG; −1 the `givyx` layout's `<link rel=preconnect>` to fonts.googleapis/gstatic counted as
+  broken links. Seed also sent to stan.zak.inf@gmail.com (Stan checks Inbox vs Spam).
+- Generic list: 42 PL shops (`prospects/2026-09-21-PL-autoservice-generic.md`, 29 clean). Sent **1/29** (D1 Garage,
+  gw-20260921-01); sends 2+ blocked by the auto-mode classifier ("Real-World Transactions") even one per call — needs a
+  Bash allow rule for `ops/tools/send-one.sh`. Specs in `outreach/generic-20260921/`.
+- Niche demos: spec `givyx.claudeBrain/Givyx/superpowers/specs/2026-09-21-niche-demo-sites.md`; three build agents (fizjo,
+  remonty, szkolajazdy) + one research agent (4 niche lists × 30, Kraków first) running.
+
 ### 2026-09-17 (afternoon) — shade mailbox connected; D+3 SMS backlog prepared
 - Stan switched the Gmail connector to `stan.zak.shade@gmail.com` (where improvmx delivers). Read 8 days, all folders:
   **0 prospect replies.** The only @givyx.com traffic is our own notifications.

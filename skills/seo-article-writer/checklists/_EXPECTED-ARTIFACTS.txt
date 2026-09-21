@@ -1,0 +1,105 @@
+# _EXPECTED-ARTIFACTS.txt - reference list of evidence artifacts per stage.
+#
+# Used at Stage 16.1 (Hard gate: artifact reconciliation):
+#   ls work/<slug>/ | sort > work/<slug>/_actual-artifacts.txt
+#   diff checklists/_EXPECTED-ARTIFACTS.txt work/<slug>/_actual-artifacts.txt
+#
+# There must be no discrepancies. If an item is closed with a valid SKIP in the
+# checklist (Stage 6b without config.image.tool, Stage 11 with an unchanged
+# render layer, Stage 13.2 without schema) - the matching artifact is legitimately
+# absent; such a discrepancy is explained in the checklist, not passed over silently.
+#
+# Names are strict: exactly how the files are named in work/<slug>/. If you rename
+# something in the checklist - rename it here too, otherwise the diff will lie.
+#
+# Lines starting with # are comments (for the eye). If you want a clean
+# machine diff - compare the filtered version:
+#   grep -v '^#' checklists/_EXPECTED-ARTIFACTS.txt | grep -v '^$' | sort > /tmp/expected.txt
+#   diff /tmp/expected.txt work/<slug>/_actual-artifacts.txt
+
+# --- Stage 0: context ---
+stage-00-published-registry.md
+
+# --- Stage 1: topic discovery (absent entirely if the topic is given explicitly - SKIP) ---
+stage-01-pain-points.md
+stage-01-unique-material.md
+stage-01-external-viral.md
+stage-01-serp-gaps.md
+stage-01-pool.md
+stage-01-weights.md
+
+# --- Stage 3: headline ---
+stage-03-h1-variants.md
+
+# --- Stage 4: deep research ---
+research-external.md
+research-internal.md          # conditional: absent if Agent B was SKIP (no unique material)
+sources.md
+
+# --- Stage 5: structure ---
+stage-05-structure.md
+
+# --- Stage 6: writing (the main artifact - the article body) ---
+draft.md
+
+# --- Stage 6b: hero (conditional, SKIP if config.image.tool is empty) ---
+stage-06b-hero-meta.md
+
+# --- Stages 3-4: brief and claims register (editorial-standard sections 1-2; the daily-mode copies live in work/topics/YYYY-MM-DD/) ---
+brief.md
+claims.md
+
+# --- Stage 7: multi-agent QA (7 agents) ---
+stage-07-qa-1-antiai.md
+stage-07-qa-2-compliance.md
+stage-07-qa-3-tone.md
+stage-07-qa-4-factcheck.md
+stage-07-qa-5-seo-geo.md
+stage-07-qa-6-crosslink.md
+stage-07-qa-7-selfdisclosure.md
+
+# --- Stage 8: humanization loop ---
+stage-08-baseline.md
+stage-08-recheck.md
+stage-08-manual-grep.md
+stage-08-read-aloud.md
+
+# --- Stage 9: publish as draft ---
+stage-09-publish-draft.md
+
+# --- Stage 10: local preview ---
+stage-10-preview-http.txt
+
+# --- Stage 11: visual QA (conditional, SKIP if the render layer has not changed) ---
+stage-11-desktop.png
+stage-11-mobile.png
+stage-11-dom.json
+stage-11-og.png
+
+# --- Stage 11a: final independent review cascade (directory with runs) ---
+final-review/
+
+# --- Stage 12: promote to production ---
+stage-12-publish-prod.md
+stage-12b-prod-visual.png
+stage-12c-remote-verify.md
+
+# --- Stage 13: SEO/GEO audit on production ---
+stage-13-availability.txt
+stage-13-cwv.md
+stage-13-index-artifacts.txt
+stage-13-geo-bot.txt
+stage-13-seo-geo-audit.md
+
+# --- Stage 14: compliance audit ---
+stage-14-prod.html
+stage-14-compliance-audit.md
+
+# --- Stage 15: AI detection ---
+stage-15-prod.html
+stage-15-audit.md
+
+# --- Stage 16: final gate + notification + retrospective ---
+report.md
+retro.md
+_actual-artifacts.txt

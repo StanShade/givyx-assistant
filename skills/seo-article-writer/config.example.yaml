@@ -1,0 +1,149 @@
+# =====================================================================
+#  SEO Article Writer - project config
+#  The only place where your specifics live. The methodology, the tools
+#  and the checklists read this file and work on your data.
+#
+#  Two ways to fill it in:
+#   1. Run AUTOPILOT.md - it scans the project, asks up to 8 questions
+#      and fills this file in for you.
+#   2. Copy it to config.yaml and fill it in by hand following the
+#      comments below.
+# =====================================================================
+
+project:
+  # The domain the articles are published on (without https://).
+  domain: "example.com"
+  # Path to the articles section: /blog, /guides, /articles, /journal.
+  content_path: "/blog"
+  # Article language: en | pl - selects the tools/lang pattern pack
+  # (both packs are calibrated on tools/tests/fixture-*-<lang>.md).
+  language: "en"
+
+audience:
+  # 1-2 paragraphs: who the reader is, what they already know, what they fear,
+  # what they want to get. The more specific - the sharper the headlines and
+  # the tone. This is NOT "everyone".
+  # Keep it on ONE quoted line: the built-in mini-parser (used when PyYAML is not
+  # installed) does not support `>` / `|` folded blocks.
+  profile: "Who your reader is. For example: small-business owners who do their own bookkeeping, are afraid of getting their filings wrong and look for step-by-step explanations without accounting jargon."
+  # low  = the reader does not know the niche terms, searches for an action
+  #        ("how to get a tax refund")
+  # high = the reader is an expert, searches by terms
+  jargon_level: "low"
+
+voice:
+  # A folder with 3-5 of your own texts (articles, transcripts, posts) for
+  # tone matching. The agent reads them so the article sounds like you, not
+  # like an AI copywriter. No samples - leave it empty, the tone will be neutral.
+  source: "./voice-samples"
+  # Phrases and words that do not sound like you or give away a template.
+  # List of strings.
+  forbidden:
+    - "in today's world"
+    - "it's no secret that"
+
+cta:
+  # What you sell: a product, a subscription, a lead magnet, a service. One phrase.
+  offer: "Your product or service - what the article leads the reader to"
+  # Link to the offer (with UTM tags if you use them).
+  url: "https://example.com/offer"
+  # CTA point 1 (Stage 6a): where the reader subscribes / stays in touch
+  # (newsletter, community, messenger). Empty = no subscription block.
+  subscribe_channel: ""
+  subscribe_url: ""
+  # UTM convention for CTA links, checked by Agent 6 (Stage 7). utm_content is
+  # optional; leave it empty if your analytics drops it.
+  utm: "utm_source=article&utm_medium=blog&utm_campaign=<slug>"
+
+editorial:
+  # Your banned-word list: brand taboos, legal restrictions of your niche,
+  # licensed terms, LLM vocabulary tells you refuse to publish. List of strings.
+  # The methodology checks the text against this list (Stages 8 and 14, manual grep).
+  banned_words: []
+  # Canonical spelling of your brand / product names (Anti-AI Section 12,
+  # checklists/anti-ai.md 13). Wrong forms go to banned_words.
+  brand_spelling: []
+
+legal:
+  # Jurisdiction of the content. "pl" enables the extra legal module
+  # checklists/legal-pl.md (Poland/EU), "us" enables checklists/legal-us.md
+  # (United States): guaranteed-results claims, false urgency, ad disclosure,
+  # personal data, regulated terms. "" - off.
+  # A list is allowed when you sell in several markets: ["pl", "us"] runs both modules.
+  region: ""
+
+notify:
+  # Where the agent delivers the final short notification (methodology/owner-report.md).
+  # chat - just print it in the agent's reply; file - append to a file; webhook - your URL.
+  channel: "chat"
+  # path: "work/notify.log"     # for channel: file
+  # webhook_url: ""             # for channel: webhook
+
+research:
+  # Daily topic selection (methodology/topic-selection.md).
+  youtube:
+    # Enables the "independent breakdown of a fresh video" branch.
+    enabled: false
+    # Your transcription service for the private research of the winning video
+    # (any API that returns a full transcript with timestamps).
+    transcript_provider: ""
+  # Soft balance of directions for the day (example): ["search", "video", "fresh"].
+  daily_balance: []
+  # Folder with your already published articles (md/mdx/html) - the corpus for
+  # tools/originality-check.py (Stage 8.1) and the published registry (Stage 0).
+  corpus_path: "./published"
+  # The full niche landscape (Stage 1.1) - so the portfolio does not sink into
+  # a mono-topic. Every discovery agent walks the whole list, not just the
+  # familiar part.
+  watchlist:
+    core: []                 # the main entities/tools/brands of your topic
+    adjacent: []             # adjacent and competing ones - their audience is yours too
+    comparison: []           # "X vs Y" pairs: high conversion, usually low SERP competition
+  windows_days: 14           # signal freshness window
+
+qa:
+  final_review:
+    # Final independent cascade (methodology/final-review.md): an editor from a
+    # different model family + a fresh reviewer BEFORE publication.
+    # Empty = the cascade runs on fresh subagents of the same model (weaker).
+    editor_model: ""
+    reviewer_model: ""
+
+cms:
+  # How the article is published. The adapter defines Stages 9 and 12.
+  #   manual    - the agent drops the finished file, you publish by hand
+  #   wordpress - WordPress REST API
+  #   ghost     - Ghost Admin API
+  #   notion    - Notion API
+  #   custom    - your own adapter implementation in tools/publish.py
+  adapter: "manual"
+  # For adapter: custom - shell command template run by tools/publish.py with
+  # placeholders {slug} {status} {file} {title}; its exit code is the result.
+  custom_command: ""
+  # Categories / tags the adapter attaches at Stage 9a (names as your CMS knows them).
+  categories: []
+  # Where the draft renders before production (Stage 10). Empty with adapter: manual.
+  preview_url: ""
+  # IndexNow key for Stage 12a (Bing/Yandex/Naver/Seznam). Empty = skip the ping.
+  indexnow_key: ""
+
+tools:
+  # Thresholds for the quality-check tools (tools/). Can be left as is.
+  originality:
+    max_cosine: 0.60     # higher - the text is too similar to what is already published
+    ngram_n: 5           # length of the word n-grams used to find matches
+    max_ngram: 0.30      # max share of matching n-grams 0..1 (higher = verbatim copying)
+  cadence:
+    max_per_1k: 5.0      # density of AI markers per 1,000 words (higher - rewrite); calibrate with --baseline-dir
+  read_aloud:
+    max_sentence_words: 28   # longer - the sentence stumbles when read aloud
+  structure:
+    min_internal_links: 3    # minimum internal links to your own material (Agent 5 / seo-geo.md require 3)
+
+image:
+  # Hero illustration (Stage 6b, optional). If not needed - leave tool empty.
+  tool: ""               # the name of your image tool, or empty = SKIP
+  format: "webp"         # cover file format: webp / avif / jpg
+  dest: "./images"       # where to put the finished covers (path or bucket)
+  ratio: "16:9"
+  max_kb: 200

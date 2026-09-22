@@ -3,7 +3,9 @@
  "demo_url": "https://fizjo.givyx.com/",
  "subject": "Strona dla gabinetu fizjoterapii — przykład i oferta",
  "title_prefix": "Strona dla",
- "intro": "Z tej strony Stanisław z Givyx, z Krakowa. Robimy strony dla gabinetów fizjoterapii i masażu — takie, które pacjent otwiera na telefonie, widzi zabiegi, ceny i godziny, i od razu rezerwuje wizytę albo dzwoni.",
+ "intro": "Z tej strony Stanisław z Givyx, z Krakowa. Robimy strony dla gabinetów fizjoterapii i rehabilitacji — takie, które pacjent otwiera na telefonie, widzi zabiegi, ceny i zespół, i od razu umawia wizytę u konkretnego terapeuty albo dzwoni.",
  "link_hint": "Zobaczcie na telefonie — to 30 sekund.",
- "closing": "strona działa na telefonie; my dbamy o stronę, Wy o pacjentów"
+ "closing": "strona działa na telefonie; my dbamy o stronę, Wy o pacjentów",
+ "version_with": "zabiegami, cenami, zespołem",
+ "booking_line": "umawianie wizyt online (z wyborem terapeuty i terminu) oraz formularz kontaktowy"
 }

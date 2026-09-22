@@ -856,3 +856,52 @@ shortened to the brand for the „Strona dla …” title (`name_full` kept in t
 | Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
 |---|---|---|---|
 | S1 (32) | **Fri 25 Sep** — all 32 mobiles above (generic SMS, link szkolajazdy.givyx.com?utm_campaign=sms-<code>) | Mon 28 Sep | Fri 2 Oct |
+
+## 2026-09-22 — generic batch F1: 32 PL gabinety fizjoterapii, e-mail v4.1, generic demo `fizjo.givyx.com`
+
+Source `prospects/2026-09-21-PL-fizjo.md` (32 of 34 qualified; panoramafirm listings → one Maps check each; no real website). Every mail links
+`fizjo.givyx.com` (clinic-family redesign, published 09-21, noindex) with the prospect code in `utm_campaign`; the personalised build is offered
+on reply. Niche wording in `outreach/niches/fizjo.json` (intro: zabiegi, ceny, zespół, wizyta u konkretnego terapeuty; `version_with`
+„zabiegami, cenami, zespołem”; `booking_line` „umawianie wizyt online (z wyborem terapeuty i terminu)”). Seed to Stan, "ok send all" →
+32/32 `sent:true`, one curl each from the session. Names shortened to the brand (`name_full` in the spec); three „Waszego gabinetu”
+placeholders replaced from the list. Specs `outreach/generic-fizjo-20260921/`.
+
+| # | prospect | city | e-mail | mobile | code | state |
+|---|---|---|---|---|---|---|
+| 01 | Szel-Med | Kraków | szel_med@op.pl | 695 581 814 | `gf-20260921-01` | **SENT 2026-09-22** |
+| 02 | Fizjoterapia Anna Zajączkowska-Drożdż | Kraków | ania.zajaczkowska@gmail.com | 606 829 780 | `gf-20260921-02` | **SENT 2026-09-22** |
+| 03 | Fizjoterapia Edukacja | Kraków | tomasz.ridan@gmail.com | 601 436 574 | `gf-20260921-03` | **SENT 2026-09-22** |
+| 04 | Fizjoczech | Kraków | magda.czech@op.pl | 662 436 662 | `gf-20260921-04` | **SENT 2026-09-22** |
+| 05 | Fizjoterapia Michał Łukaszewski | Kraków | lukaszewski.michal@poczta.onet.pl | 511 571 916 | `gf-20260921-05` | **SENT 2026-09-22** |
+| 06 | Przystań | Kraków | przystanfizjo@gmail.com | 604 790 729 | `gf-20260921-06` | **SENT 2026-09-22** |
+| 07 | Bądź w dobrej formie | Kraków | info@badzwdobrejformie.pl | 516 676 202 | `gf-20260921-07` | **SENT 2026-09-22** |
+| 08 | Stacja Zdrowie | Kraków | kontakt@stacjazdrowie.com | 785 615 959 | `gf-20260921-08` | **SENT 2026-09-22** |
+| 09 | Fizjoterapia Jakub Stanek | Kraków | stanek19@vp.pl | 504 228 143 | `gf-20260921-09` | **SENT 2026-09-22** |
+| 10 | Fizjoterapia Personalna Sylwia Mętel | Kraków | smetel@interia.pl | 606 480 472 | `gf-20260921-10` | **SENT 2026-09-22** |
+| 11 | Terapia Manualna Marcin Woźniak | Kraków | wozniakmw@gmail.com | 792 658 134 | `gf-20260921-11` | **SENT 2026-09-22** |
+| 12 | Medmas | Katowice | migasiorowski@gmail.com | 512 241 667 | `gf-20260921-12` | **SENT 2026-09-22** |
+| 13 | Domoreh | Katowice | erni1992@op.pl | 509 916 870 | `gf-20260921-13` | **SENT 2026-09-22** |
+| 14 | Fizjohelp | Katowice | alianna007@gmail.com | 505 345 595 | `gf-20260921-14` | **SENT 2026-09-22** |
+| 15 | Fizjolympic | Katowice | fizjolympic@gmail.com | 530 797 641 | `gf-20260921-15` | **SENT 2026-09-22** |
+| 16 | Gabinet Rehabilitacji Przemysław Paduch | Katowice | paddi@poczta.fm | 604 633 371 | `gf-20260921-16` | **SENT 2026-09-22** |
+| 17 | Gabinet Ewa Klonnek | Katowice | eklonnek@interia.pl | 601 180 077 | `gf-20260921-17` | **SENT 2026-09-22** |
+| 18 | Centrum Rehabilitacji Arnold Górka | Wrocław | arnoldgorka@wp.pl | 695 424 332 | `gf-20260921-18` | **SENT 2026-09-22** |
+| 19 | Acusrehmed | Poznań | kontakt@acusrehmed.pl | 668 180 809 | `gf-20260921-19` | **SENT 2026-09-22** |
+| 20 | Activmedic | Łódź | rehabilitacja@activmedic.pl | 504 124 124 | `gf-20260921-20` | **SENT 2026-09-22** |
+| 21 | Bejbuśki | Łódź | bejbuski.fizjo@gmail.com | 504 217 887 | `gf-20260921-21` | **SENT 2026-09-22** |
+| 22 | Fizjo Plus | Łódź | fizjoplus.lodz@gmail.com | 505 996 533 | `gf-20260921-22` | **SENT 2026-09-22** |
+| 23 | Fizjocomplex | Łódź | robertnowicki.rehabilitacja@gmail.com | 660 368 653 | `gf-20260921-23` | **SENT 2026-09-22** |
+| 24 | Gabinet Fizjoterapii Patryk Chojnacki | Łódź | gfpatrykchojnacki@gmail.com | 509 130 823 | `gf-20260921-24` | **SENT 2026-09-22** |
+| 25 | Gabinet Rehabilitacji Maciej Niewodniczy | Łódź | maciekn@orange.pl | 501 056 507 | `gf-20260921-25` | **SENT 2026-09-22** |
+| 26 | Mały Dom Ulgi w Bólu | Gdańsk | tom.lew@onet.eu | 692 497 774 | `gf-20260921-26` | **SENT 2026-09-22** |
+| 27 | Rehabilitacja Krzysztof Woźny | Lublin | kwozny7@wp.pl | 603 766 120 | `gf-20260921-27` | **SENT 2026-09-22** |
+| 28 | Fizjoactive | Rzeszów | fizjoactive.rzeszow@gmail.com | 696 485 322 | `gf-20260921-28` | **SENT 2026-09-22** |
+| 29 | Mk Med | Rzeszów | mkmedrzeszow@wp.pl | 793 995 085 | `gf-20260921-29` | **SENT 2026-09-22** |
+| 30 | Reha Silesia | Gliwice | kontakt@rehasilesia.pl | 507 989 720 | `gf-20260921-30` | **SENT 2026-09-22** |
+| 31 | Fizjotrend | Tarnów | mariafela@op.pl | 519 052 524 | `gf-20260921-31` | **SENT 2026-09-22** |
+| 32 | Fizjoterapia Krzysztof Korman | Tarnów | krzysztof.korman92@gmail.com | 787 581 650 | `gf-20260921-32` | **SENT 2026-09-22** |
+
+### Follow-up dates for F1 (32 sent 2026-09-22)
+| Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
+|---|---|---|---|
+| F1 (32) | **Fri 25 Sep** — all 32 mobiles above (generic SMS, link fizjo.givyx.com?utm_campaign=sms-<code>) | Mon 28 Sep | Fri 2 Oct |

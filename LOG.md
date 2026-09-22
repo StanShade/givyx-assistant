@@ -24,9 +24,12 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 - Seed (prospect #01 verbatim) to stan.zak.inf@gmail.com; Stan "ok send all" → **32/32 `sent:true`**, one curl per prospect from the
   session — every call passed the classifier (yesterday only #01 did). Codes `gs-20260921-01…32`, campaign lands on `szkolajazdy`'s
   location + `l_givyx` for signature clicks. Flags kept in the send: OSK Łukasz Sosnowiec 21 % one-star, OSK Szóstka 19 %.
-- **Scoreboard: 130 offer e-mails to date** (98 + 32) · 0 replies · 1 tracked clicker. Follow-ups: S1 D+3 SMS **Fri 25 Sep**, email 2
+- Stan "ok do fizjo" → same drill on `fizjo.givyx.com` (clinic redesign, published 09-21): niche wording (zabiegi · ceny · zespół,
+  „umawianie wizyt online z wyborem terapeuty i terminu”), 32 specs cleaned (3 placeholders replaced from the list), seed to Stan,
+  "ok send all" → **F1: 32/32 `sent:true`**, codes `gf-20260921-01…32`, all from the session.
+- **Scoreboard: 162 offer e-mails to date** (98 + 32 S1 + 32 F1) · 0 replies · 1 tracked clicker. Follow-ups: S1 + F1 D+3 SMS **Fri 25 Sep** (64 mobiles), email 2
   Mon 28 Sep; G1 D+3 SMS Thu 24 Sep. Open: email 2 for batches 3–6 (personalised, overdue) — Stan's call whether it still goes after
-  the pivot; fizjo pack (32 specs ready, demo redesigned) is the next generic send.
+  the pivot; remonty (7, thin) and dentyści (32, pitch unclear) are what is left of the niche lists.
 
 ### 2026-09-21 (Mon) — pivot: generic e-mails, no per-prospect builds; niche demos started
 - Weekend: 0 prospect replies (shade, 4 d). Click read on 39 tenants since 09-15: baseline 1 desktop + 1 mobile PL direct per

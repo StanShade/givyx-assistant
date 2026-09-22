@@ -1,19 +1,21 @@
 [
  {
-  "name": "Krzysztof Konieczny Ośrodek Szkolenia Kierowców Krzyś",
+  "name": "OSK Krzyś",
   "to": "oskkrzys@gazeta.pl",
   "city": "Kraków",
   "mobile": "502 326 343",
   "code": "gs-20260921-01",
-  "slug": "krzysztofkon"
+  "slug": "krzysztofkon",
+  "name_full": "Krzysztof Konieczny Ośrodek Szkolenia Kierowców Krzyś"
  },
  {
-  "name": "Nauka Jazdy Partner Andrzej Morawiec",
+  "name": "Nauka Jazdy Partner",
   "to": "kurs.start@wp.pl",
   "city": "Kraków",
   "mobile": "604 353 887",
   "code": "gs-20260921-02",
-  "slug": "naukajazdypa"
+  "slug": "naukajazdypa",
+  "name_full": "Nauka Jazdy Partner Andrzej Morawiec"
  },
  {
   "name": "OSK Piotr Pelczar",
@@ -21,7 +23,8 @@
   "city": "Kraków",
   "mobile": "501 412 121",
   "code": "gs-20260921-03",
-  "slug": "osrodekszkol"
+  "slug": "osrodekszkol",
+  "name_full": "OSK Piotr Pelczar"
  },
  {
   "name": "OSK MRMOT",
@@ -29,39 +32,44 @@
   "city": "Katowice",
   "mobile": "603 603 315",
   "code": "gs-20260921-04",
-  "slug": "osrodekszkol"
+  "slug": "osrodekszkol",
+  "name_full": "OSK MRMOT"
  },
  {
-  "name": "Izabela Antoszewska Szkoła Jazdy Iza",
+  "name": "Szkoła Jazdy Iza",
   "to": "nauka_jazdy_iza@o2.pl",
   "city": "Wrocław",
   "mobile": "609 795 886",
   "code": "gs-20260921-05",
-  "slug": "izabelaantos"
+  "slug": "izabelaantos",
+  "name_full": "Izabela Antoszewska Szkoła Jazdy Iza"
  },
  {
-  "name": "Auto Szkoła Dajlor Piotr Rojeski",
+  "name": "Auto Szkoła Dajlor",
   "to": "st7sw5@gmail.com",
   "city": "Łódź",
   "mobile": "602 324 107",
   "code": "gs-20260921-06",
-  "slug": "autoszkoadaj"
+  "slug": "autoszkoadaj",
+  "name_full": "Auto Szkoła Dajlor Piotr Rojeski"
  },
  {
-  "name": "Gębalski Jan Ośrodek Szkolenia Kierowców",
+  "name": "OSK Gębalski",
   "to": "gebalski@op.pl",
   "city": "Łódź",
   "mobile": "604 307 107",
   "code": "gs-20260921-07",
-  "slug": "gebalskijano"
+  "slug": "gebalskijano",
+  "name_full": "Gębalski Jan Ośrodek Szkolenia Kierowców"
  },
  {
-  "name": "Nauka Jazdy -Zuba Mateusz",
+  "name": "Nauka Jazdy Zuba",
   "to": "matelek25@wp.pl",
   "city": "Rzeszów",
   "mobile": "600 309 083",
   "code": "gs-20260921-08",
-  "slug": "naukajazdyzu"
+  "slug": "naukajazdyzu",
+  "name_full": "Nauka Jazdy -Zuba Mateusz"
  },
  {
   "name": "OSK Szóstka",
@@ -69,10 +77,11 @@
   "city": "Bydgoszcz",
   "mobile": "605 281 588",
   "code": "gs-20260921-09",
-  "slug": "oskszostka"
+  "slug": "oskszostka",
+  "name_full": "OSK Szóstka"
  },
  {
-  "name": "Waszej szkoły",
+  "name": "El-Team",
   "to": "osk.el.team@gmail.com",
   "city": "Chełm",
   "mobile": "514 814 591",
@@ -80,52 +89,58 @@
   "slug": "elteammichak"
  },
  {
-  "name": "OSK MOBILEK Jarosław Głuch",
+  "name": "OSK Mobilek",
   "to": "jarekglu@wp.pl",
   "city": "Chełm",
   "mobile": "577 799 930",
   "code": "gs-20260921-11",
-  "slug": "osrodekszkol"
+  "slug": "osrodekszkol",
+  "name_full": "OSK MOBILEK Jarosław Głuch"
  },
  {
-  "name": "Niezła Jazda Ośrodek Szkolenia Kierowców Łukasz Kurdziel",
+  "name": "Niezła Jazda",
   "to": "lukaszkurdziel@op.pl",
   "city": "Częstochowa",
   "mobile": "504 277 344",
   "code": "gs-20260921-12",
-  "slug": "niezajazdaos"
+  "slug": "niezajazdaos",
+  "name_full": "Niezła Jazda Ośrodek Szkolenia Kierowców Łukasz Kurdziel"
  },
  {
-  "name": "Prymus Ośrodek Szkolenia Kierowców Jan Musiał",
+  "name": "OSK Prymus",
   "to": "jan.musial@poczta.onet.pl",
   "city": "Inowrocław",
   "mobile": "603 346 904",
   "code": "gs-20260921-13",
-  "slug": "prymusosrode"
+  "slug": "prymusosrode",
+  "name_full": "Prymus Ośrodek Szkolenia Kierowców Jan Musiał"
  },
  {
-  "name": "Guzowski Michał Ośrodek Szkolenia Kierowców Guzio",
+  "name": "OSK Guzio",
   "to": "mguzowski@gmail.com",
   "city": "Jastrzębie-Zdrój",
   "mobile": "601 826 290",
   "code": "gs-20260921-14",
-  "slug": "guzowskimich"
+  "slug": "guzowskimich",
+  "name_full": "Guzowski Michał Ośrodek Szkolenia Kierowców Guzio"
  },
  {
-  "name": "OSK MOTO PASJA Rafał Widerski",
+  "name": "OSK Moto Pasja",
   "to": "rafwi1311@wp.pl",
   "city": "Jastrzębie-Zdrój",
   "mobile": "512 307 848",
   "code": "gs-20260921-15",
-  "slug": "oskmotopasja"
+  "slug": "oskmotopasja",
+  "name_full": "OSK MOTO PASJA Rafał Widerski"
  },
  {
-  "name": "Karol Kwiciński Ośrodek Szkolenia Kierowców",
+  "name": "OSK Karol Kwiciński",
   "to": "karolprawko@wp.pl",
   "city": "Kalisz",
   "mobile": "607 980 803",
   "code": "gs-20260921-16",
-  "slug": "karolkwicins"
+  "slug": "karolkwicins",
+  "name_full": "Karol Kwiciński Ośrodek Szkolenia Kierowców"
  },
  {
   "name": "OSK Wojciech Ossowski",
@@ -133,74 +148,83 @@
   "city": "Kalisz",
   "mobile": "601 898 857",
   "code": "gs-20260921-17",
-  "slug": "osrodekszkol"
+  "slug": "osrodekszkol",
+  "name_full": "OSK Wojciech Ossowski"
  },
  {
-  "name": "Konicki Nauka Jazdy Damian Konicki",
+  "name": "Nauka Jazdy Konicki",
   "to": "njkonicki@gmail.com",
   "city": "Kielce",
   "mobile": "600 547 569",
   "code": "gs-20260921-18",
-  "slug": "konickinauka"
+  "slug": "konickinauka",
+  "name_full": "Konicki Nauka Jazdy Damian Konicki"
  },
  {
-  "name": "Szkoła Jazdy L-Pol Krzysztof Bugajski",
+  "name": "Szkoła Jazdy L-Pol",
   "to": "szkolajazdylpol@gmail.com",
   "city": "Kielce",
   "mobile": "606 194 427",
   "code": "gs-20260921-19",
-  "slug": "szkoajazdylp"
+  "slug": "szkoajazdylp",
+  "name_full": "Szkoła Jazdy L-Pol Krzysztof Bugajski"
  },
  {
-  "name": "OSK Auto Elka Andrzej Gołębiowski",
+  "name": "OSK Auto Elka",
   "to": "andrzejsgolebiowski@gmail.com",
   "city": "Konin",
   "mobile": "607 856 747",
   "code": "gs-20260921-20",
-  "slug": "oskautoelkaa"
+  "slug": "oskautoelkaa",
+  "name_full": "OSK Auto Elka Andrzej Gołębiowski"
  },
  {
-  "name": "Łukasz Pawlak Osk Royal",
+  "name": "OSK Royal",
   "to": "oskroyal@wp.pl",
   "city": "Konin",
   "mobile": "537 141 837",
   "code": "gs-20260921-21",
-  "slug": "ukaszpawlako"
+  "slug": "ukaszpawlako",
+  "name_full": "Łukasz Pawlak Osk Royal"
  },
  {
-  "name": "E-L-Ka Szkoła Nauki Jazdy Błachaniec Jacek",
+  "name": "Szkoła Jazdy E-L-Ka",
   "to": "szkolajazdy_elka@wp.pl",
   "city": "Mielec",
   "mobile": "604 637 260",
   "code": "gs-20260921-22",
-  "slug": "elkaszkoanau"
+  "slug": "elkaszkoanau",
+  "name_full": "E-L-Ka Szkoła Nauki Jazdy Błachaniec Jacek"
  },
  {
-  "name": "Przemek Ośrodek Szkolenia Kierowców Przemysław Rzepski",
+  "name": "OSK Przemek",
   "to": "oskprzemek@gmail.com",
   "city": "Nysa",
   "mobile": "605 381 349",
   "code": "gs-20260921-23",
-  "slug": "przemekosrod"
+  "slug": "przemekosrod",
+  "name_full": "Przemek Ośrodek Szkolenia Kierowców Przemysław Rzepski"
  },
  {
-  "name": "OSK Kamil Kamil Burek - nauka jazd",
+  "name": "OSK Kamil",
   "to": "kamilburek@interia.pl",
   "city": "Nysa",
   "mobile": "604 664 609",
   "code": "gs-20260921-24",
-  "slug": "osrodekszkol"
+  "slug": "osrodekszkol",
+  "name_full": "OSK Kamil Kamil Burek - nauka jazd"
  },
  {
-  "name": "Auto-Szkoła Sprintelka Ośrodek Szkolenia Kierowców kat. B Ag",
+  "name": "Auto-Szkoła Sprintelka",
   "to": "syland12@wp.pl",
   "city": "Olsztyn",
   "mobile": "600 554 547",
   "code": "gs-20260921-25",
-  "slug": "autoszkoaspr"
+  "slug": "autoszkoaspr",
+  "name_full": "Auto-Szkoła Sprintelka Ośrodek Szkolenia Kierowców kat. B Ag"
  },
  {
-  "name": "Waszej szkoły",
+  "name": "Speed",
   "to": "marcin_kossakowski@o2.pl",
   "city": "Ostrołęka",
   "mobile": "501 515 114",
@@ -213,46 +237,52 @@
   "city": "Przemyśl",
   "mobile": "606 356 049",
   "code": "gs-20260921-27",
-  "slug": "osrodekszkol"
+  "slug": "osrodekszkol",
+  "name_full": "OSK Jerzy Świetlicki"
  },
  {
-  "name": "OSK Jarosław Michał Pawlik",
+  "name": "OSK Pawlik",
   "to": "oskpawlik@interia.pl",
   "city": "Płock",
   "mobile": "697 510 590",
   "code": "gs-20260921-28",
-  "slug": "osrodekszkol"
+  "slug": "osrodekszkol",
+  "name_full": "OSK Jarosław Michał Pawlik"
  },
  {
-  "name": "Łukasz Ośrodek Szkolenia Kierowców",
+  "name": "OSK Łukasz",
   "to": "lukaszek6@interia.pl",
   "city": "Sosnowiec",
   "mobile": "695 662 695",
   "code": "gs-20260921-29",
-  "slug": "ukaszosrodek"
+  "slug": "ukaszosrodek",
+  "name_full": "Łukasz Ośrodek Szkolenia Kierowców"
  },
  {
-  "name": "Bartek Ośrodek Szkolenia Jan Perz",
+  "name": "OSK Bartek",
   "to": "biuro@bartek.slupsk.pl",
   "city": "Słupsk",
   "mobile": "691 115 626",
   "code": "gs-20260921-30",
-  "slug": "bartekosrode"
+  "slug": "bartekosrode",
+  "name_full": "Bartek Ośrodek Szkolenia Jan Perz"
  },
  {
-  "name": "OSK Liga Orłów Adam Sędzicki",
+  "name": "OSK Liga Orłów",
   "to": "sedzia89@op.pl",
   "city": "Słupsk",
   "mobile": "660 528 773",
   "code": "gs-20260921-31",
-  "slug": "osrodekszkol"
+  "slug": "osrodekszkol",
+  "name_full": "OSK Liga Orłów Adam Sędzicki"
  },
  {
-  "name": "Liszewski Jacek Nauka Jazdy",
+  "name": "Nauka Jazdy Liszewski",
   "to": "jacekliszewski@op.pl",
   "city": "Łomża",
   "mobile": "506 072 810",
   "code": "gs-20260921-32",
-  "slug": "liszewskijac"
+  "slug": "liszewskijac",
+  "name_full": "Liszewski Jacek Nauka Jazdy"
  }
 ]

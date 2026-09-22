@@ -3,7 +3,9 @@
  "demo_url": "https://szkolajazdy.givyx.com/",
  "subject": "Strona dla szkoły jazdy — przykład i oferta",
  "title_prefix": "Strona dla",
- "intro": "Z tej strony Stanisław z Givyx, z Krakowa. Robimy strony dla szkół jazdy — takie, które kursant otwiera na telefonie, widzi kursy, ceny i terminy, i od razu zapisuje się albo dzwoni.",
+ "intro": "Z tej strony Stanisław z Givyx, z Krakowa. Robimy strony dla szkół jazdy — takie, które kursant otwiera na telefonie, widzi kursy i ceny, zapisuje się na kurs albo umawia jazdę próbną, i od razu wie, do kogo zadzwonić.",
  "link_hint": "Zobaczcie na telefonie — to 30 sekund.",
- "closing": "strona działa na telefonie; my dbamy o stronę, Wy o kursantów"
+ "closing": "strona działa na telefonie; my dbamy o stronę, Wy o kursantów",
+ "version_with": "kursami, cenami, instruktorami",
+ "booking_line": "zapisy na kurs i jazdę próbną online oraz formularz kontaktowy"
 }

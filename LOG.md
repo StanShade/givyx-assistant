@@ -9,6 +9,25 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-22 (Tue) — szkoła jazdy demo redesigned (Stan's session) → batch S1: 32 generic OSK e-mails sent
+- Morning: 0 prospect replies (shade, 2 d); calendar empty. Auto Perfetto promised to look today and call back (Stan calls Wed if silent);
+  Auto Expert owner "na pewno się odezwie" (Stan calls Thu); ARMCAR reception SMS out, shop-line call Wed.
+- Stan: "prepare the szkoły jazdy e-mail, but first redesign the demo". Design-reference shortlist (agent, 6 sites fetched): stych.fr
+  primary (pack cards with hour toggle, price-first hero, instalments), gazelka.pl for PL substance (kat. B/automat naming, raty 0 %
+  schedule, course-page skeleton), 123fahrschule picker-under-hero. Stan ran the redesign in his own session: **szkolajazdy v2 on the
+  driving family**, routes home · oferta · zapisy (drive-enrol) · jazda-probna (booking-v2) · o-nas · kontakt · faq · legal ×2;
+  `uslugi`/`umow-wizyte` deleted; **promoted to Production 09-22**, all 9 routes 200 + noindex (brain `04564bd`).
+- `build-email-v4.py`: two optional niche keys `version_with` / `booking_line` (defaults = the workshop wording; G1 output verified
+  byte-identical). `outreach/niches/szkolajazdy.json`: intro rewritten to the redesigned demo (kursy i ceny, zapis na kurs, jazda próbna),
+  "kursami, cenami, instruktorami", "zapisy na kurs i jazdę próbną online oraz formularz kontaktowy". 32 specs: long legal names
+  shortened to the brand for the title (`name_full` kept); two "Waszej szkoły" placeholders replaced (El-Team, Speed).
+- Seed (prospect #01 verbatim) to stan.zak.inf@gmail.com; Stan "ok send all" → **32/32 `sent:true`**, one curl per prospect from the
+  session — every call passed the classifier (yesterday only #01 did). Codes `gs-20260921-01…32`, campaign lands on `szkolajazdy`'s
+  location + `l_givyx` for signature clicks. Flags kept in the send: OSK Łukasz Sosnowiec 21 % one-star, OSK Szóstka 19 %.
+- **Scoreboard: 130 offer e-mails to date** (98 + 32) · 0 replies · 1 tracked clicker. Follow-ups: S1 D+3 SMS **Fri 25 Sep**, email 2
+  Mon 28 Sep; G1 D+3 SMS Thu 24 Sep. Open: email 2 for batches 3–6 (personalised, overdue) — Stan's call whether it still goes after
+  the pivot; fizjo pack (32 specs ready, demo redesigned) is the next generic send.
+
 ### 2026-09-21 (Mon) — pivot: generic e-mails, no per-prospect builds; niche demos started
 - Weekend: 0 prospect replies (shade, 4 d). Click read on 39 tenants since 09-15: baseline 1 desktop + 1 mobile PL direct per
   tenant (ours). Above baseline after Friday's SMS: **Auto Expert 4 sessions (+1 mobile, +1 referral)**, **Gucio 3 (+1 mobile)**;

@@ -808,3 +808,51 @@ on reply („odpiszcie tak”). #01 sent 08:1xZ from the session on the v4 look;
 
 - **Calls 2026-09-21 (Stan):** **Auto Expert** 600 249 761 — staff again: "szef jak wróci, na pewno się odezwie" → wait for the owner's call; if silent, Stan calls Thu 24 Sep. **Gucio** 667 275 290 — **NIE**, "jak coś się zmieni, zadzwonią" → closed-for-now, no further touches, keep the site up. **Auto Perfetto** — looks tomorrow, calls back (Wed fallback).
 - Batch 7 D+3 SMS sent 09-21 via relay: Tecław · Top Car · FOX · Auto-Flower · Golik (5/5).
+
+## 2026-09-22 — generic batch S1: 32 PL szkoły jazdy (OSK), e-mail v4.1, generic demo `szkolajazdy.givyx.com`
+
+Source `prospects/2026-09-21-PL-szkolajazdy.md` (32 qualified; panoramafirm listings → one Maps check each; no real website). Every mail links
+`szkolajazdy.givyx.com` (redesigned v2 on the driving family, promoted 09-22, noindex) with the prospect code in `utm_campaign`; the personalised
+build is offered on reply („odpiszcie tak”). Niche wording in `outreach/niches/szkolajazdy.json` (intro, `version_with`, `booking_line`, closing);
+seed to Stan 09-22 morning, Stan "ok send all". 32/32 `sent:true`, one curl each from the session (all passed the classifier). Long legal names
+shortened to the brand for the „Strona dla …” title (`name_full` kept in the spec). Specs `outreach/generic-szkolajazdy-20260921/`.
+
+| # | prospect | city | e-mail | mobile | code | state |
+|---|---|---|---|---|---|---|
+| 01 | OSK Krzyś | Kraków | oskkrzys@gazeta.pl | 502 326 343 | `gs-20260921-01` | **SENT 2026-09-22** |
+| 02 | Nauka Jazdy Partner | Kraków | kurs.start@wp.pl | 604 353 887 | `gs-20260921-02` | **SENT 2026-09-22** |
+| 03 | OSK Piotr Pelczar | Kraków | pietia121@poczta.onet.pl | 501 412 121 | `gs-20260921-03` | **SENT 2026-09-22** |
+| 04 | OSK MRMOT | Katowice | jolanta.madejczyk@interia.pl | 603 603 315 | `gs-20260921-04` | **SENT 2026-09-22** |
+| 05 | Szkoła Jazdy Iza | Wrocław | nauka_jazdy_iza@o2.pl | 609 795 886 | `gs-20260921-05` | **SENT 2026-09-22** |
+| 06 | Auto Szkoła Dajlor | Łódź | st7sw5@gmail.com | 602 324 107 | `gs-20260921-06` | **SENT 2026-09-22** |
+| 07 | OSK Gębalski | Łódź | gebalski@op.pl | 604 307 107 | `gs-20260921-07` | **SENT 2026-09-22** |
+| 08 | Nauka Jazdy Zuba | Rzeszów | matelek25@wp.pl | 600 309 083 | `gs-20260921-08` | **SENT 2026-09-22** |
+| 09 | OSK Szóstka | Bydgoszcz | info@oskszostka.pl | 605 281 588 | `gs-20260921-09` | **SENT 2026-09-22** |
+| 10 | El-Team | Chełm | osk.el.team@gmail.com | 514 814 591 | `gs-20260921-10` | **SENT 2026-09-22** |
+| 11 | OSK Mobilek | Chełm | jarekglu@wp.pl | 577 799 930 | `gs-20260921-11` | **SENT 2026-09-22** |
+| 12 | Niezła Jazda | Częstochowa | lukaszkurdziel@op.pl | 504 277 344 | `gs-20260921-12` | **SENT 2026-09-22** |
+| 13 | OSK Prymus | Inowrocław | jan.musial@poczta.onet.pl | 603 346 904 | `gs-20260921-13` | **SENT 2026-09-22** |
+| 14 | OSK Guzio | Jastrzębie-Zdrój | mguzowski@gmail.com | 601 826 290 | `gs-20260921-14` | **SENT 2026-09-22** |
+| 15 | OSK Moto Pasja | Jastrzębie-Zdrój | rafwi1311@wp.pl | 512 307 848 | `gs-20260921-15` | **SENT 2026-09-22** |
+| 16 | OSK Karol Kwiciński | Kalisz | karolprawko@wp.pl | 607 980 803 | `gs-20260921-16` | **SENT 2026-09-22** |
+| 17 | OSK Wojciech Ossowski | Kalisz | wojtusossowski@wp.pl | 601 898 857 | `gs-20260921-17` | **SENT 2026-09-22** |
+| 18 | Nauka Jazdy Konicki | Kielce | njkonicki@gmail.com | 600 547 569 | `gs-20260921-18` | **SENT 2026-09-22** |
+| 19 | Szkoła Jazdy L-Pol | Kielce | szkolajazdylpol@gmail.com | 606 194 427 | `gs-20260921-19` | **SENT 2026-09-22** |
+| 20 | OSK Auto Elka | Konin | andrzejsgolebiowski@gmail.com | 607 856 747 | `gs-20260921-20` | **SENT 2026-09-22** |
+| 21 | OSK Royal | Konin | oskroyal@wp.pl | 537 141 837 | `gs-20260921-21` | **SENT 2026-09-22** |
+| 22 | Szkoła Jazdy E-L-Ka | Mielec | szkolajazdy_elka@wp.pl | 604 637 260 | `gs-20260921-22` | **SENT 2026-09-22** |
+| 23 | OSK Przemek | Nysa | oskprzemek@gmail.com | 605 381 349 | `gs-20260921-23` | **SENT 2026-09-22** |
+| 24 | OSK Kamil | Nysa | kamilburek@interia.pl | 604 664 609 | `gs-20260921-24` | **SENT 2026-09-22** |
+| 25 | Auto-Szkoła Sprintelka | Olsztyn | syland12@wp.pl | 600 554 547 | `gs-20260921-25` | **SENT 2026-09-22** |
+| 26 | Speed | Ostrołęka | marcin_kossakowski@o2.pl | 501 515 114 | `gs-20260921-26` | **SENT 2026-09-22** |
+| 27 | OSK Jerzy Świetlicki | Przemyśl | oskagnieszkajerzy@op.pl | 606 356 049 | `gs-20260921-27` | **SENT 2026-09-22** |
+| 28 | OSK Pawlik | Płock | oskpawlik@interia.pl | 697 510 590 | `gs-20260921-28` | **SENT 2026-09-22** |
+| 29 | OSK Łukasz | Sosnowiec | lukaszek6@interia.pl | 695 662 695 | `gs-20260921-29` | **SENT 2026-09-22** |
+| 30 | OSK Bartek | Słupsk | biuro@bartek.slupsk.pl | 691 115 626 | `gs-20260921-30` | **SENT 2026-09-22** |
+| 31 | OSK Liga Orłów | Słupsk | sedzia89@op.pl | 660 528 773 | `gs-20260921-31` | **SENT 2026-09-22** |
+| 32 | Nauka Jazdy Liszewski | Łomża | jacekliszewski@op.pl | 506 072 810 | `gs-20260921-32` | **SENT 2026-09-22** |
+
+### Follow-up dates for S1 (32 sent 2026-09-22)
+| Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
+|---|---|---|---|
+| S1 (32) | **Fri 25 Sep** — all 32 mobiles above (generic SMS, link szkolajazdy.givyx.com?utm_campaign=sms-<code>) | Mon 28 Sep | Fri 2 Oct |

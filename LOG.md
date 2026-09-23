@@ -2297,3 +2297,16 @@ lead's letter is Stan's voice, not the v3 template — `build-email-v2.py` got a
   Ostróda/Iława/Stargard (scanned, see the pack's screening log for who is left).
 - 07:0xZ, Stan "send sms": remaining 9 D+3 texts sent via the Mac relay (batch 5 ×5 at D+2, batch 6 ×4 at D+1 with "Wczoraj"
   wording). Helper fixed (account filter threw). SMS backlog 32/32 complete; batch 7's five queued as group G for Mon 21 Sep.
+
+## 2026-09-23 — DP Detailing (free-site test #1): pistonnerd-style rebuild, passes 5–11
+- Stan: recreate pistonnerd.com layout/style on dpdetailing.givyx.com with a Higgsfield hero video and detailing imagery.
+  Layout, positions, sizes and colours recreated; all copy original PL from verified facts only; fonts Unbounded/Barlow
+  (Phonk/URW DIN are paid). Spec: `givyx.claudeBrain/Givyx/superpowers/specs/2026-09-23-dpdetailing-pistonnerd-recreation.md`.
+- Media: 7 generated images (alt "zdjęcie poglądowe") + hero loops v2 (desktop 16:9 + phone 9:16, Seedance 2.5, ~290
+  credits total incl. v1). Their own photos only in Efekty.
+- Before/after: 4 pairs registered with SIFT+homography+ECC from their FB composites (found the 22 Sep split of podloga/kanapa
+  was wrong: rows are przed/po, not columns). 2 hover-lens + 2 drag-slider; red Passat photo under them.
+- Contact popup now holds the contact form (same form id as /kontakt), test lead Notified:true; CTA renamed "NAPISZ DO NAS".
+- Renderer commits on givyx.websites main: c3373f7 a4011f7 e9cc275 43be63a a766b09 a0da5d0 d8e33e7 4319fd8 fb8cc12.
+  Record: `dealership/clones/dpdetailing.md` passes 5–11. Still noIndex, Preview only — Stan promotes.
+- Open: RODO information note on both forms before real launch; desktop hero headline contrast dip over the lit wheel (offered).

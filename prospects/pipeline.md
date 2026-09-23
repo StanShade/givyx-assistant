@@ -805,6 +805,7 @@ on reply („odpiszcie tak”). #01 sent 08:1xZ from the session on the v4 look;
 | G1 (29) | **Thu 24 Sep** — all 29 mobiles above (text: generic v4 SMS, link warsztat.givyx.com?utm_campaign=sms-<code>) | ~~Fri 26 Sep~~ dropped | ~~Thu 1 Oct~~ dropped |
 
 - **ARMCAR 2026-09-21 ~11:xxZ — SMS to the reception line 501 792 367 (RU, Слава, Mac relay):** letter of 09-17 had 0 opens (armcar.givyx.com: 0 sessions since 09-18); text says the offer went to prostoautoserwis@gmail.com and asks for a direct contact / time with the management (owners are Belarusian; Stan wants a personal line to Nikita/Dzianis, not the reception). Next: Stan calls when they answer; if silent, call the shop line Wed 23 Sep.
+- **ARMCAR 2026-09-23 — Stan called the shop line (RU):** message passed to Nikita and Dzianis; „пока думают, свяжутся, когда будет ответ”. Ball in their court; no chase before Wed 30 Sep. armcar.givyx.com: 0 sessions since 09-19.
 
 - **Calls 2026-09-21 (Stan):** **Auto Expert** 600 249 761 — staff again: "szef jak wróci, na pewno się odezwie" → wait for the owner's call; if silent, Stan calls Thu 24 Sep. **Gucio** 667 275 290 — **NIE**, "jak coś się zmieni, zadzwonią" → closed-for-now, no further touches, keep the site up. **Auto Perfetto** — looks tomorrow, calls back (Wed fallback).
 - Batch 7 D+3 SMS sent 09-21 via relay: Tecław · Top Car · FOX · Auto-Flower · Golik (5/5).

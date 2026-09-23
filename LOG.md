@@ -9,6 +9,19 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-23 (Wed) — one-email rule, F2 physio batch (27), niche scout, six follow-ups
+- **Rule (Stan): one e-mail per prospect, ever.** No email 2 / last touch (junk risk). Openers → Stan's call list; PL mobiles →
+  D+3 SMS; no SMS to US until Twilio. Batches 4–7 email 2 cancelled. Memory `givyx-no-second-email`.
+- **Click read (admin token, helper script, 15 reads):** new openers OSK Guzio, Stacja Zdrowie, Paduch (all 09-22 sends).
+  G1 auto shops 0 of 29 in 2 days; batch 7 0 of 10 in 5 days. Replies: 0.
+- **F2:** research agent, 20 new cities, 27 physio/massage practices qualified (Maps yield ~12 %, city pool thinning) → 27/27
+  sent on Stan's "ok send all". **Scoreboard 189.** D+3 SMS Mon 28 Sep.
+- **Niche scout** (`research/2026-09-23-niche-scout.md`, 4,505 listings, 66 Maps checks): groomer · podolog · kosmetyczka at
+  ~50 % Maps yield; psycholog runner-up; masaż rides the fizjo demo. Stan builds the demo from his references; I fill lists.
+- **Follow-ups (Stan):** Auto Perfetto → SMS instead of a third call (`ap-sms-0923`) · DP Detailing (free-site test run 1)
+  → clear NO · OSK Guzio → „oddzwoni” · Stacja Zdrowie (asked for their opinion, no free build) → „zastanowi się” ·
+  Paduch → NO, hung up · ARMCAR → passed to both owners, they'll come back. Openers → conversations 3 of 3 today, 0 yes.
+
 ### 2026-09-22 (Tue) — szkoła jazdy demo redesigned (Stan's session) → batch S1: 32 generic OSK e-mails sent
 - Morning: 0 prospect replies (shade, 2 d); calendar empty. Auto Perfetto promised to look today and call back (Stan calls Wed if silent);
   Auto Expert owner "na pewno się odezwie" (Stan calls Thu); ARMCAR reception SMS out, shop-line call Wed.

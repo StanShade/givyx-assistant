@@ -1010,3 +1010,4 @@ Stan "ok send all" → 27/27 `sent:true`, one curl each from the session. **Scor
 | 2 | Sosnowski Service & Motorsport, Kamil Sosnowski, Niepołomice | 533 198 190 | **NO** — „nie chce, na razie dziękuję” (09-23). Closed for now. |
 | 3 | Auto-Elektron, Polanka / Myślenice | 660 636 741 | **NO** — person on the line is not the owner; „nie potrzebują strony” (09-23). Closed for now. |
 | 4 | DZWON GARAGE, Łukasz Łukasik, Lusina | 534 662 497 | **NO** — „ma kolegę, ogarnie” (09-23). Door open: if the friend's site never happens, a check-in in ~2 months. |
+| 5 | PM MOTO, Przemysław Dębowski, Tomaszkowice | 787 099 894 | **NO** — „dziękuję, do widzenia” (09-23). Closed. |

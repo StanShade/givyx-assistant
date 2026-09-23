@@ -963,7 +963,7 @@ Friday's SMS — Stan calls them instead. Batch 4–7 email 2 and all D+10 last 
 
 Source `prospects/2026-09-23-PL-fizjo-2.md` (12 qualified; 4 flagged rows left out: Bartkowiak and Actireh have sites that may still
 exist, Fizjo-Arch and Regenerya have 3 reviews each). Same niche wording and template as F1. Seed to Stan 09-23 (As-Med copy).
-Round 2 of the same research (the ~70 names not yet looked up) is running and will be added as F2 rows 13+.
+Round 2 (rows 13–27, research rows 13–28 minus #23 Max Medical, matched on trading name only).
 
 | # | prospect | city | e-mail | mobile | code | state |
 |---|---|---|---|---|---|---|
@@ -979,3 +979,18 @@ Round 2 of the same research (the ~70 names not yet looked up) is running and wi
 | 10 | Fizjo-Monia | Kalisz | monia.kasia@wp.pl | 696 448 380 | `gf-20260923-10` | built, awaiting Stan's OK |
 | 11 | Berentmed | Częstochowa | rafalberent@gmail.com | 605 852 707 | `gf-20260923-11` | built, awaiting Stan's OK |
 | 12 | Fizjohelp | Płock | niepogoda.mateusz@wp.pl | 793 009 702 | `gf-20260923-12` | built, awaiting Stan's OK |
+| 13 | Fizjoterapia Mariusz Bujalski | Białystok | bujalskimariusz@gmail.com | 602 465 964 | `gf-20260923-13` | built, awaiting Stan's OK |
+| 14 | Fizjo4active | Białystok | jaroslaw-oldakowski@wp.pl | 660 101 644 | `gf-20260923-14` | built, awaiting Stan's OK |
+| 15 | Fizjoterapia Andrzej Pastwa | Bydgoszcz | andrzejpastwa5@gmail.com | 780 028 931 | `gf-20260923-15` | built, awaiting Stan's OK |
+| 16 | MIK-MED | Bydgoszcz | miko.kowl@gmail.com | 602 764 499 | `gf-20260923-16` | built, awaiting Stan's OK |
+| 17 | Maria Dratwa - Masaż Leczniczy | Bydgoszcz | mariadratwa@wp.pl | 600 315 314 | `gf-20260923-17` | built, awaiting Stan's OK |
+| 18 | Studio masażu Michał Welter | Bydgoszcz | welter@vp.pl | 693 280 802 | `gf-20260923-18` | built, awaiting Stan's OK |
+| 19 | Gabinet Masażu Małgorzata Kusztelak | Zielona Góra | sabinka1303@wp.pl | 507 671 471 | `gf-20260923-19` | built, awaiting Stan's OK |
+| 20 | Katarzyna Polak Fizjoterapia | Zielona Góra | katarzynakozka@o2.pl | 725 102 036 | `gf-20260923-20` | built, awaiting Stan's OK |
+| 21 | Sanitas | Zielona Góra | sanitas.fizjoterapia@gmail.com | 607 829 460 | `gf-20260923-21` | built, awaiting Stan's OK |
+| 22 | Chandika | Zielona Góra | sylwiazyza@wp.pl | 691 850 455 | `gf-20260923-22` | built, awaiting Stan's OK |
+| 23 | Fizjoterapia Mateusz Dąbrowski | Olsztyn | mateusz.md9@gmail.com | 509 941 690 | `gf-20260923-23` | built, awaiting Stan's OK |
+| 24 | Gabinet Masażu Mniszek | Płock | mniszek11@tlen.pl | 606 346 118 | `gf-20260923-24` | built, awaiting Stan's OK |
+| 25 | Lokamed | Częstochowa | bartosz.niechcielski@gmail.com | 792 885 686 | `gf-20260923-25` | built, awaiting Stan's OK |
+| 26 | Gabinet masażu leczniczego Robert Panek | Legnica | robert.panek@interia.pl | 602 466 940 | `gf-20260923-26` | built, awaiting Stan's OK |
+| 27 | StrefaFizjo | Warszawa | wiolet48@wp.pl | 510 785 406 | `gf-20260923-27` | built, awaiting Stan's OK |

@@ -94,5 +94,125 @@
   "mobile": "793 009 702",
   "code": "gf-20260923-12",
   "slug": "fizjohelp"
+ },
+ {
+  "name": "Fizjoterapia Mariusz Bujalski",
+  "to": "bujalskimariusz@gmail.com",
+  "city": "Białystok",
+  "mobile": "602 465 964",
+  "code": "gf-20260923-13",
+  "slug": "fizjoterapia"
+ },
+ {
+  "name": "Fizjo4active",
+  "to": "jaroslaw-oldakowski@wp.pl",
+  "city": "Białystok",
+  "mobile": "660 101 644",
+  "code": "gf-20260923-14",
+  "slug": "fizjo4active"
+ },
+ {
+  "name": "Fizjoterapia Andrzej Pastwa",
+  "to": "andrzejpastwa5@gmail.com",
+  "city": "Bydgoszcz",
+  "mobile": "780 028 931",
+  "code": "gf-20260923-15",
+  "slug": "fizjoterapia"
+ },
+ {
+  "name": "MIK-MED",
+  "to": "miko.kowl@gmail.com",
+  "city": "Bydgoszcz",
+  "mobile": "602 764 499",
+  "code": "gf-20260923-16",
+  "slug": "mikmed"
+ },
+ {
+  "name": "Maria Dratwa - Masaż Leczniczy",
+  "to": "mariadratwa@wp.pl",
+  "city": "Bydgoszcz",
+  "mobile": "600 315 314",
+  "code": "gf-20260923-17",
+  "slug": "mariadratwam"
+ },
+ {
+  "name": "Studio masażu Michał Welter",
+  "to": "welter@vp.pl",
+  "city": "Bydgoszcz",
+  "mobile": "693 280 802",
+  "code": "gf-20260923-18",
+  "slug": "studiomasazu"
+ },
+ {
+  "name": "Gabinet Masażu Małgorzata Kusztelak",
+  "to": "sabinka1303@wp.pl",
+  "city": "Zielona Góra",
+  "mobile": "507 671 471",
+  "code": "gf-20260923-19",
+  "slug": "gabinetmasaz"
+ },
+ {
+  "name": "Katarzyna Polak Fizjoterapia",
+  "to": "katarzynakozka@o2.pl",
+  "city": "Zielona Góra",
+  "mobile": "725 102 036",
+  "code": "gf-20260923-20",
+  "slug": "katarzynapol"
+ },
+ {
+  "name": "Sanitas",
+  "to": "sanitas.fizjoterapia@gmail.com",
+  "city": "Zielona Góra",
+  "mobile": "607 829 460",
+  "code": "gf-20260923-21",
+  "slug": "sanitas"
+ },
+ {
+  "name": "Chandika",
+  "to": "sylwiazyza@wp.pl",
+  "city": "Zielona Góra",
+  "mobile": "691 850 455",
+  "code": "gf-20260923-22",
+  "slug": "chandika"
+ },
+ {
+  "name": "Fizjoterapia Mateusz Dąbrowski",
+  "to": "mateusz.md9@gmail.com",
+  "city": "Olsztyn",
+  "mobile": "509 941 690",
+  "code": "gf-20260923-23",
+  "slug": "fizjoterapia"
+ },
+ {
+  "name": "Gabinet Masażu Mniszek",
+  "to": "mniszek11@tlen.pl",
+  "city": "Płock",
+  "mobile": "606 346 118",
+  "code": "gf-20260923-24",
+  "slug": "gabinetmasaz"
+ },
+ {
+  "name": "Lokamed",
+  "to": "bartosz.niechcielski@gmail.com",
+  "city": "Częstochowa",
+  "mobile": "792 885 686",
+  "code": "gf-20260923-25",
+  "slug": "lokamed"
+ },
+ {
+  "name": "Gabinet masażu leczniczego Robert Panek",
+  "to": "robert.panek@interia.pl",
+  "city": "Legnica",
+  "mobile": "602 466 940",
+  "code": "gf-20260923-26",
+  "slug": "gabinetmasaz"
+ },
+ {
+  "name": "StrefaFizjo",
+  "to": "wiolet48@wp.pl",
+  "city": "Warszawa",
+  "mobile": "510 785 406",
+  "code": "gf-20260923-27",
+  "slug": "strefafizjo"
  }
 ]

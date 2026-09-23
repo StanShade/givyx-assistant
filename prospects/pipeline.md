@@ -920,7 +920,7 @@ on being seen** (active social, ads, pro photos). Second condition is what separ
 
 | # | prospect | city | phone | code | site | state |
 |---|---|---|---|---|---|---|
-| 01 | **DP Detailing Kraków** | Kraków, Dębniki | **692 438 344** (mobile) | `fs-20260922-01` | dpdetailing.givyx.com (`l_bd5119c` / `a_c74e36a`) | **CALLED 2026-09-23 — clear NO** (Stan: „jednoznaczne nie”). No further touches; site stays up, noindex. Free-site test: run 1 of 3 = 0 acceptances |
+| 01 | **DP Detailing Kraków** | Kraków, Dębniki | **692 438 344** (mobile) | `fs-20260922-01` | dpdetailing.givyx.com (`l_bd5119c` / `a_c74e36a`) | **CALLED 2026-09-23 — clear NO** (Stan: „jednoznaczne nie”). Site stays up, noindex. Same day Stan sent one SMS (`fs-sms-0923`): „rozumiem, że nie potrzebują Państwo strony… prosta strona z formularzem, dlatego za darmo i gotowa… czy się podoba, czy nie”. Free-site test: run 1 of 3 = 0 acceptances so far |
 
 **Why chosen.** No website confirmed four ways: FB "website" field points at facebook.com · Google Maps website =
 facebook.com · Bookinger listing shows none · email is a free `o2.pl` mailbox. `dpdetailing.pl` is a **different

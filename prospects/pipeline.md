@@ -832,7 +832,7 @@ shortened to the brand for the „Strona dla …” title (`name_full` kept in t
 | 11 | OSK Mobilek | Chełm | jarekglu@wp.pl | 577 799 930 | `gs-20260921-11` | **SENT 2026-09-22** |
 | 12 | Niezła Jazda | Częstochowa | lukaszkurdziel@op.pl | 504 277 344 | `gs-20260921-12` | **SENT 2026-09-22** |
 | 13 | OSK Prymus | Inowrocław | jan.musial@poczta.onet.pl | 603 346 904 | `gs-20260921-13` | **SENT 2026-09-22** |
-| 14 | OSK Guzio | Jastrzębie-Zdrój | mguzowski@gmail.com | 601 826 290 | `gs-20260921-14` | **SENT 2026-09-22** |
+| 14 | OSK Guzio | Jastrzębie-Zdrój | mguzowski@gmail.com | 601 826 290 | `gs-20260921-14` | **SENT 2026-09-22** · clicked 09-22 · **Stan called 09-23: „oddzwoni”** → if silent, Stan calls Mon 28 Sep; not in Friday's SMS |
 | 15 | OSK Moto Pasja | Jastrzębie-Zdrój | rafwi1311@wp.pl | 512 307 848 | `gs-20260921-15` | **SENT 2026-09-22** |
 | 16 | OSK Karol Kwiciński | Kalisz | karolprawko@wp.pl | 607 980 803 | `gs-20260921-16` | **SENT 2026-09-22** |
 | 17 | OSK Wojciech Ossowski | Kalisz | wojtusossowski@wp.pl | 601 898 857 | `gs-20260921-17` | **SENT 2026-09-22** |

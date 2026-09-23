@@ -1007,3 +1007,4 @@ Stan "ok send all" → 27/27 `sent:true`, one curl each from the session. **Scor
 | # | who | phone | result |
 |---|---|---|---|
 | 1 | BOBI GARAGE, Norbert Zaręba, Łętkowice | 575 814 112 | **NO — already signed with another web company** (09-23 ~16:1xZ). Closed. |
+| 2 | Sosnowski Service & Motorsport, Kamil Sosnowski, Niepołomice | 533 198 190 | **NO** — „nie chce, na razie dziękuję” (09-23). Closed for now. |

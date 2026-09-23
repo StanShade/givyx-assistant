@@ -875,7 +875,7 @@ placeholders replaced from the list. Specs `outreach/generic-fizjo-20260921/`.
 | 05 | Fizjoterapia Michał Łukaszewski | Kraków | lukaszewski.michal@poczta.onet.pl | 511 571 916 | `gf-20260921-05` | **SENT 2026-09-22** |
 | 06 | Przystań | Kraków | przystanfizjo@gmail.com | 604 790 729 | `gf-20260921-06` | **SENT 2026-09-22** |
 | 07 | Bądź w dobrej formie | Kraków | info@badzwdobrejformie.pl | 516 676 202 | `gf-20260921-07` | **SENT 2026-09-22** |
-| 08 | Stacja Zdrowie | Kraków | kontakt@stacjazdrowie.com | 785 615 959 | `gf-20260921-08` | **SENT 2026-09-22** |
+| 08 | Stacja Zdrowie | Kraków | kontakt@stacjazdrowie.com | 785 615 959 | `gf-20260921-08` | **SENT 2026-09-22** · clicked 09-22 · **Stan called 09-23** (asked for their opinion of the example, no free build offered): „zastanowi się” → if silent, Stan calls Mon 28 Sep; not in Friday's SMS |
 | 09 | Fizjoterapia Jakub Stanek | Kraków | stanek19@vp.pl | 504 228 143 | `gf-20260921-09` | **SENT 2026-09-22** |
 | 10 | Fizjoterapia Personalna Sylwia Mętel | Kraków | smetel@interia.pl | 606 480 472 | `gf-20260921-10` | **SENT 2026-09-22** |
 | 11 | Terapia Manualna Marcin Woźniak | Kraków | wozniakmw@gmail.com | 792 658 134 | `gf-20260921-11` | **SENT 2026-09-22** |

@@ -802,7 +802,7 @@ on reply („odpiszcie tak”). #01 sent 08:1xZ from the session on the v4 look;
 ### Follow-up dates for G1 (29 sent 2026-09-21)
 | Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
 |---|---|---|---|
-| G1 (29) | **Thu 24 Sep** — all 29 mobiles above (text: generic v4 SMS, link warsztat.givyx.com?utm_campaign=sms-<code>) | Fri 26 Sep | Thu 1 Oct |
+| G1 (29) | **Thu 24 Sep** — all 29 mobiles above (text: generic v4 SMS, link warsztat.givyx.com?utm_campaign=sms-<code>) | ~~Fri 26 Sep~~ dropped | ~~Thu 1 Oct~~ dropped |
 
 - **ARMCAR 2026-09-21 ~11:xxZ — SMS to the reception line 501 792 367 (RU, Слава, Mac relay):** letter of 09-17 had 0 opens (armcar.givyx.com: 0 sessions since 09-18); text says the offer went to prostoautoserwis@gmail.com and asks for a direct contact / time with the management (owners are Belarusian; Stan wants a personal line to Nikita/Dzianis, not the reception). Next: Stan calls when they answer; if silent, call the shop line Wed 23 Sep.
 
@@ -855,7 +855,7 @@ shortened to the brand for the „Strona dla …” title (`name_full` kept in t
 ### Follow-up dates for S1 (32 sent 2026-09-22)
 | Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
 |---|---|---|---|
-| S1 (32) | **Fri 25 Sep** — all 32 mobiles above (generic SMS, link szkolajazdy.givyx.com?utm_campaign=sms-<code>) | Mon 28 Sep | Fri 2 Oct |
+| S1 (32) | **Fri 25 Sep** — all 32 mobiles above (generic SMS, link szkolajazdy.givyx.com?utm_campaign=sms-<code>) | ~~Mon 28 Sep~~ dropped | ~~Fri 2 Oct~~ dropped |
 
 ## 2026-09-22 — generic batch F1: 32 PL gabinety fizjoterapii, e-mail v4.1, generic demo `fizjo.givyx.com`
 
@@ -904,7 +904,7 @@ placeholders replaced from the list. Specs `outreach/generic-fizjo-20260921/`.
 ### Follow-up dates for F1 (32 sent 2026-09-22)
 | Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
 |---|---|---|---|
-| F1 (32) | **Fri 25 Sep** — all 32 mobiles above (generic SMS, link fizjo.givyx.com?utm_campaign=sms-<code>) | Mon 28 Sep | Fri 2 Oct |
+| F1 (32) | **Fri 25 Sep** — all 32 mobiles above (generic SMS, link fizjo.givyx.com?utm_campaign=sms-<code>) | ~~Mon 28 Sep~~ dropped | ~~Fri 2 Oct~~ dropped |
 
 ## 2026-09-22 — free-site test, run #1: DP Detailing Kraków (NOT YET CONTACTED)
 
@@ -953,3 +953,8 @@ says *"wycena od ręki"*. Do not promise either on the call.
 - **Batch 7 (10, sent 09-18, PL SMS 09-21):** 0 sessions on 9 of 10 sites, 1 untagged referral on foxauto. No clicker.
 - **givyx.com signature links:** only our own `sigtest-20260921` campaign.
 - Batch 7 email 2 drafted in chat for Stan's OK (not sent). Batches 4–6 email 2 (due 22 Sep) were never sent — skipped at the 09-21 pivot, open question for Stan.
+
+**Rule (Stan, 2026-09-23): one email per prospect, ever.** No email 2, no last-touch email — a repeat cold mail
+risks junk placement for every later send. Follow-up = clicker → Stan calls · PL mobile → D+3 SMS via the relay.
+No SMS to US prospects until Twilio is integrated. The three 09-23 clickers (gs-14, gf-08, gf-16) are left out of
+Friday's SMS — Stan calls them instead. Batch 4–7 email 2 and all D+10 last touches: cancelled.

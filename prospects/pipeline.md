@@ -958,3 +958,24 @@ says *"wycena od ręki"*. Do not promise either on the call.
 risks junk placement for every later send. Follow-up = clicker → Stan calls · PL mobile → D+3 SMS via the relay.
 No SMS to US prospects until Twilio is integrated. The three 09-23 clickers (gs-14, gf-08, gf-16) are left out of
 Friday's SMS — Stan calls them instead. Batch 4–7 email 2 and all D+10 last touches: cancelled.
+
+## 2026-09-23 — generic batch F2: PL gabinety fizjoterapii (new cities), e-mail v4.1, demo `fizjo.givyx.com`
+
+Source `prospects/2026-09-23-PL-fizjo-2.md` (12 qualified; 4 flagged rows left out: Bartkowiak and Actireh have sites that may still
+exist, Fizjo-Arch and Regenerya have 3 reviews each). Same niche wording and template as F1. Seed to Stan 09-23 (As-Med copy).
+Round 2 of the same research (the ~70 names not yet looked up) is running and will be added as F2 rows 13+.
+
+| # | prospect | city | e-mail | mobile | code | state |
+|---|---|---|---|---|---|---|
+| 01 | Fizjoterapia Piotr Kułakowski | Białystok | kulakowski.piotr93@gmail.com | 790 467 532 | `gf-20260923-01` | built, awaiting Stan's OK |
+| 02 | Fizjoefekt | Białystok | janusz86@onet.eu | 513 936 583 | `gf-20260923-02` | built, awaiting Stan's OK |
+| 03 | Gabinet Masażu Leczniczego Krzysztof Kubicki | Kielce | k.kubicki82@wp.pl | 604 517 315 | `gf-20260923-03` | built, awaiting Stan's OK |
+| 04 | Manual Med | Kielce | jakub.strzalka86@wp.pl | 600 390 557 | `gf-20260923-04` | built, awaiting Stan's OK |
+| 05 | As-Med | Sosnowiec | s.rerak@wp.pl | 606 751 890 | `gf-20260923-05` | built, awaiting Stan's OK |
+| 06 | FizjoGabinet | Zielona Góra | natali.sza@wp.pl | 609 801 900 | `gf-20260923-06` | built, awaiting Stan's OK |
+| 07 | BB Rehabilitacja | Bielsko-Biała | boba.bernard@gmail.com | 692 677 129 | `gf-20260923-07` | built, awaiting Stan's OK |
+| 08 | Fizjoterapia Sebastian Niżnik | Elbląg | sebastian.niznik@wp.pl | 509 415 410 | `gf-20260923-08` | built, awaiting Stan's OK |
+| 09 | Fizjoterapia Sławomir Kamiński | Elbląg | slawkamtaz@wp.pl | 516 285 657 | `gf-20260923-09` | built, awaiting Stan's OK |
+| 10 | Fizjo-Monia | Kalisz | monia.kasia@wp.pl | 696 448 380 | `gf-20260923-10` | built, awaiting Stan's OK |
+| 11 | Berentmed | Częstochowa | rafalberent@gmail.com | 605 852 707 | `gf-20260923-11` | built, awaiting Stan's OK |
+| 12 | Fizjohelp | Płock | niepogoda.mateusz@wp.pl | 793 009 702 | `gf-20260923-12` | built, awaiting Stan's OK |

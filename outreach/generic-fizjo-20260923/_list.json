@@ -1,0 +1,98 @@
+[
+ {
+  "name": "Fizjoterapia Piotr Kułakowski",
+  "to": "kulakowski.piotr93@gmail.com",
+  "city": "Białystok",
+  "mobile": "790 467 532",
+  "code": "gf-20260923-01",
+  "slug": "fizjoterapia"
+ },
+ {
+  "name": "Fizjoefekt",
+  "to": "janusz86@onet.eu",
+  "city": "Białystok",
+  "mobile": "513 936 583",
+  "code": "gf-20260923-02",
+  "slug": "fizjoefekt"
+ },
+ {
+  "name": "Gabinet Masażu Leczniczego Krzysztof Kubicki",
+  "to": "k.kubicki82@wp.pl",
+  "city": "Kielce",
+  "mobile": "604 517 315",
+  "code": "gf-20260923-03",
+  "slug": "gabinetmasaz"
+ },
+ {
+  "name": "Manual Med",
+  "to": "jakub.strzalka86@wp.pl",
+  "city": "Kielce",
+  "mobile": "600 390 557",
+  "code": "gf-20260923-04",
+  "slug": "manualmed"
+ },
+ {
+  "name": "As-Med",
+  "to": "s.rerak@wp.pl",
+  "city": "Sosnowiec",
+  "mobile": "606 751 890",
+  "code": "gf-20260923-05",
+  "slug": "asmed"
+ },
+ {
+  "name": "FizjoGabinet",
+  "to": "natali.sza@wp.pl",
+  "city": "Zielona Góra",
+  "mobile": "609 801 900",
+  "code": "gf-20260923-06",
+  "slug": "fizjogabinet"
+ },
+ {
+  "name": "BB Rehabilitacja",
+  "to": "boba.bernard@gmail.com",
+  "city": "Bielsko-Biała",
+  "mobile": "692 677 129",
+  "code": "gf-20260923-07",
+  "slug": "bbrehabilita"
+ },
+ {
+  "name": "Fizjoterapia Sebastian Niżnik",
+  "to": "sebastian.niznik@wp.pl",
+  "city": "Elbląg",
+  "mobile": "509 415 410",
+  "code": "gf-20260923-08",
+  "slug": "fizjoterapia"
+ },
+ {
+  "name": "Fizjoterapia Sławomir Kamiński",
+  "to": "slawkamtaz@wp.pl",
+  "city": "Elbląg",
+  "mobile": "516 285 657",
+  "code": "gf-20260923-09",
+  "slug": "fizjoterapia"
+ },
+ {
+  "name": "Fizjo-Monia",
+  "to": "monia.kasia@wp.pl",
+  "city": "Kalisz",
+  "mobile": "696 448 380",
+  "code": "gf-20260923-10",
+  "slug": "fizjomonia"
+ },
+ {
+  "name": "Berentmed",
+  "to": "rafalberent@gmail.com",
+  "city": "Częstochowa",
+  "mobile": "605 852 707",
+  "code": "gf-20260923-11",
+  "slug": "berentmed"
+ },
+ {
+  "name": "Fizjohelp",
+  "to": "niepogoda.mateusz@wp.pl",
+  "city": "Płock",
+  "mobile": "793 009 702",
+  "code": "gf-20260923-12",
+  "slug": "fizjohelp"
+ }
+]

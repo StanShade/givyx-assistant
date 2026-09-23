@@ -45,6 +45,17 @@ month free, benefits list, explicit contact line).
 
 ## 2. Research 5 PL + 5 US (two agents in parallel, ~60–90 min)
 
+**Which demo a prospect gets (generic, one per niche):**
+
+| prospect | demo |
+|---|---|
+| auto repair shop (PL) | `warsztat.givyx.com` |
+| auto repair shop (US) | `autoservice.givyx.com` |
+| **car dealer / komis / used-car or premium salon, also a dealer with a workshop or detailing (PL or EN)** | **`showroom.givyx.com`** (Halden Automobile, Klausen-style dark premium; PL, EN at `?lang=en`; published 2026-09-23). Look for dealers when searching; don't drop them as "not a workshop". |
+| physiotherapy | `fizjo.givyx.com` |
+| driving school | `szkolajazdy.givyx.com` |
+| renovation | `remonty.givyx.com` |
+
 ### 2a. Who can really buy — the buy score (Stan, 2026-09-15)
 
 Rank by **likelihood to pay 249 zł / $49 a month for a site from a stranger's email**, not by how well

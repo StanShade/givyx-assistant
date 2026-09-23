@@ -21,6 +21,13 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 - **Follow-ups (Stan):** Auto Perfetto → SMS instead of a third call (`ap-sms-0923`) · DP Detailing (free-site test run 1)
   → clear NO · OSK Guzio → „oddzwoni” · Stacja Zdrowie (asked for their opinion, no free build) → „zastanowi się” ·
   Paduch → NO, hung up · ARMCAR → passed to both owners, they'll come back. Openers → conversations 3 of 3 today, 0 yes.
+- **Evening cold calls (first ever on two seams):** CEIDG new workshops 7 called → 7 NO (BOBI already signed with another
+  web company · Sosnowski no · Auto-Elektron not the owner, don't need · DZWON friend will do it · PM MOTO no · J. Bros doesn't
+  want Google at all · Blueberry refused over Stan's Belarusian accent); AutoMik left for Thu. RU/UA Kraków: Herasymliuk no
+  answer (retry Thu), Auto Hub NO. **Day total: 14 calls, 0 yes.** Stan's read: auto services are very hard to sell to.
+  Assistant's read: auto repair = 98 e-mails → 1 opener, ~25 calls → 0 yes; driving schools/physio ~5 % click rate. Proposed:
+  drop auto repair, move to appointment niches (kosmetyczka first), pitch time/no-commission not "more clients", and try
+  the warm channels (referrals from the two free clients, OLX + FB groups). Awaiting Stan's pick.
 
 ### 2026-09-22 (Tue) — szkoła jazdy demo redesigned (Stan's session) → batch S1: 32 generic OSK e-mails sent
 - Morning: 0 prospect replies (shade, 2 d); calendar empty. Auto Perfetto promised to look today and call back (Stan calls Wed if silent);

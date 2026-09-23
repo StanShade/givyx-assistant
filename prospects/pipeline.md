@@ -1021,3 +1021,4 @@ Stan "ok send all" → 27/27 `sent:true`, one curl each from the session. **Scor
 |---|---|---|---|
 | 1 | Auto Serwis Herasymliuk Vitalii (UA owner, no site, 4,9/53) | 575 831 456 | no answer 09-23 ~16:3xZ → retry Thu 24 Sep 10–12 |
 | 2 | Auto Hub – Autoelektryk & Serwis, Nowohucka (RU replies, IG only, 4,7/207) | 889 722 555 | **NO** — „мы не нуждаемся” (09-23). Closed. |
+| 2 | Auto Hub – Autoelektryk & Serwis, Nowohucka (RU replies, IG only, 4,7/207) | 889 722 555 | **NO** — „мы не нуждаемся” (09-23). Closed. |

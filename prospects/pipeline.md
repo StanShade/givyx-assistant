@@ -883,7 +883,7 @@ placeholders replaced from the list. Specs `outreach/generic-fizjo-20260921/`.
 | 13 | Domoreh | Katowice | erni1992@op.pl | 509 916 870 | `gf-20260921-13` | **SENT 2026-09-22** |
 | 14 | Fizjohelp | Katowice | alianna007@gmail.com | 505 345 595 | `gf-20260921-14` | **SENT 2026-09-22** |
 | 15 | Fizjolympic | Katowice | fizjolympic@gmail.com | 530 797 641 | `gf-20260921-15` | **SENT 2026-09-22** |
-| 16 | Gabinet Rehabilitacji Przemysław Paduch | Katowice | paddi@poczta.fm | 604 633 371 | `gf-20260921-16` | **SENT 2026-09-22** |
+| 16 | Gabinet Rehabilitacji Przemysław Paduch | Katowice | paddi@poczta.fm | 604 633 371 | `gf-20260921-16` | **SENT 2026-09-22** · clicked 09-22 · **Stan called 09-23: NO, hung up** → closed, no further touches, not in Friday's SMS |
 | 17 | Gabinet Ewa Klonnek | Katowice | eklonnek@interia.pl | 601 180 077 | `gf-20260921-17` | **SENT 2026-09-22** |
 | 18 | Centrum Rehabilitacji Arnold Górka | Wrocław | arnoldgorka@wp.pl | 695 424 332 | `gf-20260921-18` | **SENT 2026-09-22** |
 | 19 | Acusrehmed | Poznań | kontakt@acusrehmed.pl | 668 180 809 | `gf-20260921-19` | **SENT 2026-09-22** |

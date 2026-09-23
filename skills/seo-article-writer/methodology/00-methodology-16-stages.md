@@ -1827,9 +1827,13 @@ Operational traps collected from runs. Stage 16.3 appends here (Rule -> Why -> H
 | Browser DOM check returns empty because of a hydration race | Stage 11 | Wait for the render-complete signal, retry; an empty result is a failure, not a pass. |
 | CMS components / CTA templates re-inject dashes and cliches after humanization | Stage 15 | Audit the rendered production HTML, not the draft. |
 | Foreign-language quotes go out untranslated | Stage 16.3 | Fact-checker flags any quote body longer than 3 words in a language other than the article's. |
+| A bilingual adapter pairs locales by block position | Stages 6, 9 | When one page carries two locales, give both drafts the same skeleton (sections, block kinds, table rows, FAQ and source counts); an unmatched block leaks into the other locale. Check parity before Stage 7 wave 2, not after. |
+| Pairwise TF-IDF originality saturates on a one-document corpus | Stage 8.1 | With 1-2 reference files the IDF cannot discount function words (English scores 0.7+ between unrelated same-site pages). Calibrate on two unrelated existing pages; judge by the n-gram score and the intent, and record the calibration. |
+| One source line with two URLs | Stage 6 | Adapters that parse "Name (url)" keep the first URL only; give each source its own line. |
 
 ## Version history
 
 | Version | Date | Change |
 |---|---|---|
 | 1.0-en | 2026-09-21 | English adaptation of "statejnik" v1.1.0 (16 stages, priority docs, checklists, tools). Legal module split into `legal-pl.md` / `legal-us.md`; tools rewritten for English with `tools/lang/` packs; Stage 15 three-layer audit implemented in `tools/ai-cadence-check.py`; artifact stems renamed `etap-` -> `stage-`, `otchet.md` -> `report.md`. |
+| 1.0.1-en | 2026-09-23 | Known traps: bilingual positional merge, originality-check calibration on a tiny corpus, one URL per source line (run website-subscription-contract). |

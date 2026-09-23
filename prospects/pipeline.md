@@ -1001,3 +1001,9 @@ Stan "ok send all" → 27/27 `sent:true`, one curl each from the session. **Scor
 | Batch | D+3 SMS (Stan/relay) |
 |---|---|
 | F2 (27) | **Sat 26 Sep → send Mon 28 Sep** — all 27 mobiles above (generic SMS, link fizjo.givyx.com?utm_campaign=sms-<code>) |
+
+## 2026-09-23 (evening) — CEIDG new-workshop calls (source `prospects/2026-09-14-ceidg-new-workshops.md`, first calls ever)
+
+| # | who | phone | result |
+|---|---|---|---|
+| 1 | BOBI GARAGE, Norbert Zaręba, Łętkowice | 575 814 112 | **NO — already signed with another web company** (09-23 ~16:1xZ). Closed. |

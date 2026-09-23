@@ -905,3 +905,51 @@ placeholders replaced from the list. Specs `outreach/generic-fizjo-20260921/`.
 | Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
 |---|---|---|---|
 | F1 (32) | **Fri 25 Sep** — all 32 mobiles above (generic SMS, link fizjo.givyx.com?utm_campaign=sms-<code>) | Mon 28 Sep | Fri 2 Oct |
+
+## 2026-09-22 — free-site test, run #1: DP Detailing Kraków (NOT YET CONTACTED)
+
+New motion, manual trigger only — `specs/2026-09-22-free-site-test-design.md`. Offer changed: the basic site is
+**free forever** on `<slug>.givyx.com` with a Givyx footer mark; money starts at own domain / booking / custom
+design. Success metric is **acceptance, not revenue** — the goal is one real business actually using a Givyx site,
+so there is someone to sell features to later and a reference for the next prospect. Kill condition: 3 runs, 0
+acceptances → the offer is wrong, stop and rethink.
+
+Selection rule (both must hold, fetched evidence only): **high need** (no site / FB-only / dead) **and spends money
+on being seen** (active social, ads, pro photos). Second condition is what separates this from charity.
+
+| # | prospect | city | phone | code | site | state |
+|---|---|---|---|---|---|---|
+| 01 | **DP Detailing Kraków** | Kraków, Dębniki | **692 438 344** (mobile) | `fs-20260922-01` | dpdetailing.givyx.com (`l_bd5119c` / `a_c74e36a`) | **BUILT — awaiting Stan's call** |
+
+**Why chosen.** No website confirmed four ways: FB "website" field points at facebook.com · Google Maps website =
+facebook.com · Bookinger listing shows none · email is a free `o2.pl` mailbox. `dpdetailing.pl` is a **different
+company** (D.P. Detailing, Chobienice, Wielkopolska, tel. 695 129 295) — fetched and confirmed. Marketing spend:
+3,3K FB followers, posting every few days, priced "PAKIET JESIEŃ" promo, active Reels, TOP 100 of Poland in
+Detailing. Reputation: **5,0 / 108 Google reviews**, no complaint flags. Their Bookinger booking calendar is
+listed but **not active** — real friction, verified.
+
+**Rejected on the way:** Auto Styl (July list said "no site"; `autostyl-oklejanie.pl` is live — directory-data
+trap) · Auto Serwis Zawiła (no site ✅ but only 6 reviews and a review calling the owner *"cwaniak pazerny na
+każdy grosz"*) · Good Road Serwis (4,8K followers, `goodroad.pl` parked on cPanel — but two live complaints about
+*"praktyki warsztatowe"*) · Rurdech (*"PROSZĘ OMIJAĆ TO MIEJSCE I TYCH OSZUSTÓW"*).
+
+**Bench for run #2** (verified no-website, good ratings): Moto Car Mechanik (501 400 017, 5,0/323) · AUTOLAB
+Bronowice (575 635 006, 4,7/82) · AlexMotors Nowa Huta (4,7/51) · Auto Mania Serwis (790 608 491, 4,6/92) ·
+GT-Autoserwis (660 943 456, 4,9/61).
+
+**Call script + SMS:** `outreach/2026-09-22-call-script-dpdetailing.md`. Stan approves the exact SMS text before
+any send; one approval = one send.
+
+**On the page deliberately: no prices, no opening hours.** They publish neither and sources disagree, so the site
+says *"wycena od ręki"*. Do not promise either on the call.
+
+## 2026-09-23 (Wed, morning) — click read + reply check
+
+- **Replies:** 0 prospect replies in the shade mailbox (search `in:anywhere newer_than:2d`).
+- **New clickers (email / oferta, 09-22 sends):** OSK Guzio, Jastrzębie-Zdrój (`gs-20260921-14`, 601 826 290) ·
+  Stacja Zdrowie, Kraków (`gf-20260921-08`, 785 615 959) · Gabinet Rehabilitacji Przemysław Paduch, Katowice
+  (`gf-20260921-16`, 604 633 371). One session each, no form submit. → Stan's call list, not email 2.
+- **warsztat.givyx.com (G1, 29 sent 09-21):** 0 campaign sessions in 2 days; 7 untagged PL sessions (our preview/FAQ checks, 2 referral).
+- **Batch 7 (10, sent 09-18, PL SMS 09-21):** 0 sessions on 9 of 10 sites, 1 untagged referral on foxauto. No clicker.
+- **givyx.com signature links:** only our own `sigtest-20260921` campaign.
+- Batch 7 email 2 drafted in chat for Stan's OK (not sent). Batches 4–6 email 2 (due 22 Sep) were never sent — skipped at the 09-21 pivot, open question for Stan.

@@ -1013,3 +1013,10 @@ Stan "ok send all" → 27/27 `sent:true`, one curl each from the session. **Scor
 | 5 | PM MOTO, Przemysław Dębowski, Tomaszkowice | 787 099 894 | **NO** — „dziękuję, do widzenia” (09-23). Closed. |
 | 6 | J. Bros Auto, Mateusz Jackiewicz, Solcza | 666 325 342 | **NO** — doesn't want to be on Google at all; „w razie czego zadzwoni” (09-23). |
 | 7 | Blueberry Garage, Konrad Borowiak, Dąbrówki Breńskie | 573 404 021 | **NO** — said no because of Stan's Belarusian accent (09-23). Closed. |
+| 8 | AutoMik, Jakub Mikulski, Korzenna | 799 039 230 | not called yet — Thu 24 Sep |
+
+## 2026-09-23 (evening) — RU/UA-owner calls, Kraków (source `prospects/2026-09-15-krakow-ru-ua-owners.md`, first calls ever)
+
+| # | who | phone | result |
+|---|---|---|---|
+| 1 | Auto Serwis Herasymliuk Vitalii (UA owner, no site, 4,9/53) | 575 831 456 | no answer 09-23 ~16:3xZ → retry Thu 24 Sep 10–12 |

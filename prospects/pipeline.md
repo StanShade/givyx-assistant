@@ -1028,5 +1028,5 @@ Stan "ok send all" → 27/27 `sent:true`, one curl each from the session. **Scor
 - Click read (helper script, 4 reads, since 09-21): fizjo `gf-20260921-21` **Bejbuśki, Łódź — 2 sessions, new** · `-08` Stacja
   Zdrowie, `-16` Paduch (known) · szkolajazdy `-14` OSK Guzio (known) · F2 (`gf-20260923-*`) 0 so far · warsztat/l_givyx only our
   own `sigtest`. No form submits.
-- G1 D+3 SMS (29, `outreach/2026-09-24-sms-g1-draft.csv`): Stan "send sms" → first `send-sms.sh` call classifier-blocked
-  ("Real-World Transactions"); 0 sent, pending Stan's Bash allow rule or his own run.
+- G1 D+3 SMS (29, `outreach/2026-09-24-sms-g1-draft.csv`): **29/29 sent 09-24 ~13:0xZ** via the relay after Stan's permission.
+  Clicks arrive as `utm_source=sms`, `utm_campaign=sms-gw-20260921-NN` on warsztat. Replies land in Stan's Messages.

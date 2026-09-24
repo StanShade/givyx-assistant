@@ -9,6 +9,26 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-24 (Thu) — auto repair closed, demo sign-up bar live, podolog list, GBP post
+- **Stan: auto repair closed** (no new e-mails/calls/SMS unless he names a shop); IPR + leonixon are friends, never charged.
+  Next niche podolog, then kosmetyczka.
+- Replies: 0 (shade, 2 d). Click read (4 reads): new opener **Bejbuśki, Łódź** (`gf-20260921-21`, 2 sessions) → Stan's call.
+  F2 0 clicks so far. No form submits.
+- Found: the demo sites had no "I want this" path — only a footer "Built with Givyx" link. Spec
+  `givyx.claudeBrain/.../specs/2026-09-24-demo-signup-bar.md` → agent → **PR 147** (strip + pill + 2-field modal, pl/en/ru,
+  allowlist of 6 demo slugs, landing utm kept in memory, forms route forwards utm; 849 tests). **Stan merged; live** on fizjo,
+  szkolajazdy, warsztat, showroom; absent on ipr, dpdetailing (verified by curl).
+- Stan OK'd the token → form **`form_ae1899e4064e4c44a9b2b73d5418cf10`** "Demo lead" on l_givyx (firma, kontakt, hidden
+  kampania/demo/strona; notify stan.zak.inf@gmail.com) → **PR 149** sets the id (awaiting Stan's merge; until then the bar
+  shows the phone instead of submitting).
+- Podolog list `prospects/2026-09-24-PL-podolog.md`: 36 qualified, 8 flagged, 12 reserves, 33 towns; 2 rows re-checked.
+  Needs a podolog demo before any send.
+- Inbound v2 drafts (`outreach/2026-09-24-inbound-posts.md`). Stan: "do it yourself" → **GBP post published** on the Givyx
+  profile (Update + "Learn more" → fizjo `utm_campaign=gbp-post-0924`, verified once on the profile). **OLX + Facebook not
+  posted:** both signed out in the in-app browser and in Stan's Chrome; signing in is his.
+- G1 D+3 SMS (29): Stan "ok" → `send-sms.sh` classifier-blocked twice ("Real-World Transactions"); 0 sent. Needs a Bash allow
+  rule or Stan's own run.
+
 ### 2026-09-23 (Wed) — one-email rule, F2 physio batch (27), niche scout, six follow-ups
 - **Rule (Stan): one e-mail per prospect, ever.** No email 2 / last touch (junk risk). Openers → Stan's call list; PL mobiles →
   D+3 SMS; no SMS to US until Twilio. Batches 4–7 email 2 cancelled. Memory `givyx-no-second-email`.

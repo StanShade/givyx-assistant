@@ -3,7 +3,7 @@
 > **How to use** (AI agent running the 16-stage methodology):
 >
 > 1. At Stage 0a: `cp checklists/_CHECKLIST-TEMPLATE.md work/<slug>.checklist.md` + `mkdir -p work/<slug>/`
-> 2. As you work - edit this file, closing `[ ]` -> `[x]` for every completed sub-stage.
+> 2. As you work - edit this file, ticking each open box to `[x]` for every completed sub-stage.
 > 3. **Hard rule.** A `[x]` on an item that points at an artifact is set **ONLY** when the file physically exists in `work/<slug>/`. No file - no checkmark. The final gate (Stage 16) diffs the real files against `checklists/_EXPECTED-ARTIFACTS.txt`.
 > 4. **Conditional items** (visual QA, hero image, schema markup) are closed as `[x] SKIP: <reason>` - that is a valid closure.
 - With `cms.adapter: manual`, Stages 10-15 items are closed as `[x] DEFERRED-MANUAL: <reason>` in Part 1 and reopened in Part 2 (see methodology "Manual adapter: two-part run").

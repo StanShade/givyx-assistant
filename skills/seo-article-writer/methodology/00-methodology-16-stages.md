@@ -1830,6 +1830,10 @@ Operational traps collected from runs. Stage 16.3 appends here (Rule -> Why -> H
 | A bilingual adapter pairs locales by block position | Stages 6, 9 | When one page carries two locales, give both drafts the same skeleton (sections, block kinds, table rows, FAQ and source counts); an unmatched block leaks into the other locale. Check parity before Stage 7 wave 2, not after. |
 | Pairwise TF-IDF originality saturates on a one-document corpus | Stage 8.1 | With 1-2 reference files the IDF cannot discount function words (English scores 0.7+ between unrelated same-site pages). Calibrate on two unrelated existing pages; judge by the n-gram score and the intent, and record the calibration. |
 | One source line with two URLs | Stage 6 | Adapters that parse "Name (url)" keep the first URL only; give each source its own line. |
+| The checklist gate counts its own instructions | Stage 16.1 | The templates how-to line quoted the empty box literally, so `grep -c "\[ \]"` returned 1 on a fully closed checklist and a run reported 0 anyway. Keep the template free of the literal box and gate with the anchored form `grep -c "^- \[ \]"`; report the number the command prints. |
+| Remote verify misreads "$" strings | Stage 12c | A Next.js (React Flight) page payload writes any string that starts with "$" as "$$" ("$25" -> "$$25"). Undo that before diffing the served page tree against the local one, or every USD table cell shows as a change. |
+| Lab CWV under local load | Stage 13.1 | A local Lighthouse run while subagents or loops are busy gave mobile 49 / TBT 1.5 s; the next two runs gave 93. Run mobile at least twice with a same-template control page in the same minute and record the machine load; judge by the stable runs. |
+| Generated registries go stale between Preview edits | Stage 13.3 | llms.txt built at 15:16 missed an article revision pushed to Preview later the same hour. Regenerate after the last Preview change that the deploy will carry, right before handing the files over. |
 
 ## Version history
 
@@ -1837,3 +1841,4 @@ Operational traps collected from runs. Stage 16.3 appends here (Rule -> Why -> H
 |---|---|---|
 | 1.0-en | 2026-09-21 | English adaptation of "statejnik" v1.1.0 (16 stages, priority docs, checklists, tools). Legal module split into `legal-pl.md` / `legal-us.md`; tools rewritten for English with `tools/lang/` packs; Stage 15 three-layer audit implemented in `tools/ai-cadence-check.py`; artifact stems renamed `etap-` -> `stage-`, `otchet.md` -> `report.md`. |
 | 1.0.1-en | 2026-09-23 | Known traps: bilingual positional merge, originality-check calibration on a tiny corpus, one URL per source line (run website-subscription-contract). |
+| 1.0.2-en | 2026-09-24 | Known traps: checklist gate counting its own instruction line (template line fixed, anchored gate), React Flight "$$" in Stage 12c, lab CWV under local load, stale generated registries (run booksy-new-client-fee). |

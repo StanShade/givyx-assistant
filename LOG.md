@@ -42,6 +42,9 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   Found on the way → **api #92** (settings save wiped the custom domain) and **api #93** (booking config saves not scoped to
   location; stacked on #91). Merge order 91 → 92 → 93 → 151 → 117. Held: plan gate (branch feat/booking-plan-gate) until the demo
   apps' plans are checked (admin token). New P2s: demo strip overlaps booking buttons at 390 px; admin modal wipes consent/GA.
+- Stan merged api 91 + 92, websites 151, portal 117 → all four deploys green 14:08-14:09Z. Live: fizjo + szkolajazdy month
+  availability `enabled:true`, warsztat `enabled:false` with the demo flow intact (checked in the browser). api 93 retargeted from
+  the merged branch to main, mergeable/clean, awaiting Stan.
 
 ### 2026-09-23 (Wed) — one-email rule, F2 physio batch (27), niche scout, six follow-ups
 - **Rule (Stan): one e-mail per prospect, ever.** No email 2 / last touch (junk risk). Openers → Stan's call list; PL mobiles →

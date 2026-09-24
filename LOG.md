@@ -32,6 +32,16 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   success state shown; submission stored on l_givyx with `kampania=test-demobar`, `demo=fizjo`, Utm campaign kept,
   `Notified: true` (inf@ Gmail not readable from here — Stan to eyeball). Demo bar is fully live.
 - OLX + Facebook: Stan has no accounts → dropped. GBP post stays the only inbound post.
+- **Tech tickets (Stan):** added to Notion + prioritised: Twilio SMS P0 (GVX-118), online payments demo P1 (119), Portal editing
+  via MCP/API P2 (120), AI chatbot P2 (121; needs the path to Stan's old .NET chat project).
+- **Top tech pick: booking go-live (GVX-94).** Audit: booking-v2 (fizjo, szkolajazdy) already real. Spec
+  `givyx.claudeBrain/.../specs/2026-09-24-booking-go-live.md` → 3 agents → **api #91** (lock against double booking, server-owned
+  duration, customer emails pl/en/ru for received/confirmed/declined/cancelled/moved, owner actions scoped to their location;
+  1221 tests) · **websites #151** (booking-flow fails closed on real sites, demo slugs keep the hashed calendar, locale + visitor IP
+  forwarded, badge on Warsaw time; 877 tests) · **portal #117** (booking gate works for non-admin owners, Move action).
+  Found on the way → **api #92** (settings save wiped the custom domain) and **api #93** (booking config saves not scoped to
+  location; stacked on #91). Merge order 91 → 92 → 93 → 151 → 117. Held: plan gate (branch feat/booking-plan-gate) until the demo
+  apps' plans are checked (admin token). New P2s: demo strip overlaps booking buttons at 390 px; admin modal wipes consent/GA.
 
 ### 2026-09-23 (Wed) — one-email rule, F2 physio batch (27), niche scout, six follow-ups
 - **Rule (Stan): one e-mail per prospect, ever.** No email 2 / last touch (junk risk). Openers → Stan's call list; PL mobiles →

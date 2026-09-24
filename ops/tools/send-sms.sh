@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Send ONE D+3 SMS from Stan's own number via Mac Messages (Text Message Forwarding).
-# Usage: send-sms.sh <slug> [prefix]  — row from outreach/2026-09-17-sms-d3-backlog.csv
+# Usage: send-sms.sh <slug> [prefix] [csv]  — row from the csv (default outreach/2026-09-17-sms-d3-backlog.csv)
 # Text goes through a UTF-8 file read with «class utf8»; env vars / system attribute mangle Polish letters.
 set -euo pipefail
 SLUG="${1:?slug}"; PREFIX="${2:-}"
-CSV="$(dirname "$0")/../../outreach/2026-09-17-sms-d3-backlog.csv"
+CSV="${3:-$(dirname "$0")/../../outreach/2026-09-17-sms-d3-backlog.csv}"
 TMP="$(mktemp)"; trap 'rm -f "$TMP"' EXIT
 PHONE=$(python3 -c '
 import csv,sys

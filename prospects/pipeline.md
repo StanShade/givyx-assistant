@@ -889,7 +889,7 @@ placeholders replaced from the list. Specs `outreach/generic-fizjo-20260921/`.
 | 18 | Centrum Rehabilitacji Arnold Górka | Wrocław | arnoldgorka@wp.pl | 695 424 332 | `gf-20260921-18` | **SENT 2026-09-22** |
 | 19 | Acusrehmed | Poznań | kontakt@acusrehmed.pl | 668 180 809 | `gf-20260921-19` | **SENT 2026-09-22** |
 | 20 | Activmedic | Łódź | rehabilitacja@activmedic.pl | 504 124 124 | `gf-20260921-20` | **SENT 2026-09-22** |
-| 21 | Bejbuśki | Łódź | bejbuski.fizjo@gmail.com | 504 217 887 | `gf-20260921-21` | **SENT 2026-09-22** |
+| 21 | Bejbuśki | Łódź | bejbuski.fizjo@gmail.com | 504 217 887 | `gf-20260921-21` | **SENT 2026-09-22** · **clicked (2 sessions, read 09-24)** → Stan's call list; not in Friday's SMS |
 | 22 | Fizjo Plus | Łódź | fizjoplus.lodz@gmail.com | 505 996 533 | `gf-20260921-22` | **SENT 2026-09-22** |
 | 23 | Fizjocomplex | Łódź | robertnowicki.rehabilitacja@gmail.com | 660 368 653 | `gf-20260921-23` | **SENT 2026-09-22** |
 | 24 | Gabinet Fizjoterapii Patryk Chojnacki | Łódź | gfpatrykchojnacki@gmail.com | 509 130 823 | `gf-20260921-24` | **SENT 2026-09-22** |
@@ -1013,12 +1013,20 @@ Stan "ok send all" → 27/27 `sent:true`, one curl each from the session. **Scor
 | 5 | PM MOTO, Przemysław Dębowski, Tomaszkowice | 787 099 894 | **NO** — „dziękuję, do widzenia” (09-23). Closed. |
 | 6 | J. Bros Auto, Mateusz Jackiewicz, Solcza | 666 325 342 | **NO** — doesn't want to be on Google at all; „w razie czego zadzwoni” (09-23). |
 | 7 | Blueberry Garage, Konrad Borowiak, Dąbrówki Breńskie | 573 404 021 | **NO** — said no because of Stan's Belarusian accent (09-23). Closed. |
-| 8 | AutoMik, Jakub Mikulski, Korzenna | 799 039 230 | not called yet — Thu 24 Sep |
+| 8 | AutoMik, Jakub Mikulski, Korzenna | 799 039 230 | **dropped 09-24** — auto repair closed as a niche (Stan) |
 
 ## 2026-09-23 (evening) — RU/UA-owner calls, Kraków (source `prospects/2026-09-15-krakow-ru-ua-owners.md`, first calls ever)
 
 | # | who | phone | result |
 |---|---|---|---|
-| 1 | Auto Serwis Herasymliuk Vitalii (UA owner, no site, 4,9/53) | 575 831 456 | no answer 09-23 ~16:3xZ → retry Thu 24 Sep 10–12 |
+| 1 | Auto Serwis Herasymliuk Vitalii (UA owner, no site, 4,9/53) | 575 831 456 | no answer 09-23 ~16:3xZ → **dropped 09-24** — auto repair closed as a niche (Stan) |
 | 2 | Auto Hub – Autoelektryk & Serwis, Nowohucka (RU replies, IG only, 4,7/207) | 889 722 555 | **NO** — „мы не нуждаемся” (09-23). Closed. |
 | 2 | Auto Hub – Autoelektryk & Serwis, Nowohucka (RU replies, IG only, 4,7/207) | 889 722 555 | **NO** — „мы не нуждаемся” (09-23). Closed. |
+
+## 2026-09-24 (Thu) — click read · auto repair closed · G1 SMS
+- **Stan: no new e-mails, calls or SMS to auto-repair prospects** unless he names one. AutoMik + Herasymliuk retries dropped.
+- Click read (helper script, 4 reads, since 09-21): fizjo `gf-20260921-21` **Bejbuśki, Łódź — 2 sessions, new** · `-08` Stacja
+  Zdrowie, `-16` Paduch (known) · szkolajazdy `-14` OSK Guzio (known) · F2 (`gf-20260923-*`) 0 so far · warsztat/l_givyx only our
+  own `sigtest`. No form submits.
+- G1 D+3 SMS (29, `outreach/2026-09-24-sms-g1-draft.csv`): Stan "send sms" → first `send-sms.sh` call classifier-blocked
+  ("Real-World Transactions"); 0 sent, pending Stan's Bash allow rule or his own run.

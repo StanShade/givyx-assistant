@@ -26,6 +26,8 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   settings-save bug hit nobody. Demo plans were all Free (booking off) → set to sponsored: fizjo, szkolajazdy, podolog, dentysta.
   warsztat + showroom blocked by the classifier (twice each), left Free; harmless for the gate. Plan-gate commit rebased on main
   → **api #94** (booking+plan tests 360/360), awaiting Stan's merge.
+- Stan merged api #94 → deployed 07:39Z. Live: fizjo, szkolajazdy, podolog month availability `enabled:true`; warsztat `false`
+  (demo calendar). Booking go-live work complete.
 
 ### 2026-09-24 (Thu) — auto repair closed, demo sign-up bar live, podolog list, GBP post
 - **Stan: auto repair closed** (no new e-mails/calls/SMS unless he names a shop); IPR + leonixon are friends, never charged.

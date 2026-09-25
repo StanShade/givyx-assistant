@@ -9,6 +9,11 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-25 (Fri, evening) — K1 + D1 sent, scoreboard 290
+- Stan "send all K1", "send all D1" → **68/68 `sent:true`** (36 kosmetyczka → kosmetyczka.givyx.com `gk-20260925-NN`, 32 dentysta →
+  dentysta.givyx.com `gd-20260925-NN`; D1 requests built with build-email-v4 from `niches/dentysta.json`). **Scoreboard 290.**
+  D+3 SMS Mon 28 Sep for K1 + D1 (with F2 + podolog). Rows in pipeline.md.
+
 ### 2026-09-25 (Fri, afternoon) — kosmetyczka demo built (Preview), seed to Stan
 - kosmetyczka.givyx.com: **Studio Urody Brzask** (fictional one-person salon, ul. Roosevelta 11, Wrocław Nadodrze), layout
   transcribed from bridgebeauty.com. New renderer family `beauty` (givyx.websites PR 156, merged by Stan, deploy green, other

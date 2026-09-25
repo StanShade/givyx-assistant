@@ -1071,3 +1071,87 @@ Seed to Stan 09-24; Stan "ok send all" → **33/33 `sent:true`**, one call each.
 | 34 | Gabinet podologiczny Marta Linkowska | Oława | martalinkowska81@wp.pl | 698 911 773 | `gp-20260924-34` | **SENT 2026-09-25** |
 | 35 | Gabinet Visage Bożena Urbanowicz | Świebodzin | bozunia45@wp.pl | 501 322 861 | `gp-20260924-35` | **SENT 2026-09-25** |
 | 36 | Etre Belle Ewa Jakubowska | Gubin | ewaorlinska@wp.pl | 516 067 600 | `gp-20260924-36` | **SENT 2026-09-25** |
+
+## 2026-09-25 (Fri) — K1: 36 kosmetyczka + D1: 32 dentysta generic e-mails
+
+Stan "send all K1" + "send all D1" → **68/68 `sent:true`**, one call each. K1 links kosmetyczka.givyx.com (`gk-20260925-NN`),
+D1 links dentysta.givyx.com (`gd-20260925-NN`). Sources `prospects/2026-09-25-PL-kosmetyczka.md`, `prospects/2026-09-21-PL-dentysci.md`.
+**Scoreboard: 290 offer e-mails to date.** D+3 SMS **Mon 28 Sep** (to the mobiles below, clickers excluded → calls).
+
+### K1
+
+| # | Name | City | E-mail | Mobile | Code | Status |
+|---|---|---|---|---|---|---|
+| 01 | Studio Urody Expert | Sopot | barbara.przywitowska@gmail.com | 792 740 006 | `gk-20260925-01` | **SENT 2026-09-25** |
+| 02 | Beauty-Strefa Urody Sylwia Rusin | Zabrze | beauty_strefaurody@poczta.fm | 609 969 199 | `gk-20260925-02` | **SENT 2026-09-25** |
+| 03 | Beauty Room Ewelina Siękowska | Suwałki | ewelinasiekowska@o2.pl | 513 256 180 | `gk-20260925-03` | **SENT 2026-09-25** |
+| 04 | Kosmetolog Monika Szułczyńska | Głogów | monika970318@icloud.com | 726 673 037 | `gk-20260925-04` | **SENT 2026-09-25** |
+| 05 | Salon Gabrielle | Pabianice | agus.k@interia.eu | 503 707 645 | `gk-20260925-05` | **SENT 2026-09-25** |
+| 06 | Salon Kosmetyczny Cera | Leszno | joannasobota@o2.pl | 603 098 497 | `gk-20260925-06` | **SENT 2026-09-25** |
+| 07 | Studio Precyzja | Ełk | zuzannastaszkiewicz@wp.pl | 728 569 003 | `gk-20260925-07` | **SENT 2026-09-25** |
+| 08 | BrowArt Studio Wiktoria Dworecka | Ciechanów | wikka.dworecka@gmail.com | 513 579 202 | `gk-20260925-08` | **SENT 2026-09-25** |
+| 09 | Gabinet Kosmetyczny Esencja Piękna | Sanok | klaudia.borowy@gmail.com | 792 347 925 | `gk-20260925-09` | **SENT 2026-09-25** |
+| 10 | Salon Urody SPAsją | Kutno | m.spasja2605@gmail.com | 607 694 893 | `gk-20260925-10` | **SENT 2026-09-25** |
+| 11 | Folk Beauty Monika Wojnar | Zakopane | kontakt.folkbeauty@gmail.com | 575 821 127 | `gk-20260925-11` | **SENT 2026-09-25** |
+| 12 | Renowacja Paulina Reniuszek | Puławy | paulina.reniuszek@gmail.com | 691 603 260 | `gk-20260925-12` | **SENT 2026-09-25** |
+| 13 | Beauty Room by Izabela Zobek | Mysłowice | isabella119955@gmail.com | 509 349 972 | `gk-20260925-13` | **SENT 2026-09-25** |
+| 14 | Kosmetologia Karolina Lachowska | Wodzisław Śląski | karolina.mikulka@gmail.com | 530 157 031 | `gk-20260925-14` | **SENT 2026-09-25** |
+| 15 | Expert Studio Kosmetyczne Magdalena Mularczyk | Zawiercie | expertstudiokosmetyczne@outlook.com | 795 995 801 | `gk-20260925-15` | **SENT 2026-09-25** |
+| 16 | Katarzyna Smęda Makijaż Permanentny | Łapczyca (by Bochnia) | dudziak_katarzyna@wp.pl | 791 814 742 | `gk-20260925-16` | **SENT 2026-09-25** |
+| 17 | Beauty Bar Justyna Witaszyńska | Wejherowo | jwitaszynska@gmail.com | 606 860 001 | `gk-20260925-17` | **SENT 2026-09-25** |
+| 18 | Gabinet Kosmetyczny Dotyk Piękna | Legionowo | bnatalia@wp.eu | 603 350 931 | `gk-20260925-18` | **SENT 2026-09-25** |
+| 19 | Studio Urody Femmina | Wołomin | studiofemmina@gmail.com | 501 467 010 | `gk-20260925-19` | **SENT 2026-09-25** |
+| 20 | Studio Urody Motyl | Starachowice | annaszymanska@vp.pl | 535 363 969 | `gk-20260925-20` | **SENT 2026-09-25** |
+| 21 | Diamond Studio Justyna Strojny | Kluczbork | strojny.justyna@gmail.com | 665 360 212 | `gk-20260925-21` | **SENT 2026-09-25** |
+| 22 | Salon Kosmetyczny TiNKA | Żagań | justynadda@wp.pl | 512 434 917 | `gk-20260925-22` | **SENT 2026-09-25** |
+| 23 | Zakątek Piękna i Urody Żaneta Urbańczyk | Bierzglinek (by Września) | zanus442@wp.pl | 721 016 451 | `gk-20260925-23` | **SENT 2026-09-25** |
+| 24 | Beauty by Sandra Przysiek | Wągrowiec | sandraprzysiek@gmail.com | 790 603 566 | `gk-20260925-24` | **SENT 2026-09-25** |
+| 25 | Kosmetyczka Sylwia Nowakowska | Żywiec | sylwia.1990@hotmail.com | 691 793 202 | `gk-20260925-25` | **SENT 2026-09-25** |
+| 26 | Skin Halina Gołuńska | Skarszewy | golunska.halina@gmail.com | 512 736 215 | `gk-20260925-26` | **SENT 2026-09-25** |
+| 27 | Salon Kosmetyczny Diament | Chorzów | kosmetyka.diament@interia.pl | 667 014 169 | `gk-20260925-27` | **SENT 2026-09-25** |
+| 28 | Beauty Room by Małgorzata Mularska | Jasło | br.gosiamularska@gmail.com | 506 538 086 | `gk-20260925-28` | **SENT 2026-09-25** |
+| 29 | Lash & Look by Weronika Sekuła | Piaseczno | weronikasekula0620@gmail.com | 789 076 002 | `gk-20260925-29` | **SENT 2026-09-25** |
+| 30 | Adrianna Makulska Beauty | Toruń | maalina.1991@gmail.com | 791 466 795 | `gk-20260925-30` | **SENT 2026-09-25** |
+| 31 | Cosmodern Magdalena Szymura | Rybnik | magdalenaszymura@onet.pl | 502 343 753 | `gk-20260925-31` | **SENT 2026-09-25** |
+| 32 | Studio Urody Agápe | Ruda Śląska | agnieszka.drapa@gmail.com | 662 121 092 | `gk-20260925-32` | **SENT 2026-09-25** |
+| 33 | Salon Urody Lavages | Konin | wozniak.anna1@o2.pl | 731 841 388 | `gk-20260925-33` | **SENT 2026-09-25** |
+| 34 | Beautyland Żaneta Taraszkiewicz | Suwałki | beautylandsalon@o2.pl | 508 417 635 | `gk-20260925-34` | **SENT 2026-09-25** |
+| 35 | Salon Kosmetyczny Perła | Ełk | salon@perla.elk.pl | 602 449 920 | `gk-20260925-35` | **SENT 2026-09-25** |
+| 36 | House of Beauty Angelika Wojtasik | Kołobrzeg | angelika.wu@onet.pl | 503 464 858 | `gk-20260925-36` | **SENT 2026-09-25** |
+
+### D1
+
+| # | Name | City | E-mail | Mobile | Code | Status |
+|---|---|---|---|---|---|---|
+| 01 | Dentikon Stomatologia Małgorzata Kolczyńska | Kraków | gabinet@dentikon.pl | 519 551 523 | `gd-20260925-01` | **SENT 2026-09-25** |
+| 02 | Arikadent Katarzyna Duch-Kramarz | Kraków | stomkas@interia.pl | 501 595 272 | `gd-20260925-02` | **SENT 2026-09-25** |
+| 03 | Gabinet Stomatologiczny Agnieszka Dudek | Kraków | a.dudek.dentysta@gmail.com | 693 914 987 | `gd-20260925-03` | **SENT 2026-09-25** |
+| 04 | Gabinet Stomatologii Rodzinnej Monika Kocoł-Chudzia | Kraków | gsr@onet.pl | 502 082 102 | `gd-20260925-04` | **SENT 2026-09-25** |
+| 05 | Praktyka Stomatologiczna Agnieszka Suder | Kraków | agnieszka.suder@wp.pl | 694 072 211 | `gd-20260925-05` | **SENT 2026-09-25** |
+| 06 | Happydent Katarzyna Batko | Kraków | happydentkrakow@gmail.com | 600 987 475 | `gd-20260925-06` | **SENT 2026-09-25** |
+| 07 | Gabinet Stomatologiczny Katarzyna Błaszczyk | Katowice | kasiablaszczyk1@wp.pl | 603 111 250 | `gd-20260925-07` | **SENT 2026-09-25** |
+| 08 | Lekarz Stomatolog Marcin Irzyk | Katowice | asolo@poczta.fm | 608 605 108 | `gd-20260925-08` | **SENT 2026-09-25** |
+| 09 | Vita-Dent | Katowice | mazur-psonka@wp.pl | 601 452 896 | `gd-20260925-09` | **SENT 2026-09-25** |
+| 10 | Szwed-Dent | Katowice | szweddent@op.pl | 516 193 882 | `gd-20260925-10` | **SENT 2026-09-25** |
+| 11 | Praktyka Stomatologiczna Marek Kowalczewski | Katowice | marek.kowalczewski.dentysta@wp.pl | 602 288 996 | `gd-20260925-11` | **SENT 2026-09-25** |
+| 12 | Alfadent Maciej Cetnarski | Wrocław | alfadent1@op.pl | 601 792 596 | `gd-20260925-12` | **SENT 2026-09-25** |
+| 13 | Gabinet Stomatologiczny Bożena Piekarska | Wrocław | gabinet@dr-bozenka.com | 609 665 599 | `gd-20260925-13` | **SENT 2026-09-25** |
+| 14 | Gabinet Stomatologiczny Magdalena Chorążykiewicz | Wrocław | magda@world.pl | 603 068 648 | `gd-20260925-14` | **SENT 2026-09-25** |
+| 15 | Dentalcare Ewa Młyńczak | Wrocław | mlynczak.ewa@gmail.com | 500 221 754 | `gd-20260925-15` | **SENT 2026-09-25** |
+| 16 | Gabinet Stomatologiczny Dariusz Łasut | Wrocław | dariuszlasut@gmail.com | 696 424 404 | `gd-20260925-16` | **SENT 2026-09-25** |
+| 17 | Praktyka Lekarsko-Dentystyczna Anna Urban | Wrocław | a_urban@o2.pl | 509 475 047 | `gd-20260925-17` | **SENT 2026-09-25** |
+| 18 | Praktyka Stomatologiczna Beata Wandas | Wrocław | beatawandas@gmail.com | 785 226 572 | `gd-20260925-18` | **SENT 2026-09-25** |
+| 19 | Praktyka Stomatologiczna Kinga Chodór | Wrocław | k.e.chodor@gmail.com | 601 421 068 | `gd-20260925-19` | **SENT 2026-09-25** |
+| 20 | Praktyka Stomatologiczna Izabela Tokarz | Wrocław | izabela.tokarz@interia.eu | 509 275 123 | `gd-20260925-20` | **SENT 2026-09-25** |
+| 21 | Gabinet Stomatologiczny Joanna Kosiek | Wrocław | akosiek@tlen.pl | 605 670 202 | `gd-20260925-21` | **SENT 2026-09-25** |
+| 22 | Dentisana Anna Przybylska | Poznań | gabinet@dentisana.pl | 666 371 713 | `gd-20260925-22` | **SENT 2026-09-25** |
+| 23 | Gabinet Stomatologiczny Ewa Marcinkowska | Poznań | marcinkowska1@gmail.com | 609 443 705 | `gd-20260925-23` | **SENT 2026-09-25** |
+| 24 | Gabinet Dentystyczny Anna Krahel | Poznań | akrahel@wp.pl | 607 244 256 | `gd-20260925-24` | **SENT 2026-09-25** |
+| 25 | Gabinet Stomatologiczny Iwona Radziszewska | Poznań | iwonradziszewska@wp.pl | 607 283 690 | `gd-20260925-25` | **SENT 2026-09-25** |
+| 26 | Gabinet Stomatologiczny Katarzyna Chudzińska-Otulakowska | Poznań | kajdas@o2.pl | 608 076 706 | `gd-20260925-26` | **SENT 2026-09-25** |
+| 27 | Gabinet Stomatologiczny Naramowice | Poznań | dlisowska@wp.pl | 512 753 670 | `gd-20260925-27` | **SENT 2026-09-25** |
+| 28 | Gabinet Stomatologiczny Katarzyna Glinka-Pawlik | Poznań | glinkapawlikkatarzyna@o2.pl | 502 593 195 | `gd-20260925-28` | **SENT 2026-09-25** |
+| 29 | Praktyka Stomatologiczna Radosław Siwiec | Poznań | r.siwiec@stomatologia.poznan.pl | 514 270 421 | `gd-20260925-29` | **SENT 2026-09-25** |
+| 30 | Dentysta Małgorzata Narożna-Krajniak | Poznań | lekarzdentysta@wp.pl | 609 552 209 | `gd-20260925-30` | **SENT 2026-09-25** |
+| 31 | Gabinet Stomatologiczny Małgorzata Próchnicka | Poznań | prochnickamalgorzata@wp.pl | 602 129 911 | `gd-20260925-31` | **SENT 2026-09-25** |
+| 32 | Stomatologia Agnieszka Pabian | Poznań | agnieszkapabian@o2.pl | 601 256 176 | `gd-20260925-32` | **SENT 2026-09-25** |

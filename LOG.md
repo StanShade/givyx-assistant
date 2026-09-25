@@ -24,6 +24,11 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   Paduch, Bejbuśki left out for calls). Awaiting Stan's send OK.
 - Kosmetyczka list `prospects/2026-09-25-PL-kosmetyczka.md`: 36 qualified, 7 flagged, 15 reserves, 34 new towns; 3 e-mails
   re-checked against panoramafirm. Maps yield 21 % (scout said 52 %); 10/36 already on Booksy. Needs a kosmetyczka demo before any send.
+- Click read (Stan's explicit OK, 4 reads): **new opener Twój Podolog Martyna Bassara, Rzeszów (`gp-20260924-01`, 3 sessions,
+  same day as the send)** → Stan's call 793 973 474. G1 SMS clicks on warsztat: Auto Naprawa Dudek (gw-08), Auto-Express (gw-23),
+  LUKCAR (gw-25) — auto repair is stopped, Stan decides. fizjo/szkolajazdy: only the known openers; F2 0. No conversions.
+- S1/F1 SMS send classifier-blocked ("Real-World Transactions") despite Stan's "send" → Stan runs the loop or adds an allow rule.
+  Stan merged api #93. Kosmetyczka demo ref: bridgebeauty.com, Higgsfield video + images.
 
 ### 2026-09-25 (Fri) — P1 podolog batch sent
 - Stan "ok send all" → 33/33 podolog e-mails `sent:true` (v4.1 generic, podolog.json niche config, link podolog.givyx.com with

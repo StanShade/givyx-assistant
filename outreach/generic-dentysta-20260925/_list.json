@@ -1,0 +1,290 @@
+[
+ {
+  "name": "Dentikon Stomatologia Małgorzata Kolczyńska",
+  "name_full": "Dentikon Stomatologia Małgorzata Kolczyńska",
+  "to": "gabinet@dentikon.pl",
+  "city": "Kraków",
+  "mobile": "519 551 523",
+  "code": "gd-20260925-01",
+  "slug": "dentikonstom"
+ },
+ {
+  "name": "Arikadent Katarzyna Duch-Kramarz",
+  "name_full": "Arikadent-Gabinet Stomatologiczny Katarzyna Duch-Kramarz",
+  "to": "stomkas@interia.pl",
+  "city": "Kraków",
+  "mobile": "501 595 272",
+  "code": "gd-20260925-02",
+  "slug": "arikadentkat"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Agnieszka Dudek",
+  "name_full": "Gabinet Stomatologiczny Lek.Dentysta Agnieszka Dudek",
+  "to": "a.dudek.dentysta@gmail.com",
+  "city": "Kraków",
+  "mobile": "693 914 987",
+  "code": "gd-20260925-03",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Gabinet Stomatologii Rodzinnej Monika Kocoł-Chudzia",
+  "name_full": "Gabinet Stomatologii Rodzinnej Monika Kocoł-Chudzia",
+  "to": "gsr@onet.pl",
+  "city": "Kraków",
+  "mobile": "502 082 102",
+  "code": "gd-20260925-04",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Praktyka Stomatologiczna Agnieszka Suder",
+  "name_full": "Indywidualna Praktyka Stomatologiczna Agnieszka Suder",
+  "to": "agnieszka.suder@wp.pl",
+  "city": "Kraków",
+  "mobile": "694 072 211",
+  "code": "gd-20260925-05",
+  "slug": "praktykastom"
+ },
+ {
+  "name": "Happydent Katarzyna Batko",
+  "name_full": "Katarzyna Batko Praktyka Stomatologiczna Happydent",
+  "to": "happydentkrakow@gmail.com",
+  "city": "Kraków",
+  "mobile": "600 987 475",
+  "code": "gd-20260925-06",
+  "slug": "happydentkat"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Katarzyna Błaszczyk",
+  "name_full": "Błaszczyk Katarzyna Gabinet Stomatologiczny",
+  "to": "kasiablaszczyk1@wp.pl",
+  "city": "Katowice",
+  "mobile": "603 111 250",
+  "code": "gd-20260925-07",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Lekarz Stomatolog Marcin Irzyk",
+  "name_full": "Lekarz Stomatolog Marcin Irzyk",
+  "to": "asolo@poczta.fm",
+  "city": "Katowice",
+  "mobile": "608 605 108",
+  "code": "gd-20260925-08",
+  "slug": "lekarzstomat"
+ },
+ {
+  "name": "Vita-Dent",
+  "name_full": "Niepubliczny Zakład Opieki Zdrowotnej Vita-Dent",
+  "to": "mazur-psonka@wp.pl",
+  "city": "Katowice",
+  "mobile": "601 452 896",
+  "code": "gd-20260925-09",
+  "slug": "vitadent"
+ },
+ {
+  "name": "Szwed-Dent",
+  "name_full": "Niepubliczny Zakład Opieki Zdrowotnej Szwed-Dent Prywatna Poradnia Stomatologiczna",
+  "to": "szweddent@op.pl",
+  "city": "Katowice",
+  "mobile": "516 193 882",
+  "code": "gd-20260925-10",
+  "slug": "szweddent"
+ },
+ {
+  "name": "Praktyka Stomatologiczna Marek Kowalczewski",
+  "name_full": "Prywatna Praktyka Stomatologiczna Marek Kowalczewski",
+  "to": "marek.kowalczewski.dentysta@wp.pl",
+  "city": "Katowice",
+  "mobile": "602 288 996",
+  "code": "gd-20260925-11",
+  "slug": "praktykastom"
+ },
+ {
+  "name": "Alfadent Maciej Cetnarski",
+  "name_full": "Alfadent Maciej Cetnarski",
+  "to": "alfadent1@op.pl",
+  "city": "Wrocław",
+  "mobile": "601 792 596",
+  "code": "gd-20260925-12",
+  "slug": "alfadentmaci"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Bożena Piekarska",
+  "name_full": "Bożena Piekarska Gabinet Stomatologiczny",
+  "to": "gabinet@dr-bozenka.com",
+  "city": "Wrocław",
+  "mobile": "609 665 599",
+  "code": "gd-20260925-13",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Magdalena Chorążykiewicz",
+  "name_full": "Chorążykiewicz Magdalena Gabinet Stomatologiczny",
+  "to": "magda@world.pl",
+  "city": "Wrocław",
+  "mobile": "603 068 648",
+  "code": "gd-20260925-14",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Dentalcare Ewa Młyńczak",
+  "name_full": "Dentalcare Ewa Młyńczak",
+  "to": "mlynczak.ewa@gmail.com",
+  "city": "Wrocław",
+  "mobile": "500 221 754",
+  "code": "gd-20260925-15",
+  "slug": "dentalcareew"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Dariusz Łasut",
+  "name_full": "Gabinet Stomatologiczny Dariusz Łasut",
+  "to": "dariuszlasut@gmail.com",
+  "city": "Wrocław",
+  "mobile": "696 424 404",
+  "code": "gd-20260925-16",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Praktyka Lekarsko-Dentystyczna Anna Urban",
+  "name_full": "Indywidualna Praktyka Lekarsko-Dentystyczna Anna Urban",
+  "to": "a_urban@o2.pl",
+  "city": "Wrocław",
+  "mobile": "509 475 047",
+  "code": "gd-20260925-17",
+  "slug": "praktykaleka"
+ },
+ {
+  "name": "Praktyka Stomatologiczna Beata Wandas",
+  "name_full": "Indywidualna Praktyka Stomatologiczna Beata Wandas",
+  "to": "beatawandas@gmail.com",
+  "city": "Wrocław",
+  "mobile": "785 226 572",
+  "code": "gd-20260925-18",
+  "slug": "praktykastom"
+ },
+ {
+  "name": "Praktyka Stomatologiczna Kinga Chodór",
+  "name_full": "Indywidualna Praktyka Stomatologiczna Kinga Chodór",
+  "to": "k.e.chodor@gmail.com",
+  "city": "Wrocław",
+  "mobile": "601 421 068",
+  "code": "gd-20260925-19",
+  "slug": "praktykastom"
+ },
+ {
+  "name": "Praktyka Stomatologiczna Izabela Tokarz",
+  "name_full": "Izabela Tokarz Indywidualna Praktyka Stomatologiczna",
+  "to": "izabela.tokarz@interia.eu",
+  "city": "Wrocław",
+  "mobile": "509 275 123",
+  "code": "gd-20260925-20",
+  "slug": "praktykastom"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Joanna Kosiek",
+  "name_full": "Kosiek Joanna Gabinet Stomatologiczny",
+  "to": "akosiek@tlen.pl",
+  "city": "Wrocław",
+  "mobile": "605 670 202",
+  "code": "gd-20260925-21",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Dentisana Anna Przybylska",
+  "name_full": "Dentisana Gabinet Stomatologiczny Anna Przybylska",
+  "to": "gabinet@dentisana.pl",
+  "city": "Poznań",
+  "mobile": "666 371 713",
+  "code": "gd-20260925-22",
+  "slug": "dentisanaann"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Ewa Marcinkowska",
+  "name_full": "Gabinet Stomatologiczny Ewa Marcinkowska",
+  "to": "marcinkowska1@gmail.com",
+  "city": "Poznań",
+  "mobile": "609 443 705",
+  "code": "gd-20260925-23",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Gabinet Dentystyczny Anna Krahel",
+  "name_full": "Anna Krahel Gabinet Dentystyczny",
+  "to": "akrahel@wp.pl",
+  "city": "Poznań",
+  "mobile": "607 244 256",
+  "code": "gd-20260925-24",
+  "slug": "gabinetdenty"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Iwona Radziszewska",
+  "name_full": "Gabinet Stomatologiczny Iwona Radziszewska",
+  "to": "iwonradziszewska@wp.pl",
+  "city": "Poznań",
+  "mobile": "607 283 690",
+  "code": "gd-20260925-25",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Katarzyna Chudzińska-Otulakowska",
+  "name_full": "Gabinet Stomatologiczny Katarzyna Chudzińska-Otulakowska",
+  "to": "kajdas@o2.pl",
+  "city": "Poznań",
+  "mobile": "608 076 706",
+  "code": "gd-20260925-26",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Naramowice",
+  "name_full": "Gabinet Stomatologiczny Naramowice lek. stom. Daria Lisowska",
+  "to": "dlisowska@wp.pl",
+  "city": "Poznań",
+  "mobile": "512 753 670",
+  "code": "gd-20260925-27",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Katarzyna Glinka-Pawlik",
+  "name_full": "Glinka-Pawlik Katarzyna Prywatny Gabinet Stomatologiczny",
+  "to": "glinkapawlikkatarzyna@o2.pl",
+  "city": "Poznań",
+  "mobile": "502 593 195",
+  "code": "gd-20260925-28",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Praktyka Stomatologiczna Radosław Siwiec",
+  "name_full": "Indywidualna Praktyka Stomatologiczna Radosław Siwiec",
+  "to": "r.siwiec@stomatologia.poznan.pl",
+  "city": "Poznań",
+  "mobile": "514 270 421",
+  "code": "gd-20260925-29",
+  "slug": "praktykastom"
+ },
+ {
+  "name": "Dentysta Małgorzata Narożna-Krajniak",
+  "name_full": "Narożna-Krajniak Małgorzata Dentysta",
+  "to": "lekarzdentysta@wp.pl",
+  "city": "Poznań",
+  "mobile": "609 552 209",
+  "code": "gd-20260925-30",
+  "slug": "dentystamalg"
+ },
+ {
+  "name": "Gabinet Stomatologiczny Małgorzata Próchnicka",
+  "name_full": "Próchnicka Małgorzata Gabinet Stomatologiczny",
+  "to": "prochnickamalgorzata@wp.pl",
+  "city": "Poznań",
+  "mobile": "602 129 911",
+  "code": "gd-20260925-31",
+  "slug": "gabinetstoma"
+ },
+ {
+  "name": "Stomatologia Agnieszka Pabian",
+  "name_full": "Stomatologia Agnieszka Pabian",
+  "to": "agnieszkapabian@o2.pl",
+  "city": "Poznań",
+  "mobile": "601 256 176",
+  "code": "gd-20260925-32",
+  "slug": "stomatologia"
+ }
+]

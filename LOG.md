@@ -9,6 +9,14 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-25 (Fri) — dentysta demo ready → D1 config + 32 specs, seed to Stan
+- Stan: dentists demo ready. dentysta.givyx.com (Klinika Orlicz, fictional): 9 routes 200, noindex, demo bar on, prices on
+  /uslugi, booking-v2 (usługa · lekarz · termin).
+- `outreach/niches/dentysta.json` (zakres leczenia, cennik; booking line says "usługi i terminu" since most rows are solo
+  dentists). 32 specs from `prospects/2026-09-21-PL-dentysci.md` qualified rows, legal names shortened to the brand, codes
+  `gd-20260925-01…32`; 0 overlaps with earlier sends. 7 flagged rows (few/no reviews, one 25 % 1★) held. Seed (#01) to
+  stan.zak.inf@gmail.com `sent:true`. Awaiting "ok send all".
+
 ### 2026-09-25 (Fri) — P1 podolog batch sent
 - Stan "ok send all" → 33/33 podolog e-mails `sent:true` (v4.1 generic, podolog.json niche config, link podolog.givyx.com with
   `utm_campaign=gp-20260924-NN`). Two titles had `&amp;` from escaping → sent with a plain `&`. **Scoreboard 222.** D+3 SMS Mon 28 Sep.

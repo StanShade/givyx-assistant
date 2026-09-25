@@ -889,7 +889,7 @@ placeholders replaced from the list. Specs `outreach/generic-fizjo-20260921/`.
 | 18 | Centrum Rehabilitacji Arnold Górka | Wrocław | arnoldgorka@wp.pl | 695 424 332 | `gf-20260921-18` | **SENT 2026-09-22** |
 | 19 | Acusrehmed | Poznań | kontakt@acusrehmed.pl | 668 180 809 | `gf-20260921-19` | **SENT 2026-09-22** |
 | 20 | Activmedic | Łódź | rehabilitacja@activmedic.pl | 504 124 124 | `gf-20260921-20` | **SENT 2026-09-22** |
-| 21 | Bejbuśki | Łódź | bejbuski.fizjo@gmail.com | 504 217 887 | `gf-20260921-21` | **SENT 2026-09-22** · **clicked (2 sessions, read 09-24)** → Stan's call list; not in Friday's SMS |
+| 21 | Bejbuśki | Łódź | bejbuski.fizjo@gmail.com | 504 217 887 | `gf-20260921-21` | **SENT 2026-09-22** · **clicked (2 sessions, read 09-24)** → Stan's call list; not in Friday's SMS · **Stan called 09-25: no answer** → call back Mon 28 Sep before 10:00 (Booksy hours Mon 10–15) |
 | 22 | Fizjo Plus | Łódź | fizjoplus.lodz@gmail.com | 505 996 533 | `gf-20260921-22` | **SENT 2026-09-22** |
 | 23 | Fizjocomplex | Łódź | robertnowicki.rehabilitacja@gmail.com | 660 368 653 | `gf-20260921-23` | **SENT 2026-09-22** |
 | 24 | Gabinet Fizjoterapii Patryk Chojnacki | Łódź | gfpatrykchojnacki@gmail.com | 509 130 823 | `gf-20260921-24` | **SENT 2026-09-22** |

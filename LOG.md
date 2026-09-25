@@ -9,6 +9,11 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-25 (Fri, 15:34) — Bassara call: no answer, SMS back
+- Stan called Twój Podolog Martyna Bassara (gp-20260924-01, 793 973 474); she was with a patient. SMS back 15:34:
+  „Dzień dobry, wykonuję zabieg, proszę o sms- oddzwonię jak będzie to możliwe…” (preview, read on screen). Reply SMS
+  drafted for Stan's OK. Out of the Mon 28 Sep P1 D+3 SMS. Script: `outreach/2026-09-25-call-script-bassara.md`.
+
 ### 2026-09-25 (Fri, evening) — K1 + D1 sent, scoreboard 290
 - Stan "send all K1", "send all D1" → **68/68 `sent:true`** (36 kosmetyczka → kosmetyczka.givyx.com `gk-20260925-NN`, 32 dentysta →
   dentysta.givyx.com `gd-20260925-NN`; D1 requests built with build-email-v4 from `niches/dentysta.json`). **Scoreboard 290.**

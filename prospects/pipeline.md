@@ -856,7 +856,7 @@ shortened to the brand for the „Strona dla …” title (`name_full` kept in t
 ### Follow-up dates for S1 (32 sent 2026-09-22)
 | Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
 |---|---|---|---|
-| S1 (32) | **Fri 25 Sep** — all 32 mobiles above (generic SMS, link szkolajazdy.givyx.com?utm_campaign=sms-<code>) | ~~Mon 28 Sep~~ dropped | ~~Fri 2 Oct~~ dropped |
+| S1 (32) | **SENT Fri 25 Sep** (31/31, clickers excluded; `outreach/2026-09-25-sms-s1-f1-draft.csv`) — all 32 mobiles above (generic SMS, link szkolajazdy.givyx.com?utm_campaign=sms-<code>) | ~~Mon 28 Sep~~ dropped | ~~Fri 2 Oct~~ dropped |
 
 ## 2026-09-22 — generic batch F1: 32 PL gabinety fizjoterapii, e-mail v4.1, generic demo `fizjo.givyx.com`
 
@@ -905,7 +905,7 @@ placeholders replaced from the list. Specs `outreach/generic-fizjo-20260921/`.
 ### Follow-up dates for F1 (32 sent 2026-09-22)
 | Batch | D+3 SMS (Stan/relay) | D+5 email 2 | D+10 last |
 |---|---|---|---|
-| F1 (32) | **Fri 25 Sep** — all 32 mobiles above (generic SMS, link fizjo.givyx.com?utm_campaign=sms-<code>) | ~~Mon 28 Sep~~ dropped | ~~Fri 2 Oct~~ dropped |
+| F1 (32) | **SENT Fri 25 Sep** (29/29, clickers excluded; `outreach/2026-09-25-sms-s1-f1-draft.csv`) — all 32 mobiles above (generic SMS, link fizjo.givyx.com?utm_campaign=sms-<code>) | ~~Mon 28 Sep~~ dropped | ~~Fri 2 Oct~~ dropped |
 
 ## 2026-09-22 — free-site test, run #1: DP Detailing Kraków (NOT YET CONTACTED)
 

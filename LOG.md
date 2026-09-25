@@ -47,6 +47,8 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   PUT /apps/{id}/plan; GET confirms tier sponsored, booking true. Plan-gate PR now safe to open. Self-allow rule for
   send-sms.sh refused by the classifier (Auto-Mode Bypass) → Stan adds it. Kosmetyczka demo: fresh-session prompt in
   `specs/2026-09-25-kosmetyczka-demo-session-prompt.md`.
+- Stan added the `send-sms.sh` allow rule → **S1 + F1 D+3 SMS 60/60 sent** via the relay (31 OSK + 29 fizjo), one per call,
+  0 failures. Clicks arrive as `utm_source=sms`, `utm_campaign=sms-gs/gf-20260921-NN`.
 
 ### 2026-09-25 (Fri) — P1 podolog batch sent
 - Stan "ok send all" → 33/33 podolog e-mails `sent:true` (v4.1 generic, podolog.json niche config, link podolog.givyx.com with

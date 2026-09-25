@@ -9,6 +9,14 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-25 (Fri, late) — campaign click report, all demos
+- Stan's OK, 10 analytics reads + 1 leads read (helper script, admin token). **New opener: Podologia Maciej Dawidowicz, Wrocław
+  (`gp-20260924-12`, 724 109 802)** → call list, dropped from Monday's SMS (126 left). **New S1/F1 SMS clickers (sent 09-25):**
+  Szkoła Jazdy Iza (gs-05), OSK Royal (gs-21), OSK Świetlicki (gs-27), Activmedic (gf-20), Mały Dom Ulgi w Bólu (gf-26), plus
+  Bądź w dobrej formie (gf-07, already said no). K1/D1 0 (hours old), F2 0, GBP post 0, showroom no sends yet.
+- Every conversion in the data is ours (fizjo "Zadzwoń" + form on build day 09-21, demo-bar E2E test, kosmetyczka booking in the
+  build window). Real form/booking/demo-bar leads from prospects: 0. Email openers to date 9 of 290; SMS clickers 9 of 89 generic.
+
 ### 2026-09-25 (Fri, 15:34) — Bassara call: no answer, SMS back
 - Stan called Twój Podolog Martyna Bassara (gp-20260924-01, 793 973 474); she was with a patient. SMS back 15:34:
   „Dzień dobry, wykonuję zabieg, proszę o sms- oddzwonię jak będzie to możliwe…” (preview, read on screen). Reply SMS

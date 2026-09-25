@@ -9,6 +9,16 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-25 (Fri, late) — GVX-119 online payments demo: spec + 3 PRs
+- Evidence sweep: product checkout → Stripe Connect (Standard, per app) → webhook → Portal Orders tab is already on main but
+  never ran live. Gaps: failed payments never recorded, no order e-mails, e-mail-only contact, webhook claim not released on
+  error, no plan gate on `/order-checkout`, subscription-only success page.
+- Spec `givyx.claudeBrain/Givyx/superpowers/specs/2026-09-25-tenant-payments-demo.md` (brain `7d6bb77`). PRs, none merged:
+  givyx.api #96 (1290 + 115 tests green), givyx.portal #118 (build green), givyx.websites #158 (1045 tests green).
+- Demo = `platnosci.givyx.com`, a copy of kosmetyczka (Brzask) with vouchers 100/200 zł + 20 zł deposit, not linked from
+  outreach. Waiting on Stan's gate (spec §7): 2nd Stripe account, webhook events, merges, tenant/plan/products OK, Connect,
+  4 live payments.
+
 ### 2026-09-25 (Fri, late) — campaign click report, all demos
 - Stan's OK, 10 analytics reads + 1 leads read (helper script, admin token). **New opener: Podologia Maciej Dawidowicz, Wrocław
   (`gp-20260924-12`, 724 109 802)** → call list, dropped from Monday's SMS (126 left). **New S1/F1 SMS clickers (sent 09-25):**

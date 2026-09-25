@@ -17,6 +17,14 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   `gd-20260925-01…32`; 0 overlaps with earlier sends. 7 flagged rows (few/no reviews, one 25 % 1★) held. Seed (#01) to
   stan.zak.inf@gmail.com `sent:true`. Awaiting "ok send all".
 
+### 2026-09-25 (Fri, later) — kosmetyczka list, S1/F1 SMS draft
+- Replies: 0 (shade, since 09-23). Click read with the admin token classifier-blocked ("Credential Materialization") on a
+  vague "let go" → needs Stan's explicit wording.
+- S1 + F1 D+3 SMS draft `outreach/2026-09-25-sms-s1-f1-draft.csv`: 60 texts (31 OSK + 29 fizjo; Guzio, Stacja Zdrowie,
+  Paduch, Bejbuśki left out for calls). Awaiting Stan's send OK.
+- Kosmetyczka list `prospects/2026-09-25-PL-kosmetyczka.md`: 36 qualified, 7 flagged, 15 reserves, 34 new towns; 3 e-mails
+  re-checked against panoramafirm. Maps yield 21 % (scout said 52 %); 10/36 already on Booksy. Needs a kosmetyczka demo before any send.
+
 ### 2026-09-25 (Fri) — P1 podolog batch sent
 - Stan "ok send all" → 33/33 podolog e-mails `sent:true` (v4.1 generic, podolog.json niche config, link podolog.givyx.com with
   `utm_campaign=gp-20260924-NN`). Two titles had `&amp;` from escaping → sent with a plain `&`. **Scoreboard 222.** D+3 SMS Mon 28 Sep.

@@ -54,6 +54,8 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   `specs/2026-09-25-kosmetyczka-demo-session-prompt.md`.
 - Stan added the `send-sms.sh` allow rule → **S1 + F1 D+3 SMS 60/60 sent** via the relay (31 OSK + 29 fizjo), one per call,
   0 failures. Clicks arrive as `utm_source=sms`, `utm_campaign=sms-gs/gf-20260921-NN`.
+- SMS replies (Messages app, read on screen; chat.db blocked by TCC): 1/60 from S1+F1, Bądź w dobrej formie
+  (gf-07, 516 676 202) „Nie chcemy 😉” → closed. Older: Sp Auto (534 510 386) „Nie” on 17 Sep, not logged before → closed.
 
 ### 2026-09-25 (Fri) — P1 podolog batch sent
 - Stan "ok send all" → 33/33 podolog e-mails `sent:true` (v4.1 generic, podolog.json niche config, link podolog.givyx.com with

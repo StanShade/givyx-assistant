@@ -9,6 +9,18 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-25 (Fri, afternoon) — kosmetyczka demo built (Preview), seed to Stan
+- kosmetyczka.givyx.com: **Studio Urody Brzask** (fictional one-person salon, ul. Roosevelta 11, Wrocław Nadodrze), layout
+  transcribed from bridgebeauty.com. New renderer family `beauty` (givyx.websites PR 156, merged by Stan, deploy green, other
+  sites smoked). Tenant `a_9b6d7f9` / `l_bb3a0cc`, plan sponsored, booking-v2 seeded (10 treatments, Hanna Borowska).
+  9 routes 200, noindex + Disallow, one tel:+48713456789, demo strip on, pill hidden on /zabiegi. Preview only, not published.
+- Tests: booking `bkg_6a1864f8…` (Oczyszczanie wodorowe, wt 29 wrz 09:45) notified:true, then cancelled; contact form
+  `resp_d03a7ed7…` Notified:true.
+- Media: Higgsfield 185 credits (12 stills gpt_image_2_5 2k + Seedance 2.5 loops 16:9 1080p / 9:16 720p). Balance 545.5.
+- `outreach/niches/kosmetyczka.json` + `generic-kosmetyczka-20260925/` (row 1 only, `gk-20260925-01`, Studio Urody Expert,
+  Sopot). Seed to stan.zak.inf@gmail.com `sent:true`, subject "Strona dla gabinetu kosmetycznego — przykład i oferta".
+  **No prospect e-mailed.** Build window 10:20–12:00 UTC (exclude from the first click read).
+- Needs Stan: review the seed, publish the tenant, then build the remaining 35 specs and OK the batch.
 ### 2026-09-25 (Fri) — dentysta demo ready → D1 config + 32 specs, seed to Stan
 - Stan: dentists demo ready. dentysta.givyx.com (Klinika Orlicz, fictional): 9 routes 200, noindex, demo bar on, prices on
   /uslugi, booking-v2 (usługa · lekarz · termin).

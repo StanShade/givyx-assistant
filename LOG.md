@@ -20,7 +20,9 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 - `outreach/niches/kosmetyczka.json` + `generic-kosmetyczka-20260925/` (row 1 only, `gk-20260925-01`, Studio Urody Expert,
   Sopot). Seed to stan.zak.inf@gmail.com `sent:true`, subject "Strona dla gabinetu kosmetycznego — przykład i oferta".
   **No prospect e-mailed.** Build window 10:20–12:00 UTC (exclude from the first click read).
-- Needs Stan: review the seed, publish the tenant, then build the remaining 35 specs and OK the batch.
+- Stan: PR 157 merged (deploy rerun after a Google Fonts fetch flake, green, sites smoked), seed OK, "publish it" →
+  `deploy_to_production` 9 pages promoted, verify 0 failures on Production. Batch built: 36 specs `gk-20260925-01…36`
+  (rows 1–36, 0 overlaps with any earlier outreach, 0 dropped). Awaiting "send all".
 ### 2026-09-25 (Fri) — dentysta demo ready → D1 config + 32 specs, seed to Stan
 - Stan: dentists demo ready. dentysta.givyx.com (Klinika Orlicz, fictional): 9 routes 200, noindex, demo bar on, prices on
   /uslugi, booking-v2 (usługa · lekarz · termin).

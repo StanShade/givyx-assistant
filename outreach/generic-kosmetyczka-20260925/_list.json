@@ -7,5 +7,320 @@
   "mobile": "792 740 006",
   "code": "gk-20260925-01",
   "slug": "studiourodye"
+ },
+ {
+  "name": "Beauty-Strefa Urody Sylwia Rusin",
+  "name_full": "Beauty-Strefa Urody Sylwia Rusin",
+  "to": "beauty_strefaurody@poczta.fm",
+  "city": "Zabrze",
+  "mobile": "609 969 199",
+  "code": "gk-20260925-02",
+  "slug": "beautystrefa"
+ },
+ {
+  "name": "Beauty Room Ewelina Siękowska",
+  "name_full": "Beauty Room Ewelina Siękowska",
+  "to": "ewelinasiekowska@o2.pl",
+  "city": "Suwałki",
+  "mobile": "513 256 180",
+  "code": "gk-20260925-03",
+  "slug": "beautyroomew"
+ },
+ {
+  "name": "Kosmetolog Monika Szułczyńska",
+  "name_full": "Powiększanie Ust - Kosmetyczka - Kosmetolog Monika Szułczyńska",
+  "to": "monika970318@icloud.com",
+  "city": "Głogów",
+  "mobile": "726 673 037",
+  "code": "gk-20260925-04",
+  "slug": "kosmetologmo"
+ },
+ {
+  "name": "Salon Gabrielle",
+  "name_full": "\"Gabrielle\" Salon Piękna i Urody Agata Senator",
+  "to": "agus.k@interia.eu",
+  "city": "Pabianice",
+  "mobile": "503 707 645",
+  "code": "gk-20260925-05",
+  "slug": "salongabriel"
+ },
+ {
+  "name": "Salon Kosmetyczny Cera",
+  "name_full": "\"Cera\" Salon Kosmetyczny Joanna Sobota",
+  "to": "joannasobota@o2.pl",
+  "city": "Leszno",
+  "mobile": "603 098 497",
+  "code": "gk-20260925-06",
+  "slug": "salonkosmety"
+ },
+ {
+  "name": "Studio Precyzja",
+  "name_full": "\"Precyzja\" Mobilne Studio Stylizacji Paznokci i Rzęs Zuzanna Krzyśków",
+  "to": "zuzannastaszkiewicz@wp.pl",
+  "city": "Ełk",
+  "mobile": "728 569 003",
+  "code": "gk-20260925-07",
+  "slug": "studioprecyz"
+ },
+ {
+  "name": "BrowArt Studio Wiktoria Dworecka",
+  "name_full": "BrowArt Studio Wiktoria Dworecka",
+  "to": "wikka.dworecka@gmail.com",
+  "city": "Ciechanów",
+  "mobile": "513 579 202",
+  "code": "gk-20260925-08",
+  "slug": "browartstudi"
+ },
+ {
+  "name": "Gabinet Kosmetyczny Esencja Piękna",
+  "name_full": "Klaudia Borowy Gabinet Kosmetyczny „Esencja Piękna”",
+  "to": "klaudia.borowy@gmail.com",
+  "city": "Sanok",
+  "mobile": "792 347 925",
+  "code": "gk-20260925-09",
+  "slug": "gabinetkosme"
+ },
+ {
+  "name": "Salon Urody SPAsją",
+  "name_full": "SPAsją Salon Urody Magdalena Bardzińska",
+  "to": "m.spasja2605@gmail.com",
+  "city": "Kutno",
+  "mobile": "607 694 893",
+  "code": "gk-20260925-10",
+  "slug": "salonurodysp"
+ },
+ {
+  "name": "Folk Beauty Monika Wojnar",
+  "name_full": "Gabinet Kosmetyczny Folk Beauty Monika Wojnar",
+  "to": "kontakt.folkbeauty@gmail.com",
+  "city": "Zakopane",
+  "mobile": "575 821 127",
+  "code": "gk-20260925-11",
+  "slug": "folkbeautymo"
+ },
+ {
+  "name": "Renowacja Paulina Reniuszek",
+  "name_full": "Renowacja Paulina Reniuszek",
+  "to": "paulina.reniuszek@gmail.com",
+  "city": "Puławy",
+  "mobile": "691 603 260",
+  "code": "gk-20260925-12",
+  "slug": "renowacjapau"
+ },
+ {
+  "name": "Beauty Room by Izabela Zobek",
+  "name_full": "Beauty Room By Izabela Zobek",
+  "to": "isabella119955@gmail.com",
+  "city": "Mysłowice",
+  "mobile": "509 349 972",
+  "code": "gk-20260925-13",
+  "slug": "beautyroomby"
+ },
+ {
+  "name": "Kosmetologia Karolina Lachowska",
+  "name_full": "Kosmetologia Karolina Lachowska",
+  "to": "karolina.mikulka@gmail.com",
+  "city": "Wodzisław Śląski",
+  "mobile": "530 157 031",
+  "code": "gk-20260925-14",
+  "slug": "kosmetologia"
+ },
+ {
+  "name": "Expert Studio Kosmetyczne Magdalena Mularczyk",
+  "name_full": "Expert Studio Kosmetyczne Magdalena Mularczyk",
+  "to": "expertstudiokosmetyczne@outlook.com",
+  "city": "Zawiercie",
+  "mobile": "795 995 801",
+  "code": "gk-20260925-15",
+  "slug": "expertstudio"
+ },
+ {
+  "name": "Katarzyna Smęda Makijaż Permanentny",
+  "name_full": "Katarzyna Smęda Makijaż Permanentny",
+  "to": "dudziak_katarzyna@wp.pl",
+  "city": "Łapczyca (by Bochnia)",
+  "mobile": "791 814 742",
+  "code": "gk-20260925-16",
+  "slug": "katarzynasme"
+ },
+ {
+  "name": "Beauty Bar Justyna Witaszyńska",
+  "name_full": "Beauty Bar Justyna Witaszyńska",
+  "to": "jwitaszynska@gmail.com",
+  "city": "Wejherowo",
+  "mobile": "606 860 001",
+  "code": "gk-20260925-17",
+  "slug": "beautybarjus"
+ },
+ {
+  "name": "Gabinet Kosmetyczny Dotyk Piękna",
+  "name_full": "\"Dotyk Piękna\" Natalia Bezpalko Gabinet Kosmetyczny",
+  "to": "bnatalia@wp.eu",
+  "city": "Legionowo",
+  "mobile": "603 350 931",
+  "code": "gk-20260925-18",
+  "slug": "gabinetkosme"
+ },
+ {
+  "name": "Studio Urody Femmina",
+  "name_full": "\"Femmina\" Studio Urody Monika Strzałkowska",
+  "to": "studiofemmina@gmail.com",
+  "city": "Wołomin",
+  "mobile": "501 467 010",
+  "code": "gk-20260925-19",
+  "slug": "studiourodyf"
+ },
+ {
+  "name": "Studio Urody Motyl",
+  "name_full": "Anna Szymańska Studio Urody \"Motyl\"",
+  "to": "annaszymanska@vp.pl",
+  "city": "Starachowice",
+  "mobile": "535 363 969",
+  "code": "gk-20260925-20",
+  "slug": "studiourodym"
+ },
+ {
+  "name": "Diamond Studio Justyna Strojny",
+  "name_full": "Diamond Studio Gabinet Kosmetyczny Justyna Strojny",
+  "to": "strojny.justyna@gmail.com",
+  "city": "Kluczbork",
+  "mobile": "665 360 212",
+  "code": "gk-20260925-21",
+  "slug": "diamondstudi"
+ },
+ {
+  "name": "Salon Kosmetyczny TiNKA",
+  "name_full": "Salon Kosmetyczny T i N K A Ptasińska Justyna",
+  "to": "justynadda@wp.pl",
+  "city": "Żagań",
+  "mobile": "512 434 917",
+  "code": "gk-20260925-22",
+  "slug": "salonkosmety"
+ },
+ {
+  "name": "Zakątek Piękna i Urody Żaneta Urbańczyk",
+  "name_full": "Zakątek Piękna I Urody Żaneta Urbańczyk",
+  "to": "zanus442@wp.pl",
+  "city": "Bierzglinek (by Września)",
+  "mobile": "721 016 451",
+  "code": "gk-20260925-23",
+  "slug": "zakatekpiekn"
+ },
+ {
+  "name": "Beauty by Sandra Przysiek",
+  "name_full": "Beauty By Sandra Przysiek",
+  "to": "sandraprzysiek@gmail.com",
+  "city": "Wągrowiec",
+  "mobile": "790 603 566",
+  "code": "gk-20260925-24",
+  "slug": "beautybysand"
+ },
+ {
+  "name": "Kosmetyczka Sylwia Nowakowska",
+  "name_full": "Kosmetyczka Sylwia Nowakowska",
+  "to": "sylwia.1990@hotmail.com",
+  "city": "Żywiec",
+  "mobile": "691 793 202",
+  "code": "gk-20260925-25",
+  "slug": "kosmetyczkas"
+ },
+ {
+  "name": "Skin Halina Gołuńska",
+  "name_full": "Skin - Kosmetolog Halina Gołuńska",
+  "to": "golunska.halina@gmail.com",
+  "city": "Skarszewy",
+  "mobile": "512 736 215",
+  "code": "gk-20260925-26",
+  "slug": "skinhalinago"
+ },
+ {
+  "name": "Salon Kosmetyczny Diament",
+  "name_full": "\"Diament\" Salon Kosmetyczny Magdalena Konieczna",
+  "to": "kosmetyka.diament@interia.pl",
+  "city": "Chorzów",
+  "mobile": "667 014 169",
+  "code": "gk-20260925-27",
+  "slug": "salonkosmety"
+ },
+ {
+  "name": "Beauty Room by Małgorzata Mularska",
+  "name_full": "Beauty Room By Małgorzata Mularska",
+  "to": "br.gosiamularska@gmail.com",
+  "city": "Jasło",
+  "mobile": "506 538 086",
+  "code": "gk-20260925-28",
+  "slug": "beautyroomby"
+ },
+ {
+  "name": "Lash & Look by Weronika Sekuła",
+  "name_full": "Lash & Look By Weronika Sekuła",
+  "to": "weronikasekula0620@gmail.com",
+  "city": "Piaseczno",
+  "mobile": "789 076 002",
+  "code": "gk-20260925-29",
+  "slug": "lashlookbywe"
+ },
+ {
+  "name": "Adrianna Makulska Beauty",
+  "name_full": "Adrianna Makulska Beauty",
+  "to": "maalina.1991@gmail.com",
+  "city": "Toruń",
+  "mobile": "791 466 795",
+  "code": "gk-20260925-30",
+  "slug": "adriannamaku"
+ },
+ {
+  "name": "Cosmodern Magdalena Szymura",
+  "name_full": "Cosmodern Gabinet Kosmetyki Profesjonalnej Magdalena Szymura",
+  "to": "magdalenaszymura@onet.pl",
+  "city": "Rybnik",
+  "mobile": "502 343 753",
+  "code": "gk-20260925-31",
+  "slug": "cosmodernmag"
+ },
+ {
+  "name": "Studio Urody Agápe",
+  "name_full": "Agápe Studio Urody Agnieszka Drapa",
+  "to": "agnieszka.drapa@gmail.com",
+  "city": "Ruda Śląska",
+  "mobile": "662 121 092",
+  "code": "gk-20260925-32",
+  "slug": "studiourodya"
+ },
+ {
+  "name": "Salon Urody Lavages",
+  "name_full": "Salon Urody Lavages Anna Woźniak",
+  "to": "wozniak.anna1@o2.pl",
+  "city": "Konin",
+  "mobile": "731 841 388",
+  "code": "gk-20260925-33",
+  "slug": "salonurodyla"
+ },
+ {
+  "name": "Beautyland Żaneta Taraszkiewicz",
+  "name_full": "Beautyland Żaneta Taraszkiewicz",
+  "to": "beautylandsalon@o2.pl",
+  "city": "Suwałki",
+  "mobile": "508 417 635",
+  "code": "gk-20260925-34",
+  "slug": "beautylandza"
+ },
+ {
+  "name": "Salon Kosmetyczny Perła",
+  "name_full": "Salon Kosmetyczny Perła Aneta Szlaszyńska",
+  "to": "salon@perla.elk.pl",
+  "city": "Ełk",
+  "mobile": "602 449 920",
+  "code": "gk-20260925-35",
+  "slug": "salonkosmety"
+ },
+ {
+  "name": "House of Beauty Angelika Wojtasik",
+  "name_full": "House Of Beauty Angelika Wojtasik",
+  "to": "angelika.wu@onet.pl",
+  "city": "Kołobrzeg",
+  "mobile": "503 464 858",
+  "code": "gk-20260925-36",
+  "slug": "houseofbeaut"
  }
 ]

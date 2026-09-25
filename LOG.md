@@ -13,6 +13,12 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 - Stan "ok send all" → 33/33 podolog e-mails `sent:true` (v4.1 generic, podolog.json niche config, link podolog.givyx.com with
   `utm_campaign=gp-20260924-NN`). Two titles had `&amp;` from escaping → sent with a plain `&`. **Scoreboard 222.** D+3 SMS Mon 28 Sep.
 
+### 2026-09-25 (Fri) — booking plans, plan-gate PR
+- api 93 merged + deployed (booking config ownership). Admin token (Stan's OK): no location has a stored custom domain, so the
+  settings-save bug hit nobody. Demo plans were all Free (booking off) → set to sponsored: fizjo, szkolajazdy, podolog, dentysta.
+  warsztat + showroom blocked by the classifier (twice each), left Free; harmless for the gate. Plan-gate commit rebased on main
+  → **api #94** (booking+plan tests 360/360), awaiting Stan's merge.
+
 ### 2026-09-24 (Thu) — auto repair closed, demo sign-up bar live, podolog list, GBP post
 - **Stan: auto repair closed** (no new e-mails/calls/SMS unless he names a shop); IPR + leonixon are friends, never charged.
   Next niche podolog, then kosmetyczka.

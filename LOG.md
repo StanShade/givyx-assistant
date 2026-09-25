@@ -9,6 +9,10 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-25 (Fri) — P1 podolog batch sent
+- Stan "ok send all" → 33/33 podolog e-mails `sent:true` (v4.1 generic, podolog.json niche config, link podolog.givyx.com with
+  `utm_campaign=gp-20260924-NN`). Two titles had `&amp;` from escaping → sent with a plain `&`. **Scoreboard 222.** D+3 SMS Mon 28 Sep.
+
 ### 2026-09-24 (Thu) — auto repair closed, demo sign-up bar live, podolog list, GBP post
 - **Stan: auto repair closed** (no new e-mails/calls/SMS unless he names a shop); IPR + leonixon are friends, never charged.
   Next niche podolog, then kosmetyczka.

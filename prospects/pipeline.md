@@ -1030,3 +1030,44 @@ Stan "ok send all" → 27/27 `sent:true`, one curl each from the session. **Scor
   own `sigtest`. No form submits.
 - G1 D+3 SMS (29, `outreach/2026-09-24-sms-g1-draft.csv`): **29/29 sent 09-24 ~13:0xZ** via the relay after Stan's permission.
   Clicks arrive as `utm_source=sms`, `utm_campaign=sms-gw-20260921-NN` on warsztat. Replies land in Stan's Messages.
+
+## 2026-09-25 (Fri) — P1: 33 podolog generic e-mails → podolog.givyx.com
+Demo built 09-24 (neuracore reference, booking tested E2E). List `prospects/2026-09-24-PL-podolog.md` (rows 7–9 skipped: <10 reviews).
+Seed to Stan 09-24; Stan "ok send all" → **33/33 `sent:true`**, one call each. Codes `gp-20260924-NN` (utm_campaign on podolog).
+**Scoreboard: 222 offer e-mails to date.** D+3 SMS **Mon 28 Sep** (33 PL mobiles below).
+
+| # | Name | City | E-mail | Mobile | Code | State |
+|---|---|---|---|---|---|---|
+| 01 | Twój Podolog Martyna Bassara | Rzeszów | martyna.b0311@gmail.com | 793 973 474 | `gp-20260924-01` | **SENT 2026-09-25** |
+| 02 | Kinga Ryba-Podologia | Bydgoszcz | kingaryba1@gmail.com | 531 823 030 | `gp-20260924-02` | **SENT 2026-09-25** |
+| 03 | Gabinet Podologiczny Paulina Babiarz | Rzeszów | paulina.babiarz@o2.pl | 695 031 745 | `gp-20260924-03` | **SENT 2026-09-25** |
+| 04 | Jagoda Stelmach usługi podologiczne | Lublin | jagodach77@gmail.com | 661 736 413 | `gp-20260924-04` | **SENT 2026-09-25** |
+| 05 | PediExpert Julita Dietrich | Białystok | julitadietrich@gmail.com | 608 204 638 | `gp-20260924-05` | **SENT 2026-09-25** |
+| 06 | 1Podolog Foot Life | Kraków | lizo.oleh@gmail.com | 660 847 031 | `gp-20260924-06` | **SENT 2026-09-25** |
+| 10 | Gabinet Podologiczny Gabriela Bajor | Trzebinia | gabriela.bajor@interia.pl | 728 482 878 | `gp-20260924-10` | **SENT 2026-09-25** |
+| 11 | Podolek Monika Skinderowicz | Wrocław | monikaskind@gmail.com | 605 543 020 | `gp-20260924-11` | **SENT 2026-09-25** |
+| 12 | Podologia Maciej Dawidowicz | Wrocław | maciej.dawidowicz1@gmail.com | 724 109 802 | `gp-20260924-12` | **SENT 2026-09-25** |
+| 13 | Gabinet Podologiczny Kinga Podgórska | Oborniki Śląskie | kpodgorskamakeup@gmail.com | 572 202 710 | `gp-20260924-13` | **SENT 2026-09-25** |
+| 14 | Anna Wiatr Foot & Beauty | Łomianki | gabinet.annawiatr@gmail.com | 530 172 753 | `gp-20260924-14` | **SENT 2026-09-25** |
+| 15 | Gabinet Podologiczny Stópka Karolina Zawierucha | Wyszków | stopodolog@gmail.com | 732 820 144 | `gp-20260924-15` | **SENT 2026-09-25** |
+| 16 | Crystal Nails Emilia Felczak | Babięty Wielkie | crystalnails025@gmail.com | 796 021 303 | `gp-20260924-16` | **SENT 2026-09-25** |
+| 17 | Podolog Izabela Gniatkowska | Swarzędz | podolog.gniatkowska@gmail.com | 721 366 842 | `gp-20260924-17` | **SENT 2026-09-25** |
+| 18 | Ewa Legutko Podologia-Zdrowe Stopy | Jaworzno | e.leg63@interia.pl | 602 331 579 | `gp-20260924-18` | **SENT 2026-09-25** |
+| 19 | PodoArte Kalina Maciaszczyk-Kupiec | Szczerców | podoartekmk@gmail.com | 781 993 251 | `gp-20260924-19` | **SENT 2026-09-25** |
+| 20 | Podologia Małgorzata Kaźmierczak | Rydzyna | kazmierczak_gosia@wp.pl | 533 740 075 | `gp-20260924-20` | **SENT 2026-09-25** |
+| 21 | Hanami Podologia & Kosmetyka | Giżycko | hanami-gizycko@wp.pl | 696 800 449 | `gp-20260924-21` | **SENT 2026-09-25** |
+| 22 | Gabinet Podologiczno-Kosmetyczny Wiesława Wasilewska | Tomaszów Mazowiecki | wwpodologia@gmail.com | 534 403 492 | `gp-20260924-22` | **SENT 2026-09-25** |
+| 23 | Natalia Frybezowska Podologia | Reda | nataliafrybezowska@wp.pl | 660 372 052 | `gp-20260924-23` | **SENT 2026-09-25** |
+| 24 | Gabinet Podologiczny Podo-Styl Kamila Gawryszewska | Jelenia Góra | gawryszewskakamila@gmail.com | 734 179 373 | `gp-20260924-24` | **SENT 2026-09-25** |
+| 25 | Mobilny Gabinet Podologiczny Nadlen | Gniezno | nadlen13@wp.pl | 663 731 313 | `gp-20260924-25` | **SENT 2026-09-25** |
+| 26 | Gabinet Podologiczny Katarzyna Wójcik | Dębica | gabinet.podologiczny.kw@gmail.com | 664 223 627 | `gp-20260924-26` | **SENT 2026-09-25** |
+| 27 | Mani Pedi by Luiza - Podologia | Gdańsk | mp.byluiza@gmail.com | 505 930 981 | `gp-20260924-27` | **SENT 2026-09-25** |
+| 28 | Gabinet Podologiczny Lamed Aleksandra Stępień | Łódź | podologlodz@gmail.com | 577 811 588 | `gp-20260924-28` | **SENT 2026-09-25** |
+| 29 | Gabinet Podologiczny Zdrowe Stopy | Brzeziny | zdrowe.stopy.brzeziny@gmail.com | 510 537 476 | `gp-20260924-29` | **SENT 2026-09-25** |
+| 30 | Podoskin Agata Kleć | Świdwin | podoskin@podoskin.pl | 691 074 587 | `gp-20260924-30` | **SENT 2026-09-25** |
+| 31 | Gabinet Podologiczny Katarzyna Kutera | Wołczkowo (by Szczecin) | kasiakutera@onet.pl | 516 144 047 | `gp-20260924-31` | **SENT 2026-09-25** |
+| 32 | Gabinet Podologiczny Zdrowa Stopa | Sochaczew | sylwia.burzymowska@onet.pl | 505 506 781 | `gp-20260924-32` | **SENT 2026-09-25** |
+| 33 | Podolog Anna Pieniążek | Łowicz | podolowicz@gmail.com | 695 751 105 | `gp-20260924-33` | **SENT 2026-09-25** |
+| 34 | Gabinet podologiczny Marta Linkowska | Oława | martalinkowska81@wp.pl | 698 911 773 | `gp-20260924-34` | **SENT 2026-09-25** |
+| 35 | Gabinet Visage Bożena Urbanowicz | Świebodzin | bozunia45@wp.pl | 501 322 861 | `gp-20260924-35` | **SENT 2026-09-25** |
+| 36 | Etre Belle Ewa Jakubowska | Gubin | ewaorlinska@wp.pl | 516 067 600 | `gp-20260924-36` | **SENT 2026-09-25** |

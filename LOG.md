@@ -9,6 +9,12 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-29 (Tue) — Bejbuśki: two missed calls, SMS sent
+- Stan called Bejbuśki (Paulina Dębska, Łódź, `gf-20260921-21`) on 25 Sep and again: no answer both times. With Stan's OK, SMS
+  sent 09-29 from his number via Messages (`outreach/2026-09-29-sms-bejbuski.csv`): offer to build her own version, no
+  obligation, link `utm_campaign=sms-gf-20260921-21`. Next: wait for her reply; no third call this week.
+- Rule saved: call scripts never say we saw the prospect open the demo.
+
 ### 2026-09-29 (Tue) — click read, call list, GBP API check
 - Replies: 0 prospect replies in the shade mailbox since 24 Sep (only Contra, GitHub CI, one SEO spam pitch).
 - Click read since 25 Sep (Stan's OK, 7 reads, helper script, admin token): **one new opener, Beauty Room by Małgorzata

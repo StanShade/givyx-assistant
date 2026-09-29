@@ -9,6 +9,10 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-29 (Tue, 16:17) — Bassara replied: no
+- Twój Podolog Martyna Bassara (`gp-20260924-01`) answered the 15:56 SMS: „Dziękuję, już mam swój system” (read in Messages).
+  Her system = the iPodologia booking page. Closed, no further calls or SMS. Pipeline row updated.
+
 ### 2026-09-29 (Tue, 15:56) — Bassara SMS sent
 - Stan called again 15:47, same auto-reply (with patient, "proszę o sms", her iPodologia link). Personalised SMS sent 15:56
   with Stan's OK (one send): own site, patient picks zabieg (klamra, wkładki, grzybica), sees the price, books online; free

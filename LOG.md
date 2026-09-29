@@ -9,9 +9,14 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
-### 2026-09-29 (Tue, 16:17) — Bassara replied: no
+### 2026-09-29 (Tue, 16:17) — Bassara replied: has iPodologia; two-option SMS sent
 - Twój Podolog Martyna Bassara (`gp-20260924-01`) answered the 15:56 SMS: „Dziękuję, już mam swój system” (read in Messages).
-  Her system = the iPodologia booking page. Closed, no further calls or SMS. Pipeline row updated.
+  Her system = the iPodologia booking page.
+- iPodologia (ipodologia.pl): full system 199 zł netto/mo monthly or 99 zł netto/mo annual; calendar, online booking, SMS
+  reminders, e-patient records with photos, marketing, stock, reports.
+- Stan's offer, sent 17:02 with his OK (one send, `outreach/2026-09-29-sms-bassara-2.csv`): own site with „Umów wizytę” to
+  iPodologia for **50 zł brutto/mo** (new price, below Starter), or **245 zł brutto/mo** full iPodologia replacement + site;
+  no contract, first month free; asks if she wants a version to view. Awaiting reply.
 
 ### 2026-09-29 (Tue, 15:56) — Bassara SMS sent
 - Stan called again 15:47, same auto-reply (with patient, "proszę o sms", her iPodologia link). Personalised SMS sent 15:56

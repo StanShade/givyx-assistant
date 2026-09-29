@@ -1109,7 +1109,7 @@ D1 links dentysta.givyx.com (`gd-20260925-NN`). Sources `prospects/2026-09-25-PL
 | 25 | Kosmetyczka Sylwia Nowakowska | Żywiec | sylwia.1990@hotmail.com | 691 793 202 | `gk-20260925-25` | **SENT 2026-09-25** |
 | 26 | Skin Halina Gołuńska | Skarszewy | golunska.halina@gmail.com | 512 736 215 | `gk-20260925-26` | **SENT 2026-09-25** |
 | 27 | Salon Kosmetyczny Diament | Chorzów | kosmetyka.diament@interia.pl | 667 014 169 | `gk-20260925-27` | **SENT 2026-09-25** |
-| 28 | Beauty Room by Małgorzata Mularska | Jasło | br.gosiamularska@gmail.com | 506 538 086 | `gk-20260925-28` | **SENT 2026-09-25** |
+| 28 | Beauty Room by Małgorzata Mularska | Jasło | br.gosiamularska@gmail.com | 506 538 086 | `gk-20260925-28` | **SENT 2026-09-25** · **clicked (1 session, read 09-29)** → Stan's call list (`outreach/2026-09-29-call-list.md` #6); out of the D+3 SMS |
 | 29 | Lash & Look by Weronika Sekuła | Piaseczno | weronikasekula0620@gmail.com | 789 076 002 | `gk-20260925-29` | **SENT 2026-09-25** |
 | 30 | Adrianna Makulska Beauty | Toruń | maalina.1991@gmail.com | 791 466 795 | `gk-20260925-30` | **SENT 2026-09-25** |
 | 31 | Cosmodern Magdalena Szymura | Rybnik | magdalenaszymura@onet.pl | 502 343 753 | `gk-20260925-31` | **SENT 2026-09-25** |

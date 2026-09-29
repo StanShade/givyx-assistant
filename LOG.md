@@ -9,6 +9,18 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-29 (Tue) — click read, call list, GBP API check
+- Replies: 0 prospect replies in the shade mailbox since 24 Sep (only Contra, GitHub CI, one SEO spam pitch).
+- Click read since 25 Sep (Stan's OK, 7 reads, helper script, admin token): **one new opener, Beauty Room by Małgorzata
+  Mularska, Jasło (`gk-20260925-28`, 506 538 086)** → call list, removed from the D+3 SMS draft (**125 left**: F2 27 · P1 31 ·
+  K1 35 · D1 32). Everything else = known openers (Bassara, Dawidowicz, the five S1/F1 SMS clickers). F2 and D1 0 clicks,
+  signature links (l_givyx) 0, warsztat 0. No conversions.
+- Monday 28 Sep: the D+3 SMS (126) and the three callbacks (Bejbuśki, Guzio, Stacja Zdrowie) are not recorded as done.
+- Call list `outreach/2026-09-29-call-list.md`: 11 people in order (3 callbacks, Bassara by SMS, 2 e-mail openers, 5 SMS
+  clickers), true-only compliments per row, a reply SMS to Bassara drafted for Stan's OK.
+- GBP Basic API Access (case 1-5210000041578, applied 15 Sep, 7–10 business days): no Google mail in the shade mailbox; the
+  in-app browser isn't signed in, so the quota page is unread.
+- All 25 Sep PRs merged 28 Sep (api 93/95/96/100, portal 118/119, websites 158); main deploys green on 29 Sep.
 ### 2026-09-25 (Fri, late) — GVX-119 online payments demo: spec + 3 PRs
 - Evidence sweep: product checkout → Stripe Connect (Standard, per app) → webhook → Portal Orders tab is already on main but
   never ran live. Gaps: failed payments never recorded, no order e-mails, e-mail-only contact, webhook claim not released on

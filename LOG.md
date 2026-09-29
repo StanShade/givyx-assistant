@@ -9,6 +9,12 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-29 (Tue, 15:56) — Bassara SMS sent
+- Stan called again 15:47, same auto-reply (with patient, "proszę o sms", her iPodologia link). Personalised SMS sent 15:56
+  with Stan's OK (one send): own site, patient picks zabieg (klamra, wkładki, grzybica), sees the price, books online; free
+  version to view. Link `podolog.givyx.com/?utm_campaign=sms-gp-01` (short code for `gp-20260924-01`). Text in
+  `outreach/2026-09-29-sms-bassara.csv`. Delivered as SMS in her thread.
+
 ### 2026-09-29 (Tue) — Bejbuśki: two missed calls, SMS sent
 - Stan called Bejbuśki (Paulina Dębska, Łódź, `gf-20260921-21`) on 25 Sep and again: no answer both times. With Stan's OK, SMS
   sent 09-29 from his number via Messages (`outreach/2026-09-29-sms-bejbuski.csv`): offer to build her own version, no

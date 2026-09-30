@@ -33,8 +33,8 @@ body = (
           "<strong>zaawansowane SEO</strong>: podstrony pod zabiegi, których szukają pacjenci",
           "zmiany bez limitu i wsparcie priorytetowe",
           "panel analityczny: ile osób wchodzi na stronę i skąd"])
-    + p("Zrobiłem też podstawową analizę SEO: na hasło „podolog Rzeszów” wysoko są gabinety z własnymi stronami, "
-        "a po nazwie gabinetu wciąż wyskakuje nieaktywna strona w Booksy. Właśnie tym zajmie się SEO w Studio.")
+    + p("Zrobiłem też wstępną analizę SEO. Z zaawansowanym SEO w Studio możecie być na pierwszym miejscu "
+        "w wyszukiwarkach, np. na hasło „podolog Rzeszów”, i oczywiście w odpowiedziach czatów AI, takich jak ChatGPT.")
     + p("<strong>Co dalej</strong>")
     + ul(["<strong>Strona za darmo:</strong> proszę ją obejrzeć i przetestować. Jeśli się podoba, chętnie coś zmienię "
           "na Wasze życzenie i podpowiem, jak ją aktywować i jakie są dalsze kroki.",

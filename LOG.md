@@ -14,7 +14,8 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
   accept). Offer email via POST /emails (v4.1 look, `outreach/2026-09-30-twojpodolog-offer/`), review copy approved by Stan, sent
   to nowak.bartek1996@gmail.com: current site free (= everything in Starter); Studio for the Starter price 149 zł/mo, new custom
   design + advanced SEO; first free month starts only once the new site is done and they're happy. utm_campaign=twojpodolog.
-- SMS to +48 696 401 294 drafted (`outreach/2026-09-30-sms-twojpodolog-4.csv`), waiting for Stan's go.
+- 20:17: SMS sent with Stan's OK to Bartek (+48 696 401 294, Martyna's husband): sorry for the late message, site finished,
+  offer sent to his e-mail (`outreach/2026-09-30-sms-twojpodolog-4.csv`).
 
 ### 2026-09-30 (Wed, 12:20) — Bassara: last SMS, free site offer
 - No reply to the 09-29 17:02 two-option SMS. With Stan's OK (one send, `outreach/2026-09-30-sms-bassara-3.csv`): if 50 zł is

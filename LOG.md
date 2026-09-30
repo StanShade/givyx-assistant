@@ -9,6 +9,11 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-30 (Wed, 12:20) — Bassara: last SMS, free site offer
+- No reply to the 09-29 17:02 two-option SMS. With Stan's OK (one send, `outreach/2026-09-30-sms-bassara-3.csv`): if 50 zł is
+  too much, a free site like podolog.givyx.com with her zabiegi, ceny and a button to iPodologia (promotion, we're just starting
+  and looking for first clients); asks her to recommend us if she likes it. No time limit on "free". Last contact unless she replies.
+
 ### 2026-09-29 (Tue, 16:17) — Bassara replied: has iPodologia; two-option SMS sent
 - Twój Podolog Martyna Bassara (`gp-20260924-01`) answered the 15:56 SMS: „Dziękuję, już mam swój system” (read in Messages).
   Her system = the iPodologia booking page.

@@ -9,6 +9,13 @@ observed effect on funnel numbers. Weekly metrics snapshot at top.
 | 2026-07-17 (baseline) | TBD | TBD | TBD | 2 | 0 | $0 |
 
 ## Actions
+### 2026-09-30 (Wed, 20:16) — Twój Podolog: offer email to Bartek (Martyna's husband) sent
+- After Stan's call with Bartek Nowak: personalised site live on twojpodolog.givyx.com (research-based, logo, noindex until they
+  accept). Offer email via POST /emails (v4.1 look, `outreach/2026-09-30-twojpodolog-offer/`), review copy approved by Stan, sent
+  to nowak.bartek1996@gmail.com: current site free (= everything in Starter); Studio for the Starter price 149 zł/mo, new custom
+  design + advanced SEO; first free month starts only once the new site is done and they're happy. utm_campaign=twojpodolog.
+- SMS to +48 696 401 294 drafted (`outreach/2026-09-30-sms-twojpodolog-4.csv`), waiting for Stan's go.
+
 ### 2026-09-30 (Wed, 12:20) — Bassara: last SMS, free site offer
 - No reply to the 09-29 17:02 two-option SMS. With Stan's OK (one send, `outreach/2026-09-30-sms-bassara-3.csv`): if 50 zł is
   too much, a free site like podolog.givyx.com with her zabiegi, ceny and a button to iPodologia (promotion, we're just starting

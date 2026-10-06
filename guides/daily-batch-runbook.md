@@ -113,6 +113,7 @@ Dispatch **two** `prospect-researcher` agents at once (PL and US). The agent hol
 format, hard rules, screening, report); the dispatch gives only:
 
 > Country <PL|US> · batch <N> · date <YYYY-MM-DD> · avoid: <the PL cities below | the US states below> ·
+> PL try first: <the **Next:** list below; the batch-6 and batch-7 screening logs show what was already scanned> ·
 > <reserves or holds to re-score, if any>.
 
 **US states used so far (avoid unless a different metro):** NC, TX, KY, AZ, MI, IL, FL, NY, MD, NM, CA, OH,
@@ -166,15 +167,16 @@ next as one finishes. Dispatch one `clone-builder` per prospect. The agent holds
 (reading order, non-negotiables, US variant, verification, report); the dispatch gives only (fill the `<…>`):
 
 > <Name> (<City>) · slug `<slug>` · appId `<appId>` · locationId `<locationId>` · lang `pl|en` ·
-> pack `prospects/<batch file>` · phone <as displayed> · email <email> ·
+> pack `/Users/stan/Code/givyx/PersonalAssistant/prospects/<batch file>` · phone <as displayed> · email <email> ·
 > rating row <x,y · N opinii, read <date> | US: stars · source · read date> ·
 > prices: <none published | the pack's cennik, quoted exactly> ·
 > hours: <as the pack states; flag a site/Google closing-time conflict> ·
-> photos: <local paths `$SCRATCH/photos/<slug>/NN.ext` | no own photos>.
+> photos: <absolute local paths, e.g. `<scratchpad>/photos/<slug>/NN.ext` | no own photos>.
 
 If an agent dies mid-way (429, timeout): check the tenant's real state before re-dispatching —
-title, robots meta, `list_forms`, screenshots folder, log — and send a "finish" agent for what is
-missing rather than a full rebuild.
+title, robots meta, `list_forms`, screenshots folder, log — and dispatch `clone-builder` again with the
+same fill-ins plus `finish only: <missing steps> · forms exist: <ids>` rather than a full rebuild (a
+plain re-dispatch would create a second pair of forms).
 
 ## 5. Independent verification (main session, 2 min per site)
 

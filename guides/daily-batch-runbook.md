@@ -109,25 +109,14 @@ which; never invent a Google number.
 
 ### 2c. Briefs
 
-Dispatch **two** `general-purpose` agents at once (PL and US), each with:
+Dispatch **two** `prospect-researcher` agents at once (PL and US). The agent holds the brief (pack
+format, hard rules, screening, report); the dispatch gives only:
 
-> Deliverable: `prospects/<YYYY-MM-DD>-<PL|US>-batch<N>.md` with **5** prospects scoring **≥ 7 on the buy
-> score in `guides/daily-batch-runbook.md` §2a** (read §2a–§2b first; copy the per-prospect build pack
-> structure of `prospects/2026-09-14-service-centers-PL-batch4.md` — for US, of
-> `prospects/2026-09-11-autoservice-US.md`). Per prospect: buy score with one line of evidence per point ·
-> legal/trading name · address · phone(s) as displayed · e-mail + WHERE seen on a page they own ·
-> platform / vendor markers / site age · services in THEIR wording · prices only if published · hours only
-> if stated (site vs Google/Yelp, note conflicts) · 3–6 own photo URLs returning 200 (or "no own photos") ·
-> star histogram + source + read date · what they do well · what is missing · growth motive · a
-> `hook` (one sentence about THEIR customers that makes them want to see the example — no rating
-> mention) and a `fakt` line (verified facts, **never a review count or rating**).
-> Hard rules: every fact from a page you fetched; e-mail on a page they own; reject > 10 % one-star,
-> chains/partners, vendor-managed or ≤ 12-month-old sites, multi-location, wrong shape; exclude names
-> found by `grep -ril <name> prospects/`. Screen ≥ 30 candidates across the sources in §2b, deep-verify
-> the best 8, deliver the top 5 by buy score (send order = score). End with Reserves and a Rejected list
-> with reasons. Keep the file on disk as you go. Do not contact anyone. Report in < 250 words.
-> PL cities not yet used: (see list below). US: avoid the states already used (NC, TX, KY, AZ, MI, IL, FL, NY, MD, NM, CA, OH, TN, GA) unless a
-> different metro.
+> Country <PL|US> · batch <N> · date <YYYY-MM-DD> · avoid: <the PL cities below | the US states below> ·
+> <reserves or holds to re-score, if any>.
+
+**US states used so far (avoid unless a different metro):** NC, TX, KY, AZ, MI, IL, FL, NY, MD, NM, CA, OH,
+TN, GA (+ the batch-7 additions below).
 
 **PL cities used so far (do not repeat):** Kraków area, Poznań, Legnica, Katowice, Olsztyn, Gdańsk,
 Warszawa, Łódź, Białystok, Siemianowice, Barcin, Wrocław, Szczecin, Kielce, Toruń, Częstochowa,
@@ -173,46 +162,15 @@ GivyxTestSetup tool is the only thing you run.
 ## 4. Build agents — MAX 4 AT ONCE (each ~30 min, ~350k tokens)
 
 Twelve at once hit the account session limit on 09-14 and all died. Keep four in flight; start the
-next as one finishes. Prompt per prospect (fill the `<…>`):
+next as one finishes. Dispatch one `clone-builder` per prospect. The agent holds the build rules
+(reading order, non-negotiables, US variant, verification, report); the dispatch gives only (fill the `<…>`):
 
-> You are a build agent working in `/Users/stan/Code/givyx/givyx.claudeBrain` (cd there first).
-> Build the personalised prospect demo for **<Name> (<City>)** on the tenant that already exists:
-> slug `<slug>` (MCP key in `.mcp.json`; call tools with `Givyx/tools/mcp.sh <slug> <tool> '<json>'`),
-> appId `<appId>`, locationId `<locationId>`, lang `pl`, source = PL `dealership` (`l_5fd7d91`)
-> [US: lang `en`, source EN `autoservice` (`l_5d08dd1`), fictional identity "Northgate Auto Service", pages
-> services/book/about/contact/faq/privacy-policy/terms-of-service, `map-optout.py <slug> en`, `tel:+1…`,
-> stars from the pack's named source (CARFAX/Birdeye/Yelp), reference logs `troutman.md` + `holbrook.md`],
-> already cloned `--purge` and host-rewritten; Preview renders 200 at https://<slug>.givyx.com/?preview=1
-> and still carries the template's fictional "AutoSerwis Kowalski" identity. Use your own scratch
-> dir (`$TMPDIR/<slug>/`) — other build agents run concurrently.
-> Read, in this order, before touching anything: (1) `Givyx/superpowers/specs/2026-09-11-prospect-demo-clone.md`
-> — you execute steps 4 through 13; (2) `dealership/template/clone-runbook.md` §3–§6;
-> (3) `dealership/clones/napierala.md` and the "lessons" tails of `dealership/clones/dieselchip.md`
-> and `dealership/clones/poslowski.md` — copy their rigour and log format; (4) the research pack:
-> the "<Name>" section in `/Users/stan/Code/givyx/PersonalAssistant/prospects/<batch file>` — the
-> ONLY source of facts. Tools: `dealership/tools/set-values.py`, `dealership/tools/map-optout.py`.
-> Prospect specifics: phone <as displayed> → every `tel:` = `tel:+48<digits>`; email <email>;
-> rating row **<x,y · N opinii, read <date>>**; prices: <none published → none / quote the pack's
-> cennik exactly, `labelPrice` "Cena">; hours: <as the pack states; if site and Google disagree on a
-> closing time, print the opening time and days only and say so>; <no own photos → upload nothing,
-> shared assets only, neutral captions, NO ogImage>.
-> Non-negotiable rules: every fact from the pack; services in THEIR wording, ≤8, no padding, generic
-> copy apart from quoted facts; photos only from the pack's own-photo URLs (rsync per runbook, never
-> the images REST API; `ogImage` = one of them; no caption may claim the shared film/GLB is their
-> premises); copy sweep per spec step 9 + `dealership.givyx.com` + source phone/coords → 0 hits in
-> stored JSON and rendered HTML; JSON-LD on /faq and /o-warsztacie all theirs; SEO one `update_seo`
-> with title, description, `lang:"pl"`, `locales:["pl"]`, ogImage, **`noIndex:true`** (verify
-> `noindex, nofollow` + robots `Disallow: /`); forms: create the clone's OWN booking (11 fields) +
-> contact (4 fields), `notifyEmails` = `info@givyx.com,stan.zak.inf@gmail.com`, declare fields first,
-> submit each once with TEST, read back `Notified:true`; maps: `dealership/tools/map-optout.py <slug> pl`
-> + read back (re-run if a later rewrite touches card-menu/FAQ); Preview-only — do NOT call
-> `deploy_to_production`; one MCP call per Bash invocation if the classifier blocks a loop.
-> **Write `dealership/clones/<slug>.md` EARLY and update it as you go.**
-> Verify per spec step 13 (pages under 32K; local Playwright desktop + mobile — the hidden Browser
-> pane is stale; every `tel:` E.164; no-WebGL fallback; no Maps request before consent on map-less
-> pages). Screenshots to `Givyx/screenshots/<slug>/`. Output: the clone log in napierala.md's format
-> and the `<slug>` row in `dealership/clones/index.md` → "built + verified on Preview". Do not commit.
-> Report back in under 200 words: preview URL, form ids, sweep result, anything unverified.
+> <Name> (<City>) · slug `<slug>` · appId `<appId>` · locationId `<locationId>` · lang `pl|en` ·
+> pack `prospects/<batch file>` · phone <as displayed> · email <email> ·
+> rating row <x,y · N opinii, read <date> | US: stars · source · read date> ·
+> prices: <none published | the pack's cennik, quoted exactly> ·
+> hours: <as the pack states; flag a site/Google closing-time conflict> ·
+> photos: <local paths `$SCRATCH/photos/<slug>/NN.ext` | no own photos>.
 
 If an agent dies mid-way (429, timeout): check the tenant's real state before re-dispatching —
 title, robots meta, `list_forms`, screenshots folder, log — and send a "finish" agent for what is
